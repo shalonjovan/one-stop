@@ -114,22 +114,45 @@
         const searchInput = document.getElementById('search-input');
         let allCareers = [];
 
-        // Function to render career cards
-        function renderCareers(careers) {
-            careerGrid.innerHTML = ''; // Clear previous cards
-            careers.forEach(career => {
-                const card = `
-                    <div class="career-card flex flex-col items-center">
-                        <div class="card-logo">
-                            <img src="${career.logo}" alt="${career.career} Logo">
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mt-2">${career.career}</h3>
-                        <p class="text-sm text-gray-500">${career.options} Career Options</p>
-                    </div>
-                `;
-                careerGrid.innerHTML += card;
-            });
-        }
+        // Function to render career cards with click navigation
+function renderCareers(careers) {
+    careerGrid.innerHTML = ''; // Clear previous cards
+    careers.forEach(career => {
+        const card = `
+            <div class="career-card flex flex-col items-center" onclick="handleCareerClick('${career.career}')">
+                <div class="card-logo">
+                    <img src="${career.logo}" alt="${career.career} Logo">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 mt-2">${career.career}</h3>
+                <p class="text-sm text-gray-500">${career.options} Career Options</p>
+            </div>
+        `;
+        careerGrid.innerHTML += card;
+    });
+}
+
+// Function to handle career card clicks
+function handleCareerClick(careerName) {
+    // Define the mapping of career names to their respective pages
+    const careerPages = {
+        'Engineering': './engineering.html', // Make sure this matches your second file's name
+        'Medical Science': './medicine.html',
+        'Business': './business.html',
+        'Technology': './technology.html',
+        // Add more career-to-page mappings as needed
+    };
+    
+    // Get the page URL for the clicked career
+    const pageUrl = careerPages[careerName];
+    
+    if (pageUrl) {
+        // Navigate to the specific page
+        window.location.href = pageUrl;
+    } else {
+        // Fallback: show a message or redirect to generic page
+        console.log(`No specific page found for ${careerName}`);
+    }
+}
 
         async function fetchCareers() {
             try {
