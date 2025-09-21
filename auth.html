@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Login Redirect</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align:center; margin-top:50px; }
+        button { padding:10px 20px; font-size:16px; }
+    </style>
+</head>
+<body>
+    <h1>Login with Google</h1>
+    <button id="loginBtn">Login with Google</button>
+
+    <script>
+        const clientId = "709858001016-1ejbevrnot4n6tl77la9htdk9ktsfkl6.apps.googleusercontent.com";
+        const redirectUri = "http://localhost:5500/callback.html";
+        const scope = "profile email";
+
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            const oauthUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
+                `client_id=${clientId}&` +
+                `redirect_uri=${encodeURIComponent(redirectUri)}&` +
+                `response_type=token&` +
+                `scope=${encodeURIComponent(scope)}`;
+            
+            // Redirect to Google login
+            window.location.href = oauthUrl;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+       <script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .auth-container {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 380px;
+            max-width: 90%;
+        }
+
+        h2 {
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            font-size: 2rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        #signupBtn {
+            background-color: #3498db;
+            color: white;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        #signupBtn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .separator {
+            margin: 1.5rem 0;
+            position: relative;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .separator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #ddd;
+            z-index: 1;
+        }
+
+        .separator span {
+            background: #fff;
+            padding: 0 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .google-btn {
+            background-color: #fff;
+            color: #757575;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .google-btn:hover {
+            background-color: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        .link-text {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .link-text a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .link-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Sign Up</h2>
+        <div class="input-group">
+            <label for="new-username">Username</label>
+            <input type="text" id="new-username" placeholder="Choose a username" required>
+        </div>
+        <div class="input-group">
+            <label for="new-password">Password</label>
+            <input type="password" id="new-password" placeholder="Create a password" required>
+        </div>
+        <button id="signupBtn">Sign Up</button>
+        <div class="separator"><span>OR</span></div>
+        <button id="googleSignupBtn" class="google-btn">
+            <img src="https://www.google.com/favicon.ico" alt="Google icon" width="20">
+            Sign Up with Google
+        </button>
+        <div class="link-text">
+            Already have an account? <a href="login.html">Login here</a>
+        </div>
+    </div>
+
+
+<script>
+    const backend = "http://localhost:3000";
+
+    // Normal signup
+    document.getElementById('signupBtn').addEventListener('click', async () => {
+        const username = document.getElementById('new-username').value;
+        const password = document.getElementById('new-password').value;
+        if (username.length<3 || password.length<6) { alert('Username >=3 & Password >=6'); return; }
+
+        try {
+            const res = await fetch(backend+'/signup', {
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body: JSON.stringify({username,password})
+            });
+            const data = await res.json();
+            if(res.ok){ alert('Sign up success!'); window.location.href='login.html'; }
+            else alert(data.error);
+        } catch(err){ alert('Server error'); console.error(err);}
+    });
+
+    // Google signup
+    window.onload = function() {
+        google.accounts.id.initialize({
+            client_id: "709858001016-1ejbevrnot4n6tl77la9htdk9ktsfkl6.apps.googleusercontent.com",
+            callback: handleCredentialResponse
+        });
+
+        google.accounts.id.renderButton(
+            document.getElementById("googleLoginBtn"),
+            { theme: "outline", size: "large" }
+        );
+    };
+
+    async function handleCredentialResponse(response){
+        const decoded = jwt_decode(response.credential);
+        const googleUser = {
+            name: decoded.name,
+            email: decoded.email,
+            picture: decoded.picture
+        };
+        try {
+            const res = await fetch(backend+'/google-signup', {
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body: JSON.stringify(googleUser)
+            });
+            const data = await res.json();
+            if(res.ok){ 
+                localStorage.setItem('googleUser', JSON.stringify(googleUser));
+                window.location.href = 'profile.html';
+            } else alert(data.error);
+        } catch(err){ alert('Server error'); console.error(err);}
+    }
+</script>
+
+</body>
+</html>
