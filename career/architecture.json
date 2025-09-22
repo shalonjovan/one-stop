@@ -1,0 +1,126 @@
+{
+  "fields": [
+    { "name": "Architectural Design", "color": "#3B82F6" },
+    { "name": "Urban Planning", "color": "#F97316" },
+    { "name": "Landscape Architecture", "color": "#10B981" },
+    { "name": "Interior Architecture", "color": "#6366F1" },
+    { "name": "Sustainable Architecture", "color": "#EC4899" },
+    { "name": "Historic Preservation", "color": "#F59E0B" },
+    { "name": "Architectural Engineering", "color": "#06B6D4" },
+    { "name": "Construction Management", "color": "#D946EF" },
+    { "name": "Environmental Design", "color": "#4B5563" },
+    { "name": "Digital Architecture & BIM", "color": "#EF4444" },
+    { "name": "Furniture & Product Design", "color": "#8B5CF6" },
+    { "name": "Industrial Design", "color": "#3B82F6" },
+    { "name": "Parametric & Computational Design", "color": "#10B981" },
+    { "name": "Architectural Visualization", "color": "#F97316" },
+    { "name": "Housing & Community Design", "color": "#D946EF" },
+    { "name": "Smart Cities & Infrastructure", "color": "#06B6D4" },
+    { "name": "Exhibition & Museum Design", "color": "#4B5563" },
+    { "name": "Transportation Architecture", "color": "#EF4444" },
+    { "name": "Healthcare Architecture", "color": "#8B5CF6" },
+    { "name": "Educational Facility Design", "color": "#EC4899" }
+  ],
+  "insights": {
+    "Architectural Design": {
+      "summary": "Architectural design focuses on creating functional, aesthetic, and innovative building concepts that respond to human needs and cultural contexts. It blends creativity with technical precision to bring ideas to life in built form.",
+      "keyFocusAreas": ["Concept Development", "Spatial Planning", "3D Modeling", "Aesthetics", "Functionality", "Material Selection"],
+      "careerOutlook": "Architectural designers work in architecture firms, construction companies, or as independent consultants. Careers include design architect, project architect, and creative director roles."
+    },
+    "Urban Planning": {
+      "summary": "Urban planners design and manage the growth of cities, balancing housing, transportation, and infrastructure with environmental and social needs. They aim to create sustainable, efficient, and livable communities.",
+      "keyFocusAreas": ["Zoning & Land Use", "Transportation Systems", "Community Development", "Environmental Planning", "GIS Tools", "Policy Analysis"],
+      "careerOutlook": "Urban planning careers include government agencies, NGOs, and private consultancies, with roles like city planner, transport planner, and development strategist."
+    },
+    "Landscape Architecture": {
+      "summary": "Landscape architects design outdoor environments like parks, gardens, and recreational spaces, integrating natural and built elements to promote beauty, ecology, and human well-being.",
+      "keyFocusAreas": ["Site Planning", "Environmental Design", "Planting Design", "Ecological Systems", "Sustainable Materials", "3D Landscape Modeling"],
+      "careerOutlook": "Careers include landscape architect, urban green space consultant, and environmental designer, with opportunities in public works, design firms, and urban development."
+    },
+    "Interior Architecture": {
+      "summary": "Interior architects design functional and visually pleasing indoor spaces, considering lighting, acoustics, ergonomics, and materials to enhance user experience.",
+      "keyFocusAreas": ["Space Planning", "Lighting Design", "Furniture Layout", "Material Innovation", "User Experience", "Color Theory"],
+      "careerOutlook": "Interior architects work in design firms, real estate, and luxury industries. Roles include interior designer, space planner, and design consultant."
+    },
+    "Sustainable Architecture": {
+      "summary": "Sustainable architecture focuses on energy-efficient, eco-friendly building designs that minimize environmental impact while maintaining comfort and function.",
+      "keyFocusAreas": ["Green Building Materials", "Energy Efficiency", "LEED Standards", "Renewable Energy Integration", "Passive Design", "Water Conservation"],
+      "careerOutlook": "Sustainability consultants, green architects, and eco-design specialists are in demand globally as environmental awareness and regulations increase."
+    },
+    "Historic Preservation": {
+      "summary": "Historic preservationists protect and restore heritage buildings, balancing conservation with modern functionality while preserving cultural identity.",
+      "keyFocusAreas": ["Restoration Techniques", "Cultural Heritage", "Architectural History", "Material Conservation", "Adaptive Reuse", "Documentation"],
+      "careerOutlook": "Careers include heritage architect, conservation consultant, and museum preservation specialist, working in cultural institutions and government agencies."
+    },
+    "Architectural Engineering": {
+      "summary": "Architectural engineers integrate engineering principles into building design, ensuring safety, structural stability, and performance of architectural projects.",
+      "keyFocusAreas": ["Structural Systems", "HVAC Systems", "Electrical Systems", "Construction Materials", "Building Codes", "Safety Standards"],
+      "careerOutlook": "Architectural engineers find opportunities in construction companies, engineering consultancies, and infrastructure development projects."
+    },
+    "Construction Management": {
+      "summary": "Construction managers oversee the planning, coordination, and execution of building projects, ensuring timelines, budgets, and quality standards are met.",
+      "keyFocusAreas": ["Project Management", "Budgeting", "Site Supervision", "Contract Management", "Risk Assessment", "Scheduling"],
+      "careerOutlook": "Careers include project manager, site supervisor, and operations manager in construction, real estate, and large-scale infrastructure development."
+    },
+    "Environmental Design": {
+      "summary": "Environmental design focuses on creating spaces that harmonize with natural systems, improving sustainability, and supporting human health.",
+      "keyFocusAreas": ["Sustainable Design", "Climate Adaptation", "Urban Ecology", "Renewable Resources", "Human-Centered Design", "Resilient Architecture"],
+      "careerOutlook": "Careers include environmental architect, sustainability consultant, and urban ecology designer in both private and public sectors."
+    },
+    "Digital Architecture & BIM": {
+      "summary": "Digital architecture emphasizes advanced technologies like Building Information Modeling (BIM) and computational tools for smarter, data-driven building design.",
+      "keyFocusAreas": ["BIM Modeling", "Parametric Tools", "Digital Fabrication", "Virtual Reality", "Automation", "Data-Driven Design"],
+      "careerOutlook": "BIM specialists, digital architects, and computational designers are increasingly sought after in global architectural and construction firms."
+    },
+    "Furniture & Product Design": {
+      "summary": "This field explores the creation of furniture and products that combine functionality, ergonomics, and aesthetics to improve everyday life.",
+      "keyFocusAreas": ["Industrial Design", "Ergonomics", "Material Experimentation", "Prototype Development", "Mass Production", "3D Printing"],
+      "careerOutlook": "Careers include furniture designer, product designer, and design consultant in manufacturing, interior design, and innovation industries."
+    },
+    "Industrial Design": {
+      "summary": "Industrial designers create everyday products, blending creativity, engineering, and user experience to make designs both functional and marketable.",
+      "keyFocusAreas": ["Product Development", "Human-Centered Design", "Prototyping", "CAD Modeling", "Manufacturing Processes", "Design Thinking"],
+      "careerOutlook": "Industrial designers work in consumer goods, automotive, electronics, and furniture sectors, often collaborating with engineers and marketers."
+    },
+    "Parametric & Computational Design": {
+      "summary": "This field uses algorithms, coding, and parametric software to create complex, adaptive, and innovative architectural forms beyond traditional methods.",
+      "keyFocusAreas": ["Algorithmic Design", "Grasshopper/Rhino", "Generative Design", "Data-Driven Architecture", "Digital Fabrication", "Complex Geometry"],
+      "careerOutlook": "Computational designers and parametric specialists are highly valued in futuristic architectural practices and high-tech engineering projects."
+    },
+    "Architectural Visualization": {
+      "summary": "Architectural visualization brings designs to life through 3D renderings, VR, and animations, enabling clients to experience projects before construction.",
+      "keyFocusAreas": ["3D Rendering", "Virtual Reality", "Animation", "Lighting Simulation", "Photorealistic Models", "Visualization Software"],
+      "careerOutlook": "Visualization artists, 3D modelers, and VR specialists are in demand in architecture firms, real estate, and gaming industries."
+    },
+    "Housing & Community Design": {
+      "summary": "This field focuses on designing residential and community spaces that are affordable, sustainable, and enhance social interactions.",
+      "keyFocusAreas": ["Affordable Housing", "Community Planning", "Sustainability", "Accessibility", "Neighborhood Design", "Social Impact"],
+      "careerOutlook": "Housing designers and community architects often work with government agencies, NGOs, and urban developers addressing housing challenges."
+    },
+    "Smart Cities & Infrastructure": {
+      "summary": "Smart city design integrates technology, IoT, and data systems with architecture to create intelligent, efficient, and sustainable urban environments.",
+      "keyFocusAreas": ["IoT Integration", "Urban Infrastructure", "Sustainability", "Transport Systems", "Energy Management", "Smart Grids"],
+      "careerOutlook": "Smart city planners, infrastructure designers, and sustainability strategists are in demand for global urban development initiatives."
+    },
+    "Exhibition & Museum Design": {
+      "summary": "This field involves designing spaces for exhibitions and museums that tell stories, showcase art, and engage audiences through spatial experiences.",
+      "keyFocusAreas": ["Exhibition Layouts", "Lighting Design", "Interactive Displays", "Curation Support", "Visitor Experience", "Temporary Structures"],
+      "careerOutlook": "Careers include museum designer, exhibition architect, and curator support specialist working with cultural institutions worldwide."
+    },
+    "Transportation Architecture": {
+      "summary": "Transportation architecture focuses on designing airports, metro stations, and transport hubs, ensuring efficiency, safety, and user comfort.",
+      "keyFocusAreas": ["Airport Design", "Railway Stations", "Traffic Flow", "Public Spaces", "Safety Standards", "Accessibility"],
+      "careerOutlook": "Transportation architects and infrastructure designers work with government, multinational engineering firms, and global transport authorities."
+    },
+    "Healthcare Architecture": {
+      "summary": "Healthcare architects design hospitals, clinics, and wellness centers that support healing, efficiency, and patient-centered care.",
+      "keyFocusAreas": ["Hospital Planning", "Infection Control", "Accessibility", "Medical Equipment Integration", "Lighting & Ventilation", "Patient Comfort"],
+      "careerOutlook": "Healthcare design specialists find roles in hospital projects, government agencies, and global healthcare infrastructure development."
+    },
+    "Educational Facility Design": {
+      "summary": "This field focuses on creating innovative learning environments like schools and universities that enhance teaching, collaboration, and inclusivity.",
+      "keyFocusAreas": ["Classroom Design", "Flexible Learning Spaces", "Accessibility", "Technology Integration", "Safety Standards", "Community Spaces"],
+      "careerOutlook": "Educational architects and facility designers contribute to school systems, universities, and international educational infrastructure projects."
+    }
+  }
+}

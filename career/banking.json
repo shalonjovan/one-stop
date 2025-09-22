@@ -1,0 +1,126 @@
+{
+  "fields": [
+    { "name": "Investment Banking", "color": "#3B82F6" },
+    { "name": "Commercial Banking", "color": "#F97316" },
+    { "name": "Corporate Finance", "color": "#10B981" },
+    { "name": "Financial Planning", "color": "#6366F1" },
+    { "name": "Risk Management", "color": "#EC4899" },
+    { "name": "Asset Management", "color": "#F59E0B" },
+    { "name": "Private Banking", "color": "#06B6D4" },
+    { "name": "Insurance", "color": "#D946EF" },
+    { "name": "Financial Analysis", "color": "#4B5563" },
+    { "name": "Trading & Securities", "color": "#EF4444" },
+    { "name": "Credit Analysis", "color": "#8B5CF6" },
+    { "name": "Treasury Management", "color": "#3B82F6" },
+    { "name": "Financial Technology", "color": "#10B981" },
+    { "name": "Venture Capital", "color": "#F97316" },
+    { "name": "Real Estate Finance", "color": "#D946EF" },
+    { "name": "International Finance", "color": "#06B6D4" },
+    { "name": "Compliance & Audit", "color": "#4B5563" },
+    { "name": "Quantitative Finance", "color": "#EF4444" },
+    { "name": "Cryptocurrency & Blockchain", "color": "#8B5CF6" },
+    { "name": "Sustainable Finance", "color": "#EC4899" }
+  ],
+  "insights": {
+    "Investment Banking": {
+      "summary": "Investment bankers are the architects of major financial transactions, helping companies raise capital, execute mergers and acquisitions, and navigate complex financial markets. They work on high-stakes deals that shape entire industries, combining financial expertise with strategic advisory skills.",
+      "keyFocusAreas": ["Mergers & Acquisitions", "Capital Markets", "Financial Modeling", "Valuation", "Due Diligence", "Client Relations"],
+      "careerOutlook": "Investment banking offers prestigious, high-paying careers with global opportunities. While demanding, the field provides unparalleled learning experiences and can lead to senior roles in finance, executive positions, or entrepreneurial ventures."
+    },
+    "Commercial Banking": {
+      "summary": "Commercial bankers are the relationship builders who serve businesses and individuals, providing lending, deposit services, and financial solutions. They assess creditworthiness, structure loans, and help clients achieve their financial goals while managing bank profitability and risk.",
+      "keyFocusAreas": ["Lending Operations", "Credit Analysis", "Relationship Management", "Banking Regulations", "Financial Products", "Customer Service"],
+      "careerOutlook": "Commercial banking provides stable career paths with opportunities for advancement from relationship manager to branch manager, regional director, or senior executive. The field offers good work-life balance and community impact."
+    },
+    "Corporate Finance": {
+      "summary": "Corporate finance professionals manage the financial strategy and operations of companies, making decisions about capital structure, investments, and financial planning. They work within organizations to optimize financial performance and create shareholder value.",
+      "keyFocusAreas": ["Capital Budgeting", "Financial Planning", "Cash Management", "Cost of Capital", "Investment Decisions", "Performance Analysis"],
+      "careerOutlook": "Corporate finance offers diverse career opportunities across industries, from financial analyst to CFO roles. The field provides excellent advancement potential and the chance to directly impact business strategy and performance."
+    },
+    "Financial Planning": {
+      "summary": "Financial planners help individuals and families achieve their financial goals through comprehensive planning strategies. They provide advice on investments, retirement planning, tax strategies, and wealth management, serving as trusted advisors for life's major financial decisions.",
+      "keyFocusAreas": ["Retirement Planning", "Investment Advisory", "Tax Planning", "Estate Planning", "Insurance Planning", "Wealth Management"],
+      "careerOutlook": "Financial planning is a growing field with aging populations and increasing financial complexity. Certified Financial Planners enjoy strong demand, competitive compensation, and the satisfaction of helping clients achieve financial security."
+    },
+    "Risk Management": {
+      "summary": "Risk managers identify, assess, and mitigate financial risks that could impact organizations. They develop strategies to protect against market, credit, operational, and regulatory risks, ensuring business continuity and regulatory compliance in an increasingly complex financial environment.",
+      "keyFocusAreas": ["Risk Assessment", "Regulatory Compliance", "Market Risk", "Credit Risk", "Operational Risk", "Risk Modeling"],
+      "careerOutlook": "Risk management offers excellent career prospects as organizations face increasing regulatory requirements and market volatility. The field provides stable, well-compensated positions with growing importance in financial decision-making."
+    },
+    "Asset Management": {
+      "summary": "Asset managers oversee investment portfolios for individuals, institutions, and funds, making strategic decisions to maximize returns while managing risk. They research markets, select investments, and develop portfolio strategies to meet client objectives and market conditions.",
+      "keyFocusAreas": ["Portfolio Management", "Investment Research", "Asset Allocation", "Performance Analysis", "Client Relations", "Market Analysis"],
+      "careerOutlook": "Asset management offers lucrative careers with opportunities to manage billions in assets. The field provides paths from research analyst to portfolio manager to senior leadership, with compensation often tied to performance success."
+    },
+    "Private Banking": {
+      "summary": "Private bankers provide personalized financial services to high-net-worth individuals and families, offering sophisticated investment solutions, estate planning, and wealth preservation strategies. They build long-term relationships with affluent clients and coordinate complex financial arrangements.",
+      "keyFocusAreas": ["Wealth Management", "Estate Planning", "Investment Advisory", "Tax Optimization", "Client Relationship Management", "Luxury Financial Services"],
+      "careerOutlook": "Private banking offers prestigious careers serving wealthy clients with excellent compensation and relationship-building opportunities. The field provides stability and growth potential as global wealth continues to expand."
+    },
+    "Insurance": {
+      "summary": "Insurance professionals help individuals and businesses protect against financial risks through various insurance products. They assess risks, underwrite policies, process claims, and develop new insurance solutions to meet evolving protection needs.",
+      "keyFocusAreas": ["Risk Assessment", "Underwriting", "Claims Management", "Actuarial Analysis", "Product Development", "Regulatory Compliance"],
+      "careerOutlook": "Insurance offers stable careers with diverse opportunities from sales and underwriting to actuarial science and executive leadership. The field provides good job security and opportunities to make meaningful impacts on people's financial security."
+    },
+    "Financial Analysis": {
+      "summary": "Financial analysts evaluate investment opportunities, analyze financial data, and provide recommendations to guide business and investment decisions. They research companies, industries, and economic trends to help organizations and investors make informed financial choices.",
+      "keyFocusAreas": ["Financial Modeling", "Valuation Analysis", "Industry Research", "Investment Recommendations", "Data Analysis", "Report Writing"],
+      "careerOutlook": "Financial analysis provides excellent entry points into finance with clear advancement paths to senior analyst, portfolio manager, or executive roles. The field offers strong demand across industries with competitive compensation."
+    },
+    "Trading & Securities": {
+      "summary": "Traders and securities professionals execute trades in financial markets, managing portfolios and capitalizing on market opportunities. They work in fast-paced environments, using market knowledge and analytical skills to generate profits from price movements in stocks, bonds, and derivatives.",
+      "keyFocusAreas": ["Market Making", "Portfolio Trading", "Derivatives", "Market Analysis", "Risk Management", "Electronic Trading"],
+      "careerOutlook": "Trading offers high-reward careers with significant earning potential tied to performance. While competitive and demanding, successful traders can achieve substantial compensation and advance to senior trading or fund management roles."
+    },
+    "Credit Analysis": {
+      "summary": "Credit analysts assess the creditworthiness of individuals, businesses, and governments to determine lending risks and appropriate terms. They analyze financial statements, market conditions, and repayment capacity to make informed lending decisions that protect institutional interests.",
+      "keyFocusAreas": ["Credit Risk Assessment", "Financial Statement Analysis", "Loan Structuring", "Industry Analysis", "Regulatory Compliance", "Documentation Review"],
+      "careerOutlook": "Credit analysis provides stable careers in banking, insurance, and investment firms. The field offers advancement opportunities from analyst to senior credit officer or risk management roles with good job security and competitive compensation."
+    },
+    "Treasury Management": {
+      "summary": "Treasury managers oversee an organization's cash flow, liquidity, and financial risk management. They manage banking relationships, optimize cash positions, and ensure adequate funding for operations while maximizing investment returns on excess cash.",
+      "keyFocusAreas": ["Cash Management", "Liquidity Planning", "Banking Relations", "Interest Rate Risk", "Foreign Exchange", "Investment Management"],
+      "careerOutlook": "Treasury management offers specialized careers with excellent advancement potential to treasurer or CFO roles. The field provides stable, well-compensated positions with growing importance as companies focus on cash optimization and risk management."
+    },
+    "Financial Technology": {
+      "summary": "FinTech professionals revolutionize financial services through technology innovation, developing digital payment systems, mobile banking solutions, and automated investment platforms. They combine financial expertise with technological innovation to create user-friendly financial solutions.",
+      "keyFocusAreas": ["Digital Payments", "Mobile Banking", "Blockchain Technology", "Artificial Intelligence", "Regulatory Technology", "User Experience"],
+      "careerOutlook": "FinTech is one of the fastest-growing sectors with excellent opportunities for innovation and entrepreneurship. The field offers competitive compensation, equity opportunities, and the chance to shape the future of financial services."
+    },
+    "Venture Capital": {
+      "summary": "Venture capitalists identify and invest in promising startups and high-growth companies, providing funding and strategic guidance to entrepreneurial ventures. They evaluate business models, assess market opportunities, and help build the next generation of successful companies.",
+      "keyFocusAreas": ["Investment Due Diligence", "Portfolio Company Management", "Market Analysis", "Startup Valuation", "Board Participation", "Exit Strategies"],
+      "careerOutlook": "Venture capital offers exciting careers working with innovative companies and entrepreneurs. While competitive, the field provides excellent compensation, equity upside, and the opportunity to impact technological and business innovation."
+    },
+    "Real Estate Finance": {
+      "summary": "Real estate finance professionals structure and arrange financing for property acquisitions, developments, and investments. They analyze property values, assess market trends, and create financing solutions for residential, commercial, and industrial real estate projects.",
+      "keyFocusAreas": ["Property Valuation", "Mortgage Underwriting", "Development Finance", "REITs", "Market Analysis", "Investment Structuring"],
+      "careerOutlook": "Real estate finance offers stable careers with cyclical growth opportunities. The field provides diverse paths from mortgage banking to commercial real estate investment with good compensation and advancement potential."
+    },
+    "International Finance": {
+      "summary": "International finance specialists manage cross-border financial transactions, currency risks, and global investment strategies. They help organizations navigate international markets, manage foreign exchange exposure, and optimize global capital allocation.",
+      "keyFocusAreas": ["Foreign Exchange", "International Markets", "Cross-border Transactions", "Country Risk Analysis", "Trade Finance", "Global Economics"],
+      "careerOutlook": "International finance offers global career opportunities with multinational corporations, banks, and investment firms. The field provides excellent compensation, international experience, and advancement opportunities in increasingly connected global markets."
+    },
+    "Compliance & Audit": {
+      "summary": "Financial compliance and audit professionals ensure organizations adhere to regulations and maintain proper financial controls. They conduct audits, monitor compliance with financial regulations, and help organizations maintain integrity and avoid regulatory penalties.",
+      "keyFocusAreas": ["Regulatory Compliance", "Internal Controls", "Financial Auditing", "Risk Assessment", "Policy Development", "Regulatory Reporting"],
+      "careerOutlook": "Compliance and audit offer stable careers with growing importance due to increasing regulations. The field provides clear advancement paths to compliance officer or audit director roles with good job security and competitive compensation."
+    },
+    "Quantitative Finance": {
+      "summary": "Quantitative finance professionals apply advanced mathematics and statistical methods to financial markets, developing complex models for pricing, risk management, and algorithmic trading. They work at the intersection of finance, mathematics, and computer science.",
+      "keyFocusAreas": ["Mathematical Modeling", "Derivatives Pricing", "Risk Modeling", "Algorithmic Trading", "Statistical Analysis", "Programming"],
+      "careerOutlook": "Quantitative finance offers highly specialized, well-compensated careers in investment banks, hedge funds, and asset management firms. The field provides excellent opportunities for mathematically-inclined professionals with strong earning potential."
+    },
+    "Cryptocurrency & Blockchain": {
+      "summary": "Cryptocurrency and blockchain specialists work with digital assets and distributed ledger technologies, developing new financial products, trading strategies, and blockchain applications. They operate at the frontier of financial innovation and decentralized finance.",
+      "keyFocusAreas": ["Digital Assets", "Blockchain Technology", "DeFi Protocols", "Cryptocurrency Trading", "Regulatory Compliance", "Smart Contracts"],
+      "careerOutlook": "Cryptocurrency and blockchain represent emerging fields with significant growth potential and innovation opportunities. While volatile, the sector offers excellent compensation and the chance to shape the future of digital finance."
+    },
+    "Sustainable Finance": {
+      "summary": "Sustainable finance professionals integrate environmental, social, and governance factors into financial decision-making, developing green bonds, ESG investment strategies, and sustainable funding solutions. They help organizations align financial goals with sustainability objectives.",
+      "keyFocusAreas": ["ESG Investing", "Green Finance", "Impact Investing", "Climate Risk", "Sustainability Reporting", "Responsible Banking"],
+      "careerOutlook": "Sustainable finance is rapidly growing as organizations focus on environmental and social responsibility. The field offers meaningful careers combining financial expertise with positive impact, with increasing demand and competitive compensation."
+    }
+  }
+}

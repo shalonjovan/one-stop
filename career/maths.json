@@ -1,0 +1,126 @@
+{
+  "fields": [
+    { "name": "Pure Mathematics", "color": "#3B82F6" },
+    { "name": "Applied Mathematics", "color": "#F97316" },
+    { "name": "Statistics", "color": "#10B981" },
+    { "name": "Data Analytics", "color": "#6366F1" },
+    { "name": "Actuarial Science", "color": "#EC4899" },
+    { "name": "Mathematical Finance", "color": "#F59E0B" },
+    { "name": "Operations Research", "color": "#06B6D4" },
+    { "name": "Biostatistics", "color": "#D946EF" },
+    { "name": "Econometrics", "color": "#4B5563" },
+    { "name": "Mathematical Modeling", "color": "#EF4444" },
+    { "name": "Cryptography", "color": "#8B5CF6" },
+    { "name": "Computational Mathematics", "color": "#3B82F6" },
+    { "name": "Mathematical Physics", "color": "#10B981" },
+    { "name": "Quality Control", "color": "#F97316" },
+    { "name": "Market Research", "color": "#D946EF" },
+    { "name": "Risk Analysis", "color": "#06B6D4" },
+    { "name": "Algorithm Design", "color": "#4B5563" },
+    { "name": "Game Theory", "color": "#EF4444" },
+    { "name": "Numerical Analysis", "color": "#8B5CF6" },
+    { "name": "Mathematical Education", "color": "#EC4899" }
+  ],
+  "insights": {
+    "Pure Mathematics": {
+      "summary": "Pure mathematicians are the theoretical explorers who push the boundaries of mathematical knowledge, discovering new theorems, patterns, and mathematical structures. They work with abstract concepts that often find unexpected applications years or decades later, contributing to the fundamental understanding of mathematical truth.",
+      "keyFocusAreas": ["Abstract Algebra", "Real Analysis", "Topology", "Number Theory", "Logic and Set Theory", "Mathematical Proofs"],
+      "careerOutlook": "Pure mathematics offers intellectually rewarding careers in academia, research institutions, and think tanks. While competitive, opportunities exist in universities, government research labs, and technology companies that value deep mathematical thinking and problem-solving skills."
+    },
+    "Applied Mathematics": {
+      "summary": "Applied mathematicians bridge the gap between mathematical theory and real-world problems, using mathematical tools to solve complex challenges in science, engineering, and industry. They translate practical problems into mathematical language and develop solutions that drive innovation.",
+      "keyFocusAreas": ["Differential Equations", "Optimization", "Mathematical Modeling", "Scientific Computing", "Engineering Mathematics", "Industrial Applications"],
+      "careerOutlook": "Applied mathematics offers diverse career opportunities in aerospace, automotive, pharmaceutical, and technology industries. Roles include research scientist, consultant, systems analyst, and quantitative researcher with excellent salary prospects."
+    },
+    "Statistics": {
+      "summary": "Statisticians are the data interpreters who design experiments, collect and analyze data, and draw meaningful conclusions from complex datasets. They help organizations make informed decisions by extracting insights from uncertainty and variability in data.",
+      "keyFocusAreas": ["Statistical Inference", "Experimental Design", "Hypothesis Testing", "Regression Analysis", "Probability Theory", "Survey Methods"],
+      "careerOutlook": "Statistics is experiencing unprecedented growth with the data revolution. Career opportunities span government, healthcare, business, and research sectors, with roles as statistician, data scientist, biostatistician, or market researcher offering strong job security."
+    },
+    "Data Analytics": {
+      "summary": "Data analysts transform raw data into actionable business insights, using statistical methods and visualization tools to identify trends, patterns, and opportunities. They serve as the bridge between data and decision-making in organizations across all industries.",
+      "keyFocusAreas": ["Data Visualization", "Statistical Software", "Business Intelligence", "Predictive Analytics", "Database Management", "Report Generation"],
+      "careerOutlook": "Data analytics is one of the fastest-growing fields with massive demand across all sectors. Career paths include business analyst, marketing analyst, operations analyst, and senior data scientist with excellent compensation and advancement opportunities."
+    },
+    "Actuarial Science": {
+      "summary": "Actuaries are the risk quantifiers who use mathematics, statistics, and financial theory to assess and manage financial risks. They help insurance companies, pension funds, and financial institutions make informed decisions about pricing, reserving, and investment strategies.",
+      "keyFocusAreas": ["Risk Assessment", "Insurance Mathematics", "Pension Planning", "Financial Modeling", "Regulatory Compliance", "Investment Analysis"],
+      "careerOutlook": "Actuarial science offers excellent career prospects with high earning potential and strong job security. Actuaries are in high demand in insurance, consulting, government, and financial services, with clear professional certification pathways."
+    },
+    "Mathematical Finance": {
+      "summary": "Mathematical finance professionals apply advanced mathematics to financial markets, developing models for pricing derivatives, managing portfolios, and assessing financial risk. They work at the intersection of mathematics, economics, and computer science to drive financial innovation.",
+      "keyFocusAreas": ["Derivatives Pricing", "Risk Management", "Portfolio Optimization", "Stochastic Calculus", "Financial Modeling", "Algorithmic Trading"],
+      "careerOutlook": "Mathematical finance offers lucrative careers in investment banks, hedge funds, fintech companies, and trading firms. Roles include quantitative analyst, risk manager, algorithmic trader, and financial engineer with exceptional earning potential."
+    },
+    "Operations Research": {
+      "summary": "Operations researchers use advanced mathematical and analytical methods to solve complex business and organizational problems. They optimize processes, improve efficiency, and help organizations make better decisions through mathematical modeling and simulation.",
+      "keyFocusAreas": ["Linear Programming", "Supply Chain Optimization", "Simulation Modeling", "Decision Analysis", "Logistics", "Resource Allocation"],
+      "careerOutlook": "Operations research offers diverse opportunities in logistics, manufacturing, healthcare, and consulting. The field provides excellent problem-solving careers with roles as operations analyst, supply chain analyst, or management consultant."
+    },
+    "Biostatistics": {
+      "summary": "Biostatisticians apply statistical methods to biological and health-related problems, designing clinical trials, analyzing medical data, and helping advance medical research. They play crucial roles in drug development, public health research, and evidence-based medicine.",
+      "keyFocusAreas": ["Clinical Trials", "Epidemiology", "Medical Data Analysis", "Survival Analysis", "Public Health Statistics", "Regulatory Statistics"],
+      "careerOutlook": "Biostatistics offers rewarding careers in pharmaceutical companies, research institutions, government health agencies, and hospitals. The field combines statistical expertise with meaningful health applications, offering strong job growth and competitive salaries."
+    },
+    "Econometrics": {
+      "summary": "Econometricians apply statistical methods to economic data to test economic theories and forecast economic trends. They help governments, central banks, and businesses understand economic relationships and make informed policy and business decisions.",
+      "keyFocusAreas": ["Economic Modeling", "Time Series Analysis", "Panel Data Analysis", "Policy Evaluation", "Forecasting", "Causal Inference"],
+      "careerOutlook": "Econometrics offers careers in government agencies, central banks, consulting firms, and research institutions. Roles include economic analyst, policy researcher, market forecaster, and economic consultant with opportunities to influence economic policy."
+    },
+    "Mathematical Modeling": {
+      "summary": "Mathematical modelers create mathematical representations of real-world phenomena to understand, predict, and optimize complex systems. They work across disciplines, from climate science to epidemiology, translating complex problems into mathematical frameworks.",
+      "keyFocusAreas": ["System Dynamics", "Computational Modeling", "Simulation", "Model Validation", "Scientific Computing", "Interdisciplinary Collaboration"],
+      "careerOutlook": "Mathematical modeling offers interdisciplinary career opportunities in research institutions, government labs, environmental agencies, and technology companies. The field provides the satisfaction of solving real-world problems through mathematical insight."
+    },
+    "Cryptography": {
+      "summary": "Cryptographers design secure communication systems and encryption algorithms that protect digital information. They work on the mathematical foundations of cybersecurity, developing methods to secure data transmission, authentication, and digital privacy.",
+      "keyFocusAreas": ["Encryption Algorithms", "Digital Signatures", "Network Security", "Blockchain Technology", "Information Theory", "Computer Security"],
+      "careerOutlook": "Cryptography offers high-demand careers in cybersecurity, fintech, government agencies, and technology companies. With increasing digital security needs, cryptographers enjoy excellent job prospects and competitive salaries in the growing cybersecurity field."
+    },
+    "Computational Mathematics": {
+      "summary": "Computational mathematicians develop and implement numerical algorithms to solve mathematical problems using computers. They bridge pure mathematics and computer science, creating computational tools that enable scientific discovery and engineering innovation.",
+      "keyFocusAreas": ["Numerical Methods", "Algorithm Development", "High-Performance Computing", "Scientific Programming", "Mathematical Software", "Parallel Computing"],
+      "careerOutlook": "Computational mathematics offers careers in research institutions, aerospace, automotive, and technology industries. The field provides opportunities to work on cutting-edge simulations and computational tools with strong demand from scientific and engineering sectors."
+    },
+    "Mathematical Physics": {
+      "summary": "Mathematical physicists use advanced mathematics to understand and describe physical phenomena, developing mathematical frameworks for theories in physics. They work at the intersection of mathematics and physics, contributing to both theoretical understanding and practical applications.",
+      "keyFocusAreas": ["Quantum Mechanics", "Relativity Theory", "Statistical Mechanics", "Field Theory", "Differential Geometry", "Mathematical Methods"],
+      "careerOutlook": "Mathematical physics offers careers in universities, research institutions, aerospace, and technology companies. While specialized, the field provides intellectually rewarding opportunities to contribute to fundamental understanding of the universe."
+    },
+    "Quality Control": {
+      "summary": "Quality control statisticians ensure product quality and process reliability through statistical methods and analysis. They design quality systems, monitor manufacturing processes, and help companies maintain high standards while reducing costs and waste.",
+      "keyFocusAreas": ["Statistical Process Control", "Six Sigma", "Quality Assurance", "Process Improvement", "Reliability Analysis", "Manufacturing Statistics"],
+      "careerOutlook": "Quality control offers stable careers in manufacturing, pharmaceuticals, food production, and service industries. The field provides opportunities to directly impact product quality and customer satisfaction with good job security and advancement potential."
+    },
+    "Market Research": {
+      "summary": "Market research analysts use statistical methods to understand consumer behavior, market trends, and competitive landscapes. They help businesses make informed decisions about product development, marketing strategies, and market entry through data-driven insights.",
+      "keyFocusAreas": ["Survey Design", "Consumer Analytics", "Market Segmentation", "Brand Research", "Statistical Analysis", "Predictive Modeling"],
+      "careerOutlook": "Market research offers dynamic careers in consulting firms, corporations, media companies, and government agencies. The field provides opportunities to influence business strategy and marketing decisions with strong growth in digital analytics and consumer insights."
+    },
+    "Risk Analysis": {
+      "summary": "Risk analysts identify, assess, and quantify various types of risks that organizations face, from financial and operational to environmental and strategic risks. They develop models and frameworks to help organizations make informed decisions under uncertainty.",
+      "keyFocusAreas": ["Risk Modeling", "Monte Carlo Simulation", "Scenario Analysis", "Stress Testing", "Regulatory Compliance", "Enterprise Risk Management"],
+      "careerOutlook": "Risk analysis offers excellent career opportunities in financial services, insurance, consulting, and government. The field provides stable, well-compensated careers with growing importance in organizational decision-making and regulatory compliance."
+    },
+    "Algorithm Design": {
+      "summary": "Algorithm designers create efficient computational procedures and mathematical solutions to complex problems. They work at the intersection of mathematics and computer science, developing algorithms that power everything from search engines to artificial intelligence systems.",
+      "keyFocusAreas": ["Computational Complexity", "Data Structures", "Optimization Algorithms", "Graph Theory", "Machine Learning Algorithms", "Parallel Algorithms"],
+      "careerOutlook": "Algorithm design offers lucrative careers in technology companies, research institutions, and startups. With the growth of AI and big data, algorithm designers are highly sought after with excellent compensation and opportunities for innovation."
+    },
+    "Game Theory": {
+      "summary": "Game theorists study strategic decision-making situations where the outcome depends on the actions of multiple participants. They apply mathematical models to understand competition, cooperation, and conflict in economics, politics, biology, and business.",
+      "keyFocusAreas": ["Strategic Interactions", "Auction Theory", "Mechanism Design", "Behavioral Game Theory", "Evolutionary Game Theory", "Market Design"],
+      "careerOutlook": "Game theory offers specialized careers in consulting, government policy, auction design, and research institutions. The field provides intellectually stimulating work with applications in economics, political science, and strategic business planning."
+    },
+    "Numerical Analysis": {
+      "summary": "Numerical analysts develop and analyze computational methods for solving mathematical problems that cannot be solved analytically. They create algorithms and software tools that enable scientists and engineers to solve complex mathematical problems using computers.",
+      "keyFocusAreas": ["Numerical Methods", "Error Analysis", "Computational Algorithms", "Mathematical Software", "Scientific Computing", "Approximation Theory"],
+      "careerOutlook": "Numerical analysis offers careers in aerospace, automotive, energy, and technology industries. The field provides opportunities to work on cutting-edge computational tools and simulations with strong demand from engineering and scientific sectors."
+    },
+    "Mathematical Education": {
+      "summary": "Mathematical educators specialize in teaching mathematics and developing innovative approaches to mathematical learning. They work in schools, universities, and educational organizations to inspire the next generation of mathematicians and promote mathematical literacy.",
+      "keyFocusAreas": ["Curriculum Development", "Educational Psychology", "Mathematical Pedagogy", "Assessment Methods", "Educational Technology", "Learning Theory"],
+      "careerOutlook": "Mathematical education offers rewarding careers in schools, universities, educational publishing, and training organizations. The field provides the satisfaction of inspiring students and shaping mathematical education with opportunities for curriculum development and educational leadership."
+    }
+  }
+}
