@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder - Banking & Finance Guidance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #43485c;
+        }
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem;
+            text-align: center;
+        }
+        .hex-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hex-row {
+            display: flex;
+            justify-content: center;
+        }
+        .hex-row-odd {
+            margin-top: -30px;
+        }
+        .hexagon-container {
+            width: 150px;
+            height: 173.2px; /* width * sqrt(3) */
+            margin: 0 5px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hexagon-container:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 0.75rem;
+        }
+        .insights-section {
+            display: none;
+        }
+        .field-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .field-list-item {
+            background-color: #445368;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            transition: transform 0.2s ease-in-out;
+            font-weight: 600;
+        }
+        .field-list-item:hover {
+            transform: translateY(-5px);
+        }
+        #chatbot-button {
+            position: fixed;
+            bottom: 80px;
+            right: 80px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        #chatbot-button:hover {
+            transform: scale(1.1);
+        }
+        #chatbot-button img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+            <button id="menu-btn" class="text-white focus:outline-none md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+                <span class="text-xl font-bold">Pathfinder</span>
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+            <a href="./colleges.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="./career_paths.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study Groups</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Others</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a6 6 0 016 6v3.586l1.707 1.707A1 1 0 0118 14H2a1 1 0 01.293-.707L4 11.586V8a6 6 0 016-6zM10 18a3 3 0 003-3H7a3 3 0 003 3z" />
+                </svg>
+            </button>
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <a href="#" class="text-sm px-4 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300">For You</a>
+        </div>
+    </header>
+
+    <div class="container max-w-7xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 mt-12 mb-4">Banking & Finance Career Hub</h1>
+        <p class="text-lg text-gray-700 mb-8 max-w-2xl">
+            Click on any of the hexagons below to explore a specific field in the world of finance.
+        </p>
+
+        <div class="hex-grid" id="hexGrid">
+            </div>
+
+        <div id="insightsSection" class="w-full w-11/12 mx-auto mt-12 p-6 bg-white rounded-xl shadow-lg insights-section">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4">💰 Financial Field Insights 💰</h2>
+            <div id="insightsOutput" class="p-4 bg-gray-50 rounded-lg min-h-[150px] text-left overflow-y-auto max-h-[400px]">
+                <p class="text-gray-500 italic">Insights will appear here...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hexGrid = document.getElementById('hexGrid');
+        const insightsSection = document.getElementById('insightsSection');
+        const insightsOutput = document.getElementById('insightsOutput');
+
+        const bankingFields = [
+            { name: "Investment Banking", color: "#1E3A8A" },
+            { name: "Corporate Finance", color: "#047857" },
+            { name: "Retail Banking", color: "#6D28D9" },
+            { name: "Wealth Management", color: "#B45309" },
+            { name: "Risk Management", color: "#BE123C" },
+            { name: "Financial Analysis", color: "#4B5563" },
+            { name: "Private Equity", color: "#1F2937" },
+            { name: "FinTech", color: "#0E7490" },
+            { name: "Venture Capital", color: "#581C87" },
+            { name: "Hedge Funds", color: "#831843" },
+            { name: "Compliance", color: "#64748B" },
+            { name: "Insurance", color: "#059669" }
+        ];
+
+        // Hard-coded insights data for banking and finance fields
+        const insightsData = {
+            "Investment Banking": {
+                summary: "Investment bankers are financial advisors to corporations and governments. They help clients raise capital by issuing stocks and bonds, and they provide strategic advice on mergers, acquisitions, and other large-scale financial transactions. It's a high-stakes, high-reward field.",
+                keyFocusAreas: ["Mergers & Acquisitions (M&A)", "Initial Public Offerings (IPOs)", "Debt & Equity Capital Markets", "Financial Modeling & Valuation", "Leveraged Buyouts (LBOs)"],
+                careerOutlook: "Extremely competitive with long hours, but offers some of the highest compensation in finance. Typically based in major financial hubs, the career path progresses from Analyst to Associate, VP, and Managing Director."
+            },
+            "Corporate Finance": {
+                summary: "Corporate finance professionals work within a company to manage its financial health. They oversee budgeting, financial planning, and investment decisions to maximize shareholder value. Their goal is to ensure the company is profitable and has the capital to grow.",
+                keyFocusAreas: ["Financial Planning & Analysis (FP&A)", "Capital Budgeting", "Treasury Management", "Working Capital Management", "Investor Relations"],
+                careerOutlook: "Offers a better work-life balance than investment banking. Professionals can work in any industry, from tech to manufacturing. Career paths include roles like Financial Analyst, Treasurer, and Chief Financial Officer (CFO)."
+            },
+           "Retail Banking": {
+                summary: "This is the consumer-facing side of banking. Retail banks provide essential financial services to the general public, including checking and savings accounts, loans, mortgages, and credit cards. It focuses on building relationships with a large number of individual customers.",
+                keyFocusAreas: ["Customer Service", "Loan Origination", "Branch Management", "Personal Finance Advising", "Digital Banking Services"],
+                careerOutlook: "A stable career path with a clear structure. Roles range from bank tellers and personal bankers to branch managers and loan officers. It's a people-oriented field with opportunities for growth into regional management."
+            },
+            "Wealth Management": {
+                summary: "Wealth managers and financial advisors help high-net-worth individuals (HNWIs) and families manage their money. They create personalized investment strategies to help clients achieve their long-term financial goals, such as retirement, estate planning, and philanthropy.",
+                keyFocusAreas: ["Portfolio Management", "Financial Planning", "Estate & Tax Planning", "Retirement Planning", "Client Relationship Management"],
+                careerOutlook: "A highly relationship-driven field. Success depends on building a strong book of clients. Compensation is often tied to the amount of assets under management (AUM). It requires strong interpersonal and analytical skills."
+            },
+            "Risk Management": {
+                summary: "Financial risk managers identify, analyze, and mitigate risks that could threaten a company's earnings and capital. They deal with various types of risk, including market risk, credit risk, and operational risk, ensuring the firm's stability in a volatile world.",
+                keyFocusAreas: ["Credit Risk Analysis", "Market Risk Modeling", "Operational Risk", "Regulatory Compliance", "Quantitative Analysis (Quants)"],
+                careerOutlook: "Demand for risk professionals is very high, especially after the 2008 financial crisis. They work in banks, investment firms, and corporations. This field is ideal for those with strong analytical and quantitative skills."
+            },
+            "Financial Analysis": {
+                summary: "Financial analysts evaluate investment opportunities. They research stocks, bonds, companies, and industries to provide recommendations to portfolio managers and investors. They build complex financial models to forecast future performance and determine an asset's value.",
+                keyFocusAreas: ["Equity Research", "Credit Analysis", "Financial Modeling", "Company Valuation", "Industry Trend Analysis"],
+                careerOutlook: "A foundational role in the finance industry. Analysts work for investment banks, asset management firms, and corporations. Earning the Chartered Financial Analyst (CFA) designation is a common goal and can significantly boost career prospects."
+            },
+            "Private Equity": {
+                summary: "Private Equity (PE) firms buy and manage entire companies that are not publicly traded. They use a mix of their own money (equity) and borrowed money (debt) to acquire these companies, improve their operations over several years, and then sell them for a profit.",
+                keyFocusAreas: ["Leveraged Buyouts (LBOs)", "Due Diligence", "Portfolio Company Management", "Deal Sourcing", "Financial Engineering"],
+                careerOutlook: "A highly sought-after and lucrative field, often seen as the next step for experienced investment bankers or management consultants. The work is intense and involves taking an active role in managing the acquired companies."
+            },
+            "FinTech": {
+                summary: "Financial Technology (FinTech) is a rapidly growing sector that uses technology to improve and automate financial services. FinTech companies are disrupting traditional banking with innovations in mobile payments, digital lending, blockchain, and robo-advising.",
+                keyFocusAreas: ["Digital Payments", "Blockchain & Cryptocurrency", "Robo-Advising", "Peer-to-Peer (P2P) Lending", "Insurtech"],
+                careerOutlook: "A dynamic and innovative field at the intersection of finance and technology. Roles range from software development and data science to product management and digital marketing. It offers a startup-like culture compared to traditional finance."
+            },
+            "Venture Capital": {
+                summary: "Venture Capital (VC) firms invest in early-stage, high-potential startups. Unlike Private Equity, VCs take minority stakes in many different companies, understanding that most will fail but hoping a few will become massive successes (like Google or Facebook).",
+                keyFocusAreas: ["Deal Sourcing & Screening", "Startup Valuation", "Due Diligence", "Portfolio Support & Mentoring", "Market Analysis"],
+                careerOutlook: "A competitive and exciting field for those passionate about innovation and entrepreneurship. VCs need a strong network and the ability to spot promising ideas and founders. Roles are less about financial modeling and more about strategic vision."
+            },
+            "Hedge Funds": {
+                summary: "Hedge funds are alternative investment funds that use complex strategies to generate high returns for their accredited investors. They are less regulated than mutual funds and can invest in a wide range of assets, often using leverage, short-selling, and derivatives.",
+                keyFocusAreas: ["Long/Short Equity", "Global Macro Strategies", "Quantitative Trading", "Arbitrage", "Portfolio Management"],
+                careerOutlook: "An intellectually demanding and highly quantitative field. Hedge funds hire top talent, including PhDs in math and physics, to develop sophisticated trading algorithms. Compensation can be extremely high but is heavily performance-based."
+            },
+            "Compliance": {
+                summary: "Compliance officers ensure that a financial firm adheres to all external regulations and internal policies. They act as the gatekeepers, protecting the firm from legal trouble and reputational damage by monitoring activities and enforcing rules.",
+                keyFocusAreas: ["Anti-Money Laundering (AML)", "Know Your Customer (KYC)", "Regulatory Reporting", "Internal Audits", "Policy Development"],
+                careerOutlook: "A stable and growing field with high demand due to increasing financial regulation. It is a critical function within any financial institution and offers a career path for those who are detail-oriented and have strong ethical principles."
+            },
+            "Insurance": {
+                summary: "The insurance industry helps individuals and businesses manage risk. Professionals in this sector develop, sell, and manage policies that provide financial protection against potential losses. Key roles include underwriters, actuaries, and claims adjusters.",
+                keyFocusAreas: ["Underwriting & Risk Assessment", "Actuarial Science", "Claims Processing", "Sales & Brokerage", "Reinsurance"],
+                careerOutlook: "A massive and stable industry offering a wide variety of roles. Actuarial science is a particularly challenging and well-compensated path for those with strong math and statistics skills. Other roles focus on sales, customer service, and analysis."
+            }
+        };
+
+        function createHexagonGrid() {
+            const hexesPerRow = 4;
+            let row = document.createElement('div');
+            row.className = 'hex-row';
+
+            bankingFields.forEach((field, index) => {
+                const hexContainer = document.createElement('div');
+                hexContainer.className = 'hexagon-container';
+                hexContainer.setAttribute('data-field', field.name);
+                
+                const hexagon = document.createElement('div');
+                hexagon.className = 'hexagon';
+                hexagon.style.backgroundColor = field.color;
+                hexagon.textContent = field.name;
+
+                hexContainer.appendChild(hexagon);
+                row.appendChild(hexContainer);
+
+                if ((index + 1) % hexesPerRow === 0 || index === bankingFields.length - 1) {
+                    hexGrid.appendChild(row);
+                    if ((index + 1) % hexesPerRow === 0 && index !== bankingFields.length - 1) {
+                        row = document.createElement('div');
+                        row.className = 'hex-row hex-row-odd';
+                    }
+                }
+            });
+
+            addHexagonClickListeners();
+        }
+
+        function addHexagonClickListeners() {
+            const hexagons = document.querySelectorAll('.hexagon-container');
+            hexagons.forEach(hexagon => {
+                hexagon.addEventListener('click', () => {
+                    const fieldName = hexagon.getAttribute('data-field');
+                    getFinanceInsights(fieldName);
+                });
+            });
+        }
+
+        function getFinanceInsights(field) {
+            insightsSection.style.display = 'block';
+            insightsOutput.innerHTML = `<p class="text-gray-500 italic animate-pulse">Generating insights for "${field}"...</p>`;
+            
+            // Scroll to the insights section
+            insightsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            const insight = insightsData[field];
+
+            if (insight) {
+                setTimeout(() => {
+                    insightsOutput.innerHTML = `
+                        <h3 class="text-xl font-bold text-blue-700 mb-2">${field}</h3>
+                        <p class="mb-4">${insight.summary}</p>
+                        <h4 class="text-lg font-semibold text-gray-700">Key Focus Areas:</h4>
+                        <ul class="list-disc list-inside mb-4 pl-4">
+                            ${insight.keyFocusAreas.map(concept => `<li>${concept}</li>`).join('')}
+                        </ul>
+                        <h4 class="text-lg font-semibold text-gray-700">Career Outlook:</h4>
+                        <p>${insight.careerOutlook}</p>
+                    `;
+                }, 1000); // Simulate a short loading time
+            } else {
+                insightsOutput.innerHTML = `<p class="text-red-500">Could not retrieve insights. Please try again.</p>`;
+            }
+        }
+        
+        window.onload = createHexagonGrid;
+    </script>
+    <a href="chat.html" id="chatbot-button" title="Chat with us!">
+        <img src="https://via.placeholder.com/90x90.png?text=Chat" alt="Chatbot" />
+    </a>
+</body>
+</html>
