@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Information Dashboard</title>
+    <!-- Use the Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN for creating the histograms -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0px;
+        }
+        /* Hide scrollbar for navigation tabs but allow scrolling */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        .tab-link.active {
+            border-bottom: 2px solid #1f2937;
+            color: #1f2937;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+            <!-- Hamburger Menu Icon -->
+            <button id="menu-btn" class="text-white focus:outline-none md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <div class="flex items-center space-x-2">
+                <!-- Logo (Using a simple SVG for now) -->
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path>
+                </svg>
+                <span class="text-xl font-bold">Pathfinder</span>
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+            <a href="./colleges.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="./career_paths.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study Groups</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Others</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <!-- Notification Bell Icon -->
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a6 6 0 016 6v3.586l1.707 1.707A1 1 0 0118 14H2a1 1 0 01.293-.707L4 11.586V8a6 6 0 016-6zM10 18a3 3 0 003-3H7a3 3 0 003 3z" />
+                </svg>
+            </button>
+            <!-- Profile Icon -->
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <!-- For You Button -->
+            <a href="#" class="text-sm px-4 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300">For You</a>
+        </div>
+    </header>
+
+
+    <!-- Main container where the single college block will be injected dynamically -->
+    <div id="colleges-container" class="space-y-12">
+        <!-- The JavaScript will generate and insert the college content here -->
+    </div>
+
+    <script>
+        // College data will be loaded from external JSON file
+        let collegeData = [];
+
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Function to load JSON data from external file
+        async function loadCollegeData() {
+            try {
+                const fieldParam = getUrlParameter('data');
+                let currentField = 'college-data'; // Default file name
+
+                if (fieldParam) {
+                    currentField = fieldParam;
+                }
+
+                const response = await fetch(`${currentField}.json`);
+                collegeData = await response.json();
+                renderSingleCollege();
+            } catch (error) {
+                console.error('Error loading college data:', error);
+                const container = document.getElementById('colleges-container');
+                container.innerHTML = `<div class="p-8 text-center text-gray-500">
+                                            <p>Failed to load college data. Please check the file name and try again.</p>
+                                        </div>`;
+            }
+        }
+
+        // Function to create a college card HTML string from a data object
+        function createCollegeCard(college) {
+            const badgesHtml = college.badges.map(badge => `
+                <span class="bg-blue-100 text-blue-800 font-medium px-2 py-0.5 rounded-full text-xs">${badge}</span>
+            `).join('');
+
+            // Get the first content key to show by default
+            const firstSection = Object.keys(college.content)[0];
+            const navigationLinksHtml = Object.keys(college.content).map(section => `
+                <a href="#" id="${college.id}-${section.replace(/\s/g, '')}-link" class="tab-link py-2 text-gray-500 hover:text-gray-900 transition duration-300 ${section === firstSection ? 'active' : ''}" data-college-id="${college.id}" data-section="${section}">
+                    ${section}
+                </a>
+            `).join('');
+
+            return `
+                <div id="${college.id}-card" class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    
+                    <!-- Banner and Logo Section -->
+                    <div class="relative">
+                        <!-- Banner Image -->
+                        <img src="${college.bannerUrl}" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/1200x250';" 
+                             alt="${college.name} Banner" 
+                             class="w-full h-40 md:h-64 object-cover">
+                        
+                        <!-- Logo Overlay -->
+                        <div class="absolute bottom-4 left-4 md:bottom-8 md:left-8 bg-white p-2 md:p-3 rounded-xl shadow-lg">
+                            <img src="${college.logoUrl}" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/80x80';" 
+                                 alt="${college.name} Logo" 
+                                 class="w-16 h-16 md:w-20 md:h-20 rounded-lg object-cover">
+                        </div>
+                    </div>
+
+                    <div class="p-6 md:p-8">
+                        <!-- College Info and Badges Section -->
+                        <div class="flex flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 md:space-x-8 mb-6">
+                            
+                            <!-- College Details -->
+                            <div class="flex-grow">
+                                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-1">${college.name}: ${college.tagline}</h1>
+                                <p class="text-gray-500 text-sm mb-2">${college.address}</p>
+                                
+                                <!-- Ratings and Badges -->
+                                <div class="flex flex-wrap items-center space-x-2 text-sm text-gray-500">
+                                    <span class="flex items-center">
+                                        <span class="text-yellow-400">★</span> ${college.ratings}
+                                    </span>
+                                    <span class="text-gray-400">|</span>
+                                    ${badgesHtml}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Tabs -->
+                        <div class="flex space-x-6 border-b border-gray-200 overflow-x-auto whitespace-nowrap scrollbar-hide">
+                            ${navigationLinksHtml}
+                            <a href="#" class="tab-link py-2 text-gray-500 hover:text-gray-900 transition duration-300" data-college-id="${college.id}" data-section="Placements">Placements</a>
+                            <a href="#" class="tab-link py-2 text-gray-500 hover:text-gray-900 transition duration-300" data-college-id="${college.id}" data-section="Admissions">Admissions</a>
+                            <a href="#" class="tab-link py-2 text-gray-500 hover:text-gray-900 transition duration-300" data-college-id="${college.id}" data-section="Cut-Offs">Cut-Offs</a>
+                            <a href="#" class="tab-link py-2 text-gray-500 hover:text-gray-900 transition duration-300" data-college-id="${college.id}" data-section="Rankings">Rankings</a>
+                            <a href="#" class="tab-link py-2 text-gray-500 hover:text-gray-900 transition duration-300" data-college-id="${college.id}" data-section="Infrastructure">Infrastructure</a>
+                            <a href="#" class="tab-link py-2 text-gray-500 hover:text-gray-900 transition duration-300" data-college-id="${college.id}" data-section="Faculty">Faculty</a>
+                            <a href="#" class="tab-link py-2 text-gray-500 hover:text-gray-900 transition duration-300" data-college-id="${college.id}" data-section="Scholarships">Scholarships</a>
+                        </div>
+
+                        <!-- Content area for tabs -->
+                        <div class="mt-6" id="${college.id}-content">
+                            <!-- Content will be injected here by JavaScript -->
+                        </div>
+
+                        <!-- Last updated timestamp -->
+                        <p class="text-gray-400 text-sm mt-4">Last updated on ${college.lastUpdated || '31 Aug 25'}</p>
+
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Function to render the content for a specific tab
+        function renderContent(collegeId, section) {
+            const college = collegeData.find(c => c.id === collegeId);
+            const contentDiv = document.getElementById(`${college.id}-content`);
+            
+            if (!college || !contentDiv) {
+                console.error("College data or content div not found.");
+                return;
+            }
+
+            // Clear previous content
+            contentDiv.innerHTML = '';
+            
+            // Switch content based on the section
+            switch (section) {
+                case "Placements":
+                    contentDiv.innerHTML = `
+                        <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4 space-y-8">
+                            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Placement Statistics</h2>
+                            
+                            <!-- Highest Salary Histogram -->
+                            <div>
+                                <h3 class="text-xl font-medium text-gray-700 mb-2">Highest Salary Over Years</h3>
+                                <canvas id="${college.id}-highest-salary-chart"></canvas>
+                            </div>
+
+                            <!-- Average Salary Histogram -->
+                            <div>
+                                <h3 class="text-xl font-medium text-gray-700 mb-2">Average Salary Over Years</h3>
+                                <canvas id="${college.id}-average-salary-chart"></canvas>
+                            </div>
+
+                            <!-- Salary Distribution Chart -->
+                            <div>
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <h3 class="text-xl font-medium text-gray-700">Salary Distribution by Year:</h3>
+                                    <select id="${college.id}-year-select" class="rounded-md border border-gray-300 px-3 py-1">
+                                        ${Object.keys(college.placements.salaryDistribution).map(year => `<option value="${year}">${year}</option>`).join('')}
+                                    </select>
+                                </div>
+                                <canvas id="${college.id}-distribution-chart"></canvas>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Render the charts
+                    renderCharts(college);
+                    break;
+                case "College Info":
+                case "Courses":
+                case "Fees":
+                case "Reviews":
+                case "Admissions":
+                case "Cut-Offs":
+                case "Rankings":
+                case "Infrastructure":
+                case "Faculty":
+                case "Compare":
+                case "Scholarships":
+                    contentDiv.innerHTML = college.content[section] || `<div class="bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4"><p class="text-gray-700 leading-relaxed">Content for ${section} is not available yet.</p></div>`;
+                    break;
+                default:
+                    contentDiv.innerHTML = `<div class="bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4"><p class="text-gray-700 leading-relaxed">Content not found.</p></div>`;
+            }
+        }
+
+        // Function to render the charts for the Placements section
+        function renderCharts(college) {
+            const highestSalaryCtx = document.getElementById(`${college.id}-highest-salary-chart`).getContext('2d');
+            new Chart(highestSalaryCtx, {
+                type: 'bar',
+                data: {
+                    labels: college.placements.salaryByYear.labels,
+                    datasets: [{
+                        label: 'Highest Salary (in Lakhs)',
+                        data: college.placements.salaryByYear.highestSalary.map(salary => salary / 100000),
+                        backgroundColor: '#4f46e5',
+                        borderColor: '#4f46e5',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            const averageSalaryCtx = document.getElementById(`${college.id}-average-salary-chart`).getContext('2d');
+            new Chart(averageSalaryCtx, {
+                type: 'bar',
+                data: {
+                    labels: college.placements.salaryByYear.labels,
+                    datasets: [{
+                        label: 'Average Salary (in Lakhs)',
+                        data: college.placements.salaryByYear.averageSalary.map(salary => salary / 100000),
+                        backgroundColor: '#22c55e',
+                        borderColor: '#22c55e',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            const yearSelect = document.getElementById(`${college.id}-year-select`);
+            const distributionCtx = document.getElementById(`${college.id}-distribution-chart`).getContext('2d');
+            let distributionChart;
+
+            function updateDistributionChart(year) {
+                const data = college.placements.salaryDistribution[year];
+                if (distributionChart) {
+                    distributionChart.destroy();
+                }
+                distributionChart = new Chart(distributionCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.labels,
+                        datasets: [{
+                            label: `Number of People in ${year}`,
+                            data: data.data,
+                            backgroundColor: '#ef4444',
+                            borderColor: '#ef4444',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true }
+                        }
+                    }
+                });
+            }
+
+            // Initial chart render
+            updateDistributionChart(yearSelect.value);
+
+            // Update chart on year selection change
+            yearSelect.addEventListener('change', (event) => {
+                updateDistributionChart(event.target.value);
+            });
+        }
+
+        // Function to render a single college
+        function renderSingleCollege() {
+            const container = document.getElementById('colleges-container');
+            container.innerHTML = '';
+            
+            if (collegeData.length > 0) {
+                const college = collegeData[0];
+                container.innerHTML = createCollegeCard(college);
+                setupEventListeners(college);
+            } else {
+                container.innerHTML = `<div class="p-8 text-center text-gray-500">
+                                           <p>No college data found.</p>
+                                       </div>`;
+            }
+        }
+        
+        // Function to set up all event listeners for the single college card
+        function setupEventListeners(college) {
+            // Set up event listeners for all navigation links for the given college
+            document.querySelectorAll(`#${college.id}-card .tab-link`).forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const collegeId = e.target.getAttribute('data-college-id');
+                    const section = e.target.getAttribute('data-section');
+                    
+                    // Remove 'active' class from all links for this college
+                    document.querySelectorAll(`#${collegeId}-card .tab-link`).forEach(l => l.classList.remove('active'));
+                    
+                    // Add 'active' class to the clicked link
+                    e.target.classList.add('active');
+                    
+                    renderContent(collegeId, section);
+                });
+            });
+
+            // Initial rendering of content for the first section
+            const firstSection = Object.keys(college.content)[0];
+            renderContent(college.id, firstSection);
+        }
+        
+        // Load data when page loads
+        window.onload = function() {
+            loadCollegeData();
+        };
+    </script>
+</body>
+</html>
