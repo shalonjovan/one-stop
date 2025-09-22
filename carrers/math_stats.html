@@ -177,8 +177,6 @@
 
         // New list of Math & Stats fields
         const mathStatsFields = [
-            { name: "Data Science", color: "#F97316" },
-            { name: "Actuarial Science", color: "#10B981" },
             { name: "Applied Mathematics", color: "#3B82F6" },
             { name: "Statistics", color: "#6366F1" },
             { name: "Financial Mathematics", color: "#D946EF" },
@@ -194,16 +192,6 @@
 
         // Hard-coded insights data for Math & Stats fields
         const insightsData = {
-            "Data Science": {
-                summary: "Data scientists are the digital detectives of the modern world. They use math, stats, and programming to find hidden patterns in huge datasets, helping companies make smart decisions, predict trends, and understand customer behavior. If you love solving mysteries with numbers, this field is for you!",
-                coreConcepts: ["Statistical Modeling", "Machine Learning", "Programming (Python, R)", "Data Visualization", "Data Mining", "Big Data Technologies (Hadoop, Spark)"],
-                careerOutlook: "The demand for data scientists is exploding across every industry—tech, finance, healthcare, and more. It's a high-paying and incredibly versatile career where your skills are always needed."
-            },
-            "Actuarial Science": {
-                summary: "Actuarial scientists are the risk managers of the financial world. They use statistics and financial theory to analyze and predict the long-term cost of risk and uncertainty. You'll work with insurance companies and pension funds, helping them make sure they're financially stable and secure for the future.",
-                coreConcepts: ["Probability & Statistics", "Financial Mathematics", "Risk Management", "Economics", "Programming", "Data Analysis"],
-                careerOutlook: "This is a very stable and well-compensated career. Actuaries are essential in the insurance and finance industries, and the job requires a series of professional exams, which adds to the prestige and earning potential."
-            },
             "Applied Mathematics": {
                 summary: "Applied mathematicians take powerful mathematical tools and use them to solve real-world problems. They're involved in everything from designing new encryption algorithms to modeling climate change and optimizing supply chains. It's a field for creative thinkers who want to use abstract ideas to make a tangible impact.",
                 coreConcepts: ["Differential Equations", "Linear Algebra", "Numerical Analysis", "Mathematical Modeling", "Scientific Computing", "Optimization Theory"],
@@ -262,31 +250,42 @@
         };
 
         function createHexagonGrid() {
-            const hexesPerRow = 4;
-            let row = document.createElement('div');
-            row.className = 'hex-row';
+            // Pattern: 4, 3, 4, 3, 4, 3...
+            const pattern = [4, 3];
+            let fieldIndex = 0;
+            let patternIndex = 0;
 
-            mathStatsFields.forEach((field, index) => {
-                const hexContainer = document.createElement('div');
-                hexContainer.className = 'hexagon-container';
-                hexContainer.setAttribute('data-field', field.name);
-                
-                const hexagon = document.createElement('div');
-                hexagon.className = 'hexagon';
-                hexagon.style.backgroundColor = field.color;
-                hexagon.textContent = field.name;
+            while (fieldIndex < mathStatsFields.length) {
+                const hexesInThisRow = pattern[patternIndex % pattern.length];
+                const row = document.createElement('div');
+                row.className = 'hex-row';
 
-                hexContainer.appendChild(hexagon);
-                row.appendChild(hexContainer);
-
-                if ((index + 1) % hexesPerRow === 0 || index === mathStatsFields.length - 1) {
-                    hexGrid.appendChild(row);
-                    if ((index + 1) % hexesPerRow === 0 && index !== mathStatsFields.length - 1) {
-                        row = document.createElement('div');
-                        row.className = 'hex-row hex-row-odd';
-                    }
+                // Add a class for offset on odd rows
+                if (patternIndex % 2 !== 0) {
+                    row.classList.add('hex-row-odd');
                 }
-            });
+
+                // Add hexagons for this row
+                for (let i = 0; i < hexesInThisRow && fieldIndex < mathStatsFields.length; i++) {
+                    const field = mathStatsFields[fieldIndex];
+                    const hexContainer = document.createElement('div');
+                    hexContainer.className = 'hexagon-container';
+                    hexContainer.setAttribute('data-field', field.name);
+                    
+                    const hexagon = document.createElement('div');
+                    hexagon.className = 'hexagon';
+                    hexagon.style.backgroundColor = field.color;
+                    hexagon.textContent = field.name;
+
+                    hexContainer.appendChild(hexagon);
+                    row.appendChild(hexContainer);
+                    
+                    fieldIndex++;
+                }
+
+                hexGrid.appendChild(row);
+                patternIndex++;
+            }
 
             addHexagonClickListeners();
         }
