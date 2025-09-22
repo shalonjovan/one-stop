@@ -257,19 +257,27 @@
         }
 
         // --- EVENT LISTENERS ---
-        document.getElementById('next-step-1').addEventListener('click', () => {
-            const firstName = document.getElementById('firstName').value.trim();
-            const lastName = document.getElementById('lastName').value.trim();
-            const age = document.getElementById('age').value;
-            const studentClass = document.getElementById('class').value.trim();
-            if (firstName && lastName && age && studentClass) {
-                assessmentData = { userName: `${firstName} ${lastName}`, age, studentClass };
-                createBubbles('stream-options', streams);
-                showStep(1);
-            } else {
-                alert('Please fill out all the fields.');
-            }
-        });
+        // In your ASSESSMENT form file
+document.getElementById('next-step-1').addEventListener('click', () => {
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const age = document.getElementById('age').value;
+    const studentClass = document.getElementById('class').value.trim();
+
+    if (firstName && lastName && age && studentClass) {
+        const userName = `${firstName} ${lastName}`;
+        assessmentData = { userName, age, studentClass };
+
+        // --- ADD THIS LINE ---
+        // Save the user's name to the browser's local storage
+        localStorage.setItem('currentUser', userName); 
+        
+        createBubbles('stream-options', streams);
+        showStep(1);
+    } else {
+        alert('Please fill out all the fields.');
+    }
+});
         document.getElementById('next-step-2').addEventListener('click', () => {
             const selectedBubble = document.querySelector('#stream-options .bubble.selected');
             if (selectedBubble) {
@@ -312,9 +320,10 @@
                 alert('Failed to save assessment. Please check your connection and try again.');
             }
         });
-        document.getElementById('view-profile-button').addEventListener('click', () => {
-             window.location.href = '/profile.html';
-        });
+        // This is the NEW, corrected code
+document.getElementById('view-profile-button').addEventListener('click', () => {
+    window.location.href = 'profile.html'; // Removed the leading slash
+});
 
         // Initialize first step
         showStep(0);

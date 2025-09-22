@@ -176,19 +176,23 @@
         const resultsDisplay = document.getElementById('results-display');
         const welcomeMessage = document.getElementById('welcome-message');
 
-        function getUserName() {
-            try {
-                // In a real app, you would get this from localStorage, a cookie, etc.
-                if (window.currentUser && window.currentUser.username) {
-                    return window.currentUser.username;
-                }
-                // Fallback for demo purposes
-                return 'demo_user';
-            } catch (e) {
-                console.error("Error retrieving user data:", e);
-            }
-            return null;
+        // In your PROFILE page file
+function getUserName() {
+    try {
+        // First, try to get the user from localStorage
+        const storedUser = localStorage.getItem('currentUser');
+        if (storedUser) {
+            return storedUser;
         }
+
+        // If no user is stored, fallback to the demo user
+        return 'demo_user';
+
+    } catch (e) {
+        console.error("Error retrieving user data from localStorage:", e);
+        return 'demo_user'; // Fallback in case of an error
+    }
+}
 
         async function fetchAssessmentResults(username) {
             try {

@@ -1,0 +1,423 @@
+[
+  {
+    "userName": "Sarvesh S",
+    "age": "18",
+    "studentClass": "12",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "Which aspect of science excites you the most?",
+        "options": [
+          "Discovering new theoretical concepts",
+          "Applying scientific knowledge to solve real-world problems",
+          "Developing new technologies",
+          "Understanding the fundamental laws of nature"
+        ]
+      },
+      {
+        "question": "Imagine your ideal work environment. Which best describes it?",
+        "options": [
+          "Quiet lab setting focused on individual research",
+          "Collaborative team working on a large project",
+          "Fast-paced startup environment with constant innovation",
+          "A mix of independent and collaborative work"
+        ]
+      },
+      {
+        "question": "Are you more drawn to:",
+        "options": [
+          "Abstract thinking and problem-solving",
+          "Practical applications and tangible results",
+          "Creative design and innovation",
+          "Data analysis and interpretation"
+        ]
+      },
+      {
+        "question": "Which subject do you find most engaging?",
+        "options": [
+          "Mathematics",
+          "Computer Science",
+          "Physics",
+          "Chemistry"
+        ]
+      },
+      {
+        "question": "What type of problem-solving do you prefer?",
+        "options": [
+          "Logical and analytical",
+          "Creative and intuitive",
+          "Experimental and hands-on",
+          "Systematic and methodical"
+        ]
+      },
+      {
+        "question": "Which career path appeals to you most?",
+        "options": [
+          "Research Scientist",
+          "Software Engineer",
+          "Data Scientist",
+          "Robotics Engineer"
+        ]
+      },
+      {
+        "question": "How important is it for you to make a tangible impact on the world?",
+        "options": [
+          "Very Important",
+          "Moderately Important",
+          "Slightly Important",
+          "Not Important"
+        ]
+      },
+      {
+        "question": "Do you prefer working with:",
+        "options": [
+          "Data and numbers",
+          "People and teams",
+          "Machines and technology",
+          "Ideas and concepts"
+        ]
+      },
+      {
+        "question": "How comfortable are you with ambiguity and uncertainty?",
+        "options": [
+          "Very Comfortable",
+          "Moderately Comfortable",
+          "Slightly Comfortable",
+          "Not Comfortable"
+        ]
+      },
+      {
+        "question": "What is your preferred learning style?",
+        "options": [
+          "Reading and studying independently",
+          "Hands-on experimentation and projects",
+          "Discussions and collaborative learning",
+          "Lectures and presentations"
+        ]
+      },
+      {
+        "question": "Which area of computer science interests you most?",
+        "options": [
+          "Artificial Intelligence",
+          "Web Development",
+          "Cybersecurity",
+          "Database Management"
+        ]
+      },
+      {
+        "question": "Are you more interested in the theoretical foundations of computer science or its practical applications?",
+        "options": [
+          "Theoretical Foundations",
+          "Practical Applications",
+          "Both equally",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "How important is it for you to continuously learn and adapt to new technologies?",
+        "options": [
+          "Very Important",
+          "Moderately Important",
+          "Slightly Important",
+          "Not Important"
+        ]
+      },
+      {
+        "question": "In a team project, what role would you most enjoy?",
+        "options": [
+          "Leader/Project Manager",
+          "Problem Solver/Analyst",
+          "Creative Designer/Innovator",
+          "Technical Expert/Implementer"
+        ]
+      },
+      {
+        "question": "Are you more interested in working on small, focused projects or large, complex ones?",
+        "options": [
+          "Small, focused projects",
+          "Large, complex projects",
+          "Both equally",
+          "Neither particularly"
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "Which aspect of science excites you the most?",
+        "answer": "Discovering new theoretical concepts"
+      },
+      {
+        "question": "Imagine your ideal work environment. Which best describes it?",
+        "answer": "Fast-paced startup environment with constant innovation"
+      },
+      {
+        "question": "Are you more drawn to:",
+        "answer": "Practical applications and tangible results"
+      },
+      {
+        "question": "Which subject do you find most engaging?",
+        "answer": "Physics"
+      },
+      {
+        "question": "What type of problem-solving do you prefer?",
+        "answer": "Creative and intuitive"
+      },
+      {
+        "question": "Which career path appeals to you most?",
+        "answer": "Robotics Engineer"
+      },
+      {
+        "question": "How important is it for you to make a tangible impact on the world?",
+        "answer": "Very Important"
+      },
+      {
+        "question": "Do you prefer working with:",
+        "answer": "Data and numbers"
+      },
+      {
+        "question": "How comfortable are you with ambiguity and uncertainty?",
+        "answer": "Moderately Comfortable"
+      },
+      {
+        "question": "What is your preferred learning style?",
+        "answer": "Reading and studying independently"
+      },
+      {
+        "question": "Which area of computer science interests you most?",
+        "answer": "Cybersecurity"
+      },
+      {
+        "question": "Are you more interested in the theoretical foundations of computer science or its practical applications?",
+        "answer": "Practical Applications"
+      },
+      {
+        "question": "How important is it for you to continuously learn and adapt to new technologies?",
+        "answer": "Moderately Important"
+      },
+      {
+        "question": "In a team project, what role would you most enjoy?",
+        "answer": "Problem Solver/Analyst"
+      },
+      {
+        "question": "Are you more interested in working on small, focused projects or large, complex ones?",
+        "answer": "Large, complex projects"
+      }
+    ],
+    "specializedFields": [
+      "AI-driven Robotics for Cybersecurity",
+      "Control Systems Engineering (with a focus on robotics)",
+      "Applied Physics in Robotics",
+      "Autonomous Systems Engineering"
+    ]
+  },
+  {
+    "userName": "Sarvesh s",
+    "age": "17",
+    "studentClass": "12",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "Which aspect of science excites you most?",
+        "options": [
+          "Discovering fundamental laws of nature",
+          "Developing practical applications and technologies",
+          "Solving complex problems using logic and mathematics",
+          "Understanding the human impact on the environment"
+        ]
+      },
+      {
+        "question": "In your free time, do you prefer to:",
+        "options": [
+          "Read scientific articles and books",
+          "Build or tinker with gadgets",
+          "Work on coding projects or puzzles",
+          "Engage in outdoor activities related to science like astronomy"
+        ]
+      },
+      {
+        "question": "Which field sounds most appealing?",
+        "options": [
+          "Theoretical Physics",
+          "Software Engineering",
+          "Data Science",
+          "Biotechnology"
+        ]
+      },
+      {
+        "question": "How do you prefer to learn?",
+        "options": [
+          "Through theoretical explanations and lectures",
+          "Hands-on experimentation and projects",
+          "By collaborating with others and discussing ideas",
+          "Through self-directed learning and exploration"
+        ]
+      },
+      {
+        "question": "What type of work environment do you envision yourself in?",
+        "options": [
+          "A quiet research lab",
+          "A dynamic and collaborative team",
+          "An independent consulting role",
+          "A fast-paced startup environment"
+        ]
+      },
+      {
+        "question": "Which skill is most important to you?",
+        "options": [
+          "Critical thinking and problem-solving",
+          "Creativity and innovation",
+          "Communication and teamwork",
+          "Attention to detail and precision"
+        ]
+      },
+      {
+        "question": "Are you more interested in:",
+        "options": [
+          "Understanding the 'why' behind scientific phenomena",
+          "Creating practical solutions to real-world problems",
+          "Analyzing large datasets to extract insights",
+          "Designing and implementing new technologies"
+        ]
+      },
+      {
+        "question": "Which of these subjects do you find most engaging?",
+        "options": [
+          "Advanced Mathematics",
+          "Computer Science fundamentals",
+          "Statistics and probability",
+          "Physics and Chemistry"
+        ]
+      },
+      {
+        "question": "Do you prefer working with:",
+        "options": [
+          "Abstract concepts and theories",
+          "Concrete data and tangible results",
+          "People and teams",
+          "Machines and technology"
+        ]
+      },
+      {
+        "question": "If you could work on any project, what would it be?",
+        "options": [
+          "Developing a new scientific theory",
+          "Designing a cutting-edge software application",
+          "Creating a data-driven solution for a social problem",
+          "Conducting research in a specific scientific field"
+        ]
+      },
+      {
+        "question": "How important is making a tangible difference in the world to you?",
+        "options": [
+          "Very important",
+          "Somewhat important",
+          "Not very important",
+          "Not at all important"
+        ]
+      },
+      {
+        "question": "Do you enjoy working independently or as part of a team?",
+        "options": [
+          "Mostly independently",
+          "Mostly as part of a team",
+          "Equally",
+          "It depends on the project"
+        ]
+      },
+      {
+        "question": "Are you comfortable with ambiguity and uncertainty?",
+        "options": [
+          "Yes, I thrive on it",
+          "Somewhat comfortable",
+          "Not very comfortable",
+          "No, I prefer clear directions"
+        ]
+      },
+      {
+        "question": "Which type of career path appeals to you more?",
+        "options": [
+          "Academic research",
+          "Industry-based roles",
+          "Entrepreneurship",
+          "Government or non-profit organizations"
+        ]
+      },
+      {
+        "question": "Are you more drawn to theoretical or applied science?",
+        "options": [
+          "Theoretical",
+          "Applied",
+          "Both equally",
+          "Neither particularly"
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "Which aspect of science excites you most?",
+        "answer": "Developing practical applications and technologies"
+      },
+      {
+        "question": "In your free time, do you prefer to:",
+        "answer": "Engage in outdoor activities related to science like astronomy"
+      },
+      {
+        "question": "Which field sounds most appealing?",
+        "answer": "Theoretical Physics"
+      },
+      {
+        "question": "How do you prefer to learn?",
+        "answer": "By collaborating with others and discussing ideas"
+      },
+      {
+        "question": "What type of work environment do you envision yourself in?",
+        "answer": "A quiet research lab"
+      },
+      {
+        "question": "Which skill is most important to you?",
+        "answer": "Communication and teamwork"
+      },
+      {
+        "question": "Are you more interested in:",
+        "answer": "Creating practical solutions to real-world problems"
+      },
+      {
+        "question": "Which of these subjects do you find most engaging?",
+        "answer": "Physics and Chemistry"
+      },
+      {
+        "question": "Do you prefer working with:",
+        "answer": "Abstract concepts and theories"
+      },
+      {
+        "question": "If you could work on any project, what would it be?",
+        "answer": "Developing a new scientific theory"
+      },
+      {
+        "question": "How important is making a tangible difference in the world to you?",
+        "answer": "Not at all important"
+      },
+      {
+        "question": "Do you enjoy working independently or as part of a team?",
+        "answer": "Equally"
+      },
+      {
+        "question": "Are you comfortable with ambiguity and uncertainty?",
+        "answer": "Yes, I thrive on it"
+      },
+      {
+        "question": "Which type of career path appeals to you more?",
+        "answer": "Academic research"
+      },
+      {
+        "question": "Are you more drawn to theoretical or applied science?",
+        "answer": "Applied"
+      }
+    ],
+    "specializedFields": [
+      "Astrophysics",
+      "Quantum Computing",
+      "Science Communication/Outreach"
+    ]
+  }
+]
