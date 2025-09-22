@@ -1,13 +1,12 @@
 [
   {
     "userName": "shalon",
-    "age": "19",
+    "age": "20",
     "gender": "male",
     "studentClass": "12",
-    "generalInterest": "Technology",
+    "generalInterest": "Business",
     "specializedFields": [
-      "AI & Machine Learning",
-      "Web Development"
+      "Entrepreneurship"
     ]
   },
   {

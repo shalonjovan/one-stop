@@ -36,7 +36,7 @@
         }
         .hexagon-container {
             width: 150px;
-            height: 173.2px; /* width * sqrt(3) */
+            height: 173.2px;
             margin: 0 5px;
             position: relative;
             cursor: pointer;
@@ -62,23 +62,6 @@
         }
         .insights-section {
             display: none;
-        }
-        .field-list {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-        .field-list-item {
-            background-color: #445368;
-            padding: 1rem;
-            border-radius: 0.75rem;
-            transition: transform 0.2s ease-in-out;
-            font-weight: 600;
-        }
-        .field-list-item:hover {
-            transform: translateY(-5px);
         }
         #chatbot-button {
             position: fixed;
@@ -112,14 +95,12 @@
     <!-- Header Navigation Bar -->
     <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
         <div class="flex items-center space-x-2">
-            <!-- Hamburger Menu Icon -->
             <button id="menu-btn" class="text-white focus:outline-none md:hidden">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
             <div class="flex items-center space-x-2">
-                <!-- Logo -->
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path>
                 </svg>
@@ -127,26 +108,23 @@
             </div>
         </div>
         <nav class="hidden md:flex items-center space-x-6">
-            <a href="./colleges.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
-            <a href="./career_paths.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
+            <a href="../colleges.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="../career_paths.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
             <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
             <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study Groups</a>
             <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Others</a>
         </nav>
         <div class="flex items-center space-x-4">
-            <!-- Notification Bell Icon -->
             <button class="text-white hover:text-gray-200">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 2a6 6 0 016 6v3.586l1.707 1.707A1 1 0 0118 14H2a1 1 0 01.293-.707L4 11.586V8a6 6 0 016-6zM10 18a3 3 0 003-3H7a3 3 0 003 3z" />
                 </svg>
             </button>
-            <!-- Profile Icon -->
             <button class="text-white hover:text-gray-200">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
                 </svg>
             </button>
-            <!-- For You Button -->
             <a href="#" class="text-sm px-4 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300">For You</a>
         </div>
     </header>
@@ -162,150 +140,46 @@
             <!-- Hexagons will be dynamically inserted here -->
         </div>
 
-        <!-- Gemini API Feature: Engineering Insights -->
+        <!-- Engineering Insights Section -->
         <div id="insightsSection" class="w-full w-11/12 mx-auto mt-12 p-6 bg-white rounded-xl shadow-lg insights-section">
             <h2 class="text-3xl font-bold text-blue-800 mb-4">✨ Engineering Insights ✨</h2>
             <div id="insightsOutput" class="p-4 bg-gray-50 rounded-lg min-h-[150px] text-left overflow-y-auto max-h-[400px]">
                 <p class="text-gray-500 italic">Insights will appear here...</p>
             </div>
         </div>
-        <!-- End of Gemini API Feature -->
     </div>
 
     <script>
-        const hexGrid = document.getElementById('hexGrid');
-        const insightsSection = document.getElementById('insightsSection');
-        const insightsOutput = document.getElementById('insightsOutput');
+        let engineeringData = {};
 
-        const engineeringFields = [
-            { name: "Computer Science Engineering", color: "#3B82F6" },
-            { name: "Information Technology", color: "#F97316" },
-            { name: "Mechanical Engineering", color: "#10B981" },
-            { name: "Electrical Engineering", color: "#6366F1" },
-            { name: "Electronics Engineering", color: "#EC4899" },
-            { name: "Aerospace Engineering", color: "#F59E0B" },
-            { name: "Civil Engineering", color: "#06B6D4" },
-            { name: "Biotechnology Engineering", color: "#D946EF" },
-            { name: "Chemical Engineering", color: "#4B5563" },
-            { name: "Petroleum Engineering", color: "#EF4444" },
-            { name: "Automobile Engineering", color: "#8B5CF6" },
-            { name: "Marine Engineering", color: "#3B82F6" },
-            { name: "Agricultural Engineering", color: "#10B981" },
-            { name: "Mining Engineering", color: "#F97316" },
-            { name: "Textile Engineering", color: "#D946EF" },
-            { name: "Industrial Engineering", color: "#06B6D4" },
-            { name: "Genetic Engineering", color: "#EC4899" },
-            { name: "Environmental Engineering", color: "#6366F1" }
-        ];
-
-        // Hard-coded insights data
-        const insightsData = {
-            "Computer Science Engineering": {
-                summary: "This is the world of digital creation, where you become a modern-day magician! Computer Science engineers are the architects of the digital age, building everything from mind-bending video games to the social media platforms we can't live without. You'll be a master of logic, turning complex ideas into functional, beautiful software.",
-                coreConcepts: ["Data Structures & Algorithms", "Operating Systems", "Networking", "Artificial Intelligence", "Cybersecurity", "Software Development"],
-                careerOutlook: "The demand for software developers, web builders, AI specialists, and games developers is skyrocketing. This field offers endless opportunities in every industry you can imagine, with high salaries and the chance to build the future."
-            },
-            "Information Technology": {
-                summary: "IT professionals are the digital guardians of organizations, ensuring that technology runs smoothly and securely. They are the problem-solvers who keep the digital world connected, from managing complex networks to protecting data from cyber threats. If you love solving puzzles and making things work, IT is your playground.",
-                coreConcepts: ["Network Management", "Database Systems", "Cloud Computing", "IT Security", "Systems Administration", "Data Analysis"],
-                careerOutlook: "With every company relying on technology, the need for IT professionals is constant. Career paths include network administrator, cybersecurity analyst, cloud engineer, and IT consultant, offering stable and rewarding work."
-            },
-            "Mechanical Engineering": {
-                summary: "Mechanical engineers are the master builders of the physical world. They design, analyze, and manufacture everything that moves or uses energy, from the tiniest robotic parts to massive industrial machinery. If you love understanding how things work and creating tangible solutions, this is the field for you.",
-                coreConcepts: ["Thermodynamics", "Fluid Mechanics", "Material Science", "Robotics", "Mechanical Design", "Kinematics"],
-                careerOutlook: "Mechanical engineers are essential in manufacturing, aerospace, automotive, and energy sectors. You can work on anything from creating next-generation electric cars to designing the robots that explore Mars. The possibilities are endless!"
-            },
-            "Electrical Engineering": {
-                summary: "This is the field of electricity and all its wonders. Electrical engineers are the innovators behind everything from the power grids that light up our cities to the microchips in our smartphones. You'll work on everything from large-scale power systems to the tiny circuits that power our lives.",
-                coreConcepts: ["Circuit Analysis", "Electronics", "Power Systems", "Electromagnetism", "Signal Processing", "Control Systems"],
-                careerOutlook: "The world runs on electricity, making electrical engineering a field with limitless demand. You can pursue careers in power generation, telecommunications, embedded systems, and consumer electronics."
-            },
-            "Electronics Engineering": {
-                summary: "Electronics engineers are the architects of the digital world, creating the circuits and devices that power our modern technology. They design the heart and brain of every gadget, from smartphones and laptops to medical devices and smart home systems. If you're fascinated by the tiny components that make up our world, this is for you.",
-                coreConcepts: ["Analog and Digital Circuits", "Microcontrollers", "VLSI Design", "Signal Processing", "Embedded Systems", "Robotics"],
-                careerOutlook: "Electronics engineers are in high demand in the consumer electronics, telecommunications, and automotive industries. They are the masterminds behind innovation, creating devices that change the way we live and interact with the world."
-            },
-            "Aerospace Engineering": {
-                summary: "Welcome to the world of flight and space exploration! Aerospace engineers design, build, and test aircraft, spacecraft, satellites, and missiles. If you dream of working on the next-generation jetliner or designing the rockets that will take humanity to Mars, this is the field that will make those dreams a reality.",
-                coreConcepts: ["Aerodynamics", "Propulsion", "Structural Mechanics", "Flight Dynamics", "Orbital Mechanics", "Materials Engineering"],
-                careerOutlook: "This field offers thrilling careers in aircraft manufacturing, space exploration agencies like NASA, and defense companies. You'll be at the forefront of human innovation, pushing the boundaries of what is possible."
-            },
-            "Civil Engineering": {
-                summary: "Civil engineers are the builders of society. They design and construct the infrastructure that makes our world function, including bridges, roads, tunnels, dams, and buildings. If you want to leave a lasting legacy and build something that improves people's lives for generations, this is the path for you.",
-                coreConcepts: ["Structural Analysis", "Geotechnical Engineering", "Hydraulics", "Urban Planning", "Construction Management", "Surveying"],
-                careerOutlook: "Civil engineers are always in demand for both public and private sector projects. You could be working on a massive skyscraper, designing a sustainable water system, or planning the next major highway."
-            },
-            "Biotechnology Engineering": {
-                summary: "This field merges biology with technology to create solutions for healthcare, agriculture, and industry. As a biotech engineer, you'll work with living organisms and biological systems to create groundbreaking products like life-saving drugs, sustainable biofuels, and genetically modified crops. It's a field where science meets engineering to solve some of the world's biggest challenges.",
-                coreConcepts: ["Molecular Biology", "Bioprocess Engineering", "Genetic Engineering", "Bioinformatics", "Nanobiotechnology", "Biomaterials"],
-                careerOutlook: "Biotechnology is a rapidly growing field with diverse career opportunities in pharmaceuticals, food science, medical research, and environmental protection. You'll be at the cutting edge of scientific discovery."
-            },
-            "Chemical Engineering": {
-                summary: "Chemical engineers are the master chefs of the industry, transforming raw materials into everyday products like plastics, fuels, and medicines. They design processes to manufacture and refine materials on a massive scale. If you are fascinated by the chemistry behind the products we use every day, you'll love this field.",
-                coreConcepts: ["Thermodynamics", "Process Control", "Reaction Engineering", "Mass Transfer", "Fluid Dynamics", "Polymer Science"],
-                careerOutlook: "Chemical engineers are vital in the oil and gas, pharmaceutical, food and beverage, and materials industries. You can work as a process engineer, a research scientist, or a quality control manager, creating the products that shape our world."
-            },
-            "Petroleum Engineering": {
-                summary: "Petroleum engineers are on the front lines of the energy industry, discovering and extracting oil and gas reserves to power our world. They are innovators who use advanced technology to locate resources and optimize production, ensuring a steady supply of energy for society.",
-                coreConcepts: ["Reservoir Engineering", "Drilling Technology", "Petrophysics", "Geology", "Fluid Dynamics", "Well Logging"],
-                careerOutlook: "With a global demand for energy, petroleum engineers are in high demand in the oil and gas sector. You can work on offshore drilling rigs, in research labs, or in management, playing a key role in the energy transition."
-            },
-            "Automobile Engineering": {
-                summary: "Automobile engineers are the innovators behind the vehicles of the future, from self-driving cars to electric supercars. They design and develop every aspect of a vehicle, from its engine and chassis to its safety systems and infotainment. If you're passionate about cars and a future of sustainable transportation, this field is for you.",
-                coreConcepts: ["Vehicle Dynamics", "Internal Combustion Engines", "Electric Vehicles", "Aerodynamics", "Automotive Design", "Manufacturing"],
-                careerOutlook: "The automotive industry is in a period of rapid change, creating new opportunities in electric vehicle technology, autonomous driving, and sustainable manufacturing. You can work as a design engineer, a systems engineer, or a research and development specialist."
-            },
-            "Marine Engineering": {
-                summary: "Marine engineers are the masterminds behind the machines that navigate our oceans. They design, build, and maintain everything from giant cargo ships and submarines to oil rigs and recreational boats. If you love the sea and have a passion for complex machinery, this is the perfect field.",
-                coreConcepts: ["Ship Design", "Naval Architecture", "Propulsion Systems", "Marine Robotics", "Ocean Mechanics", "Materials Engineering"],
-                careerOutlook: "Careers in marine engineering are found in the naval forces, shipbuilding industries, offshore exploration, and cruise line operations. You can work on the cutting edge of underwater technology and exploration."
-            },
-            "Agricultural Engineering": {
-                summary: "Agricultural engineers are the key to a sustainable future, designing solutions for food production, land management, and environmental protection. They create and apply technology to improve farming, from developing smart irrigation systems to designing advanced harvesting machinery. If you want to help feed the world while protecting our planet, this field is for you.",
-                coreConcepts: ["Soil and Water Conservation", "Agricultural Machinery", "Bioprocess Engineering", "Irrigation Systems", "Precision Agriculture", "Sustainable Farming"],
-                careerOutlook: "With a growing global population, the demand for agricultural engineers is on the rise. You can work for government agencies, agricultural companies, or in research, creating innovative solutions for food security."
-            },
-            "Mining Engineering": {
-                summary: "Mining engineers are the explorers of the modern age, locating, extracting, and processing valuable minerals and metals from the Earth. They design safe and efficient ways to mine resources, ensuring the materials that build our world are available. It's a field that combines geology, civil engineering, and mechanical engineering to unearth the world's treasures.",
-                coreConcepts: ["Geology", "Mine Design", "Rock Mechanics", "Mineral Processing", "Blasting Techniques", "Mine Safety"],
-                careerOutlook: "The mining industry offers a global career path with roles in mine planning, operations management, and environmental reclamation. It's a field with strong demand and opportunities to work on large-scale projects."
-            },
-            "Textile Engineering": {
-                summary: "Textile engineers are the innovators behind the fabrics and materials that make up our clothing, home goods, and even advanced medical devices. They apply principles of chemistry, physics, and design to create everything from bulletproof vests to smart fabrics that can monitor your health. If you have a creative and technical mind, this field is a perfect fit.",
-                coreConcepts: ["Polymer Science", "Yarn Manufacturing", "Fabric Design", "Dyeing and Finishing", "Non-woven Textiles", "Textile Composites"],
-                careerOutlook: "This field is constantly evolving with new technologies like smart textiles and sustainable manufacturing. Career paths include textile designer, quality control manager, and R&D scientist, with opportunities in fashion, sports, and healthcare."
-            },
-            "Industrial Engineering": {
-                summary: "Industrial engineers are the efficiency experts of the business world, finding ways to improve processes, eliminate waste, and increase productivity in any organization. They are the problem-solvers who optimize systems, from manufacturing assembly lines to healthcare delivery. If you have a passion for making things run better, this is your calling.",
-                coreConcepts: ["Operations Research", "Supply Chain Management", "Ergonomics", "Quality Control", "Lean Manufacturing", "Systems Analysis"],
-                careerOutlook: "Industrial engineers are in high demand across many sectors, including manufacturing, logistics, healthcare, and consulting. You can work as a process analyst, a project manager, or a supply chain strategist, making a tangible impact on a company's success."
-            },
-            "Genetic Engineering": {
-                summary: "Genetic engineers are the pioneers of a new biological frontier, directly manipulating the genetic makeup of organisms to create novel traits and solutions. They are at the forefront of medical breakthroughs, agricultural advancements, and sustainable bio-production. It's a field where you can literally change the blueprint of life.",
-                coreConcepts: ["CRISPR Technology", "Molecular Biology", "Bioinformatics", "Gene Therapy", "Synthetic Biology", "Genomics"],
-                careerOutlook: "This is a field with explosive growth potential. Careers can be found in biomedical research, pharmaceutical companies, and agricultural science, developing new cures, improving crops, and creating advanced biofuels."
-            },
-            "Environmental Engineering": {
-                summary: "Environmental engineers are the protectors of our planet, using science and technology to solve complex environmental problems like pollution, waste management, and climate change. They design systems to purify water, clean up contaminated sites, and create sustainable energy solutions. If you're passionate about protecting the Earth, this is the field for you.",
-                coreConcepts: ["Water and Wastewater Treatment", "Air Pollution Control", "Waste Management", "Ecosystem Restoration", "Environmental Impact Assessment", "Sustainable Design"],
-                careerOutlook: "The demand for environmental engineers is rapidly increasing as society focuses on sustainability. You can work for government agencies, consulting firms, or non-profits, making a real difference in the health of our planet."
+        // Load engineering data from JSON file
+        async function loadEngineeringData() {
+            try {
+                const response = await fetch('engineering.json');
+                engineeringData = await response.json();
+                createHexagonGrid();
+            } catch (error) {
+                console.error('Error loading engineering data:', error);
             }
-        };
+        }
 
         function createHexagonGrid() {
-            // Pattern: 4, 3, 4, 3, 4, 3...
+            const hexGrid = document.getElementById('hexGrid');
+            const fields = engineeringData.fields;
+            
+            if (!fields) return;
+
             const pattern = [4, 3];
             let fieldIndex = 0;
             let patternIndex = 0;
 
-            while (fieldIndex < engineeringFields.length) {
+            while (fieldIndex < fields.length) {
                 const hexesInThisRow = pattern[patternIndex % pattern.length];
                 const row = document.createElement('div');
                 row.className = 'hex-row';
 
-                // Add hexagons for this row
-                for (let i = 0; i < hexesInThisRow && fieldIndex < engineeringFields.length; i++) {
-                    const field = engineeringFields[fieldIndex];
+                for (let i = 0; i < hexesInThisRow && fieldIndex < fields.length; i++) {
+                    const field = fields[fieldIndex];
                     const hexContainer = document.createElement('div');
                     hexContainer.className = 'hexagon-container';
                     hexContainer.setAttribute('data-field', field.name);
@@ -333,21 +207,24 @@
             hexagons.forEach(hexagon => {
                 hexagon.addEventListener('click', () => {
                     const fieldName = hexagon.getAttribute('data-field');
-                    getEngineeringInsights(fieldName);
+                    showEngineeringInsights(fieldName);
                 });
             });
         }
 
-        function getEngineeringInsights(field) {
+        function showEngineeringInsights(fieldName) {
+            const insightsSection = document.getElementById('insightsSection');
+            const insightsOutput = document.getElementById('insightsOutput');
+            
             insightsSection.style.display = 'block';
-            insightsOutput.innerHTML = `<p class="text-gray-500 italic animate-pulse">Generating insights for "${field}"...</p>`;
+            insightsOutput.innerHTML = `<p class="text-gray-500 italic animate-pulse">Loading insights for "${fieldName}"...</p>`;
 
-            const insight = insightsData[field];
+            const insight = engineeringData.insights[fieldName];
 
             if (insight) {
                 setTimeout(() => {
                     insightsOutput.innerHTML = `
-                        <h3 class="text-xl font-bold text-blue-700 mb-2">${field}</h3>
+                        <h3 class="text-xl font-bold text-blue-700 mb-2">${fieldName}</h3>
                         <p class="mb-4">${insight.summary}</p>
                         <h4 class="text-lg font-semibold text-gray-700">Core Concepts:</h4>
                         <ul class="list-disc list-inside mb-4 pl-4">
@@ -356,15 +233,17 @@
                         <h4 class="text-lg font-semibold text-gray-700">Career Outlook:</h4>
                         <p>${insight.careerOutlook}</p>
                     `;
-                }, 1000); // Simulate a short loading time
+                }, 1000);
             } else {
                 insightsOutput.innerHTML = `<p class="text-red-500">Could not retrieve insights. Please try again.</p>`;
             }
         }
-        
-        window.onload = createHexagonGrid;
+
+        // Initialize the page
+        window.onload = loadEngineeringData;
     </script>
-    <a href="chat.html" id="chatbot-button" title="Chat with us!">
+
+    <a href="../chat.html" id="chatbot-button" title="Chat with us!">
         <img src="../assets/images/chat.jpeg" alt="Chatbot" />
     </a>
 </body>
