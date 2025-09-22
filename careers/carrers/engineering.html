@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder - College Guidance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #acc6eeba;
+            color: #0b1e3acb;
+        }
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem;
+            text-align: center;
+        }
+        .hex-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hex-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: -30px;
+        }
+        .hex-row:last-child {
+            margin-bottom: 0;
+        }
+        .hexagon-container {
+            width: 170px;
+            height: 183.2px;
+            margin: 0 5px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hexagon-container:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 0.75rem;
+        }
+        .insights-section {
+            display: none;
+        }
+        .insights-box {
+            background: linear-gradient(135deg, #E8F0FF 0%, #D4E4FF 100%);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+        }
+        .insights-output {
+            background: linear-gradient(135deg, #F5F9FF 0%, #E8F0FF 100%);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        #chatbot-button {
+            position: fixed;
+            bottom: 70px;
+            right: 70px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        #chatbot-button:hover {
+            transform: scale(1.1);
+        }
+        #chatbot-button img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation Bar -->
+    <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+            <button id="menu-btn" class="text-white focus:outline-none md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path>
+                </svg>
+                <span class="text-xl font-bold">Pathfinder</span>
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+            <a href="../colleges.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="../career_paths.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study Groups</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Others</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a6 6 0 016 6v3.586l1.707 1.707A1 1 0 0118 14H2a1 1 0 01.293-.707L4 11.586V8a6 6 0 016-6zM10 18a3 3 0 003-3H7a3 3 0 003 3z" />
+                </svg>
+            </button>
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <a href="#" class="text-sm px-4 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300">For You</a>
+        </div>
+    </header>
+
+    <div class="container max-w-7xl mx-auto">
+        <h1 id="main-title" class="text-5xl md:text-6xl font-extrabold text-blue-900 mt-12 mb-4">Career Hub</h1>
+        <p id="description" class="text-lg text-gray-700 mb-8 max-w-2xl">
+            Click on any of the hexagons below to learn more about a specific field.
+        </p>
+
+        <!-- Hexagon Layout -->
+        <div class="hex-grid" id="hexGrid">
+            <!-- Hexagons will be dynamically inserted here -->
+        </div>
+
+        <!-- Career Insights Section -->
+        <div id="insightsSection" class="w-full w-11/12 mx-auto mt-12 p-6 insights-box rounded-xl shadow-lg insights-section">
+            <h2 id="insights-title" class="text-3xl font-bold text-blue-800 mb-4">✨ Career Insights ✨</h2>
+            <div id="insightsOutput" class="p-4 insights-output rounded-lg min-h-[150px] text-left overflow-y-auto max-h-[400px]">
+                <p class="text-gray-500 italic">Insights will appear here...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let careerData = {};
+        let currentField = 'engineering'; // Default field
+
+        // Function to get URL parameter
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Function to capitalize first letter
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        // Load career data from JSON file
+        async function loadCareerData() {
+            try {
+                // Get field from URL parameter or default to 'engineering'
+                const fieldParam = getUrlParameter('field');
+                if (fieldParam) {
+                    currentField = fieldParam.toLowerCase();
+                }
+
+                const response = await fetch(`${currentField}.json`);
+                careerData = await response.json();
+                
+                // Update page titles and content
+                updatePageContent();
+                createHexagonGrid();
+            } catch (error) {
+                console.error('Error loading career data:', error);
+                // Fallback to engineering if other field fails
+                if (currentField !== 'engineering') {
+                    currentField = 'engineering';
+                    loadCareerData();
+                }
+            }
+        }
+
+        function updatePageContent() {
+            const fieldName = capitalizeFirstLetter(currentField);
+            
+            // Update main title
+            document.getElementById('main-title').textContent = `${fieldName} Career Hub`;
+            
+            // Update description
+            document.getElementById('description').textContent = 
+                `Click on any of the hexagons below to learn more about a specific field of ${currentField}.`;
+            
+            // Update insights title
+            document.getElementById('insights-title').textContent = `✨ ${fieldName} Insights ✨`;
+        }
+
+        function createHexagonGrid() {
+            const hexGrid = document.getElementById('hexGrid');
+            const fields = careerData.fields;
+            
+            if (!fields) return;
+
+            // Clear existing content
+            hexGrid.innerHTML = '';
+
+            const pattern = [5, 6];
+            let fieldIndex = 0;
+            let patternIndex = 0;
+
+            while (fieldIndex < fields.length) {
+                const hexesInThisRow = pattern[patternIndex % pattern.length];
+                const row = document.createElement('div');
+                row.className = 'hex-row';
+
+                for (let i = 0; i < hexesInThisRow && fieldIndex < fields.length; i++) {
+                    const field = fields[fieldIndex];
+                    const hexContainer = document.createElement('div');
+                    hexContainer.className = 'hexagon-container';
+                    hexContainer.setAttribute('data-field', field.name);
+                    
+                    const hexagon = document.createElement('div');
+                    hexagon.className = 'hexagon';
+                    hexagon.style.backgroundColor = field.color;
+                    hexagon.textContent = field.name;
+
+                    hexContainer.appendChild(hexagon);
+                    row.appendChild(hexContainer);
+                    
+                    fieldIndex++;
+                }
+
+                hexGrid.appendChild(row);
+                patternIndex++;
+            }
+
+            addHexagonClickListeners();
+        }
+
+        function addHexagonClickListeners() {
+            const hexagons = document.querySelectorAll('.hexagon-container');
+            hexagons.forEach(hexagon => {
+                hexagon.addEventListener('click', () => {
+                    const fieldName = hexagon.getAttribute('data-field');
+                    showCareerInsights(fieldName);
+                });
+            });
+        }
+
+        function showCareerInsights(fieldName) {
+            const insightsSection = document.getElementById('insightsSection');
+            const insightsOutput = document.getElementById('insightsOutput');
+            
+            insightsSection.style.display = 'block';
+            insightsOutput.innerHTML = `<p class="text-gray-500 italic animate-pulse">Loading insights for "${fieldName}"...</p>`;
+
+            const insight = careerData.insights[fieldName];
+
+            if (insight) {
+                setTimeout(() => {
+                    insightsOutput.innerHTML = `
+                        <h3 class="text-xl font-bold text-blue-700 mb-2">${fieldName}</h3>
+                        <p class="mb-4">${insight.summary}</p>
+                        <h4 class="text-lg font-semibold text-gray-700">Key Focus Areas:</h4>
+                        <ul class="list-disc list-inside mb-4 pl-4">
+                            ${insight.keyFocusAreas.map(concept => `<li>${concept}</li>`).join('')}
+                        </ul>
+                        <h4 class="text-lg font-semibold text-gray-700">Career Outlook:</h4>
+                        <p>${insight.careerOutlook}</p>
+                    `;
+                }, 100);
+            } else {
+                insightsOutput.innerHTML = `<p class="text-red-500">Could not retrieve insights. Please try again.</p>`;
+            }
+        }
+
+        // Initialize the page
+        window.onload = loadCareerData;
+    </script>
+
+    <a href="../chat.html" id="chatbot-button" title="Chat with us!">
+        <img src="../assets/images/chat.jpeg" alt="Chatbot" />
+    </a>
+</body>
+</html>

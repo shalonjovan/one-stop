@@ -127,12 +127,15 @@ app.post('/login', (req, res) => {
 app.post('/save-assessment', (req, res) => {
     const assessmentData = req.body;
     const assessmentResults = readJsonFile(assessmentFilePath);
+    
+    // Check if assessment for this user already exists, update if it does
     const existingIndex = assessmentResults.findIndex(result => result.userName === assessmentData.userName);
     if (existingIndex !== -1) {
         assessmentResults[existingIndex] = assessmentData;
     } else {
         assessmentResults.push(assessmentData);
     }
+    
     writeJsonFile(assessmentFilePath, assessmentResults);
     res.json({ status: 'success' });
 });
