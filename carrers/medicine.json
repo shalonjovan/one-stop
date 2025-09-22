@@ -1,0 +1,114 @@
+{
+  "fields": [
+    { "name": "Cardiology", "color": "#EF4444" },
+    { "name": "Dermatology", "color": "#F97316" },
+    { "name": "Neurology", "color": "#8B5CF6" },
+    { "name": "Oncology", "color": "#EC4899" },
+    { "name": "Pediatrics", "color": "#3B82F6" },
+    { "name": "Orthopedics", "color": "#10B981" },
+    { "name": "General Surgery", "color": "#6366F1" },
+    { "name": "Radiology", "color": "#F59E0B" },
+    { "name": "Anesthesiology", "color": "#06B6D4" },
+    { "name": "Psychiatry", "color": "#D946EF" },
+    { "name": "Gastroenterology", "color": "#4B5563" },
+    { "name": "Endocrinology", "color": "#F97316" },
+    { "name": "Pulmonology", "color": "#10B981" },
+    { "name": "Emergency Medicine", "color": "#EF4444" },
+    { "name": "Ophthalmology", "color": "#3B82F6" },
+    { "name": "Pathology", "color": "#8B5CF6" },
+    { "name": "Nephrology", "color": "#6366F1" },
+    { "name": "OB/GYN", "color": "#EC4899" }
+  ],
+  "insights": {
+    "Cardiology": {
+      "summary": "Cardiologists are the guardians of the heart. This field focuses on diagnosing and treating diseases of the cardiovascular system, including the heart and blood vessels. If you're fascinated by the engine that powers the human body and want to make a life-or-death impact, this is a deeply rewarding path.",
+      "keyFocusAreas": ["Coronary Artery Disease", "Heart Failure", "Arrhythmias", "Echocardiography", "Cardiac Catheterization", "Preventive Cardiology"],
+      "careerOutlook": "High in demand due to the prevalence of heart disease. Cardiologists work in hospitals, private practices, and academic settings, often performing high-stakes procedures and managing chronic conditions."
+    },
+    "Dermatology": {
+      "summary": "Dermatologists are specialists of the body's largest organ: the skin. They diagnose and treat a vast range of conditions, from acne and eczema to skin cancer. This field uniquely blends medical, surgical, and cosmetic procedures, offering a visually satisfying and diverse practice.",
+      "keyFocusAreas": ["Acne and Rosacea", "Psoriasis and Eczema", "Skin Cancer Detection", "Mohs Surgery", "Cosmetic Procedures (Botox, Fillers)", "Dermatopathology"],
+      "careerOutlook": "A highly competitive field with excellent work-life balance. Dermatologists often work in outpatient clinics, with opportunities in both medical and cosmetic practices."
+    },
+    "Neurology": {
+      "summary": "Neurologists are detectives of the central nervous system, unraveling the mysteries of the brain, spinal cord, and nerves. They treat complex conditions like stroke, epilepsy, multiple sclerosis, and Parkinson's disease. If you are a puzzle-solver intrigued by the complexities of the mind, this field is for you.",
+      "keyFocusAreas": ["Stroke Management", "Epilepsy and Seizures", "Movement Disorders", "Headaches and Migraines", "Neuromuscular Diseases", "Cognitive Neurology"],
+      "careerOutlook": "A growing field with an aging population. Neurologists work in hospitals and clinics, often collaborating with neurosurgeons and rehabilitation specialists. It's a field of continuous discovery."
+    },
+    "Oncology": {
+      "summary": "Oncologists stand on the front lines in the fight against cancer. They diagnose cancer, manage treatments (like chemotherapy and immunotherapy), and provide compassionate care to patients and their families. This field requires immense resilience, empathy, and a commitment to cutting-edge research.",
+      "keyFocusAreas": ["Chemotherapy", "Immunotherapy", "Radiation Oncology", "Palliative Care", "Clinical Trials", "Hematology"],
+      "careerOutlook": "As cancer treatments advance, oncologists are more crucial than ever. They work in cancer centers, hospitals, and research institutions, often forming long-term bonds with their patients."
+    },
+    "Pediatrics": {
+      "summary": "Pediatricians are the champions of children's health, caring for patients from birth through adolescence. They manage everything from routine check-ups and vaccinations to complex childhood illnesses. It's a joyful and challenging field that requires excellent communication skills and a playful spirit.",
+      "keyFocusAreas": ["Well-child Visits", "Vaccinations", "Developmental Milestones", "Infectious Diseases", "Asthma and Allergies", "Adolescent Medicine"],
+      "careerOutlook": "A consistently high-demand field. Pediatricians work in private practices, community clinics, and hospitals. There are also numerous subspecialties like pediatric cardiology or endocrinology."
+    },
+    "Orthopedics": {
+      "summary": "Orthopedic surgeons are the body's mechanics, focused on the musculoskeletal system—bones, joints, ligaments, and muscles. They treat everything from sports injuries and broken bones to chronic conditions like arthritis, often using surgery to restore function and relieve pain.",
+      "keyFocusAreas": ["Fracture Repair", "Joint Replacement (Hip, Knee)", "Sports Medicine", "Spine Surgery", "Arthroscopy", "Trauma Surgery"],
+      "careerOutlook": "A physically demanding but highly rewarding surgical specialty. Orthopedic surgeons work in hospitals and private practices, helping patients regain mobility and return to their active lives."
+    },
+    "General Surgery": {
+      "summary": "General surgeons are masters of the operating room, with a broad knowledge of anatomy and surgical procedures. They operate on a wide range of conditions, primarily focusing on the abdomen and its contents. This is a hands-on, fast-paced field that demands precision, decisiveness, and calm under pressure.",
+      "keyFocusAreas": ["Appendectomy", "Gallbladder Removal", "Hernia Repair", "Bowel Surgery", "Trauma and Critical Care", "Laparoscopic Surgery"],
+      "careerOutlook": "A foundational surgical field with diverse opportunities in hospitals of all sizes. General surgeons often handle emergencies and perform a wide variety of procedures, making every day different."
+    },
+    "Radiology": {
+      "summary": "Radiologists are the doctors' detectives, using medical imaging technologies like X-rays, CT scans, and MRIs to diagnose diseases from behind the scenes. They play a critical role in nearly every aspect of medicine by providing the visual evidence needed to make accurate diagnoses.",
+      "keyFocusAreas": ["X-ray Interpretation", "CT and MRI Scans", "Ultrasound", "Mammography", "Interventional Radiology", "Nuclear Medicine"],
+      "careerOutlook": "Technology-driven and constantly evolving. Radiologists work in hospitals and imaging centers. The rise of teleradiology also offers flexible work arrangements."
+    },
+    "Anesthesiology": {
+      "summary": "Anesthesiologists are the patient's silent guardians during surgery, responsible for managing pain, consciousness, and vital functions. They are experts in pharmacology and physiology, ensuring patient safety and comfort in the operating room, ICU, and beyond.",
+      "keyFocusAreas": ["General Anesthesia", "Regional Anesthesia (Epidurals)", "Pain Management", "Critical Care Medicine", "Cardiothoracic Anesthesia", "Patient Monitoring"],
+      "careerOutlook": "A critical hospital-based specialty with high responsibility. Anesthesiologists are essential members of the surgical team and also play a key role in post-operative and chronic pain management."
+    },
+    "Psychiatry": {
+      "summary": "Psychiatrists specialize in mental health, diagnosing and treating mental, emotional, and behavioral disorders. They are unique among mental health providers in their ability to prescribe medication and provide psychotherapy, addressing the biological and psychological aspects of illness.",
+      "keyFocusAreas": ["Depression and Anxiety", "Bipolar Disorder", "Schizophrenia", "ADHD", "Psychotherapy", "Psychopharmacology"],
+      "careerOutlook": "Demand for psychiatrists is extremely high and growing. They work in private practices, hospitals, and community mental health centers, helping to destigmatize and treat mental illness."
+    },
+    "Gastroenterology": {
+      "summary": "Gastroenterologists, or 'GI' doctors, are specialists in the digestive system, including the esophagus, stomach, intestines, liver, and pancreas. They diagnose and treat conditions like acid reflux, ulcers, and inflammatory bowel disease, often using endoscopic procedures.",
+      "keyFocusAreas": ["Endoscopy and Colonoscopy", "Inflammatory Bowel Disease (IBD)", "Liver Disease (Hepatology)", "Gastroesophageal Reflux Disease (GERD)", "Irritable Bowel Syndrome (IBS)", "Pancreatic Disorders"],
+      "careerOutlook": "A blend of internal medicine and procedural work. GI specialists are in demand for both diagnostic procedures (like colonoscopies) and managing chronic digestive health conditions."
+    },
+    "Endocrinology": {
+      "summary": "Endocrinologists are experts in hormones and the glands that produce them. They manage complex and systemic diseases like diabetes, thyroid disorders, and osteoporosis. This is a cerebral, detail-oriented field focused on restoring the body's delicate chemical balance.",
+      "keyFocusAreas": ["Diabetes Mellitus", "Thyroid Disorders", "Osteoporosis", "Metabolism", "Adrenal and Pituitary Gland Disorders", "Hormone Replacement Therapy"],
+      "careerOutlook": "With rising rates of diabetes and other metabolic disorders, endocrinologists are vital. Most work in outpatient settings, managing chronic conditions and developing long-term patient relationships."
+    },
+    "Pulmonology": {
+      "summary": "Pulmonologists are lung specialists who treat diseases of the respiratory system. They manage conditions like asthma, COPD, pneumonia, and lung cancer. Many also specialize in critical care medicine, managing patients on ventilators in the ICU.",
+      "keyFocusAreas": ["Asthma and COPD", "Lung Cancer", "Sleep Apnea", "Interstitial Lung Disease", "Critical Care Medicine", "Bronchoscopy"],
+      "careerOutlook": "Essential in both outpatient clinics and hospital ICUs. This field is crucial for managing common chronic diseases and life-threatening respiratory failures."
+    },
+    "Emergency Medicine": {
+      "summary": "Emergency medicine physicians thrive in a fast-paced, high-pressure environment. They are the masters of multitasking, trained to make quick decisions and treat a huge variety of undiagnosed illnesses and injuries in the emergency department. No two shifts are ever the same.",
+      "keyFocusAreas": ["Trauma Resuscitation", "Acute Cardiac Events", "Stroke Triage", "Sepsis Management", "Minor Procedures", "Disaster Preparedness"],
+      "careerOutlook": "A dynamic, shift-based specialty that offers a good work-life balance outside of work hours. ER doctors are the frontline of medicine, working in hospitals and urgent care centers."
+    },
+    "Ophthalmology": {
+      "summary": "Ophthalmologists are physicians and surgeons who specialize in eye and vision care. They treat a range of conditions from common eye infections to complex diseases like glaucoma and cataracts, performing delicate microsurgery to preserve and restore sight.",
+      "keyFocusAreas": ["Cataract Surgery", "Glaucoma Management", "Retinal Diseases", "Corneal Transplants", "LASIK and Refractive Surgery", "Pediatric Ophthalmology"],
+      "careerOutlook": "A highly sought-after specialty that combines clinic-based medicine with intricate surgery. Ophthalmologists significantly impact quality of life by protecting the precious gift of sight."
+    },
+    "Pathology": {
+      "summary": "Pathologists are the 'doctors' doctor,' working behind the scenes to provide definitive diagnoses. They analyze tissues, cells, and body fluids under a microscope to identify diseases like cancer. Their work is the foundation upon which most medical treatment is built.",
+      "keyFocusAreas": ["Surgical Pathology", "Cytopathology", "Forensic Pathology", "Hematopathology", "Microbiology", "Laboratory Management"],
+      "careerOutlook": "A cornerstone of medicine with zero patient interaction. Pathologists work in labs in hospitals and private companies, providing critical information that guides clinical decisions."
+    },
+    "Nephrology": {
+      "summary": "Nephrologists are kidney specialists who manage kidney disease, electrolyte imbalances, and hypertension. A major part of their work involves overseeing dialysis for patients with kidney failure. This field requires a deep understanding of physiology and managing complex, chronic illness.",
+      "keyFocusAreas": ["Chronic Kidney Disease (CKD)", "Dialysis", "Kidney Transplant", "Hypertension", "Electrolyte Disorders", "Glomerulonephritis"],
+      "careerOutlook": "A vital internal medicine subspecialty. With the rising prevalence of CKD, nephrologists are crucial for managing a complex and growing patient population, primarily in outpatient dialysis centers and hospitals."
+    },
+    "OB/GYN": {
+      "summary": "Obstetrician-gynecologists (OB/GYNs) are specialists in female reproductive health. They provide care through all stages of a woman's life, from routine gynecological exams to pregnancy and childbirth. This specialty offers a unique blend of primary care, surgery, and the joy of bringing new life into the world.",
+      "keyFocusAreas": ["Prenatal Care and Delivery", "Gynecological Surgery", "Contraception Management", "Menopause", "Infertility", "Women's Health Screenings"],
+      "careerOutlook": "A rewarding and diverse field with long-term patient relationships. OB/GYNs can have demanding schedules but experience some of the most profound moments in medicine."
+    }
+  }
+}

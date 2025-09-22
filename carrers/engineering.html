@@ -9,8 +9,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #43485c;
+            background-color: #acc6eeba;
+            color: #0b1e3acb;
         }
         .container {
             min-height: 100vh;
@@ -35,8 +35,8 @@
             margin-bottom: 0;
         }
         .hexagon-container {
-            width: 150px;
-            height: 173.2px;
+            width: 170px;
+            height: 183.2px;
             margin: 0 5px;
             position: relative;
             cursor: pointer;
@@ -63,10 +63,18 @@
         .insights-section {
             display: none;
         }
+        .insights-box {
+            background: linear-gradient(135deg, #E8F0FF 0%, #D4E4FF 100%);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+        }
+        .insights-output {
+            background: linear-gradient(135deg, #F5F9FF 0%, #E8F0FF 100%);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
         #chatbot-button {
             position: fixed;
-            bottom: 80px;
-            right: 80px;
+            bottom: 70px;
+            right: 70px;
             width: 100px;
             height: 100px;
             border-radius: 50%;
@@ -76,7 +84,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #fff;
+            background-color: #ffffff;
             cursor: pointer;
             transition: transform 0.2s;
         }
@@ -90,7 +98,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
 
     <!-- Header Navigation Bar -->
     <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
@@ -116,7 +124,7 @@
         </nav>
         <div class="flex items-center space-x-4">
             <button class="text-white hover:text-gray-200">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 2a6 6 0 016 6v3.586l1.707 1.707A1 1 0 0118 14H2a1 1 0 01.293-.707L4 11.586V8a6 6 0 016-6zM10 18a3 3 0 003-3H7a3 3 0 003 3z" />
                 </svg>
             </button>
@@ -130,9 +138,9 @@
     </header>
 
     <div class="container max-w-7xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 mt-12 mb-4">Engineering Career Hub</h1>
-        <p class="text-lg text-gray-700 mb-8 max-w-2xl">
-            Click on any of the hexagons below to learn more about a specific field of engineering.
+        <h1 id="main-title" class="text-5xl md:text-6xl font-extrabold text-blue-900 mt-12 mb-4">Career Hub</h1>
+        <p id="description" class="text-lg text-gray-700 mb-8 max-w-2xl">
+            Click on any of the hexagons below to learn more about a specific field.
         </p>
 
         <!-- Hexagon Layout -->
@@ -140,36 +148,81 @@
             <!-- Hexagons will be dynamically inserted here -->
         </div>
 
-        <!-- Engineering Insights Section -->
-        <div id="insightsSection" class="w-full w-11/12 mx-auto mt-12 p-6 bg-white rounded-xl shadow-lg insights-section">
-            <h2 class="text-3xl font-bold text-blue-800 mb-4">✨ Engineering Insights ✨</h2>
-            <div id="insightsOutput" class="p-4 bg-gray-50 rounded-lg min-h-[150px] text-left overflow-y-auto max-h-[400px]">
+        <!-- Career Insights Section -->
+        <div id="insightsSection" class="w-full w-11/12 mx-auto mt-12 p-6 insights-box rounded-xl shadow-lg insights-section">
+            <h2 id="insights-title" class="text-3xl font-bold text-blue-800 mb-4">✨ Career Insights ✨</h2>
+            <div id="insightsOutput" class="p-4 insights-output rounded-lg min-h-[150px] text-left overflow-y-auto max-h-[400px]">
                 <p class="text-gray-500 italic">Insights will appear here...</p>
             </div>
         </div>
     </div>
 
     <script>
-        let engineeringData = {};
+        let careerData = {};
+        let currentField = 'engineering'; // Default field
 
-        // Load engineering data from JSON file
-        async function loadEngineeringData() {
+        // Function to get URL parameter
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Function to capitalize first letter
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        // Load career data from JSON file
+        async function loadCareerData() {
             try {
-                const response = await fetch('engineering.json');
-                engineeringData = await response.json();
+                // Get field from URL parameter or default to 'engineering'
+                const fieldParam = getUrlParameter('field');
+                if (fieldParam) {
+                    currentField = fieldParam.toLowerCase();
+                }
+
+                const response = await fetch(`${currentField}.json`);
+                careerData = await response.json();
+                
+                // Update page titles and content
+                updatePageContent();
                 createHexagonGrid();
             } catch (error) {
-                console.error('Error loading engineering data:', error);
+                console.error('Error loading career data:', error);
+                // Fallback to engineering if other field fails
+                if (currentField !== 'engineering') {
+                    currentField = 'engineering';
+                    loadCareerData();
+                }
             }
+        }
+
+        function updatePageContent() {
+            const fieldName = capitalizeFirstLetter(currentField);
+            
+            // Update main title
+            document.getElementById('main-title').textContent = `${fieldName} Career Hub`;
+            
+            // Update description
+            document.getElementById('description').textContent = 
+                `Click on any of the hexagons below to learn more about a specific field of ${currentField}.`;
+            
+            // Update insights title
+            document.getElementById('insights-title').textContent = `✨ ${fieldName} Insights ✨`;
         }
 
         function createHexagonGrid() {
             const hexGrid = document.getElementById('hexGrid');
-            const fields = engineeringData.fields;
+            const fields = careerData.fields;
             
             if (!fields) return;
 
-            const pattern = [4, 3];
+            // Clear existing content
+            hexGrid.innerHTML = '';
+
+            const pattern = [5, 6];
             let fieldIndex = 0;
             let patternIndex = 0;
 
@@ -207,19 +260,19 @@
             hexagons.forEach(hexagon => {
                 hexagon.addEventListener('click', () => {
                     const fieldName = hexagon.getAttribute('data-field');
-                    showEngineeringInsights(fieldName);
+                    showCareerInsights(fieldName);
                 });
             });
         }
 
-        function showEngineeringInsights(fieldName) {
+        function showCareerInsights(fieldName) {
             const insightsSection = document.getElementById('insightsSection');
             const insightsOutput = document.getElementById('insightsOutput');
             
             insightsSection.style.display = 'block';
             insightsOutput.innerHTML = `<p class="text-gray-500 italic animate-pulse">Loading insights for "${fieldName}"...</p>`;
 
-            const insight = engineeringData.insights[fieldName];
+            const insight = careerData.insights[fieldName];
 
             if (insight) {
                 setTimeout(() => {
@@ -240,7 +293,7 @@
         }
 
         // Initialize the page
-        window.onload = loadEngineeringData;
+        window.onload = loadCareerData;
     </script>
 
     <a href="../chat.html" id="chatbot-button" title="Chat with us!">
