@@ -1,0 +1,34 @@
+[
+        {
+    "id": "vit-vellore",
+    "name": "Vellore Institute of Technology (VIT)",
+    "tagline": "Fees, Courses, Admissions 2025",
+    "address": "Vellore, Tamil Nadu",
+    "ratings": "4.3/5",
+    "badges": [
+        "NAAC A++",
+        "Private Deemed University",
+        "Estd. 1984"
+    ],
+    "bannerUrl": "https://placehold.co/1200x250/2563eb/ffffff?text=VIT+Banner",
+    "logoUrl": "https://placehold.co/80x80/2563eb/ffffff?text=VIT",
+    "lastUpdated": "31 Aug 25",
+    "content": {
+        "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\"><p class=\"text-gray-700 leading-relaxed\">VIT Vellore is one of India’s leading private institutions, renowned for its academic excellence, research, and strong placement record. It attracts students from across India and over 50 countries worldwide.</p></div>",
+        "Courses": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\"><h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Courses Offered</h2><ul class=\"space-y-4\"><li class=\"p-4 rounded-md border border-gray-200\"><h3 class=\"font-bold text-lg\">B.Tech - Computer Science and Engineering</h3><p class=\"text-sm text-gray-500\">Duration: 4 years | Seats: 960</p></li><li class=\"p-4 rounded-md border border-gray-200\"><h3 class=\"font-bold text-lg\">B.Tech - Mechanical Engineering</h3><p class=\"text-sm text-gray-500\">Duration: 4 years | Seats: 480</p></li><li class=\"p-4 rounded-md border border-gray-200\"><h3 class=\"font-bold text-lg\">MBA</h3><p class=\"text-sm text-gray-500\">Duration: 2 years | Seats: 240</p></li></ul></div>",
+        "Fees": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\"><h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Fee Structure</h2><div class=\"space-y-4\"><div class=\"p-4 rounded-md border border-gray-200\"><h3 class=\"font-bold text-lg\">Undergraduate Programs</h3><p class=\"text-sm text-gray-500\">Tuition Fee: ₹1,95,000 per semester</p><p class=\"text-sm text-gray-500\">Hostel & Mess Fee: ₹70,000 per year</p></div><div class=\"p-4 rounded-md border border-gray-200\"><h3 class=\"font-bold text-lg\">Postgraduate Programs</h3><p class=\"text-sm text-gray-500\">Total Program Fee: ₹7,00,000</p></div></div></div>"
+    },
+    "placements": {
+            "salaryByYear": {
+            "labels": ["2022", "2023", "2024"],
+            "highestSalary": [4200000, 4800000, 5500000],
+            "averageSalary": [850000, 1000000, 1200000]
+            },
+            "salaryDistribution": {
+            "2022": { "labels": ["0-5L", "5-10L", "10-20L", ">20L"], "data": [30, 40, 20, 10] },
+            "2023": { "labels": ["0-5L", "5-10L", "10-20L", ">20L"], "data": [25, 38, 25, 12] },
+            "2024": { "labels": ["0-5L", "5-10L", "10-20L", ">20L"], "data": [20, 35, 30, 15] }
+            }
+        }
+    }
+]
