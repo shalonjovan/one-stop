@@ -10,7 +10,7 @@
     "gov_pri": "Government",
     "placement": 96.8,
     "review": 4.5,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/DU"
   },
   {
     "name": "Indian Institute of Technology",
@@ -23,7 +23,7 @@
     "gov_pri": "Government",
     "placement": 98.2,
     "review": 5.0,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/srm"
   },
   {
     "name": "All India Institute of Medical Sciences",

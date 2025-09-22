@@ -1,0 +1,43 @@
+[
+    {
+        "id": "ssn-college",
+        "name": "SSN College of Engineering",
+        "tagline": "Fees, Course, Admissions 2025",
+        "address": "Old Mahabalipuram Road, Chennai",
+        "ratings": "4.5/5",
+        "badges": [
+            "A++ NAAC accredited",
+            "Private Institute",
+            "Estd. 1996"
+        ],
+        "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=SSN+Banner",
+        "logoUrl": "https://placehold.co/80x80/6366f1/ffffff?text=SSN",
+        "lastUpdated": "31 Aug 25",
+        "content": {
+            "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        SSN College of Engineering is a premier institution known for its strong academic programs, excellent faculty, and state-of-the-art facilities. Established in 1996, it has consistently been ranked among the top engineering colleges in India. The campus offers a vibrant student life with numerous clubs and activities.\n    </p>\n</div>",
+            "Courses": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Courses Offered</h2>\n    <ul class=\"space-y-4\">\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Bachelor of Engineering (B.E.) - Computer Science</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 4 years | Seats: 120</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Bachelor of Engineering (B.E.) - Electronics and Communication</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 4 years | Seats: 120</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Master of Business Administration (MBA)</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 2 years | Seats: 60</p>\n        </li>\n    </ul>\n</div>",
+            "Fees": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Fee Structure</h2>\n    <div class=\"space-y-4\">\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Undergraduate Programs</h3>\n            <p class=\"text-sm text-gray-500\">Tuition Fee: $18,000 per year</p>\n            <p class=\"text-sm text-gray-500\">Hostel & Mess Fee: $2,500 per year</p>\n        </div>\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Postgraduate Programs</h3>\n            <p class=\"text-sm text-gray-500\">Total Program Fee: $25,000</p>\n        </div>\n    </div>\n</div>"
+        },
+        "placements": {
+            "salaryByYear": {
+                "labels": ["2022", "2023", "2024"],
+                "highestSalary": [4500000, 5200000, 6000000],
+                "averageSalary": [1000000, 1200000, 1500000]
+            },
+            "salaryDistribution": {
+                "2022": { 
+                    "labels": ["0-5L", "5-10L", "10-20L", ">20L"], 
+                    "data": [25, 40, 20, 15] 
+                },
+                "2023": { 
+                    "labels": ["0-5L", "5-10L", "10-20L", ">20L"], 
+                    "data": [20, 35, 25, 20] 
+                },
+                "2024": { 
+                    "labels": ["0-5L", "5-10L", "10-20L", ">20L"], 
+                    "data": [15, 30, 30, 25] 
+                }
+            }
+        }
+    }
+]
