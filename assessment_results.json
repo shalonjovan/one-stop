@@ -32,6 +32,7 @@
     ]
   },
   {
+<<<<<<< HEAD
     "userName": "santosh",
     "age": "23",
     "gender": "male",
@@ -466,6 +467,7 @@
       "Data Science (with focus on theoretical modeling)",
       "Software Engineering (focused on AI/ML)",
       "Web3 Development"
+=======
     "userName": "joe",
     "age": "19",
     "gender": "male",
@@ -484,6 +486,7 @@
     "generalInterest": "Healthcare",
     "specializedFields": [
       "Dentistry"
+>>>>>>> 08d7af391e40ac3c551c6dfb2e2b0308cc123e4a
     ]
   }
 ]

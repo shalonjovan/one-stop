@@ -272,6 +272,12 @@
             insightsSection.style.display = 'block';
             insightsOutput.innerHTML = `<p class="text-gray-500 italic animate-pulse">Loading insights for "${fieldName}"...</p>`;
 
+            // Smooth scroll to insights section
+            insightsSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+
             const insight = careerData.insights[fieldName];
 
             if (insight) {
@@ -286,7 +292,7 @@
                         <h4 class="text-lg font-semibold text-gray-700">Career Outlook:</h4>
                         <p>${insight.careerOutlook}</p>
                     `;
-                }, 100);
+                }, 1000);
             } else {
                 insightsOutput.innerHTML = `<p class="text-red-500">Could not retrieve insights. Please try again.</p>`;
             }

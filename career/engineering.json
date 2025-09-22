@@ -17,98 +17,124 @@
     { "name": "Textile Engineering", "color": "#D946EF" },
     { "name": "Industrial Engineering", "color": "#06B6D4" },
     { "name": "Genetic Engineering", "color": "#EC4899" },
-    { "name": "Environmental Engineering", "color": "#6366F1" }
+    { "name": "Environmental Engineering", "color": "#6366F1" },
+    { "name": "Metallurgical Engineering", "color": "#A855F7" },
+    { "name": "Instrumentation Engineering", "color": "#14B8A6" }
   ],
   "insights": {
     "Computer Science Engineering": {
       "summary": "This is the world of digital creation, where you become a modern-day magician! Computer Science engineers are the architects of the digital age, building everything from mind-bending video games to the social media platforms we can't live without. You'll be a master of logic, turning complex ideas into functional, beautiful software.",
-      "coreConcepts": ["Data Structures & Algorithms", "Operating Systems", "Networking", "Artificial Intelligence", "Cybersecurity", "Software Development"],
+      "keyFocusAreas": ["Data Structures & Algorithms", "Operating Systems", "Networking", "Artificial Intelligence", "Cybersecurity", "Software Development"],
       "careerOutlook": "The demand for software developers, web builders, AI specialists, and games developers is skyrocketing. This field offers endless opportunities in every industry you can imagine, with high salaries and the chance to build the future."
     },
     "Information Technology": {
       "summary": "IT professionals are the digital guardians of organizations, ensuring that technology runs smoothly and securely. They are the problem-solvers who keep the digital world connected, from managing complex networks to protecting data from cyber threats. If you love solving puzzles and making things work, IT is your playground.",
-      "coreConcepts": ["Network Management", "Database Systems", "Cloud Computing", "IT Security", "Systems Administration", "Data Analysis"],
+      "keyFocusAreas": ["Network Management", "Database Systems", "Cloud Computing", "IT Security", "Systems Administration", "Data Analysis"],
       "careerOutlook": "With every company relying on technology, the need for IT professionals is constant. Career paths include network administrator, cybersecurity analyst, cloud engineer, and IT consultant, offering stable and rewarding work."
     },
     "Mechanical Engineering": {
       "summary": "Mechanical engineers are the master builders of the physical world. They design, analyze, and manufacture everything that moves or uses energy, from the tiniest robotic parts to massive industrial machinery. If you love understanding how things work and creating tangible solutions, this is the field for you.",
-      "coreConcepts": ["Thermodynamics", "Fluid Mechanics", "Material Science", "Robotics", "Mechanical Design", "Kinematics"],
+      "keyFocusAreas": ["Thermodynamics", "Fluid Mechanics", "Material Science", "Robotics", "Mechanical Design", "Kinematics"],
       "careerOutlook": "Mechanical engineers are essential in manufacturing, aerospace, automotive, and energy sectors. You can work on anything from creating next-generation electric cars to designing the robots that explore Mars. The possibilities are endless!"
     },
     "Electrical Engineering": {
       "summary": "This is the field of electricity and all its wonders. Electrical engineers are the innovators behind everything from the power grids that light up our cities to the microchips in our smartphones. You'll work on everything from large-scale power systems to the tiny circuits that power our lives.",
-      "coreConcepts": ["Circuit Analysis", "Electronics", "Power Systems", "Electromagnetism", "Signal Processing", "Control Systems"],
+      "keyFocusAreas": ["Circuit Analysis", "Electronics", "Power Systems", "Electromagnetism", "Signal Processing", "Control Systems"],
       "careerOutlook": "The world runs on electricity, making electrical engineering a field with limitless demand. You can pursue careers in power generation, telecommunications, embedded systems, and consumer electronics."
     },
     "Electronics Engineering": {
       "summary": "Electronics engineers are the architects of the digital world, creating the circuits and devices that power our modern technology. They design the heart and brain of every gadget, from smartphones and laptops to medical devices and smart home systems. If you're fascinated by the tiny components that make up our world, this is for you.",
-      "coreConcepts": ["Analog and Digital Circuits", "Microcontrollers", "VLSI Design", "Signal Processing", "Embedded Systems", "Robotics"],
+      "keyFocusAreas": ["Analog and Digital Circuits", "Microcontrollers", "VLSI Design", "Signal Processing", "Embedded Systems", "Robotics"],
       "careerOutlook": "Electronics engineers are in high demand in the consumer electronics, telecommunications, and automotive industries. They are the masterminds behind innovation, creating devices that change the way we live and interact with the world."
     },
     "Aerospace Engineering": {
       "summary": "Welcome to the world of flight and space exploration! Aerospace engineers design, build, and test aircraft, spacecraft, satellites, and missiles. If you dream of working on the next-generation jetliner or designing the rockets that will take humanity to Mars, this is the field that will make those dreams a reality.",
-      "coreConcepts": ["Aerodynamics", "Propulsion", "Structural Mechanics", "Flight Dynamics", "Orbital Mechanics", "Materials Engineering"],
+      "keyFocusAreas": ["Aerodynamics", "Propulsion", "Structural Mechanics", "Flight Dynamics", "Orbital Mechanics", "Materials Engineering"],
       "careerOutlook": "This field offers thrilling careers in aircraft manufacturing, space exploration agencies like NASA, and defense companies. You'll be at the forefront of human innovation, pushing the boundaries of what is possible."
     },
     "Civil Engineering": {
       "summary": "Civil engineers are the builders of society. They design and construct the infrastructure that makes our world function, including bridges, roads, tunnels, dams, and buildings. If you want to leave a lasting legacy and build something that improves people's lives for generations, this is the path for you.",
-      "coreConcepts": ["Structural Analysis", "Geotechnical Engineering", "Hydraulics", "Urban Planning", "Construction Management", "Surveying"],
+      "keyFocusAreas": ["Structural Analysis", "Geotechnical Engineering", "Hydraulics", "Urban Planning", "Construction Management", "Surveying"],
       "careerOutlook": "Civil engineers are always in demand for both public and private sector projects. You could be working on a massive skyscraper, designing a sustainable water system, or planning the next major highway."
     },
     "Biotechnology Engineering": {
       "summary": "This field merges biology with technology to create solutions for healthcare, agriculture, and industry. As a biotech engineer, you'll work with living organisms and biological systems to create groundbreaking products like life-saving drugs, sustainable biofuels, and genetically modified crops. It's a field where science meets engineering to solve some of the world's biggest challenges.",
-      "coreConcepts": ["Molecular Biology", "Bioprocess Engineering", "Genetic Engineering", "Bioinformatics", "Nanobiotechnology", "Biomaterials"],
+      "keyFocusAreas": ["Molecular Biology", "Bioprocess Engineering", "Genetic Engineering", "Bioinformatics", "Nanobiotechnology", "Biomaterials"],
       "careerOutlook": "Biotechnology is a rapidly growing field with diverse career opportunities in pharmaceuticals, food science, medical research, and environmental protection. You'll be at the cutting edge of scientific discovery."
     },
     "Chemical Engineering": {
       "summary": "Chemical engineers are the master chefs of the industry, transforming raw materials into everyday products like plastics, fuels, and medicines. They design processes to manufacture and refine materials on a massive scale. If you are fascinated by the chemistry behind the products we use every day, you'll love this field.",
-      "coreConcepts": ["Thermodynamics", "Process Control", "Reaction Engineering", "Mass Transfer", "Fluid Dynamics", "Polymer Science"],
+      "keyFocusAreas": ["Thermodynamics", "Process Control", "Reaction Engineering", "Mass Transfer", "Fluid Dynamics", "Polymer Science"],
       "careerOutlook": "Chemical engineers are vital in the oil and gas, pharmaceutical, food and beverage, and materials industries. You can work as a process engineer, a research scientist, or a quality control manager, creating the products that shape our world."
     },
     "Petroleum Engineering": {
       "summary": "Petroleum engineers are on the front lines of the energy industry, discovering and extracting oil and gas reserves to power our world. They are innovators who use advanced technology to locate resources and optimize production, ensuring a steady supply of energy for society.",
-      "coreConcepts": ["Reservoir Engineering", "Drilling Technology", "Petrophysics", "Geology", "Fluid Dynamics", "Well Logging"],
+      "keyFocusAreas": ["Reservoir Engineering", "Drilling Technology", "Petrophysics", "Geology", "Fluid Dynamics", "Well Logging"],
       "careerOutlook": "With a global demand for energy, petroleum engineers are in high demand in the oil and gas sector. You can work on offshore drilling rigs, in research labs, or in management, playing a key role in the energy transition."
     },
     "Automobile Engineering": {
       "summary": "Automobile engineers are the innovators behind the vehicles of the future, from self-driving cars to electric supercars. They design and develop every aspect of a vehicle, from its engine and chassis to its safety systems and infotainment. If you're passionate about cars and a future of sustainable transportation, this field is for you.",
-      "coreConcepts": ["Vehicle Dynamics", "Internal Combustion Engines", "Electric Vehicles", "Aerodynamics", "Automotive Design", "Manufacturing"],
+      "keyFocusAreas": ["Vehicle Dynamics", "Internal Combustion Engines", "Electric Vehicles", "Aerodynamics", "Automotive Design", "Manufacturing"],
       "careerOutlook": "The automotive industry is in a period of rapid change, creating new opportunities in electric vehicle technology, autonomous driving, and sustainable manufacturing. You can work as a design engineer, a systems engineer, or a research and development specialist."
     },
     "Marine Engineering": {
       "summary": "Marine engineers are the masterminds behind the machines that navigate our oceans. They design, build, and maintain everything from giant cargo ships and submarines to oil rigs and recreational boats. If you love the sea and have a passion for complex machinery, this is the perfect field.",
-      "coreConcepts": ["Ship Design", "Naval Architecture", "Propulsion Systems", "Marine Robotics", "Ocean Mechanics", "Materials Engineering"],
+      "keyFocusAreas": ["Ship Design", "Naval Architecture", "Propulsion Systems", "Marine Robotics", "Ocean Mechanics", "Materials Engineering"],
       "careerOutlook": "Careers in marine engineering are found in the naval forces, shipbuilding industries, offshore exploration, and cruise line operations. You can work on the cutting edge of underwater technology and exploration."
     },
     "Agricultural Engineering": {
       "summary": "Agricultural engineers are the key to a sustainable future, designing solutions for food production, land management, and environmental protection. They create and apply technology to improve farming, from developing smart irrigation systems to designing advanced harvesting machinery. If you want to help feed the world while protecting our planet, this field is for you.",
-      "coreConcepts": ["Soil and Water Conservation", "Agricultural Machinery", "Bioprocess Engineering", "Irrigation Systems", "Precision Agriculture", "Sustainable Farming"],
+      "keyFocusAreas": ["Soil and Water Conservation", "Agricultural Machinery", "Bioprocess Engineering", "Irrigation Systems", "Precision Agriculture", "Sustainable Farming"],
       "careerOutlook": "With a growing global population, the demand for agricultural engineers is on the rise. You can work for government agencies, agricultural companies, or in research, creating innovative solutions for food security."
     },
     "Mining Engineering": {
       "summary": "Mining engineers are the explorers of the modern age, locating, extracting, and processing valuable minerals and metals from the Earth. They design safe and efficient ways to mine resources, ensuring the materials that build our world are available. It's a field that combines geology, civil engineering, and mechanical engineering to unearth the world's treasures.",
-      "coreConcepts": ["Geology", "Mine Design", "Rock Mechanics", "Mineral Processing", "Blasting Techniques", "Mine Safety"],
+      "keyFocusAreas": ["Geology", "Mine Design", "Rock Mechanics", "Mineral Processing", "Blasting Techniques", "Mine Safety"],
       "careerOutlook": "The mining industry offers a global career path with roles in mine planning, operations management, and environmental reclamation. It's a field with strong demand and opportunities to work on large-scale projects."
     },
     "Textile Engineering": {
       "summary": "Textile engineers are the innovators behind the fabrics and materials that make up our clothing, home goods, and even advanced medical devices. They apply principles of chemistry, physics, and design to create everything from bulletproof vests to smart fabrics that can monitor your health. If you have a creative and technical mind, this field is a perfect fit.",
-      "coreConcepts": ["Polymer Science", "Yarn Manufacturing", "Fabric Design", "Dyeing and Finishing", "Non-woven Textiles", "Textile Composites"],
+      "keyFocusAreas": ["Polymer Science", "Yarn Manufacturing", "Fabric Design", "Dyeing and Finishing", "Non-woven Textiles", "Textile Composites"],
       "careerOutlook": "This field is constantly evolving with new technologies like smart textiles and sustainable manufacturing. Career paths include textile designer, quality control manager, and R&D scientist, with opportunities in fashion, sports, and healthcare."
     },
     "Industrial Engineering": {
       "summary": "Industrial engineers are the efficiency experts of the business world, finding ways to improve processes, eliminate waste, and increase productivity in any organization. They are the problem-solvers who optimize systems, from manufacturing assembly lines to healthcare delivery. If you have a passion for making things run better, this is your calling.",
-      "coreConcepts": ["Operations Research", "Supply Chain Management", "Ergonomics", "Quality Control", "Lean Manufacturing", "Systems Analysis"],
+      "keyFocusAreas": ["Operations Research", "Supply Chain Management", "Ergonomics", "Quality Control", "Lean Manufacturing", "Systems Analysis"],
       "careerOutlook": "Industrial engineers are in high demand across many sectors, including manufacturing, logistics, healthcare, and consulting. You can work as a process analyst, a project manager, or a supply chain strategist, making a tangible impact on a company's success."
     },
     "Genetic Engineering": {
       "summary": "Genetic engineers are the pioneers of a new biological frontier, directly manipulating the genetic makeup of organisms to create novel traits and solutions. They are at the forefront of medical breakthroughs, agricultural advancements, and sustainable bio-production. It's a field where you can literally change the blueprint of life.",
-      "coreConcepts": ["CRISPR Technology", "Molecular Biology", "Bioinformatics", "Gene Therapy", "Synthetic Biology", "Genomics"],
+      "keyFocusAreas": ["CRISPR Technology", "Molecular Biology", "Bioinformatics", "Gene Therapy", "Synthetic Biology", "Genomics"],
       "careerOutlook": "This is a field with explosive growth potential. Careers can be found in biomedical research, pharmaceutical companies, and agricultural science, developing new cures, improving crops, and creating advanced biofuels."
     },
     "Environmental Engineering": {
       "summary": "Environmental engineers are the protectors of our planet, using science and technology to solve complex environmental problems like pollution, waste management, and climate change. They design systems to purify water, clean up contaminated sites, and create sustainable energy solutions. If you're passionate about protecting the Earth, this is the field for you.",
-      "coreConcepts": ["Water and Wastewater Treatment", "Air Pollution Control", "Waste Management", "Ecosystem Restoration", "Environmental Impact Assessment", "Sustainable Design"],
+      "keyFocusAreas": ["Water and Wastewater Treatment", "Air Pollution Control", "Waste Management", "Ecosystem Restoration", "Environmental Impact Assessment", "Sustainable Design"],
       "careerOutlook": "The demand for environmental engineers is rapidly increasing as society focuses on sustainability. You can work for government agencies, consulting firms, or non-profits, making a real difference in the health of our planet."
+    },
+    "Metallurgical Engineering": {
+    "summary": "Metallurgical engineers are the metal masters, studying the properties, behavior, and processing of metals and alloys. They develop new materials for industries ranging from aerospace to electronics, ensuring strength, durability, and innovation in modern technology.",
+    "keyFocusAreas": [
+      "Physical Metallurgy",
+      "Extractive Metallurgy",
+      "Mechanical Behavior of Materials",
+      "Corrosion Engineering",
+      "Powder Metallurgy",
+      "Nanomaterials"
+    ],
+    "careerOutlook": "Metallurgical engineers are in demand in aerospace, automotive, mining, electronics, defense, and materials industries. They can work on creating lightweight aircraft parts, stronger construction materials, or advanced biomedical implants."
+    },
+    "Instrumentation Engineering": {
+    "summary": "Instrumentation engineers are the precision experts, designing and managing instruments used to measure, monitor, and control processes. They ensure accuracy and efficiency in industries like healthcare, automation, energy, and manufacturing.",
+    "keyFocusAreas": [
+      "Control Systems",
+      "Sensors and Transducers",
+      "Process Instrumentation",
+      "Industrial Automation",
+      "Embedded Systems",
+      "Signal Conditioning"
+    ],
+    "careerOutlook": "With the rise of smart manufacturing, robotics, and IoT, instrumentation engineers are highly valued. Career options include roles in automation, healthcare equipment design, oil & gas instrumentation, and process control."
     }
   }
 }
