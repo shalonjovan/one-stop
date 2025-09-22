@@ -6,8 +6,8 @@
     "studentClass": "12",
     "generalInterest": "Technology",
     "specializedFields": [
-      "Web Development",
-      "Cybersecurity"
+      "AI & Machine Learning",
+      "Web Development"
     ]
   },
   {
@@ -19,6 +19,38 @@
     "specializedFields": [
       "Web Development",
       "Cybersecurity"
+    ]
+  },
+  {
+    "userName": "caci",
+    "age": "20",
+    "gender": "female",
+    "studentClass": "12",
+    "generalInterest": "Technology",
+    "specializedFields": [
+      "Web Development",
+      "Cybersecurity"
+    ]
+  },
+  {
+    "userName": "joe",
+    "age": "19",
+    "gender": "male",
+    "studentClass": "12",
+    "generalInterest": "Science",
+    "specializedFields": [
+      "Astronomy",
+      "Physics"
+    ]
+  },
+  {
+    "userName": "he",
+    "age": "20",
+    "gender": "male",
+    "studentClass": "12",
+    "generalInterest": "Healthcare",
+    "specializedFields": [
+      "Dentistry"
     ]
   }
 ]
