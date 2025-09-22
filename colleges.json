@@ -3,7 +3,7 @@
         "name": "Indian Institute of Technology Jammu",
         "location": "Jagti, Jammu",
         "logo": "./assets/logo/IITJammu.webp",
-        "nirf": null,
+        "nirf": 100,
         "naac": null,
         "exam": "JEE Advanced/ JEE Main",
         "type": "Engineering",
