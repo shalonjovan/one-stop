@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .profile-container {
+            background-color: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4a90e2;
+            margin: 0 auto 1.5rem;
+        }
+
+        h1 {
+            color: #1f2937;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #4b5563;
+            font-size: 1.25rem;
+        }
+
+        .user-details {
+            margin-top: 2rem;
+            text-align: left;
+            padding-top: 1rem;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .user-details h2, .user-details h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .user-details p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        .user-details span {
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .upload-button {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <img id="profile-picture" class="profile-picture" src="https://placehold.co/150x150/e5e7eb/4b5563?text=Profile" alt="Profile Picture">
+        <input type="file" id="picture-upload" accept="image/*" class="hidden">
+        <label for="picture-upload" class="upload-button">Upload Picture</label>
+        
+        <h1 id="welcome-message">Welcome!</h1>
+        <p>Here are your details and assessment results.</p>
+        <div id="results-display" class="user-details">
+            <p>Loading your profile...</p>
+        </div>
+    </div>
+
+    <script>
+        const backend = 'http://localhost:3000';
+        const profilePicture = document.getElementById('profile-picture');
+        const pictureUpload = document.getElementById('picture-upload');
+        const resultsDisplay = document.getElementById('results-display');
+        const welcomeMessage = document.getElementById('welcome-message');
+
+        function getUserName() {
+            try {
+                const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                if (currentUser && currentUser.username) {
+                    return currentUser.username;
+                }
+            } catch (e) {
+                console.error("Error retrieving user data from localStorage:", e);
+            }
+            return null;
+        }
+
+        async function fetchAssessmentResults(username) {
+            try {
+                const res = await fetch(`${backend}/get-assessment/${username}`);
+                const data = await res.json();
+                if (res.ok) {
+                    displayResults(data.result);
+                    displayProfilePicture(username);
+                } else {
+                    // This handles the case where the assessment is not found (status 404)
+                    displayResults(null);
+                }
+            } catch (error) {
+                console.error('Error fetching assessment results:', error);
+                displayError("Failed to connect to the server.");
+            }
+        }
+
+        function displayResults(results) {
+            if (!results) {
+                welcomeMessage.textContent = "Welcome!";
+                resultsDisplay.innerHTML = `
+                    <h2>Assessment Not Found</h2>
+                    <p>It looks like you haven't taken the assessment yet. Please go to the <a href="assessment_test.html" class="text-blue-600 hover:underline">assessment page</a> to get started!</p>
+                `;
+                return;
+            }
+
+            welcomeMessage.textContent = `Welcome, ${results.userName}!`;
+            resultsDisplay.innerHTML = `
+                <h3>Personal Details</h3>
+                <p><strong>Name:</strong> <span>${results.userName}</span></p>
+                <p><strong>Age:</strong> <span>${results.age}</span></p>
+                <p><strong>Gender:</strong> <span>${results.gender}</span></p>
+                <p><strong>Class:</strong> <span>${results.studentClass}</span></p>
+                <br>
+                <h3>Your Results</h3>
+                <p><strong>General Interest:</strong> <span>${results.generalInterest}</span></p>
+                <p><strong>Specialized Fields:</strong> <span>${results.specializedFields.join(', ')}</span></p>
+            `;
+        }
+        
+        function displayProfilePicture(username) {
+            profilePicture.src = `/uploads/${username}.jpg?t=${new Date().getTime()}`;
+            profilePicture.onerror = () => {
+                profilePicture.src = "https://placehold.co/150x150/e5e7eb/4b5563?text=Profile";
+            };
+        }
+
+        function displayError(message) {
+            resultsDisplay.innerHTML = `
+                <h2>Error</h2>
+                <p>${message}</p>
+            `;
+        }
+
+        pictureUpload.addEventListener('change', async (event) => {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const user = getUserName();
+            if (!user) {
+                alert("You must be logged in to upload a picture.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('profilePicture', file);
+            formData.append('username', user);
+
+            try {
+                const res = await fetch(`${backend}/upload-picture`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (res.ok) {
+                    alert('Profile picture uploaded successfully!');
+                    displayProfilePicture(user);
+                } else {
+                    const data = await res.json();
+                    alert(data.error);
+                }
+            } catch (error) {
+                console.error('Failed to upload picture:', error);
+                alert('Failed to upload picture. Please try again.');
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const userName = getUserName();
+            if (userName) {
+                fetchAssessmentResults(userName);
+            } else {
+                window.location.href = '/login.html';
+            }
+        });
+    </script>
+</body>
+</html>
