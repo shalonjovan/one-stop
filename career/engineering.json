@@ -17,7 +17,9 @@
     { "name": "Textile Engineering", "color": "#D946EF" },
     { "name": "Industrial Engineering", "color": "#06B6D4" },
     { "name": "Genetic Engineering", "color": "#EC4899" },
-    { "name": "Environmental Engineering", "color": "#6366F1" }
+    { "name": "Environmental Engineering", "color": "#6366F1" },
+    { "name": "Metallurgical Engineering", "color": "#A855F7" },
+    { "name": "Instrumentation Engineering", "color": "#14B8A6" }
   ],
   "insights": {
     "Computer Science Engineering": {
@@ -109,6 +111,30 @@
       "summary": "Environmental engineers are the protectors of our planet, using science and technology to solve complex environmental problems like pollution, waste management, and climate change. They design systems to purify water, clean up contaminated sites, and create sustainable energy solutions. If you're passionate about protecting the Earth, this is the field for you.",
       "keyFocusAreas": ["Water and Wastewater Treatment", "Air Pollution Control", "Waste Management", "Ecosystem Restoration", "Environmental Impact Assessment", "Sustainable Design"],
       "careerOutlook": "The demand for environmental engineers is rapidly increasing as society focuses on sustainability. You can work for government agencies, consulting firms, or non-profits, making a real difference in the health of our planet."
+    },
+    "Metallurgical Engineering": {
+    "summary": "Metallurgical engineers are the metal masters, studying the properties, behavior, and processing of metals and alloys. They develop new materials for industries ranging from aerospace to electronics, ensuring strength, durability, and innovation in modern technology.",
+    "keyFocusAreas": [
+      "Physical Metallurgy",
+      "Extractive Metallurgy",
+      "Mechanical Behavior of Materials",
+      "Corrosion Engineering",
+      "Powder Metallurgy",
+      "Nanomaterials"
+    ],
+    "careerOutlook": "Metallurgical engineers are in demand in aerospace, automotive, mining, electronics, defense, and materials industries. They can work on creating lightweight aircraft parts, stronger construction materials, or advanced biomedical implants."
+    },
+    "Instrumentation Engineering": {
+    "summary": "Instrumentation engineers are the precision experts, designing and managing instruments used to measure, monitor, and control processes. They ensure accuracy and efficiency in industries like healthcare, automation, energy, and manufacturing.",
+    "keyFocusAreas": [
+      "Control Systems",
+      "Sensors and Transducers",
+      "Process Instrumentation",
+      "Industrial Automation",
+      "Embedded Systems",
+      "Signal Conditioning"
+    ],
+    "careerOutlook": "With the rise of smart manufacturing, robotics, and IoT, instrumentation engineers are highly valued. Career options include roles in automation, healthcare equipment design, oil & gas instrumentation, and process control."
     }
   }
 }

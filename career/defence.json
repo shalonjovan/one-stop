@@ -1,0 +1,126 @@
+{
+  "fields": [
+    { "name": "Army Officer", "color": "#3B82F6" },
+    { "name": "Naval Officer", "color": "#F97316" },
+    { "name": "Air Force Officer", "color": "#10B981" },
+    { "name": "Military Intelligence", "color": "#6366F1" },
+    { "name": "Defense Research", "color": "#EC4899" },
+    { "name": "Cyber Warfare", "color": "#F59E0B" },
+    { "name": "Military Engineering", "color": "#06B6D4" },
+    { "name": "Defense Logistics", "color": "#D946EF" },
+    { "name": "Special Forces", "color": "#4B5563" },
+    { "name": "Military Aviation", "color": "#EF4444" },
+    { "name": "Naval Engineering", "color": "#8B5CF6" },
+    { "name": "Defense Technology", "color": "#3B82F6" },
+    { "name": "Military Medicine", "color": "#10B981" },
+    { "name": "Defense Communications", "color": "#F97316" },
+    { "name": "Border Security", "color": "#D946EF" },
+    { "name": "Peacekeeping Operations", "color": "#06B6D4" },
+    { "name": "Counter-Terrorism", "color": "#4B5563" },
+    { "name": "Defense Administration", "color": "#EF4444" },
+    { "name": "Military Law", "color": "#8B5CF6" },
+    { "name": "Defense Strategy", "color": "#EC4899" }
+  ],
+  "insights": {
+    "Army Officer": {
+      "summary": "Army officers lead soldiers and manage military operations on land, serving as the backbone of ground forces. They command troops, plan tactical operations, and ensure mission success while maintaining the highest standards of discipline, honor, and service to their nation.",
+      "keyFocusAreas": ["Leadership and Command", "Tactical Operations", "Military Strategy", "Personnel Management", "Combat Training", "Logistics Coordination"],
+      "careerOutlook": "Army officers enjoy structured career progression with opportunities for specialized training, international assignments, and leadership roles. The profession offers job security, comprehensive benefits, and the honor of serving one's country with potential advancement to senior command positions."
+    },
+    "Naval Officer": {
+      "summary": "Naval officers command ships, submarines, and maritime operations, protecting national waters and projecting power across the seas. They lead naval crews, navigate complex maritime challenges, and maintain naval readiness for both peacetime and wartime missions.",
+      "keyFocusAreas": ["Naval Operations", "Ship Command", "Maritime Strategy", "Navigation", "Naval Warfare", "Fleet Management"],
+      "careerOutlook": "Naval officers have excellent career prospects with opportunities for sea command, shore assignments, and specialized roles. The profession provides global travel opportunities, technical expertise development, and pathways to senior naval leadership positions."
+    },
+    "Air Force Officer": {
+      "summary": "Air Force officers lead aerial operations and manage air power capabilities, from fighter pilots to mission commanders overseeing complex air operations. They ensure air superiority, provide close air support, and maintain readiness for air defense and strategic missions.",
+      "keyFocusAreas": ["Flight Operations", "Air Combat", "Mission Planning", "Aircraft Systems", "Aerospace Technology", "Air Traffic Control"],
+      "careerOutlook": "Air Force officers enjoy prestigious careers with opportunities for pilot training, technical specializations, and command positions. The field offers excellent training, cutting-edge technology experience, and strong civilian career prospects after military service."
+    },
+    "Military Intelligence": {
+      "summary": "Military intelligence officers gather, analyze, and interpret information crucial for national security and military operations. They work behind the scenes to provide decision-makers with actionable intelligence that protects forces and enables successful missions.",
+      "keyFocusAreas": ["Intelligence Analysis", "Surveillance", "Threat Assessment", "Information Warfare", "Counterintelligence", "Strategic Planning"],
+      "careerOutlook": "Military intelligence offers intellectually challenging careers with high security clearances and specialized skills. The field provides excellent transition opportunities to civilian intelligence agencies, cybersecurity, or consulting with competitive compensation."
+    },
+    "Defense Research": {
+      "summary": "Defense researchers develop cutting-edge military technologies and systems, from advanced weapons systems to protective equipment. They work on innovative solutions that give military forces technological advantages and improve soldier safety and effectiveness.",
+      "keyFocusAreas": ["Weapons Development", "Advanced Materials", "Military Technology", "Systems Engineering", "Research and Development", "Innovation Management"],
+      "careerOutlook": "Defense research offers exciting careers at the forefront of technology with opportunities in government labs, defense contractors, and research institutions. The field provides excellent compensation, intellectual challenges, and the chance to develop technologies that protect national security."
+    },
+    "Cyber Warfare": {
+      "summary": "Cyber warfare specialists protect military networks and conduct electronic operations in cyberspace. They defend against cyber attacks, develop offensive cyber capabilities, and ensure the security of critical military information systems in an increasingly connected world.",
+      "keyFocusAreas": ["Network Security", "Cyber Operations", "Information Systems", "Electronic Warfare", "Cybersecurity", "Digital Forensics"],
+      "careerOutlook": "Cyber warfare is one of the fastest-growing military specialties with excellent civilian career prospects. The field offers high-demand skills, competitive compensation, and opportunities in both military and civilian cybersecurity sectors."
+    },
+    "Military Engineering": {
+      "summary": "Military engineers build and maintain the infrastructure that supports military operations, from airfields and bridges to fortifications and communication systems. They ensure that forces have the physical infrastructure needed for successful operations worldwide.",
+      "keyFocusAreas": ["Combat Engineering", "Construction Management", "Infrastructure Development", "Explosive Ordnance Disposal", "Bridge Building", "Fortification Design"],
+      "careerOutlook": "Military engineers develop highly transferable skills with excellent civilian career prospects in construction, infrastructure, and project management. The field offers technical expertise, leadership experience, and strong job security."
+    },
+    "Defense Logistics": {
+      "summary": "Defense logistics officers manage the complex supply chains that keep military forces equipped and operational. They coordinate the movement of personnel, equipment, and supplies across global operations, ensuring forces have what they need when they need it.",
+      "keyFocusAreas": ["Supply Chain Management", "Transportation Coordination", "Inventory Management", "Procurement", "Distribution Systems", "Resource Planning"],
+      "careerOutlook": "Defense logistics provides excellent training in supply chain management with strong civilian career prospects. The field offers opportunities in logistics companies, manufacturing, and consulting with valuable leadership and management experience."
+    },
+    "Special Forces": {
+      "summary": "Special Forces operators conduct specialized military missions requiring advanced training and exceptional physical and mental capabilities. They perform counter-terrorism, reconnaissance, and unconventional warfare missions in challenging environments worldwide.",
+      "keyFocusAreas": ["Advanced Combat Training", "Counter-Terrorism", "Reconnaissance", "Unconventional Warfare", "Foreign Languages", "Cultural Training"],
+      "careerOutlook": "Special Forces offers elite military careers with intensive training and specialized skills. While demanding, the field provides unique experiences, strong brotherhood, and excellent opportunities in security consulting, law enforcement, or private sector after military service."
+    },
+    "Military Aviation": {
+      "summary": "Military aviation specialists operate and maintain military aircraft, from fighter jets to transport planes and helicopters. They ensure aircraft readiness, conduct flight operations, and maintain the high standards required for safe and effective military aviation.",
+      "keyFocusAreas": ["Aircraft Operations", "Flight Training", "Aircraft Maintenance", "Aviation Safety", "Mission Planning", "Air Traffic Management"],
+      "careerOutlook": "Military aviation provides excellent training with strong civilian career prospects in commercial aviation, aerospace industry, and aviation management. The field offers technical expertise, safety training, and leadership experience highly valued by civilian employers."
+    },
+    "Naval Engineering": {
+      "summary": "Naval engineers design, build, and maintain ships, submarines, and naval systems. They ensure vessel seaworthiness, manage propulsion systems, and maintain the complex engineering systems that keep naval forces operational at sea.",
+      "keyFocusAreas": ["Ship Design", "Marine Engineering", "Propulsion Systems", "Naval Architecture", "Systems Maintenance", "Port Engineering"],
+      "careerOutlook": "Naval engineering provides specialized technical skills with excellent civilian opportunities in shipbuilding, marine engineering, and maritime industries. The field offers technical expertise, problem-solving experience, and leadership development."
+    },
+    "Defense Technology": {
+      "summary": "Defense technology specialists develop and implement advanced technological systems for military applications. They work with cutting-edge technologies including robotics, artificial intelligence, and advanced communications to enhance military capabilities.",
+      "keyFocusAreas": ["Military Robotics", "Advanced Communications", "Electronic Systems", "Technology Integration", "Systems Analysis", "Innovation Development"],
+      "careerOutlook": "Defense technology offers careers at the forefront of technological innovation with excellent civilian prospects in technology companies, engineering firms, and research institutions. The field provides exposure to cutting-edge technologies and strong technical skills."
+    },
+    "Military Medicine": {
+      "summary": "Military medical professionals provide healthcare to service members and their families while developing expertise in combat medicine and emergency care. They serve in hospitals, field units, and specialized medical roles supporting military operations worldwide.",
+      "keyFocusAreas": ["Combat Medicine", "Emergency Care", "Military Healthcare", "Trauma Surgery", "Preventive Medicine", "Medical Evacuation"],
+      "careerOutlook": "Military medicine provides excellent medical training with unique combat and emergency medicine experience. The field offers civilian career opportunities in emergency medicine, trauma surgery, and healthcare administration with valuable leadership experience."
+    },
+    "Defense Communications": {
+      "summary": "Defense communications specialists manage military communication networks and systems, ensuring secure and reliable communications for military operations. They maintain communication links that are critical for command, control, and coordination of military forces.",
+      "keyFocusAreas": ["Military Communications", "Signal Intelligence", "Network Management", "Satellite Communications", "Radio Systems", "Information Security"],
+      "careerOutlook": "Defense communications provides valuable technical skills in telecommunications and network management with excellent civilian career prospects. The field offers opportunities in telecommunications companies, IT firms, and government agencies."
+    },
+    "Border Security": {
+      "summary": "Border security specialists protect national borders from illegal crossings, smuggling, and security threats. They use advanced surveillance technology, conduct patrols, and coordinate with other agencies to maintain border integrity and national security.",
+      "keyFocusAreas": ["Border Patrol", "Surveillance Technology", "Immigration Enforcement", "Customs Operations", "Intelligence Analysis", "International Cooperation"],
+      "careerOutlook": "Border security offers stable careers in government agencies with opportunities for advancement and specialized training. The field provides law enforcement experience, security clearances, and opportunities in homeland security and related fields."
+    },
+    "Peacekeeping Operations": {
+      "summary": "Peacekeeping specialists participate in international missions to maintain peace and stability in conflict zones. They work with international organizations, provide humanitarian assistance, and help rebuild societies emerging from conflict.",
+      "keyFocusAreas": ["International Relations", "Conflict Resolution", "Humanitarian Operations", "Cultural Awareness", "Diplomacy", "Stabilization Operations"],
+      "careerOutlook": "Peacekeeping operations provide unique international experience with opportunities in international organizations, diplomatic service, and non-governmental organizations. The field offers cross-cultural skills, language abilities, and global perspectives highly valued in civilian careers."
+    },
+    "Counter-Terrorism": {
+      "summary": "Counter-terrorism specialists work to prevent, detect, and respond to terrorist threats. They analyze intelligence, conduct operations, and coordinate with multiple agencies to protect against terrorist activities and maintain national security.",
+      "keyFocusAreas": ["Threat Analysis", "Counter-Terrorism Operations", "Intelligence Gathering", "Crisis Response", "International Cooperation", "Security Planning"],
+      "careerOutlook": "Counter-terrorism offers specialized careers in intelligence agencies, law enforcement, and security consulting. The field provides unique skills, security clearances, and opportunities in homeland security, private security, and international security sectors."
+    },
+    "Defense Administration": {
+      "summary": "Defense administrators manage the business and administrative functions that support military operations. They handle budgets, personnel, contracts, and administrative systems that keep military organizations running efficiently and effectively.",
+      "keyFocusAreas": ["Military Administration", "Budget Management", "Personnel Systems", "Contract Management", "Policy Implementation", "Organizational Management"],
+      "careerOutlook": "Defense administration provides excellent management and administrative experience with strong civilian career prospects. The field offers opportunities in public administration, business management, and consulting with valuable leadership and organizational skills."
+    },
+    "Military Law": {
+      "summary": "Military lawyers serve as legal advisors to military commands, handle military justice cases, and ensure compliance with military regulations and international law. They provide legal expertise essential for military operations and personnel matters.",
+      "keyFocusAreas": ["Military Justice", "International Law", "Legal Advocacy", "Court Martial Proceedings", "Legal Counseling", "Regulatory Compliance"],
+      "careerOutlook": "Military law provides unique legal experience with excellent civilian career prospects in law firms, government agencies, and corporate legal departments. The field offers trial experience, leadership development, and specialized legal knowledge."
+    },
+    "Defense Strategy": {
+      "summary": "Defense strategists develop long-term military strategies and policies to address national security challenges. They analyze threats, develop strategic plans, and advise senior leaders on matters of national defense and military policy.",
+      "keyFocusAreas": ["Strategic Planning", "Threat Analysis", "Policy Development", "National Security", "Military Planning", "International Relations"],
+      "careerOutlook": "Defense strategy offers intellectually challenging careers with opportunities in think tanks, government agencies, and consulting firms. The field provides strategic thinking skills, policy experience, and insights into national security highly valued in civilian strategic roles."
+    }
+  }
+}

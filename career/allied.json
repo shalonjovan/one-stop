@@ -1,0 +1,126 @@
+{
+  "fields": [
+    { "name": "Nursing", "color": "#3B82F6" },
+    { "name": "Pharmacy", "color": "#F97316" },
+    { "name": "Physiotherapy", "color": "#10B981" },
+    { "name": "Medical Laboratory Technology", "color": "#6366F1" },
+    { "name": "Radiology Technology", "color": "#EC4899" },
+    { "name": "Occupational Therapy", "color": "#F59E0B" },
+    { "name": "Speech-Language Pathology", "color": "#06B6D4" },
+    { "name": "Respiratory Therapy", "color": "#D946EF" },
+    { "name": "Dental Hygiene", "color": "#4B5563" },
+    { "name": "Nutrition and Dietetics", "color": "#EF4444" },
+    { "name": "Medical Imaging Technology", "color": "#8B5CF6" },
+    { "name": "Paramedic Sciences", "color": "#3B82F6" },
+    { "name": "Audiology", "color": "#10B981" },
+    { "name": "Prosthetics and Orthotics", "color": "#F97316" },
+    { "name": "Medical Social Work", "color": "#D946EF" },
+    { "name": "Clinical Psychology", "color": "#06B6D4" },
+    { "name": "Perfusion Technology", "color": "#4B5563" },
+    { "name": "Optometry", "color": "#EF4444" },
+    { "name": "Biomedical Engineering", "color": "#8B5CF6" },
+    { "name": "Health Information Management", "color": "#EC4899" }
+  ],
+  "insights": {
+    "Nursing": {
+      "summary": "Nurses are the compassionate backbone of healthcare, providing direct patient care, emotional support, and health education. They work closely with patients and families during some of life's most vulnerable moments, combining clinical expertise with human connection to promote healing and wellness.",
+      "keyFocusAreas": ["Patient Care", "Medication Administration", "Health Assessment", "Patient Education", "Care Planning", "Medical Ethics"],
+      "careerOutlook": "Nursing offers diverse career paths with strong job security and growth potential. You can specialize in areas like critical care, pediatrics, mental health, or become a nurse practitioner, nurse educator, or healthcare administrator."
+    },
+    "Pharmacy": {
+      "summary": "Pharmacists are the medication experts who ensure safe and effective drug therapy for patients. They bridge the gap between medicine and chemistry, counseling patients on medications, checking for drug interactions, and playing a crucial role in healthcare teams.",
+      "keyFocusAreas": ["Pharmacology", "Drug Interactions", "Patient Counseling", "Medication Therapy Management", "Clinical Pharmacy", "Pharmaceutical Care"],
+      "careerOutlook": "Pharmacists enjoy excellent job prospects in community pharmacies, hospitals, pharmaceutical companies, and clinical settings. Advanced roles include clinical pharmacist, pharmaceutical researcher, or pharmacy manager with competitive salaries and professional respect."
+    },
+    "Physiotherapy": {
+      "summary": "Physiotherapists are movement specialists who help people recover from injuries, manage chronic conditions, and improve their quality of life through exercise and manual therapy. They restore function and mobility, enabling patients to return to their daily activities and sports.",
+      "keyFocusAreas": ["Exercise Therapy", "Manual Therapy", "Rehabilitation", "Sports Physiotherapy", "Neurological Rehabilitation", "Pain Management"],
+      "careerOutlook": "With an aging population and increased focus on non-pharmacological treatments, physiotherapy offers excellent career growth. You can work in hospitals, sports clinics, private practice, or specialize in areas like orthopedics, neurology, or pediatrics."
+    },
+    "Medical Laboratory Technology": {
+      "summary": "Medical laboratory technologists are the behind-the-scenes heroes who perform critical tests that guide medical diagnoses and treatment decisions. They analyze blood, urine, tissue samples, and other specimens using sophisticated equipment and techniques.",
+      "keyFocusAreas": ["Clinical Chemistry", "Hematology", "Microbiology", "Immunology", "Laboratory Quality Control", "Molecular Diagnostics"],
+      "careerOutlook": "Lab technologists are essential for modern healthcare, ensuring steady employment opportunities. Career advancement includes specialization in areas like molecular diagnostics, laboratory management, or research, with opportunities in hospitals, reference labs, and biotech companies."
+    },
+    "Radiology Technology": {
+      "summary": "Radiologic technologists operate imaging equipment to create diagnostic images that help physicians diagnose and treat medical conditions. They work directly with patients, positioning them for scans and ensuring high-quality images while maintaining radiation safety.",
+      "keyFocusAreas": ["Medical Imaging", "Radiation Safety", "Patient Positioning", "Equipment Operation", "Image Quality", "Patient Care"],
+      "careerOutlook": "Medical imaging is growing rapidly with advancing technology, creating strong demand for skilled technologists. Specialization opportunities include CT, MRI, mammography, or nuclear medicine, with good compensation and advancement potential."
+    },
+    "Occupational Therapy": {
+      "summary": "Occupational therapists help people of all ages participate in meaningful daily activities after injury, illness, or disability. They focus on improving functional abilities and adapting environments to help clients achieve independence in work, self-care, and leisure activities.",
+      "keyFocusAreas": ["Activity Analysis", "Adaptive Equipment", "Cognitive Rehabilitation", "Pediatric Development", "Mental Health", "Workplace Ergonomics"],
+      "careerOutlook": "OT offers rewarding career opportunities in hospitals, schools, rehabilitation centers, and community settings. The field is growing rapidly, especially in pediatrics, mental health, and aging services, with excellent job security and competitive salaries."
+    },
+    "Speech-Language Pathology": {
+      "summary": "Speech-language pathologists help people overcome communication and swallowing disorders, working with clients from infants to elderly adults. They assess, diagnose, and treat speech, language, voice, and fluency disorders, dramatically improving quality of life.",
+      "keyFocusAreas": ["Speech Disorders", "Language Development", "Swallowing Therapy", "Voice Therapy", "Autism Spectrum Disorders", "Neurological Communication Disorders"],
+      "careerOutlook": "SLP offers excellent career prospects with growing awareness of communication disorders. Work settings include schools, hospitals, private practice, and rehabilitation centers, with opportunities to specialize in pediatrics, neurological conditions, or voice disorders."
+    },
+    "Respiratory Therapy": {
+      "summary": "Respiratory therapists are the breathing specialists who help patients with cardiopulmonary disorders breathe easier. They operate ventilators, administer oxygen therapy, and provide life-saving care to patients with breathing difficulties.",
+      "keyFocusAreas": ["Mechanical Ventilation", "Oxygen Therapy", "Pulmonary Function Testing", "Critical Care", "Sleep Disorders", "Patient Education"],
+      "careerOutlook": "Respiratory therapy offers stable career growth, especially with the increasing prevalence of respiratory conditions and an aging population. Career opportunities exist in hospitals, long-term care facilities, home care, and sleep disorder centers."
+    },
+    "Dental Hygiene": {
+      "summary": "Dental hygienists are preventive oral health professionals who clean teeth, examine patients for oral diseases, and educate people about oral health. They work closely with dentists to maintain and improve patients' oral health and prevent dental problems.",
+      "keyFocusAreas": ["Dental Cleaning", "Oral Health Education", "Periodontal Therapy", "Radiography", "Fluoride Treatment", "Preventive Care"],
+      "careerOutlook": "Dental hygiene offers excellent work-life balance, competitive wages, and strong job growth. Many hygienists enjoy flexible schedules, and the field offers opportunities for advancement into education, research, or public health roles."
+    },
+    "Nutrition and Dietetics": {
+      "summary": "Registered dietitians are food and nutrition experts who help people make healthy eating choices to prevent disease and promote wellness. They translate complex nutritional science into practical meal plans and lifestyle changes that improve health outcomes.",
+      "keyFocusAreas": ["Nutritional Assessment", "Meal Planning", "Medical Nutrition Therapy", "Community Nutrition", "Sports Nutrition", "Food Safety"],
+      "careerOutlook": "With growing awareness of nutrition's role in health, dietitians are in high demand. Career opportunities include clinical nutrition, sports nutrition, community health, food service management, and private practice consulting."
+    },
+    "Medical Imaging Technology": {
+      "summary": "Medical imaging technologists specialize in advanced imaging modalities like MRI, CT, and ultrasound to create detailed images of internal body structures. They combine technical expertise with patient care to produce high-quality diagnostic images.",
+      "keyFocusAreas": ["Advanced Imaging Modalities", "Cross-sectional Anatomy", "Contrast Administration", "Image Reconstruction", "Patient Safety", "Technology Innovation"],
+      "careerOutlook": "Medical imaging technology is rapidly evolving, creating excellent opportunities for skilled professionals. Specialization in areas like cardiac imaging, interventional radiology, or 3D imaging offers career advancement and higher compensation."
+    },
+    "Paramedic Sciences": {
+      "summary": "Paramedics are emergency medical professionals who provide advanced life support care in pre-hospital settings. They respond to medical emergencies, perform life-saving procedures, and transport critically ill patients to hospitals while providing continuous care.",
+      "keyFocusAreas": ["Emergency Medicine", "Advanced Life Support", "Trauma Care", "Pharmacology", "Critical Care Transport", "Disaster Response"],
+      "careerOutlook": "Paramedics are essential first responders with strong job security and opportunities for advancement to supervisor, educator, or flight paramedic roles. The field offers the excitement of emergency medicine with direct impact on saving lives."
+    },
+    "Audiology": {
+      "summary": "Audiologists are hearing healthcare professionals who diagnose and treat hearing, balance, and related disorders. They work with patients of all ages, from newborn hearing screenings to helping elderly patients with hearing aids and cochlear implants.",
+      "keyFocusAreas": ["Hearing Assessment", "Hearing Aid Fitting", "Balance Disorders", "Cochlear Implants", "Pediatric Audiology", "Industrial Audiology"],
+      "careerOutlook": "With an aging population and increased awareness of hearing health, audiology offers excellent career prospects. You can work in hospitals, private practice, schools, or specialize in areas like pediatric audiology or vestibular rehabilitation."
+    },
+    "Prosthetics and Orthotics": {
+      "summary": "Prosthetists and orthotists design, fabricate, and fit artificial limbs and supportive devices that help people with disabilities regain mobility and independence. They combine engineering skills with healthcare knowledge to create life-changing devices.",
+      "keyFocusAreas": ["Device Design", "Biomechanics", "Patient Assessment", "Gait Analysis", "Material Science", "Rehabilitation Technology"],
+      "careerOutlook": "P&O professionals are in high demand with advances in prosthetic technology and growing awareness of disability rights. Career opportunities exist in hospitals, rehabilitation centers, private practice, and prosthetic manufacturing companies."
+    },
+    "Medical Social Work": {
+      "summary": "Medical social workers help patients and families navigate the healthcare system and cope with illness-related challenges. They provide emotional support, connect patients with resources, and advocate for patient rights and needs within healthcare settings.",
+      "keyFocusAreas": ["Patient Advocacy", "Discharge Planning", "Crisis Intervention", "Resource Coordination", "Family Counseling", "Healthcare Ethics"],
+      "careerOutlook": "Medical social workers are essential members of healthcare teams, with opportunities in hospitals, rehabilitation centers, hospices, and community health organizations. The field offers the reward of helping patients and families during difficult times."
+    },
+    "Clinical Psychology": {
+      "summary": "Clinical psychologists assess, diagnose, and treat mental health disorders using evidence-based psychotherapy and psychological interventions. They work with individuals, families, and groups to improve mental health and psychological well-being.",
+      "keyFocusAreas": ["Psychological Assessment", "Psychotherapy", "Cognitive Behavioral Therapy", "Mental Health Diagnosis", "Research Methods", "Clinical Ethics"],
+      "careerOutlook": "Mental health awareness is driving strong demand for clinical psychologists. Career opportunities exist in hospitals, mental health clinics, private practice, and research settings, with subspecialty options in areas like neuropsychology or child psychology."
+    },
+    "Perfusion Technology": {
+      "summary": "Perfusionists operate heart-lung machines and other sophisticated equipment during cardiac surgery and other procedures. They maintain circulation and oxygenation of blood when the heart and lungs cannot function normally, playing a critical role in life-saving surgeries.",
+      "keyFocusAreas": ["Cardiopulmonary Bypass", "ECMO Technology", "Blood Gas Analysis", "Cardiac Surgery Support", "Critical Care", "Equipment Maintenance"],
+      "careerOutlook": "Perfusionists are highly specialized professionals with excellent job prospects and compensation. The field offers opportunities in cardiac surgery centers, children's hospitals, and transplant programs, with potential for travel assignments."
+    },
+    "Optometry": {
+      "summary": "Optometrists are primary eye care professionals who examine, diagnose, and treat eye conditions and vision problems. They prescribe glasses and contact lenses, detect eye diseases, and provide comprehensive eye care to maintain optimal vision health.",
+      "keyFocusAreas": ["Vision Examination", "Eye Disease Detection", "Contact Lens Fitting", "Vision Therapy", "Pediatric Optometry", "Low Vision Rehabilitation"],
+      "careerOutlook": "Optometry offers excellent career prospects with an aging population and increased screen time affecting vision. You can work in private practice, retail settings, or specialize in areas like pediatric optometry, low vision, or contact lens specialty."
+    },
+    "Biomedical Engineering": {
+      "summary": "Biomedical engineers apply engineering principles to healthcare, designing medical devices, diagnostic equipment, and therapeutic systems. They bridge the gap between engineering and medicine, creating innovative solutions that improve patient care and medical outcomes.",
+      "keyFocusAreas": ["Medical Device Design", "Biomaterials", "Medical Imaging Systems", "Rehabilitation Engineering", "Regulatory Affairs", "Clinical Engineering"],
+      "careerOutlook": "Biomedical engineering is a rapidly growing field with excellent career prospects in medical device companies, hospitals, research institutions, and regulatory agencies. The field offers opportunities to directly impact patient care through technological innovation."
+    },
+    "Health Information Management": {
+      "summary": "Health information managers are the guardians of medical records and health data, ensuring accuracy, privacy, and accessibility of patient information. They manage electronic health records, maintain data quality, and ensure compliance with healthcare regulations.",
+      "keyFocusAreas": ["Electronic Health Records", "Health Data Analytics", "Medical Coding", "Privacy and Security", "Regulatory Compliance", "Quality Management"],
+      "careerOutlook": "With the digitization of healthcare and focus on data analytics, HIM professionals are in high demand. Career opportunities exist in hospitals, insurance companies, consulting firms, and government agencies, with growth in health informatics and data analytics roles."
+    }
+  }
+}
