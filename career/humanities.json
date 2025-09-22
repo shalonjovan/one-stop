@@ -1,0 +1,126 @@
+{
+  "fields": [
+    { "name": "Literature & English", "color": "#3B82F6" },
+    { "name": "History", "color": "#F97316" },
+    { "name": "Philosophy", "color": "#10B981" },
+    { "name": "Psychology", "color": "#6366F1" },
+    { "name": "Sociology", "color": "#EC4899" },
+    { "name": "Political Science", "color": "#F59E0B" },
+    { "name": "Anthropology", "color": "#06B6D4" },
+    { "name": "Economics", "color": "#D946EF" },
+    { "name": "International Relations", "color": "#4B5563" },
+    { "name": "Journalism & Media", "color": "#EF4444" },
+    { "name": "Linguistics", "color": "#8B5CF6" },
+    { "name": "Art History", "color": "#3B82F6" },
+    { "name": "Cultural Studies", "color": "#10B981" },
+    { "name": "Creative Writing", "color": "#F97316" },
+    { "name": "Public Policy", "color": "#D946EF" },
+    { "name": "Social Work", "color": "#06B6D4" },
+    { "name": "Religious Studies", "color": "#4B5563" },
+    { "name": "Gender Studies", "color": "#EF4444" },
+    { "name": "Criminal Justice", "color": "#8B5CF6" },
+    { "name": "Human Rights", "color": "#EC4899" }
+  ],
+  "insights": {
+    "Literature & English": {
+      "summary": "Literature and English scholars explore the power of language, analyzing literary works and developing exceptional communication skills. They interpret texts, understand cultural contexts, and master the art of written and spoken expression, becoming skilled communicators who shape how society understands itself through storytelling.",
+      "keyFocusAreas": ["Literary Analysis", "Creative Writing", "Critical Thinking", "Communication Skills", "Cultural Interpretation", "Research Methods"],
+      "careerOutlook": "Literature and English graduates find diverse opportunities in publishing, journalism, education, marketing, and content creation. Strong writing and analytical skills are highly valued across industries, with paths to editor, teacher, content strategist, or literary agent roles."
+    },
+    "History": {
+      "summary": "Historians are the detectives of the past, uncovering and interpreting human experiences across time and cultures. They analyze primary sources, construct narratives, and help society understand how the past shapes the present, providing crucial context for contemporary decisions and future planning.",
+      "keyFocusAreas": ["Historical Research", "Primary Source Analysis", "Historiography", "Cultural Context", "Critical Analysis", "Narrative Construction"],
+      "careerOutlook": "History offers diverse career paths in education, museums, government, law, and journalism. Historians develop research, analytical, and communication skills highly valued in consulting, policy analysis, cultural institutions, and historical preservation."
+    },
+    "Philosophy": {
+      "summary": "Philosophers tackle life's biggest questions about existence, knowledge, values, and meaning. They develop rigorous thinking skills, analyze complex arguments, and explore fundamental questions that shape human understanding, training minds to think clearly and critically about any subject.",
+      "keyFocusAreas": ["Logical Reasoning", "Ethical Analysis", "Critical Thinking", "Argument Construction", "Metaphysics", "Philosophy of Mind"],
+      "careerOutlook": "Philosophy graduates excel in law, consulting, business, and academia due to their analytical and reasoning skills. The field provides excellent preparation for careers requiring clear thinking, ethical reasoning, and complex problem-solving abilities."
+    },
+    "Psychology": {
+      "summary": "Psychologists study human behavior and mental processes, exploring how people think, feel, and act. They investigate everything from individual development to group dynamics, helping people overcome challenges and organizations understand human behavior and motivation.",
+      "keyFocusAreas": ["Human Behavior", "Research Methods", "Statistical Analysis", "Counseling Techniques", "Developmental Psychology", "Social Psychology"],
+      "careerOutlook": "Psychology offers diverse career opportunities in mental health, human resources, research, education, and consulting. The field provides paths to clinical practice, organizational psychology, research, or education with strong growth in mental health services."
+    },
+    "Sociology": {
+      "summary": "Sociologists examine how societies work, studying social structures, institutions, and relationships that shape human behavior. They investigate social problems, analyze cultural trends, and help organizations and communities understand social dynamics and create positive change.",
+      "keyFocusAreas": ["Social Research", "Data Analysis", "Social Theory", "Community Development", "Social Policy", "Cultural Analysis"],
+      "careerOutlook": "Sociology graduates find opportunities in social services, market research, public policy, non-profits, and consulting. The field provides skills in research, analysis, and understanding social dynamics valuable across many sectors."
+    },
+    "Political Science": {
+      "summary": "Political scientists study government systems, political behavior, and public policies that shape society. They analyze political processes, institutions, and power dynamics, contributing to democratic governance and helping citizens understand their political systems.",
+      "keyFocusAreas": ["Government Systems", "Public Policy", "Political Theory", "Comparative Politics", "International Relations", "Political Analysis"],
+      "careerOutlook": "Political science offers careers in government, law, journalism, consulting, and non-profits. The field provides excellent preparation for law school, public service, campaign management, policy analysis, and international organizations."
+    },
+    "Anthropology": {
+      "summary": "Anthropologists study human cultures and societies across time and space, exploring what makes us uniquely human. They investigate cultural practices, social organization, and human evolution, providing insights into human diversity and universal patterns of behavior.",
+      "keyFocusAreas": ["Cultural Analysis", "Ethnographic Research", "Human Evolution", "Social Organization", "Cross-cultural Studies", "Archaeological Methods"],
+      "careerOutlook": "Anthropology offers careers in academia, museums, international development, market research, and cultural consulting. The field provides cross-cultural understanding and research skills valuable in our increasingly globalized world."
+    },
+    "Economics": {
+      "summary": "Economists study how societies allocate scarce resources, analyzing markets, policies, and economic behavior. They use mathematical models and statistical analysis to understand economic phenomena and provide insights for business, government, and policy decisions.",
+      "keyFocusAreas": ["Economic Theory", "Statistical Analysis", "Market Analysis", "Policy Evaluation", "Financial Markets", "Econometrics"],
+      "careerOutlook": "Economics offers excellent career prospects in finance, consulting, government, and research. Economists enjoy strong earning potential and opportunities in banking, policy analysis, market research, and international organizations."
+    },
+    "International Relations": {
+      "summary": "International relations specialists study global politics, diplomacy, and international cooperation. They analyze conflicts, trade relationships, and global governance, helping navigate an increasingly interconnected world and promoting peaceful international cooperation.",
+      "keyFocusAreas": ["Global Politics", "Diplomacy", "International Law", "Conflict Resolution", "Trade Relations", "Security Studies"],
+      "careerOutlook": "International relations offers careers in diplomacy, international organizations, NGOs, consulting, and journalism. The field provides opportunities to work on global challenges with excellent prospects in foreign service and international business."
+    },
+    "Journalism & Media": {
+      "summary": "Journalists and media professionals inform the public, investigate important stories, and hold power accountable through responsible reporting. They adapt to changing media landscapes, using digital platforms and multimedia storytelling to engage audiences and promote informed citizenship.",
+      "keyFocusAreas": ["News Reporting", "Digital Media", "Investigative Journalism", "Media Ethics", "Broadcast Production", "Content Creation"],
+      "careerOutlook": "Journalism offers dynamic careers in traditional and digital media, with opportunities in reporting, broadcasting, podcasting, and content strategy. While evolving rapidly, the field provides essential skills in communication and storytelling highly valued across industries."
+    },
+    "Linguistics": {
+      "summary": "Linguists study the structure and evolution of human language, exploring how people communicate and how languages change over time. They investigate grammar, phonetics, and semantics, contributing to our understanding of this uniquely human capability.",
+      "keyFocusAreas": ["Language Structure", "Phonetics", "Syntax", "Semantics", "Language Acquisition", "Historical Linguistics"],
+      "careerOutlook": "Linguistics offers specialized careers in language technology, translation, education, and research. With growing interest in natural language processing and AI, linguists find opportunities in tech companies, government agencies, and academic research."
+    },
+    "Art History": {
+      "summary": "Art historians study visual culture across time and space, analyzing artistic movements, techniques, and cultural contexts. They preserve cultural heritage, curate exhibitions, and help society understand how art reflects and shapes human experience and values.",
+      "keyFocusAreas": ["Art Analysis", "Cultural Context", "Museum Studies", "Art Criticism", "Historical Periods", "Visual Culture"],
+      "careerOutlook": "Art history offers careers in museums, galleries, auction houses, cultural institutions, and arts administration. The field provides opportunities in curation, arts management, cultural preservation, and art market analysis."
+    },
+    "Cultural Studies": {
+      "summary": "Cultural studies scholars examine how culture shapes identity, power, and social relationships. They analyze popular culture, media representations, and cultural practices, helping society understand how meaning is created and contested in contemporary life.",
+      "keyFocusAreas": ["Cultural Analysis", "Media Studies", "Identity Politics", "Popular Culture", "Power Relations", "Cultural Theory"],
+      "careerOutlook": "Cultural studies offers careers in media, marketing, cultural institutions, and consulting. The field provides skills in cultural analysis and understanding diverse perspectives valuable in our multicultural, globalized world."
+    },
+    "Creative Writing": {
+      "summary": "Creative writers craft original literary works including novels, poetry, screenplays, and creative non-fiction. They master the art of storytelling, develop unique voices, and contribute to literary culture while honing skills in creativity, expression, and communication.",
+      "keyFocusAreas": ["Fiction Writing", "Poetry", "Screenwriting", "Creative Non-fiction", "Literary Techniques", "Publishing Industry"],
+      "careerOutlook": "Creative writing offers opportunities in publishing, entertainment, marketing, and education. Writers can pursue traditional publishing, freelance work, content creation, or combine writing with other careers in communications and media."
+    },
+    "Public Policy": {
+      "summary": "Public policy specialists analyze social problems and develop solutions through government programs and policies. They research policy effectiveness, evaluate programs, and work to create evidence-based policies that improve society and address public challenges.",
+      "keyFocusAreas": ["Policy Analysis", "Program Evaluation", "Research Methods", "Statistical Analysis", "Policy Implementation", "Government Relations"],
+      "careerOutlook": "Public policy offers meaningful careers in government, think tanks, non-profits, and consulting. The field provides opportunities to address social challenges and influence policy decisions with strong demand for evidence-based policy analysis."
+    },
+    "Social Work": {
+      "summary": "Social workers help individuals, families, and communities overcome challenges and improve their well-being. They provide counseling, connect people with resources, and advocate for social justice, working to create positive change in people's lives and society.",
+      "keyFocusAreas": ["Case Management", "Counseling", "Community Development", "Social Advocacy", "Crisis Intervention", "Program Administration"],
+      "careerOutlook": "Social work offers stable careers with strong job growth, particularly in healthcare, mental health, and aging services. The field provides the satisfaction of helping others while offering diverse specializations and advancement opportunities."
+    },
+    "Religious Studies": {
+      "summary": "Religious studies scholars examine religious traditions, beliefs, and practices across cultures and throughout history. They analyze the role of religion in society, promote interfaith understanding, and contribute to dialogue about spirituality and meaning in human life.",
+      "keyFocusAreas": ["Comparative Religion", "Theology", "Religious History", "Sacred Texts", "Interfaith Dialogue", "Philosophy of Religion"],
+      "careerOutlook": "Religious studies offers careers in education, interfaith organizations, cultural institutions, and counseling. The field provides valuable perspectives on human values and cultural understanding important in our diverse, globalized world."
+    },
+    "Gender Studies": {
+      "summary": "Gender studies scholars examine how gender shapes individual experiences and social structures. They analyze gender roles, inequality, and identity, contributing to understanding of diversity, inclusion, and social justice in contemporary society.",
+      "keyFocusAreas": ["Gender Theory", "Intersectionality", "Women's Rights", "LGBTQ+ Studies", "Social Justice", "Identity Studies"],
+      "careerOutlook": "Gender studies offers careers in non-profits, human resources, policy analysis, and education. The field provides valuable perspectives on diversity and inclusion increasingly important in organizations and policymaking."
+    },
+    "Criminal Justice": {
+      "summary": "Criminal justice professionals work within legal systems to promote public safety, administer justice, and rehabilitate offenders. They study crime patterns, law enforcement practices, and correctional systems to improve the fairness and effectiveness of justice systems.",
+      "keyFocusAreas": ["Law Enforcement", "Corrections", "Court Systems", "Crime Analysis", "Criminal Law", "Victim Services"],
+      "careerOutlook": "Criminal justice offers stable careers in law enforcement, corrections, courts, and victim services. The field provides opportunities to serve communities and promote public safety with diverse specializations and advancement potential."
+    },
+    "Human Rights": {
+      "summary": "Human rights advocates work to protect and promote fundamental human rights and dignity worldwide. They investigate violations, advocate for policy changes, and work with international organizations to advance justice, equality, and human dignity for all people.",
+      "keyFocusAreas": ["International Law", "Human Rights Law", "Advocacy", "Policy Analysis", "Field Research", "International Organizations"],
+      "careerOutlook": "Human rights offers meaningful careers in international organizations, NGOs, government, and legal advocacy. While competitive, the field provides opportunities to make significant impacts on global justice and human dignity."
+    }
+  }
+}

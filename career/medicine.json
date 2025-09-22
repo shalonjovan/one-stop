@@ -1,0 +1,126 @@
+{
+  "fields": [
+    { "name": "General Medicine", "color": "#3B82F6" },
+    { "name": "Surgery", "color": "#F97316" },
+    { "name": "Pediatrics", "color": "#10B981" },
+    { "name": "Cardiology", "color": "#6366F1" },
+    { "name": "Neurology", "color": "#EC4899" },
+    { "name": "Orthopedics", "color": "#F59E0B" },
+    { "name": "Psychiatry", "color": "#06B6D4" },
+    { "name": "Radiology", "color": "#D946EF" },
+    { "name": "Anesthesiology", "color": "#4B5563" },
+    { "name": "Dermatology", "color": "#EF4444" },
+    { "name": "Ophthalmology", "color": "#8B5CF6" },
+    { "name": "Gynecology & Obstetrics", "color": "#3B82F6" },
+    { "name": "Emergency Medicine", "color": "#10B981" },
+    { "name": "Pathology", "color": "#F97316" },
+    { "name": "Oncology", "color": "#D946EF" },
+    { "name": "Gastroenterology", "color": "#06B6D4" },
+    { "name": "Pulmonology", "color": "#4B5563" },
+    { "name": "Endocrinology", "color": "#EF4444" },
+    { "name": "Nephrology", "color": "#8B5CF6" },
+    { "name": "Infectious Diseases", "color": "#EC4899" }
+  ],
+  "insights": {
+    "General Medicine": {
+      "summary": "General physicians are the frontline heroes of healthcare, providing comprehensive medical care and serving as the first point of contact for patients. They diagnose and treat a wide range of conditions, coordinate care with specialists, and build long-term relationships with patients and families.",
+      "keyFocusAreas": ["Preventive Medicine", "Chronic Disease Management", "Patient Communication", "Diagnostic Skills", "Family Medicine", "Community Health"],
+      "careerOutlook": "General practitioners are always in high demand, especially in underserved areas. You can work in private practice, hospitals, community health centers, or telemedicine, with opportunities for both clinical work and healthcare leadership roles."
+    },
+    "Surgery": {
+      "summary": "Surgeons are the skilled artisans of medicine, using precision and expertise to repair, remove, or replace diseased or damaged tissues. They combine technical mastery with quick decision-making under pressure, literally holding lives in their hands during critical procedures.",
+      "keyFocusAreas": ["Surgical Techniques", "Anatomy", "Pre and Post-operative Care", "Minimally Invasive Surgery", "Surgical Technology", "Patient Safety"],
+      "careerOutlook": "Surgeons are among the most respected and well-compensated medical professionals. Specializations include general surgery, cardiothoracic, neurosurgery, and plastic surgery, with opportunities in academic medical centers, private practice, and specialized surgical centers."
+    },
+    "Pediatrics": {
+      "summary": "Pediatricians are the champions of children's health, specializing in the medical care of infants, children, and adolescents. They ensure proper growth and development, prevent childhood diseases, and provide compassionate care to young patients and worried parents.",
+      "keyFocusAreas": ["Child Development", "Immunizations", "Pediatric Diseases", "Family-Centered Care", "Adolescent Medicine", "Newborn Care"],
+      "careerOutlook": "Pediatricians enjoy rewarding careers helping the next generation thrive. Work settings include pediatric hospitals, private practice, school health services, and international health organizations, with subspecialty options in areas like pediatric cardiology or oncology."
+    },
+    "Cardiology": {
+      "summary": "Cardiologists are the guardians of the heart, diagnosing and treating cardiovascular diseases that affect millions worldwide. They use advanced technology to peer inside the heart, perform life-saving procedures, and help patients maintain heart health throughout their lives.",
+      "keyFocusAreas": ["Heart Disease Diagnosis", "Interventional Cardiology", "Echocardiography", "Cardiac Catheterization", "Heart Failure Management", "Preventive Cardiology"],
+      "careerOutlook": "With cardiovascular disease being a leading cause of death globally, cardiologists are in constant demand. Career paths include interventional cardiology, electrophysiology, heart failure specialist, and cardiac surgery, offering excellent compensation and prestige."
+    },
+    "Neurology": {
+      "summary": "Neurologists are the detectives of the nervous system, unraveling the mysteries of the brain, spinal cord, and nerves. They diagnose and treat complex neurological conditions, from stroke and epilepsy to Alzheimer's disease and multiple sclerosis.",
+      "keyFocusAreas": ["Neurological Examination", "Brain Imaging", "Stroke Management", "Epilepsy Treatment", "Neurodegenerative Diseases", "Neurorehabilitation"],
+      "careerOutlook": "As the population ages and neurological awareness grows, neurology offers excellent career prospects. Specializations include stroke neurology, pediatric neurology, and movement disorders, with opportunities in academic medicine, private practice, and research."
+    },
+    "Orthopedics": {
+      "summary": "Orthopedic surgeons are the mechanics of the human body, specializing in the musculoskeletal system. They repair broken bones, replace worn joints, and restore mobility to help patients get back to active, pain-free lives.",
+      "keyFocusAreas": ["Bone and Joint Surgery", "Sports Medicine", "Trauma Surgery", "Joint Replacement", "Spine Surgery", "Arthroscopic Procedures"],
+      "careerOutlook": "With active lifestyles and an aging population, orthopedic surgeons are highly sought after. You can specialize in sports medicine, spine surgery, pediatric orthopedics, or joint replacement, with excellent earning potential and job satisfaction."
+    },
+    "Psychiatry": {
+      "summary": "Psychiatrists are the healers of the mind, addressing mental health conditions that affect millions of people worldwide. They combine medical knowledge with psychological insight to diagnose and treat depression, anxiety, bipolar disorder, and other mental health conditions.",
+      "keyFocusAreas": ["Mental Health Diagnosis", "Psychopharmacology", "Psychotherapy", "Crisis Intervention", "Addiction Medicine", "Child and Adolescent Psychiatry"],
+      "careerOutlook": "Mental health awareness is growing rapidly, creating strong demand for psychiatrists. Career options include private practice, hospital settings, community mental health, and specialized areas like forensic psychiatry or addiction medicine."
+    },
+    "Radiology": {
+      "summary": "Radiologists are the visual detectives of medicine, using advanced imaging technologies to see inside the human body and diagnose diseases. They interpret X-rays, CT scans, MRIs, and other imaging studies to guide treatment decisions for patients worldwide.",
+      "keyFocusAreas": ["Medical Imaging", "Image Interpretation", "Interventional Radiology", "Nuclear Medicine", "Mammography", "Emergency Radiology"],
+      "careerOutlook": "Radiology offers excellent work-life balance and high compensation. With advancing imaging technology and telemedicine growth, radiologists can work in hospitals, outpatient centers, or even remotely, with subspecialty options in areas like neuroradiology or interventional radiology."
+    },
+    "Anesthesiology": {
+      "summary": "Anesthesiologists are the guardians of patient comfort and safety during surgery, managing pain and consciousness throughout medical procedures. They ensure patients remain stable and pain-free, making complex surgeries possible while monitoring vital functions continuously.",
+      "keyFocusAreas": ["Anesthesia Administration", "Pain Management", "Critical Care", "Perioperative Medicine", "Regional Anesthesia", "Pediatric Anesthesia"],
+      "careerOutlook": "Every surgical procedure requires an anesthesiologist, ensuring steady demand. The field offers excellent compensation, regular hours compared to other surgical specialties, and subspecialty opportunities in pain medicine, cardiac anesthesia, or critical care."
+    },
+    "Dermatology": {
+      "summary": "Dermatologists are the skin specialists who diagnose and treat conditions affecting the body's largest organ. They handle everything from acne and eczema to skin cancer and cosmetic procedures, helping patients look and feel their best.",
+      "keyFocusAreas": ["Skin Disease Diagnosis", "Dermatopathology", "Cosmetic Dermatology", "Skin Cancer Treatment", "Pediatric Dermatology", "Dermatologic Surgery"],
+      "careerOutlook": "Dermatology is highly competitive but offers excellent work-life balance and high earning potential. You can focus on medical dermatology, cosmetic procedures, dermatopathology, or Mohs surgery, with opportunities in private practice or academic medicine."
+    },
+    "Ophthalmology": {
+      "summary": "Ophthalmologists are the protectors of vision, specializing in eye and visual system care. They perform delicate surgeries to restore sight, treat eye diseases, and help patients maintain their precious gift of vision throughout their lives.",
+      "keyFocusAreas": ["Eye Surgery", "Retinal Diseases", "Glaucoma Treatment", "Cataract Surgery", "Corneal Disorders", "Pediatric Ophthalmology"],
+      "careerOutlook": "With an aging population and increasing screen time, eye care is more important than ever. Ophthalmology offers excellent compensation, the joy of restoring sight, and subspecialty options in retina, cornea, glaucoma, or oculoplastics."
+    },
+    "Gynecology & Obstetrics": {
+      "summary": "OB/GYN physicians specialize in women's reproductive health, from adolescence through menopause. They deliver babies, perform gynecologic surgeries, and provide comprehensive care for women's unique health needs throughout their lives.",
+      "keyFocusAreas": ["Prenatal Care", "Labor and Delivery", "Gynecologic Surgery", "Reproductive Endocrinology", "Minimally Invasive Surgery", "Women's Health"],
+      "careerOutlook": "Women's healthcare remains a priority worldwide, ensuring strong demand for OB/GYN specialists. You can focus on obstetrics, gynecologic oncology, reproductive endocrinology, or maternal-fetal medicine, with opportunities in private practice or academic centers."
+    },
+    "Emergency Medicine": {
+      "summary": "Emergency physicians are the first responders of the hospital, providing critical care to patients in life-threatening situations. They work in fast-paced environments, making quick decisions and stabilizing patients during medical emergencies and trauma situations.",
+      "keyFocusAreas": ["Trauma Management", "Critical Care", "Emergency Procedures", "Disaster Medicine", "Toxicology", "Pediatric Emergency Care"],
+      "careerOutlook": "Emergency medicine offers dynamic, challenging work with the satisfaction of saving lives daily. Career opportunities exist in hospital emergency departments, urgent care centers, flight medicine, and emergency medical services, with competitive compensation."
+    },
+    "Pathology": {
+      "summary": "Pathologists are the medical detectives who diagnose diseases by examining tissues, cells, and body fluids under microscopes. They provide the definitive diagnoses that guide treatment decisions, working behind the scenes to solve medical mysteries.",
+      "keyFocusAreas": ["Tissue Diagnosis", "Laboratory Medicine", "Forensic Pathology", "Molecular Pathology", "Cytopathology", "Autopsy Procedures"],
+      "careerOutlook": "Pathologists are essential for accurate medical diagnosis, ensuring steady demand. The field offers good work-life balance, intellectual stimulation, and subspecialty options in surgical pathology, clinical pathology, forensic pathology, or molecular diagnostics."
+    },
+    "Oncology": {
+      "summary": "Oncologists are the warriors against cancer, dedicating their careers to treating one of humanity's most challenging diseases. They provide hope to patients and families while using the latest treatments and research to fight various forms of cancer.",
+      "keyFocusAreas": ["Cancer Treatment", "Chemotherapy", "Radiation Therapy", "Immunotherapy", "Palliative Care", "Clinical Research"],
+      "careerOutlook": "Cancer treatment is a rapidly evolving field with breakthrough therapies emerging regularly. Oncologists can specialize in medical oncology, radiation oncology, or surgical oncology, with opportunities in academic medical centers, cancer institutes, and private practice."
+    },
+    "Gastroenterology": {
+      "summary": "Gastroenterologists are the specialists of the digestive system, diagnosing and treating conditions affecting the stomach, intestines, liver, and related organs. They perform endoscopic procedures and manage complex digestive disorders that impact quality of life.",
+      "keyFocusAreas": ["Endoscopic Procedures", "Liver Diseases", "Inflammatory Bowel Disease", "Digestive Cancers", "Nutrition Management", "Interventional Gastroenterology"],
+      "careerOutlook": "With increasing rates of digestive disorders and liver disease, gastroenterologists are in high demand. The field offers excellent compensation, procedural opportunities, and subspecialty options in hepatology, inflammatory bowel disease, or advanced endoscopy."
+    },
+    "Pulmonology": {
+      "summary": "Pulmonologists are the breathing specialists who diagnose and treat diseases of the lungs and respiratory system. They manage conditions like asthma, COPD, lung cancer, and sleep disorders, helping patients breathe easier and live better lives.",
+      "keyFocusAreas": ["Lung Disease Management", "Sleep Medicine", "Critical Care", "Bronchoscopy", "Pulmonary Function Testing", "Interventional Pulmonology"],
+      "careerOutlook": "With rising rates of respiratory diseases and sleep disorders, pulmonology offers strong career prospects. Subspecialty areas include sleep medicine, critical care, or interventional pulmonology, with opportunities in hospitals, sleep centers, and private practice."
+    },
+    "Endocrinology": {
+      "summary": "Endocrinologists are the hormone specialists who diagnose and treat disorders of the endocrine system. They manage diabetes, thyroid diseases, osteoporosis, and other hormonal conditions that affect metabolism, growth, and reproduction.",
+      "keyFocusAreas": ["Diabetes Management", "Thyroid Disorders", "Hormone Replacement Therapy", "Metabolic Disorders", "Osteoporosis", "Reproductive Endocrinology"],
+      "careerOutlook": "With the diabetes epidemic and increasing awareness of hormonal disorders, endocrinologists are in high demand. The field offers excellent work-life balance, long-term patient relationships, and opportunities in diabetes centers, private practice, or academic medicine."
+    },
+    "Nephrology": {
+      "summary": "Nephrologists are the kidney specialists who diagnose and treat diseases of the kidneys and urinary system. They manage chronic kidney disease, perform dialysis, and help patients navigate kidney transplantation, providing life-sustaining care.",
+      "keyFocusAreas": ["Kidney Disease Management", "Dialysis", "Transplant Medicine", "Hypertension", "Electrolyte Disorders", "Acute Kidney Injury"],
+      "careerOutlook": "With increasing rates of diabetes and hypertension leading to kidney disease, nephrology offers stable career prospects. You can work in dialysis centers, transplant programs, or private practice, with opportunities for both inpatient and outpatient care."
+    },
+    "Infectious Diseases": {
+      "summary": "Infectious disease specialists are the medical detectives who diagnose and treat infections caused by bacteria, viruses, fungi, and parasites. They play crucial roles in hospital infection control, antibiotic stewardship, and managing complex or resistant infections.",
+      "keyFocusAreas": ["Antibiotic Stewardship", "Hospital Infection Control", "Travel Medicine", "Immunocompromised Patients", "Emerging Infections", "Public Health"],
+      "careerOutlook": "Recent global events have highlighted the importance of infectious disease specialists. Career opportunities exist in hospitals, public health agencies, research institutions, and international health organizations, with growing emphasis on antimicrobial resistance and pandemic preparedness."
+    }
+  }
+}

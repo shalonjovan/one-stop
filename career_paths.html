@@ -171,13 +171,16 @@ function renderCareers(careers) {
 function handleCareerClick(careerName) {
     // Define the mapping of career names to their respective pages
     const careerPages = {
-        'Engineering': './carrers/engineering.html?field=engineering',
-        'Computer Science & IT': './carrers/csit.html', // Make sure this matches your second file's name
-        'Medical Science': './carrers/engineering.html?field=medicine',
-        'Business': './carrers/business.html',
-        'Technology': './carrers/technology.html',
-        'Defense Services':'./carrers/defence.html',
-        'Banking & Finance' : './carrers/banking.html'
+        'Engineering': './career/career_option.html?field=engineering',
+        'Computer Science & IT': './career/career_option.html?field=csit', // Make sure this matches your second file's name
+        'Medical Science': './career/career_option.html?field=medicine',
+        'Mathematics & Statistics': './career/career_option.html?field=maths',
+        'Allied Medicine': './career/career_option.html?field=allied',
+        'Banking & Finance': './career/career_option.html?field=banking',
+        'Defense Services':'./career/career_option.html?field=defence',
+        'Science': './career/career_option.html?field=science',
+        'Humanities, Liberal Arts & Social Sciences': './career/career_option.html?field=humanities',
+        'Architecture':'./career/career_option.html?field=architecture',
         // Add more career-to-page mappings as needed
     };
     

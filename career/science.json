@@ -1,0 +1,126 @@
+{
+  "fields": [
+    { "name": "Physics", "color": "#3B82F6" },
+    { "name": "Chemistry", "color": "#F97316" },
+    { "name": "Biology", "color": "#10B981" },
+    { "name": "Environmental Science", "color": "#6366F1" },
+    { "name": "Geology", "color": "#EC4899" },
+    { "name": "Astronomy", "color": "#F59E0B" },
+    { "name": "Materials Science", "color": "#06B6D4" },
+    { "name": "Biochemistry", "color": "#D946EF" },
+    { "name": "Microbiology", "color": "#4B5563" },
+    { "name": "Neuroscience", "color": "#EF4444" },
+    { "name": "Genetics", "color": "#8B5CF6" },
+    { "name": "Marine Biology", "color": "#3B82F6" },
+    { "name": "Forensic Science", "color": "#10B981" },
+    { "name": "Meteorology", "color": "#F97316" },
+    { "name": "Nanotechnology", "color": "#D946EF" },
+    { "name": "Biotechnology", "color": "#06B6D4" },
+    { "name": "Food Science", "color": "#4B5563" },
+    { "name": "Pharmaceutical Sciences", "color": "#EF4444" },
+    { "name": "Data Science", "color": "#8B5CF6" },
+    { "name": "Renewable Energy", "color": "#EC4899" }
+  ],
+  "insights": {
+    "Physics": {
+      "summary": "Physicists are the fundamental investigators of the universe, studying matter, energy, and their interactions from subatomic particles to cosmic phenomena. They develop theories that explain natural phenomena and create technologies that revolutionize our world, from quantum computers to space exploration.",
+      "keyFocusAreas": ["Quantum Mechanics", "Thermodynamics", "Electromagnetism", "Particle Physics", "Astrophysics", "Mathematical Physics"],
+      "careerOutlook": "Physics offers diverse career paths in research, technology, aerospace, and academia. Physicists are highly valued for their problem-solving skills, with opportunities in tech companies, national laboratories, universities, and emerging fields like quantum computing."
+    },
+    "Chemistry": {
+      "summary": "Chemists are the molecular architects who study the composition, structure, and behavior of matter at the atomic level. They design new materials, develop life-saving drugs, and create solutions to global challenges like clean energy and sustainable manufacturing.",
+      "keyFocusAreas": ["Organic Chemistry", "Inorganic Chemistry", "Physical Chemistry", "Analytical Chemistry", "Chemical Synthesis", "Spectroscopy"],
+      "careerOutlook": "Chemistry provides excellent career opportunities in pharmaceuticals, materials, energy, and manufacturing. Chemists enjoy stable employment with advancement paths to senior scientist, research director, or industry leadership roles."
+    },
+    "Biology": {
+      "summary": "Biologists explore the fascinating world of living organisms, from microscopic bacteria to complex ecosystems. They study life processes, evolution, and biodiversity to understand how life works and develop solutions for health, agriculture, and environmental challenges.",
+      "keyFocusAreas": ["Cell Biology", "Molecular Biology", "Ecology", "Evolution", "Physiology", "Taxonomy"],
+      "careerOutlook": "Biology offers diverse career paths in healthcare, biotechnology, conservation, and research. Biologists can work in laboratories, field research, education, or biotechnology companies with growing opportunities in emerging biological sciences."
+    },
+    "Environmental Science": {
+      "summary": "Environmental scientists are the guardians of our planet, studying environmental problems and developing solutions for pollution, climate change, and resource management. They work at the intersection of multiple sciences to protect ecosystems and human health.",
+      "keyFocusAreas": ["Environmental Monitoring", "Pollution Control", "Climate Science", "Conservation Biology", "Environmental Policy", "Sustainability"],
+      "careerOutlook": "Environmental science offers meaningful careers addressing global challenges. Growing environmental awareness creates strong demand for environmental consultants, regulatory specialists, conservation scientists, and sustainability managers."
+    },
+    "Geology": {
+      "summary": "Geologists are Earth's historians, studying our planet's structure, composition, and processes to understand its past and predict future changes. They explore for natural resources, assess geological hazards, and contribute to our understanding of climate change and Earth's evolution.",
+      "keyFocusAreas": ["Mineralogy", "Petrology", "Structural Geology", "Hydrogeology", "Geophysics", "Paleontology"],
+      "careerOutlook": "Geology provides stable careers in oil and gas, mining, environmental consulting, and government agencies. Geologists enjoy field work opportunities and can specialize in areas like hydrogeology, petroleum geology, or environmental geology."
+    },
+    "Astronomy": {
+      "summary": "Astronomers are cosmic explorers who study celestial objects and phenomena beyond Earth's atmosphere. They investigate planets, stars, galaxies, and the universe's evolution, pushing the boundaries of human knowledge about our place in the cosmos.",
+      "keyFocusAreas": ["Observational Astronomy", "Astrophysics", "Planetary Science", "Cosmology", "Stellar Evolution", "Space Technology"],
+      "careerOutlook": "Astronomy offers intellectually rewarding careers in universities, observatories, space agencies, and aerospace companies. While competitive, the field provides opportunities to contribute to humanity's greatest discoveries about the universe."
+    },
+    "Materials Science": {
+      "summary": "Materials scientists engineer the building blocks of technology, developing new materials with specific properties for applications ranging from smartphone screens to spacecraft heat shields. They combine chemistry, physics, and engineering to create innovative materials that enable technological advancement.",
+      "keyFocusAreas": ["Nanotechnology", "Polymer Science", "Ceramics", "Metallurgy", "Composite Materials", "Surface Science"],
+      "careerOutlook": "Materials science offers excellent career prospects in technology, aerospace, automotive, and energy industries. The field provides opportunities to work on cutting-edge technologies with strong demand and competitive compensation."
+    },
+    "Biochemistry": {
+      "summary": "Biochemists study the chemical processes within living organisms, bridging biology and chemistry to understand life at the molecular level. They investigate how proteins, DNA, and other biomolecules function, contributing to advances in medicine, biotechnology, and agriculture.",
+      "keyFocusAreas": ["Protein Structure", "Enzyme Kinetics", "Metabolism", "DNA Analysis", "Drug Development", "Biotechnology"],
+      "careerOutlook": "Biochemistry provides excellent career opportunities in pharmaceuticals, biotechnology, healthcare, and research. The field offers paths to drug discovery, clinical research, academic research, or biotechnology leadership roles."
+    },
+    "Microbiology": {
+      "summary": "Microbiologists explore the invisible world of microorganisms, studying bacteria, viruses, fungi, and other microscopic life forms. They investigate how microbes affect human health, food production, and environmental processes, developing vaccines, antibiotics, and biotechnological applications.",
+      "keyFocusAreas": ["Medical Microbiology", "Virology", "Immunology", "Food Microbiology", "Environmental Microbiology", "Biotechnology"],
+      "careerOutlook": "Microbiology offers diverse careers in healthcare, pharmaceuticals, food industry, and research. Recent global events have highlighted the importance of microbiologists, creating strong demand in public health, vaccine development, and infectious disease research."
+    },
+    "Neuroscience": {
+      "summary": "Neuroscientists unlock the mysteries of the brain and nervous system, studying how neurons create thoughts, emotions, and behaviors. They work to understand neurological diseases, develop treatments for mental health conditions, and explore the biological basis of consciousness.",
+      "keyFocusAreas": ["Neuroanatomy", "Neurophysiology", "Cognitive Neuroscience", "Neuropharmacology", "Brain Imaging", "Computational Neuroscience"],
+      "careerOutlook": "Neuroscience is a rapidly growing field with excellent opportunities in academia, pharmaceuticals, biotechnology, and medical device companies. The field offers paths to research, clinical applications, or neurotechnology development."
+    },
+    "Genetics": {
+      "summary": "Geneticists study heredity and genetic variation, investigating how traits are passed from generation to generation and how genetic factors influence health and disease. They work on gene therapy, personalized medicine, and agricultural improvements through genetic modification.",
+      "keyFocusAreas": ["Molecular Genetics", "Population Genetics", "Gene Therapy", "Genomics", "Genetic Counseling", "Bioinformatics"],
+      "careerOutlook": "Genetics offers exciting career opportunities in personalized medicine, biotechnology, and research. The field provides paths to genetic counseling, pharmaceutical research, agricultural genetics, or academic research with strong growth potential."
+    },
+    "Marine Biology": {
+      "summary": "Marine biologists explore ocean life and ecosystems, studying everything from microscopic plankton to massive whales. They investigate marine biodiversity, ocean health, and the impact of human activities on marine environments, contributing to conservation and sustainable ocean management.",
+      "keyFocusAreas": ["Marine Ecology", "Oceanography", "Marine Conservation", "Fisheries Science", "Marine Biotechnology", "Coral Reef Biology"],
+      "careerOutlook": "Marine biology offers adventurous careers combining fieldwork with laboratory research. Opportunities exist in research institutions, aquariums, conservation organizations, and government agencies, with growing focus on ocean conservation and climate change impacts."
+    },
+    "Forensic Science": {
+      "summary": "Forensic scientists apply scientific methods to legal investigations, analyzing evidence from crime scenes to help solve criminal cases. They use chemistry, biology, and physics to examine everything from DNA and fingerprints to ballistics and digital evidence.",
+      "keyFocusAreas": ["DNA Analysis", "Toxicology", "Trace Evidence", "Digital Forensics", "Ballistics", "Crime Scene Investigation"],
+      "careerOutlook": "Forensic science offers exciting careers in law enforcement, government laboratories, and private consulting. The field provides the satisfaction of contributing to justice while using cutting-edge scientific techniques in criminal investigations."
+    },
+    "Meteorology": {
+      "summary": "Meteorologists study atmospheric phenomena to understand and predict weather patterns and climate changes. They use advanced computer models and observational data to forecast weather, study severe weather events, and investigate climate change impacts.",
+      "keyFocusAreas": ["Weather Forecasting", "Climate Modeling", "Atmospheric Physics", "Severe Weather", "Climate Change", "Remote Sensing"],
+      "careerOutlook": "Meteorology offers diverse careers in government weather services, media, aviation, and environmental consulting. With growing concern about climate change and extreme weather, meteorologists are increasingly important for public safety and policy decisions."
+    },
+    "Nanotechnology": {
+      "summary": "Nanotechnologists work at the atomic and molecular scale to create materials and devices with unique properties. They develop innovations in medicine, electronics, energy, and manufacturing by manipulating matter at the nanoscale to create revolutionary technologies.",
+      "keyFocusAreas": ["Nanomaterials", "Nanoelectronics", "Nanomedicine", "Nanocomposites", "Molecular Assembly", "Characterization Techniques"],
+      "careerOutlook": "Nanotechnology is a rapidly growing field with applications across multiple industries. Career opportunities exist in research and development, manufacturing, healthcare, and electronics with excellent growth potential and compensation."
+    },
+    "Biotechnology": {
+      "summary": "Biotechnologists harness biological systems and living organisms to develop products and technologies that improve human life. They work on everything from developing new medicines and vaccines to creating sustainable biofuels and improving crop yields.",
+      "keyFocusAreas": ["Genetic Engineering", "Bioprocess Development", "Biopharmaceuticals", "Agricultural Biotechnology", "Industrial Biotechnology", "Regulatory Affairs"],
+      "careerOutlook": "Biotechnology offers excellent career prospects in pharmaceuticals, agriculture, and industrial applications. The field provides opportunities for innovation and entrepreneurship with strong job growth and competitive compensation."
+    },
+    "Food Science": {
+      "summary": "Food scientists ensure food safety, nutrition, and quality while developing new food products and preservation methods. They study food composition, processing, and packaging to create safer, healthier, and more sustainable food systems for global populations.",
+      "keyFocusAreas": ["Food Safety", "Nutrition Science", "Food Processing", "Quality Control", "Product Development", "Food Chemistry"],
+      "careerOutlook": "Food science offers stable careers in food manufacturing, government agencies, and research institutions. With growing focus on food security and nutrition, food scientists enjoy good job prospects and opportunities for innovation."
+    },
+    "Pharmaceutical Sciences": {
+      "summary": "Pharmaceutical scientists develop and test new medications to treat diseases and improve human health. They work on drug discovery, development, and manufacturing, combining chemistry, biology, and pharmacology to create life-saving medicines.",
+      "keyFocusAreas": ["Drug Discovery", "Pharmacology", "Drug Development", "Clinical Trials", "Regulatory Science", "Manufacturing"],
+      "careerOutlook": "Pharmaceutical sciences offer excellent career opportunities in drug companies, research institutions, and regulatory agencies. The field provides high compensation, job security, and the satisfaction of contributing to human health improvement."
+    },
+    "Data Science": {
+      "summary": "Data scientists in science extract insights from complex scientific data using statistical methods, machine learning, and computational tools. They help researchers understand patterns in large datasets, accelerate scientific discovery, and develop predictive models for scientific phenomena.",
+      "keyFocusAreas": ["Scientific Computing", "Machine Learning", "Statistical Analysis", "Data Visualization", "Bioinformatics", "Computational Modeling"],
+      "careerOutlook": "Scientific data science is experiencing explosive growth across all scientific disciplines. The field offers excellent compensation and opportunities to contribute to scientific breakthroughs in academia, industry, and government research institutions."
+    },
+    "Renewable Energy": {
+      "summary": "Renewable energy scientists develop sustainable energy technologies like solar panels, wind turbines, and energy storage systems. They work to address climate change by creating efficient, cost-effective alternatives to fossil fuels and improving energy sustainability.",
+      "keyFocusAreas": ["Solar Technology", "Wind Energy", "Energy Storage", "Fuel Cells", "Grid Integration", "Energy Efficiency"],
+      "careerOutlook": "Renewable energy is one of the fastest-growing sectors with excellent career prospects. The field offers opportunities to combat climate change while enjoying strong job growth, competitive compensation, and the potential for entrepreneurship."
+    }
+  }
+}
