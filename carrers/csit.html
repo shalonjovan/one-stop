@@ -250,31 +250,42 @@
         };
 
         function createHexagonGrid() {
-            const hexesPerRow = 4;
-            let row = document.createElement('div');
-            row.className = 'hex-row';
+            // Pattern: 4, 3, 4, 3, 4, 3...
+            const pattern = [4, 3];
+            let fieldIndex = 0;
+            let patternIndex = 0;
 
-            csFields.forEach((field, index) => {
-                const hexContainer = document.createElement('div');
-                hexContainer.className = 'hexagon-container';
-                hexContainer.setAttribute('data-field', field.name);
-                
-                const hexagon = document.createElement('div');
-                hexagon.className = 'hexagon';
-                hexagon.style.backgroundColor = field.color;
-                hexagon.textContent = field.name;
+            while (fieldIndex < csFields.length) {
+                const hexesInThisRow = pattern[patternIndex % pattern.length];
+                const row = document.createElement('div');
+                row.className = 'hex-row';
 
-                hexContainer.appendChild(hexagon);
-                row.appendChild(hexContainer);
-
-                if ((index + 1) % hexesPerRow === 0 || index === csFields.length - 1) {
-                    hexGrid.appendChild(row);
-                    if ((index + 1) % hexesPerRow === 0 && index !== csFields.length - 1) {
-                        row = document.createElement('div');
-                        row.className = 'hex-row hex-row-odd';
-                    }
+                // Add a class for offset on odd rows
+                if (patternIndex % 2 !== 0) {
+                    row.classList.add('hex-row-odd');
                 }
-            });
+
+                // Add hexagons for this row
+                for (let i = 0; i < hexesInThisRow && fieldIndex < csFields.length; i++) {
+                    const field = csFields[fieldIndex];
+                    const hexContainer = document.createElement('div');
+                    hexContainer.className = 'hexagon-container';
+                    hexContainer.setAttribute('data-field', field.name);
+                    
+                    const hexagon = document.createElement('div');
+                    hexagon.className = 'hexagon';
+                    hexagon.style.backgroundColor = field.color;
+                    hexagon.textContent = field.name;
+
+                    hexContainer.appendChild(hexagon);
+                    row.appendChild(hexContainer);
+                    
+                    fieldIndex++;
+                }
+
+                hexGrid.appendChild(row);
+                patternIndex++;
+            }
 
             addHexagonClickListeners();
         }
