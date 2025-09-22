@@ -9,29 +9,112 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
+            background: linear-gradient(135deg, #acc6ee6b 0%, #c8d8f0 100%);
+            min-height: 100vh;
         }
         .main-content {
-            background-color: #f0f4f8;
+            background-color: #acc6ee6b;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
         .college-card {
             background-color: #ffffff;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border-radius: 20px;
+            padding: 24px;
+            border: 2px solid #6366f1;
+            box-shadow: 0 8px 16px rgba(99, 102, 241, 0.15), 0 4px 6px rgba(99, 102, 241, 0.1), 0 0 0 1px rgba(99, 102, 241, 0.05);
+            transition: all 0.3s ease-in-out;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
         }
+        
         .college-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(99, 102, 241, 0.25), 0 15px 20px rgba(99, 102, 241, 0.15), 0 0 0 1px rgba(99, 102, 241, 0.1);
+            border-color: #4338ca;
+        }
+        
+        .college-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #6366f1;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .college-card:hover .college-logo {
+            transform: scale(1.05);
+            border-color: #4338ca;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .filter-modal {
+            background-color: rgba(30, 41, 59, 0.8);
+        }
+        
+        .filter-content {
+            background-color: #ffffff;
+            border: 2px solid #6366f1;
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .filter-input, .filter-select {
+            border: 2px solid #c7d2fe;
+            transition: all 0.3s ease;
+        }
+
+        .filter-input:focus, .filter-select:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .apply-btn {
+            background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+            transition: all 0.3s ease;
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .header-bg {
+            background: #1e293b;
+        }
+
+        .info-tag {
+            background-color: #e0e7ff;
+            color: #4338ca;
+            border: 1px solid #c7d2fe;
+        }
+
+        .page-title {
+            color: #1e293b;
+        }
+
+        .text-dark-blue {
+            color: #1e293b;
+        }
+
+        .icon-color {
+            color: #6366f1;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
 
     <!-- Header -->
     <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
@@ -78,28 +161,30 @@
     <!-- Main Content -->
     <main class="main-content p-8">
         <div class="w-full max-w-7xl mx-auto mb-6">
-            <div class="flex justify-between items-center mb-6">
-                <h1 class="text-3xl font-bold text-gray-800">Colleges</h1>
-                <button id="filter-btn" class="flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex-1 text-center">
+                    <h1 class="page-title text-4xl font-bold drop-shadow-lg">Colleges</h1>
+                </div>
+                <button id="filter-btn" class="flex items-center space-x-2 px-6 py-3 rounded-full bg-slate-800 text-white border-2 border-slate-700 hover:bg-slate-700 hover:border-slate-600 transition-all duration-300 shadow-lg ml-4">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 9.414V16a1 1 0 01-1.293.954l-2-1A1 1 0 018 15V9.414L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
                     </svg>
-                    <span>Filters</span>
+                    <span class="font-bold">Filters</span>
                 </button>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="college-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="college-grid">
                 <!-- College cards will be dynamically inserted here -->
             </div>
         </div>
     </main>
 
-    <!-- Filter Modal (Now an exact replica of the provided image) -->
-    <div id="filter-modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center p-4 hidden z-50">
-        <div class="bg-white rounded-xl shadow-xl p-8 w-full max-w-sm mx-auto">
+    <!-- Filter Modal -->
+    <div id="filter-modal" class="filter-modal fixed inset-0 flex items-center justify-center p-4 hidden z-50">
+        <div class="filter-content rounded-2xl shadow-2xl p-8 w-full max-w-md mx-auto">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-semibold text-gray-900">Search & Filter Colleges</h2>
-                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600 transition-colors">
+                <h2 class="text-2xl font-bold text-gray-900">Search & Filter Colleges</h2>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-all">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -108,58 +193,38 @@
             
             <div class="space-y-6">
                 <div>
-                    <label for="search" class="block text-gray-800 font-bold mb-2">Search</label>
-                    <input type="text" id="search-input" class="w-full px-4 py-3 rounded-xl border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all" placeholder="College name or specialization...">
+                    <label for="search" class="block text-gray-800 font-semibold mb-2">Search</label>
+                    <input type="text" id="search-input" class="filter-input w-full px-4 py-3 rounded-xl placeholder-gray-400 focus:outline-none transition-all" placeholder="College name or specialization...">
                 </div>
                 <div>
-                    <label for="location" class="block text-gray-800 font-bold mb-2">Location</label>
-                    <input type="text" id="location-input" class="w-full px-4 py-3 rounded-xl border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all" placeholder="City or State">
+                    <label for="location" class="block text-gray-800 font-semibold mb-2">Location</label>
+                    <input type="text" id="location-input" class="filter-input w-full px-4 py-3 rounded-xl placeholder-gray-400 focus:outline-none transition-all" placeholder="City or State">
                 </div>
                 <div>
-                    <label for="nirf-range" class="block text-gray-800 font-bold mb-2">NIRF Rank Range</label>
+                    <label for="nirf-range" class="block text-gray-800 font-semibold mb-2">NIRF Rank Range</label>
                     <div class="flex space-x-4">
-                        <div class="relative w-1/2">
-                            <input type="number" id="nirf-min" class="w-full px-4 py-3 rounded-xl border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all" placeholder="Min" min="1" max="200">
-                            <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 3a1 1 0 00-.707.293l-4 4a1 1 0 001.414 1.414L10 6.414l3.293 3.293a1 1 0 001.414-1.414l-4-4A1 1 0 0010 3z" clip-rule="evenodd" /><path fill-rule="evenodd" d="M10 17a1 1 0 00.707-.293l4-4a1 1 0 00-1.414-1.414L10 13.586l-3.293-3.293a1 1 0 00-1.414 1.414l4 4A1 1 0 0010 17z" clip-rule="evenodd" /></svg>
-                            </span>
-                        </div>
-                        <div class="relative w-1/2">
-                            <input type="number" id="nirf-max" class="w-full px-4 py-3 rounded-xl border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all" placeholder="Max" min="1" max="200">
-                            <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 3a1 1 0 00-.707.293l-4 4a1 1 0 001.414 1.414L10 6.414l3.293 3.293a1 1 0 001.414-1.414l-4-4A1 1 0 0010 3z" clip-rule="evenodd" /><path fill-rule="evenodd" d="M10 17a1 1 0 00.707-.293l4-4a1 1 0 00-1.414-1.414L10 13.586l-3.293-3.293a1 1 0 00-1.414 1.414l4 4A1 1 0 0010 17z" clip-rule="evenodd" /></svg>
-                            </span>
-                        </div>
+                        <input type="number" id="nirf-min" class="filter-input w-1/2 px-4 py-3 rounded-xl placeholder-gray-400 focus:outline-none transition-all" placeholder="Min" min="1" max="200">
+                        <input type="number" id="nirf-max" class="filter-input w-1/2 px-4 py-3 rounded-xl placeholder-gray-400 focus:outline-none transition-all" placeholder="Max" min="1" max="200">
                     </div>
                 </div>
                 <div>
-                    <label for="type-select" class="block text-gray-800 font-bold mb-2">Type</label>
-                    <div class="relative">
-                        <select id="type-select" class="block w-full px-4 py-3 rounded-xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none">
-                            <option value="">All Types</option>
-                            <option value="Engineering">Engineering</option>
-                            <option value="Medical">Medical</option>
-                            <option value="Arts">Arts</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-700">
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L10 10.586 6.707 7.293a1 1 0 00-1.414 1.414l4 4z"/></svg>
-                        </div>
-                    </div>
+                    <label for="type-select" class="block text-gray-800 font-semibold mb-2">Type</label>
+                    <select id="type-select" class="filter-select block w-full px-4 py-3 rounded-xl focus:outline-none transition-all appearance-none bg-white">
+                        <option value="">All Types</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Medical">Medical</option>
+                        <option value="Arts">Arts</option>
+                    </select>
                 </div>
                 <div>
-                    <label for="gov-pri-select" class="block text-gray-800 font-bold mb-2">Government/Private</label>
-                    <div class="relative">
-                        <select id="gov-pri-select" class="block w-full px-4 py-3 rounded-xl border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none">
-                            <option value="">All</option>
-                            <option value="Government">Government</option>
-                            <option value="Private">Private</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-700">
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L10 10.586 6.707 7.293a1 1 0 00-1.414 1.414l4 4z"/></svg>
-                        </div>
-                    </div>
+                    <label for="gov-pri-select" class="block text-gray-800 font-semibold mb-2">Government/Private</label>
+                    <select id="gov-pri-select" class="filter-select block w-full px-4 py-3 rounded-xl focus:outline-none transition-all appearance-none bg-white">
+                        <option value="">All</option>
+                        <option value="Government">Government</option>
+                        <option value="Private">Private</option>
+                    </select>
                 </div>
-                <button id="apply-filter-btn" class="w-full px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold text-lg shadow-lg hover:bg-blue-700 transition-colors">Apply Filters</button>
+                <button id="apply-filter-btn" class="apply-btn w-full px-6 py-4 rounded-xl text-white font-semibold text-lg shadow-lg">Apply Filters</button>
             </div>
         </div>
     </div>
@@ -196,45 +261,59 @@
             colleges.forEach((college, index) => {
                 const card = `
                     <a href="${college.link}" class="no-underline">
-                        <div class="college-card flex flex-col space-y-4" data-card-id="${index}">
-                            <div class="flex items-start space-x-4">
-                                <div class="w-24 h-24 rounded-full bg-blue-50 flex-shrink-0 flex items-center justify-center">
-                                    <img src="${college.logo}" alt="${college.name} Logo" class="w-20 h-20 rounded-full object-cover">
-                                </div>
-                                <div class="flex-grow">
-                                    <h3 class="text-xl font-semibold text-gray-800">${college.name}</h3>
-                                    <p class="text-sm text-gray-500 flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="college-card" data-card-id="${index}">
+                            <div class="flex items-start space-x-4 mb-4 flex-shrink-0">
+                                <img src="${college.logo}" alt="${college.name} Logo" class="college-logo flex-shrink-0">
+                                <div class="flex-grow min-w-0">
+                                    <h3 class="text-lg font-bold text-dark-blue mb-2 line-clamp-2">${college.name}</h3>
+                                    <p class="text-sm text-gray-600 flex items-center mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 icon-color flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                         </svg>
-                                        ${college.location}
+                                        <span class="truncate">${college.location}</span>
                                     </p>
-                                    <p class="text-sm text-gray-500 mt-2">NIRF: <span class="text-gray-900 font-medium">${college.nirf}</span> | NAAC: <span class="text-gray-900 font-medium">${college.naac}</span></p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="info-tag text-xs px-2 py-1 rounded-full font-medium">NIRF: ${college.nirf}</span>
+                                        <span class="info-tag text-xs px-2 py-1 rounded-full font-medium">NAAC: ${college.naac}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
-                                <div class="flex items-center space-x-2">
-                                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M12 10a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M9 2a1 1 0 00-1 1v1h-2a2 2 0 00-2 2v2a2 2 0 002 2h2v2a2 2 0 002 2h2a2 2 0 002-2V9a2 2 0 00-2-2h-2V3a1 1 0 00-1-1zM7 9a1 1 0 011-1h2v2a1 1 0 01-1 1h-1a1 1 0 01-1-1v-2z" clip-rule="evenodd"/></svg>
-                                    <span>Entrance Exam: ${college.exam}</span>
+                            
+                            <div class="flex-grow">
+                                <div class="grid grid-cols-1 gap-2 text-sm text-dark-blue">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2 flex-1 min-w-0">
+                                            <svg class="w-4 h-4 icon-color flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M12 10a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M9 2a1 1 0 00-1 1v1h-2a2 2 0 00-2 2v2a2 2 0 002 2h2v2a2 2 0 002 2h2a2 2 0 002-2V9a2 2 0 00-2-2h-2V3a1 1 0 00-1-1zM7 9a1 1 0 011-1h2v2a1 1 0 01-1 1h-1a1 1 0 01-1-1v-2z" clip-rule="evenodd"/></svg>
+                                            <span class="text-xs truncate">Entrance: ${college.exam}</span>
+                                        </div>
+                                        <div class="flex items-center space-x-2 flex-1 min-w-0">
+                                            <svg class="w-4 h-4 icon-color flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2zM11 13a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2z"/></svg>
+                                            <span class="text-xs truncate">Type: ${college.type}</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2 flex-1 min-w-0">
+                                            <svg class="w-4 h-4 icon-color flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zm-2 5.5a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd"/></svg>
+                                            <span class="text-xs truncate">${college.gov_pri}</span>
+                                        </div>
+                                        <div class="flex items-center space-x-2 flex-1 min-w-0">
+                                            <svg class="w-4 h-4 icon-color flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v5a1 1 0 11-2 0V9z" clip-rule="evenodd"/></svg>
+                                            <span class="text-xs truncate">Placement: ${college.placement}</span>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-100 flex-shrink-0">
                                 <div class="flex items-center space-x-2">
-                                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2zM11 13a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2z"/></svg>
-                                    <span>Type: ${college.type}</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zm-2 5.5a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd"/></svg>
-                                    <span>${college.gov_pri}</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v5a1 1 0 11-2 0V9z" clip-rule="evenodd"/></svg>
-                                    <span>Placement: ${college.placement}</span>
-                                </div>
-                                <div class="flex items-center space-x-2 col-span-2">
-                                    <div class="flex text-sm items-center">
+                                    <div class="flex">
                                         ${renderStars(college.review)}
                                     </div>
                                     <span class="text-sm text-gray-500">(${college.review}/5)</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-semibold text-indigo-600">View Details</div>
                                 </div>
                             </div>
                         </div>
@@ -251,6 +330,36 @@
                 renderColleges(collegesData);
             } catch (error) {
                 console.error('Failed to fetch colleges:', error);
+                // Fallback data for demonstration
+                collegesData = [
+                    {
+                        name: "IIT Madras",
+                        location: "Chennai, Tamil Nadu",
+                        nirf: "1",
+                        naac: "A++",
+                        exam: "JEE Advanced",
+                        type: "Engineering",
+                        gov_pri: "Government",
+                        placement: "95%",
+                        review: 4.8,
+                        logo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='%233b82f6'/%3E%3Ctext x='40' y='48' font-family='Arial' font-size='16' fill='white' text-anchor='middle'%3EIIT%3C/text%3E%3C/svg%3E",
+                        link: "#"
+                    },
+                    {
+                        name: "IIT Delhi",
+                        location: "New Delhi",
+                        nirf: "2",
+                        naac: "A++",
+                        exam: "JEE Advanced",
+                        type: "Engineering",
+                        gov_pri: "Government",
+                        placement: "94%",
+                        review: 4.7,
+                        logo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='%23059669'/%3E%3Ctext x='40' y='48' font-family='Arial' font-size='16' fill='white' text-anchor='middle'%3EIIT%3C/text%3E%3C/svg%3E",
+                        link: "#"
+                    }
+                ];
+                renderColleges(collegesData);
             }
         }
 
@@ -276,6 +385,7 @@
             filterModal.classList.add('hidden');
         }
 
+        // Event Listeners
         filterBtn.addEventListener('click', () => {
             filterModal.classList.remove('hidden');
         });
@@ -284,46 +394,56 @@
             filterModal.classList.add('hidden');
         });
 
+        filterModal.addEventListener('click', (e) => {
+            if (e.target === filterModal) {
+                filterModal.classList.add('hidden');
+            }
+        });
+
         applyFilterBtn.addEventListener('click', () => {
             applyFilters();
         });
 
+        // Initialize
         fetchColleges();
     </script>
 
-<!-- Add this at the end of your body tag on alla bit to the lef pages -->
-<a href="chat.html" id="chatbot-button" title="Chat with us!">
-  <img src="./assets/images/chat.jpeg" alt="Chatbot" />
-</a>
+    <!-- Chatbot Button -->
+    <a href="chat.html" id="chatbot-button" title="Chat with us!">
+        <img src="./assets/images/chat.jpeg" alt="Chatbot" />
+    </a>
 
-<style>
-  #chatbot-button {
-    position: fixed;
-    bottom: 80px;
-    right: 80px;
-    width: 100px;          /* size of the button */
-    height: 100px;
-    border-radius: 50%;   /* makes it circular */
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff; /* optional background */
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
+    <style>
+        #chatbot-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid #6366f1;
+        }
 
-  #chatbot-button:hover {
-    transform: scale(1.1); /* subtle hover effect */
-  }
+        #chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
 
-  #chatbot-button img {
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
-  }
-</style>
+        #chatbot-button img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+    </style>
 </body>
 </html>
