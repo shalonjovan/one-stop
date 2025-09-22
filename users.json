@@ -24,11 +24,16 @@
     "password": "qaz"
   },
   {
+<<<<<<< HEAD
+    "username": "q",
+    "password": "q"
+=======
     "username": "hello",
     "password": "12345678"
   },
   {
     "username": "q",
     "password": "q"
+>>>>>>> 08d7af391e40ac3c551c6dfb2e2b0308cc123e4a
   }
 ]

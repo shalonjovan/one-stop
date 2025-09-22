@@ -9,27 +9,39 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
+            background-color: #6595c5;
         }
         .main-content {
-            background-color: #f0f4f8;
+            background-color: #acc6ee6b;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
         .career-card {
             background-color: #ffffff;
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 32px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease-in-out;
+            border: 2px solid #3b82f6;
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15), 0 4px 6px rgba(59, 130, 246, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.05);
+            transition: all 0.3s ease-in-out;
             cursor: pointer;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+        
+
+        
         .career-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(59, 130, 246, 0.25), 0 15px 20px rgba(59, 130, 246, 0.15), 0 0 0 1px rgba(59, 130, 246, 0.1);
+            border-color: #1e40af;
         }
+        
+        .career-card:hover .card-logo {
+            transform: scale(1.05);
+        }
+        
         .card-logo {
             width: 128px;
             height: 128px;
@@ -37,13 +49,37 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #ffffff; /* Light gray background */
-            border-radius: 8px; /* Slightly rounded corners */
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-radius: 16px;
+            border: 1px solid #93c5fd;
+            transition: all 0.3s ease;
+            position: relative;
         }
+        
+        .card-logo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: exclude;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .career-card:hover .card-logo::after {
+            opacity: 1;
+        }
+        
         .card-logo img {
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
             object-fit: contain;
+            transition: transform 0.3s ease;
         }
     </style>
 </head>
@@ -135,9 +171,9 @@ function renderCareers(careers) {
 function handleCareerClick(careerName) {
     // Define the mapping of career names to their respective pages
     const careerPages = {
-        'Engineering': './carrers/engineering.html',
+        'Engineering': './carrers/engineering.html?field=engineering',
         'Computer Science & IT': './carrers/csit.html', // Make sure this matches your second file's name
-        'Medical Science': './carrers/medicine.html',
+        'Medical Science': './carrers/engineering.html?field=medicine',
         'Business': './carrers/business.html',
         'Technology': './carrers/technology.html',
         'Defense Services':'./carrers/defence.html',
