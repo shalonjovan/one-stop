@@ -1,0 +1,126 @@
+{
+  "fields": [
+    { "name": "Software Engineering", "color": "#3B82F6" },
+    { "name": "Data Science", "color": "#F97316" },
+    { "name": "Artificial Intelligence", "color": "#10B981" },
+    { "name": "Cybersecurity", "color": "#6366F1" },
+    { "name": "Web Development", "color": "#EC4899" },
+    { "name": "Mobile App Development", "color": "#F59E0B" },
+    { "name": "Cloud Computing", "color": "#06B6D4" },
+    { "name": "DevOps Engineering", "color": "#D946EF" },
+    { "name": "Game Development", "color": "#4B5563" },
+    { "name": "Machine Learning Engineering", "color": "#EF4444" },
+    { "name": "Database Administration", "color": "#8B5CF6" },
+    { "name": "Network Engineering", "color": "#3B82F6" },
+    { "name": "UI/UX Design", "color": "#10B981" },
+    { "name": "Blockchain Development", "color": "#F97316" },
+    { "name": "Quality Assurance", "color": "#D946EF" },
+    { "name": "Systems Architecture", "color": "#06B6D4" },
+    { "name": "Product Management", "color": "#4B5563" },
+    { "name": "Technical Writing", "color": "#EF4444" },
+    { "name": "Information Security", "color": "#8B5CF6" },
+    { "name": "Business Intelligence", "color": "#EC4899" }
+  ],
+  "insights": {
+    "Software Engineering": {
+      "summary": "Software engineers are the master architects of the digital world, designing and building complex applications that power everything from banking systems to social media platforms. They combine technical expertise with creative problem-solving to create software solutions that millions of people use daily.",
+      "keyFocusAreas": ["Software Architecture", "Design Patterns", "Agile Development", "Code Quality", "System Design", "Testing Methodologies"],
+      "careerOutlook": "The demand for software engineers continues to soar across all industries. Career paths include senior developer, technical lead, software architect, and engineering manager, with excellent salary prospects and remote work opportunities."
+    },
+    "Data Science": {
+      "summary": "Data scientists are the modern-day detectives who uncover hidden patterns and insights from vast amounts of data. They combine statistics, programming, and domain expertise to extract valuable knowledge that drives business decisions and scientific discoveries.",
+      "keyFocusAreas": ["Statistical Analysis", "Machine Learning", "Data Visualization", "Python/R Programming", "Big Data Technologies", "Business Intelligence"],
+      "careerOutlook": "Often called the 'sexiest job of the 21st century,' data science offers incredible growth opportunities. You can work as a data analyst, machine learning engineer, research scientist, or chief data officer across virtually every industry."
+    },
+    "Artificial Intelligence": {
+      "summary": "AI specialists are building the intelligent systems that will reshape our future, from self-driving cars to virtual assistants. They create algorithms that can learn, reason, and make decisions, pushing the boundaries of what machines can achieve.",
+      "keyFocusAreas": ["Deep Learning", "Neural Networks", "Natural Language Processing", "Computer Vision", "Reinforcement Learning", "AI Ethics"],
+      "careerOutlook": "AI is experiencing unprecedented growth with massive investment from tech giants and startups. Career opportunities include AI researcher, machine learning engineer, robotics engineer, and AI product manager with exceptional salary potential."
+    },
+    "Cybersecurity": {
+      "summary": "Cybersecurity professionals are the digital guardians protecting our interconnected world from threats. They design security systems, investigate breaches, and stay one step ahead of cybercriminals to keep sensitive data and critical systems safe.",
+      "keyFocusAreas": ["Ethical Hacking", "Network Security", "Incident Response", "Risk Assessment", "Cryptography", "Security Architecture"],
+      "careerOutlook": "With cyber threats growing daily, cybersecurity experts are in extremely high demand. Roles include security analyst, penetration tester, security architect, and chief information security officer, offering job security and excellent compensation."
+    },
+    "Web Development": {
+      "summary": "Web developers are the creators of the internet experience, building websites and web applications that billions of people interact with daily. They transform ideas into interactive, beautiful, and functional web experiences using cutting-edge technologies.",
+      "keyFocusAreas": ["Frontend Frameworks", "Backend Development", "Responsive Design", "API Development", "Database Integration", "Web Performance"],
+      "careerOutlook": "Every business needs a web presence, making web developers essential across all sectors. Career paths include frontend developer, backend developer, full-stack developer, and web architect, with strong freelance opportunities."
+    },
+    "Mobile App Development": {
+      "summary": "Mobile app developers create the applications that have become integral to our daily lives. They design and build native and cross-platform apps for smartphones and tablets, reaching billions of users worldwide through app stores.",
+      "keyFocusAreas": ["iOS Development", "Android Development", "Cross-platform Frameworks", "Mobile UI/UX", "App Store Optimization", "Mobile Security"],
+      "careerOutlook": "With mobile usage continuing to grow globally, mobile developers are highly sought after. You can work as an iOS/Android developer, mobile architect, or start your own app business with potential for significant revenue."
+    },
+    "Cloud Computing": {
+      "summary": "Cloud engineers design and manage the infrastructure that powers the modern internet, enabling businesses to scale rapidly and efficiently. They work with cutting-edge cloud technologies to build robust, scalable, and cost-effective solutions.",
+      "keyFocusAreas": ["AWS/Azure/GCP", "Infrastructure as Code", "Containerization", "Microservices", "Cloud Security", "Cost Optimization"],
+      "careerOutlook": "Cloud adoption is accelerating rapidly, creating massive demand for cloud professionals. Career opportunities include cloud architect, DevOps engineer, cloud consultant, and solutions architect with excellent growth potential."
+    },
+    "DevOps Engineering": {
+      "summary": "DevOps engineers bridge the gap between development and operations, creating efficient pipelines that enable rapid, reliable software delivery. They automate processes and foster collaboration to help organizations deploy software faster and more reliably.",
+      "keyFocusAreas": ["CI/CD Pipelines", "Infrastructure Automation", "Monitoring and Logging", "Containerization", "Configuration Management", "Site Reliability"],
+      "careerOutlook": "DevOps practices are essential for modern software development, creating high demand for skilled professionals. Roles include DevOps engineer, site reliability engineer, platform engineer, and DevOps architect."
+    },
+    "Game Development": {
+      "summary": "Game developers bring imagination to life, creating immersive virtual worlds and interactive experiences that entertain millions. They combine technical skills with creativity to build everything from mobile games to AAA console titles.",
+      "keyFocusAreas": ["Game Engines", "3D Graphics", "Game Physics", "AI for Games", "Multiplayer Programming", "Game Optimization"],
+      "careerOutlook": "The gaming industry is one of the fastest-growing entertainment sectors. Career paths include gameplay programmer, graphics programmer, game designer, and technical director in studios ranging from indie to major publishers."
+    },
+    "Machine Learning Engineering": {
+      "summary": "ML engineers transform research prototypes into production-ready systems that can handle real-world scale and complexity. They build the infrastructure and pipelines that make machine learning models work reliably in business applications.",
+      "keyFocusAreas": ["Model Deployment", "MLOps", "Feature Engineering", "Model Monitoring", "Distributed Systems", "Model Optimization"],
+      "careerOutlook": "As AI becomes mainstream, ML engineers are crucial for implementing AI solutions at scale. This role offers excellent career prospects with high salaries and opportunities in every industry adopting AI technologies."
+    },
+    "Database Administration": {
+      "summary": "Database administrators are the custodians of organizational data, ensuring that critical information is stored securely, accessed efficiently, and maintained reliably. They design and optimize database systems that form the backbone of business operations.",
+      "keyFocusAreas": ["Database Design", "Performance Tuning", "Backup and Recovery", "Security Management", "Data Migration", "NoSQL Databases"],
+      "careerOutlook": "Data is the lifeblood of modern businesses, making database professionals essential. Career paths include database administrator, data architect, database developer, and data engineer with stable, well-compensated positions."
+    },
+    "Network Engineering": {
+      "summary": "Network engineers design and maintain the communication infrastructure that connects our digital world. They ensure that data flows smoothly and securely across local networks, the internet, and cloud environments.",
+      "keyFocusAreas": ["Network Protocols", "Router and Switch Configuration", "Network Security", "Wireless Technologies", "Network Monitoring", "SD-WAN"],
+      "careerOutlook": "As businesses become more connected and remote work grows, network engineers remain in high demand. Roles include network administrator, network architect, and network security specialist with stable career progression."
+    },
+    "UI/UX Design": {
+      "summary": "UI/UX designers create intuitive and engaging user experiences for digital products. They combine psychology, design principles, and technology to make complex systems easy and enjoyable to use, directly impacting user satisfaction and business success.",
+      "keyFocusAreas": ["User Research", "Wireframing and Prototyping", "Visual Design", "Interaction Design", "Usability Testing", "Design Systems"],
+      "careerOutlook": "As digital experiences become more important, UI/UX designers are highly valued. Career paths include UX researcher, product designer, design lead, and head of design with opportunities in tech companies, agencies, and startups."
+    },
+    "Blockchain Development": {
+      "summary": "Blockchain developers build decentralized applications and systems using distributed ledger technology. They work on cryptocurrencies, smart contracts, and decentralized platforms that are reshaping finance, supply chains, and digital ownership.",
+      "keyFocusAreas": ["Smart Contract Development", "Cryptocurrency", "Decentralized Applications", "Consensus Mechanisms", "Blockchain Security", "Web3 Technologies"],
+      "careerOutlook": "Blockchain technology is expanding beyond cryptocurrency into various industries. Opportunities exist as blockchain developer, smart contract developer, DeFi developer, and blockchain architect in both startups and established companies."
+    },
+    "Quality Assurance": {
+      "summary": "QA professionals ensure that software products meet quality standards and function correctly before reaching users. They design test strategies, identify bugs, and work closely with development teams to deliver reliable, high-quality software.",
+      "keyFocusAreas": ["Test Automation", "Manual Testing", "Performance Testing", "Security Testing", "Test Management", "Agile Testing"],
+      "careerOutlook": "Quality is crucial for software success, making QA professionals essential team members. Career paths include QA engineer, test automation engineer, QA lead, and quality manager with opportunities across all software-driven industries."
+    },
+    "Systems Architecture": {
+      "summary": "Systems architects are the strategic planners of technology infrastructure, designing large-scale systems that are scalable, reliable, and efficient. They make high-level design decisions and establish technical standards that guide development teams.",
+      "keyFocusAreas": ["System Design", "Scalability Planning", "Technology Strategy", "Integration Architecture", "Performance Optimization", "Technical Leadership"],
+      "careerOutlook": "Systems architects are highly valued senior professionals who command excellent salaries. This role combines deep technical knowledge with business understanding, leading to positions like chief technology officer or principal engineer."
+    },
+    "Product Management": {
+      "summary": "Technical product managers bridge the gap between business needs and technical implementation, defining product strategy and working with engineering teams to build products that users love. They combine market understanding with technical insight.",
+      "keyFocusAreas": ["Product Strategy", "Market Research", "Requirements Analysis", "Roadmap Planning", "Stakeholder Management", "Technical Communication"],
+      "careerOutlook": "Product management offers excellent career growth with paths to senior PM, director of product, or chief product officer roles. The field combines business acumen with technical knowledge, offering competitive compensation and strategic influence."
+    },
+    "Technical Writing": {
+      "summary": "Technical writers are the translators of complex technology, creating clear documentation, user guides, and educational content that helps people understand and use technical products. They make complex information accessible and actionable.",
+      "keyFocusAreas": ["Documentation Writing", "API Documentation", "User Guide Creation", "Content Strategy", "Information Architecture", "Technical Communication"],
+      "careerOutlook": "With the increasing complexity of technology products, skilled technical writers are in high demand. Career paths include senior technical writer, documentation manager, or developer relations specialist with opportunities for remote work."
+    },
+    "Information Security": {
+      "summary": "Information security specialists focus on protecting organizational data and information systems from unauthorized access, breaches, and cyber attacks. They develop security policies, conduct risk assessments, and implement protective measures.",
+      "keyFocusAreas": ["Security Policy Development", "Risk Assessment", "Compliance Management", "Security Auditing", "Data Protection", "Identity Management"],
+      "careerOutlook": "Information security offers strong career growth with increasing regulatory requirements and cyber threats. Roles include security analyst, compliance officer, security consultant, and chief information security officer with excellent job security."
+    },
+    "Business Intelligence": {
+      "summary": "BI professionals transform raw business data into actionable insights that drive strategic decision-making. They design dashboards, create reports, and build data warehouses that help organizations understand their performance and market trends.",
+      "keyFocusAreas": ["Data Warehousing", "Dashboard Creation", "Report Development", "Analytics Tools", "Data Modeling", "Business Analysis"],
+      "careerOutlook": "Business intelligence is essential for data-driven decision making, creating strong demand for BI professionals. Career paths include BI analyst, data warehouse architect, analytics manager, and chief data officer with excellent growth potential."
+    }
+  }
+}
