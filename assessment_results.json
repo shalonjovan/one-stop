@@ -51,5 +51,25 @@
     "specializedFields": [
       "Dentistry"
     ]
+  },
+  {
+    "userName": "Sarvesh",
+    "age": "19",
+    "gender": "male",
+    "studentClass": "12",
+    "generalInterest": "Technology",
+    "specializedFields": [
+      "Web Development"
+    ]
+  },
+  {
+    "userName": "Sarvesh .S",
+    "age": "19",
+    "gender": "male",
+    "studentClass": "13",
+    "generalInterest": "Arts & Humanities",
+    "specializedFields": [
+      "History"
+    ]
   }
 ]
