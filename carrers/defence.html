@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder - Defence Guidance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #43485c;
+        }
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem;
+            text-align: center;
+        }
+        .hex-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hex-row {
+            display: flex;
+            justify-content: center;
+        }
+        .hex-row-odd {
+            margin-top: -30px;
+        }
+        .hexagon-container {
+            width: 150px;
+            height: 173.2px; /* width * sqrt(3) */
+            margin: 0 5px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hexagon-container:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 0.75rem;
+        }
+        .insights-section {
+            display: none;
+        }
+        .field-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .field-list-item {
+            background-color: #445368;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            transition: transform 0.2s ease-in-out;
+            font-weight: 600;
+        }
+        .field-list-item:hover {
+            transform: translateY(-5px);
+        }
+        #chatbot-button {
+            position: fixed;
+            bottom: 80px;
+            right: 80px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        #chatbot-button:hover {
+            transform: scale(1.1);
+        }
+        #chatbot-button img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+            <button id="menu-btn" class="text-white focus:outline-none md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 5v6.5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-10-3z"></path>
+                </svg>
+                <span class="text-xl font-bold">Pathfinder</span>
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+            <a href="./colleges.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="./career_paths.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study Groups</a>
+            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Others</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2a6 6 0 016 6v3.586l1.707 1.707A1 1 0 0118 14H2a1 1 0 01.293-.707L4 11.586V8a6 6 0 016-6zM10 18a3 3 0 003-3H7a3 3 0 003 3z" />
+                </svg>
+            </button>
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <a href="#" class="text-sm px-4 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300">For You</a>
+        </div>
+    </header>
+
+    <div class="container max-w-7xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-blue-900 mt-12 mb-4">Defence Services Career Hub</h1>
+        <p class="text-lg text-gray-700 mb-8 max-w-2xl">
+            Click on any of the hexagons below to explore a specific branch of the armed forces.
+        </p>
+
+        <div class="hex-grid" id="hexGrid">
+            </div>
+
+        <div id="insightsSection" class="w-full w-11/12 mx-auto mt-12 p-6 bg-white rounded-xl shadow-lg insights-section">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4">🎖 Defence Branch Insights 🎖</h2>
+            <div id="insightsOutput" class="p-4 bg-gray-50 rounded-lg min-h-[150px] text-left overflow-y-auto max-h-[400px]">
+                <p class="text-gray-500 italic">Insights will appear here...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hexGrid = document.getElementById('hexGrid');
+        const insightsSection = document.getElementById('insightsSection');
+        const insightsOutput = document.getElementById('insightsOutput');
+
+        const defenceBranches = [
+            { name: "Indian Army", color: "#556B2F" },
+            { name: "Indian Navy", color: "#000080" },
+            { name: "Indian Air Force", color: "#87CEEB" },
+            { name: "Special Forces", color: "#800000" },
+            { name: "Infantry", color: "#B22222" },
+            { name: "Armoured Corps", color: "#2F4F4F" },
+            { name: "Artillery", color: "#4682B4" },
+            { name: "Coast Guard", color: "#FF8C00" },
+            { name: "Engineers Corps", color: "#A0522D" },
+            { name: "Signals Corps", color: "#DAA520" },
+            { name: "Military Intelligence", color: "#708090" },
+            { name: "Aviation Corps", color: "#B0C4DE" }
+        ];
+
+        // Hard-coded insights data for defence branches
+        const insightsData = {
+            "Indian Army": {
+                summary: "The land-based branch and the largest component of the Indian Armed Forces. The Army's primary mission is to ensure national security and unity, defending the nation from external aggression and internal threats, and maintaining peace and security within its borders.",
+                keyFocusAreas: ["Infantry Operations", "Counter-Insurgency", "Mountain Warfare", "Armoured & Mechanized Warfare", "Logistics & Supply Chain", "Peacekeeping Missions"],
+                careerOutlook: "Offers a diverse range of roles from frontline combat in the infantry and armoured corps to technical roles in engineering and signals. A career in the Army is demanding, focusing on leadership, discipline, and national service."
+            },
+            "Indian Navy": {
+                summary: "The naval branch of the Indian Armed Forces. The Navy's prime responsibility is to secure the nation's maritime borders and interests. It operates on the blue water, safeguarding India's trade routes and projecting power across the Indian Ocean Region.",
+                keyFocusAreas: ["Fleet Operations", "Anti-Submarine Warfare", "Naval Aviation", "Submarine Operations", "Maritime Patrol & Surveillance", "Hydrography"],
+                careerOutlook: "Provides opportunities in surface fleet, submarine arm, or naval aviation. Roles range from executive officers managing ship operations to engineers maintaining complex machinery and weapon systems. Life at sea is challenging but adventurous."
+            },
+           "Indian Air Force": {
+                summary: "The air arm of the Indian Armed Forces. Its primary mission is to secure Indian airspace and to conduct aerial warfare during armed conflict. The IAF is responsible for strategic airlift, air defence, and combat operations, projecting air power with precision.",
+                keyFocusAreas: ["Fighter Jet Operations", "Air Defence Systems", "Transport & Airlift", "Helicopter Operations", "Surveillance & Reconnaissance", "Ground Duty Branches"],
+                careerOutlook: "A highly technical and advanced service. Career paths include becoming a pilot in the flying branch, or serving in technical branches maintaining aircraft and systems, or in ground duty branches managing air force operations and administration."
+            },
+            "Special Forces": {
+                summary: "Highly trained elite units of the armed forces tasked with special operations like reconnaissance, unconventional warfare, and counter-terrorism. These units (like Para SF, MARCOS, Garud) are comprised of the toughest soldiers, sailors, and airmen.",
+                keyFocusAreas: ["Direct Action", "Hostage Rescue", "Counter-Terrorism", "Special Reconnaissance", "Unconventional Warfare", "Covert Operations"],
+                careerOutlook: "Entry into Special Forces is voluntary and requires passing a grueling selection process. It's not a direct entry branch but a specialization for those seeking the highest level of physical and mental challenge."
+            },
+            "Infantry": {
+                summary: "Known as the 'Queen of the Battle,' the Infantry is the backbone of the Army. These are the frontline foot soldiers who engage the enemy in close-range combat. Their role is to capture and hold ground, making them indispensable in any conflict.",
+                keyFocusAreas: ["Close-Quarters Combat", "Patrolling", "Counter-Insurgency Ops", "Urban & Jungle Warfare", "Weapon Systems Handling", "Reconnaissance"],
+                careerOutlook: "A career in the Infantry is physically and mentally demanding, requiring immense courage and resilience. It offers unparalleled opportunities for ground-level leadership and combat experience, forming the core of the Army's fighting force."
+            },
+            "Armoured Corps": {
+                summary: "This is the tank arm of the Indian Army. The Armoured Corps spearheads offensive operations with its fleet of modern main battle tanks and combat vehicles. Their role is to provide decisive shock action and firepower on the battlefield.",
+                keyFocusAreas: ["Tank Warfare", "Mechanized Maneuvers", "Reconnaissance", "Combined Arms Operations", "Gunnery and Tactics", "Vehicle Maintenance"],
+                careerOutlook: "Officers and soldiers in the Armoured Corps are experts in mechanized warfare. The career path involves commanding tank squadrons and regiments, requiring a blend of tactical acumen, technical knowledge, and bold leadership."
+            },
+            "Artillery": {
+                summary: "Known as the 'God of War,' the Regiment of Artillery provides overwhelming firepower and battlefield support to infantry and armoured formations using guns, mortars, rockets, and missiles.",
+                keyFocusAreas: ["Gunnery & Ballistics", "Forward Observation", "Fire Direction Control", "Target Acquisition", "Missile Systems", "Surveillance"],
+                careerOutlook: "Artillery officers are masters of trajectory and firepower. A career involves commanding gun batteries and regiments, deploying massive firepower to shape the outcome of battles from a distance. It's a highly technical and cerebral combat arm."
+            },
+            "Coast Guard": {
+                summary: "A maritime law enforcement and search and rescue agency. While separate from the Navy, it works in close coordination to protect India's maritime interests. Its roles include enforcing maritime law, controlling pollution, and protecting marine ecology.",
+                keyFocusAreas: ["Search and Rescue", "Anti-Smuggling & Anti-Piracy", "Pollution Control", "Fisheries Protection", "Offshore Security", "Port Security"],
+                careerOutlook: "Offers a unique career that blends law enforcement with maritime operations. Officers serve on patrol vessels and aircraft, ensuring the safety and security of India's Exclusive Economic Zone. It's less of a combat role and more focused on policing."
+            },
+            "Engineers Corps": {
+                summary: "The Corps of Engineers, or 'Sappers,' provide combat engineering support. Their tasks include constructing bridges and fortifications, laying and clearing minefields, and executing demolition tasks. They also provide vital infrastructure in border areas.",
+                keyFocusAreas: ["Bridge Construction", "Minefield Laying & Clearing", "Demolitions", "Fortification Construction", "Border Roads Development", "Disaster Relief"],
+                careerOutlook: "A career for engineering graduates who want to apply their technical skills in a military context. Engineers are involved in both combat support and nation-building activities, making it a highly versatile and constructive branch."
+            },
+            "Signals Corps": {
+                summary: "The Corps of Signals is the information technology and communication arm of the Army. They are responsible for providing reliable and secure communication networks on the battlefield and in peacetime, managing everything from radio lines to advanced satellite systems.",
+                keyFocusAreas: ["Tactical Communication", "Cyber Security", "Electronic Warfare", "Satellite Communication", "Network Management", "IT Infrastructure"],
+                careerOutlook: "A future-focused, technology-driven branch. A career in Signals is for those with an aptitude for electronics, communication, and IT. They are the 'nervous system' of the Army, enabling command and control across all operations."
+            },
+            "Military Intelligence": {
+                summary: "The Intelligence Corps is responsible for collecting, analyzing, and disseminating intelligence critical for military planning and operations. They work behind the scenes to provide commanders with a clear picture of the adversary's capabilities and intentions.",
+                keyFocusAreas: ["Human Intelligence (HUMINT)", "Signals Intelligence (SIGINT)", "Image Intelligence (IMINT)", "Counter-Intelligence", "Psychological Operations", "Information Warfare"],
+                careerOutlook: "A highly specialized and discreet field for individuals with sharp analytical skills and discretion. Officers operate in the shadows to provide a decisive edge in military operations."
+            },
+            "Aviation Corps": {
+                summary: "The Army Aviation Corps is the air arm of the Indian Army. Operating helicopters, their main roles are reconnaissance, observation, casualty evacuation, and acting as an airborne command post. They are the 'eyes and ears' of the ground commanders.",
+                keyFocusAreas: ["Reconnaissance & Surveillance", "Combat Search & Rescue", "Casualty Evacuation (CASEVAC)", "Artillery Observation", "Helicopter Assault Operations", "Logistics Support"],
+                careerOutlook: "This branch offers the opportunity to become a pilot within the Army. It combines the thrill of flying with direct involvement in ground operations. Aviators play a crucial role in providing mobility and a third-dimension view of the battlefield."
+            }
+        };
+
+        function createHexagonGrid() {
+            const hexesPerRow = 4;
+            let row = document.createElement('div');
+            row.className = 'hex-row';
+
+            defenceBranches.forEach((field, index) => {
+                const hexContainer = document.createElement('div');
+                hexContainer.className = 'hexagon-container';
+                hexContainer.setAttribute('data-field', field.name);
+                
+                const hexagon = document.createElement('div');
+                hexagon.className = 'hexagon';
+                hexagon.style.backgroundColor = field.color;
+                hexagon.textContent = field.name;
+
+                hexContainer.appendChild(hexagon);
+                row.appendChild(hexContainer);
+
+                if ((index + 1) % hexesPerRow === 0 || index === defenceBranches.length - 1) {
+                    hexGrid.appendChild(row);
+                    if ((index + 1) % hexesPerRow === 0 && index !== defenceBranches.length - 1) {
+                        row = document.createElement('div');
+                        row.className = 'hex-row hex-row-odd';
+                    }
+                }
+            });
+
+            addHexagonClickListeners();
+        }
+
+        function addHexagonClickListeners() {
+            const hexagons = document.querySelectorAll('.hexagon-container');
+            hexagons.forEach(hexagon => {
+                hexagon.addEventListener('click', () => {
+                    const fieldName = hexagon.getAttribute('data-field');
+                    getDefenceInsights(fieldName);
+                });
+            });
+        }
+
+        function getDefenceInsights(field) {
+            insightsSection.style.display = 'block';
+            insightsOutput.innerHTML = <p class="text-gray-500 italic animate-pulse">Generating insights for "${field}"...</p>;
+            
+            // Scroll to the insights section
+            insightsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            const insight = insightsData[field];
+
+            if (insight) {
+                setTimeout(() => {
+                    insightsOutput.innerHTML = `
+                        <h3 class="text-xl font-bold text-blue-700 mb-2">${field}</h3>
+                        <p class="mb-4">${insight.summary}</p>
+                        <h4 class="text-lg font-semibold text-gray-700">Key Focus Areas:</h4>
+                        <ul class="list-disc list-inside mb-4 pl-4">
+                            ${insight.keyFocusAreas.map(concept => <li>${concept}</li>).join('')}
+                        </ul>
+                        <h4 class="text-lg font-semibold text-gray-700">Career Outlook:</h4>
+                        <p>${insight.careerOutlook}</p>
+                    `;
+                }, 1000); // Simulate a short loading time
+            } else {
+                insightsOutput.innerHTML = <p class="text-red-500">Could not retrieve insights. Please try again.</p>;
+            }
+        }
+        
+        window.onload = createHexagonGrid;
+    </script>
+    <a href="chat.html" id="chatbot-button" title="Chat with us!">
+        <img src="https://via.placeholder.com/90x90.png?text=Chat" alt="Chatbot" />
+    </a>
+</body>
+</html>
