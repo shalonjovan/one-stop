@@ -9,11 +9,7 @@
     "options": 19,
     "logo": "./assets/icons/cs_it.png"
   },
-  {
-    "career": "Architecture",
-    "options": 14,
-    "logo": "./assets/icons/architect.png"
-  },
+  
   {
     "career": "Medical Science",
     "options": 6,
@@ -24,20 +20,21 @@
     "options": 11,
     "logo": "./assets/icons/allied_medicine.png"
   },
-  {
-    "career": "Science",
-    "options": 27,
-    "logo": "./assets/icons/science.png"
-  },
+  
   {
     "career": "Mathematics & Statistics",
     "options": 14,
     "logo": "./assets/icons/math_statistics.png"
   },
   {
-    "career": "Humanities, Liberal Arts & Social Sciences",
-    "options": 17,
-    "logo": "./assets/icons/humanities_liberalarts_social_sciences.png"
+    "career": "Banking & Finance",
+    "options": 15,
+    "logo": "./assets/icons/banking_finance.png"
+  },
+  {
+    "career": "Science",
+    "options": 27,
+    "logo": "./assets/icons/science.png"
   },
   {
     "career": "Defense Services",
@@ -45,8 +42,14 @@
     "logo": "./assets/icons/defense_services.png"
   },
   {
-    "career": "Banking & Finance",
-    "options": 15,
-    "logo": "./assets/icons/banking_finance.png"
+    "career": "Humanities, Liberal Arts & Social Sciences",
+    "options": 17,
+    "logo": "./assets/icons/humanities_liberalarts_social_sciences.png"
+  },
+  {
+    "career": "Architecture",
+    "options": 14,
+    "logo": "./assets/icons/architect.png"
   }
+  
 ]
