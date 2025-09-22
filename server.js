@@ -4,12 +4,18 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const multer = require('multer');
+const axios = require('axios');
+require('dotenv').config();
 
 const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
+
+// --- Gemini API Configuration ---
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
 
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, '/')));
@@ -35,7 +41,7 @@ const upload = multer({ storage: storage });
 const usersFilePath = 'users.json';
 const assessmentFilePath = 'assessment_results.json';
 
-// Utility function to read JSON files
+// Utility functions (read/write JSON)
 const readJsonFile = (filePath, defaultValue = []) => {
     if (fs.existsSync(filePath)) {
         try {
@@ -48,8 +54,6 @@ const readJsonFile = (filePath, defaultValue = []) => {
     }
     return defaultValue;
 };
-
-// Utility function to write JSON files
 const writeJsonFile = (filePath, data) => {
     try {
         fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
@@ -58,50 +62,61 @@ const writeJsonFile = (filePath, data) => {
     }
 };
 
+
 // --- API Endpoints ---
 
-// Normal signup
+// Secure Gemini API Proxy Endpoint
+app.post('/gemini-proxy', async (req, res) => {
+    const { prompt } = req.body;
+
+    if (!GEMINI_API_KEY) {
+        return res.status(500).json({ error: 'API key not configured on the server.' });
+    }
+    if (!prompt) {
+        return res.status(400).json({ error: 'Prompt is required.' });
+    }
+
+    try {
+        const response = await axios.post(GEMINI_API_URL, {
+            contents: [{ parts: [{ text: prompt }] }]
+        });
+        
+        // --- NEW: Check for blocked responses due to safety settings ---
+        const candidate = response.data.candidates[0];
+        if (!candidate.content || candidate.finishReason === 'SAFETY') {
+            console.error('Gemini response blocked due to safety settings.');
+            return res.status(400).json({ error: 'The AI response was blocked for safety reasons. This can happen with certain topics. Please try a different stream or modify the prompts.' });
+        }
+        
+        const text = candidate.content.parts[0].text;
+        res.json({ text });
+        
+    } catch (error) {
+        console.error('Error calling Gemini API:', error.response ? error.response.data : error.message);
+        res.status(500).json({ error: 'Failed to communicate with the AI service.' });
+    }
+});
+
+
+// User management and assessment saving endpoints...
 app.post('/signup', (req, res) => {
     const user = req.body;
     if (!user.username || !user.password) {
         return res.status(400).json({ error: 'Username and password required' });
     }
-
     let users = readJsonFile(usersFilePath);
-
     if (users.some(u => u.username === user.username)) {
         return res.status(400).json({ error: 'Username already exists' });
     }
-
     users.push(user);
     writeJsonFile(usersFilePath, users);
     res.json({ status: 'success' });
 });
 
-// Google signup
-app.post('/google-signup', (req, res) => {
-    const user = req.body;
-    if (!user.email || !user.name) return res.status(400).json({ error: 'Google user info missing' });
-
-    let users = readJsonFile(usersFilePath);
-
-    if (users.some(u => u.email === user.email)) {
-        return res.status(400).json({ error: 'User already exists' });
-    }
-
-    users.push(user);
-    writeJsonFile(usersFilePath, users);
-    res.json({ status: 'success', user: { username: user.username, email: user.email } });
-});
-
-// Normal login
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-
     let users = readJsonFile(usersFilePath);
-
     const user = users.find(u => u.username === username && u.password === password);
-
     if (user) {
         res.json({ status: 'success', user: { username: user.username } });
     } else {
@@ -109,34 +124,10 @@ app.post('/login', (req, res) => {
     }
 });
 
-// Google login
-app.post('/google-login', (req, res) => {
-    const { email } = req.body;
-
-    let users = readJsonFile(usersFilePath);
-
-    const user = users.find(u => u.email === email);
-
-    if (user) {
-        res.json({ status: 'success', user: { username: user.username, email: user.email } });
-    } else {
-        res.status(401).json({ error: 'User not found. Please sign up first.' });
-    }
-});
-
-// Endpoint to check if a user has taken the assessment
-app.get('/check-assessment/:username', (req, res) => {
-    const username = req.params.username;
-    const assessmentResults = readJsonFile(assessmentFilePath);
-    const hasTakenAssessment = assessmentResults.some(result => result.userName === username);
-    res.json({ hasTakenAssessment });
-});
-
-// Endpoint to save assessment data
 app.post('/save-assessment', (req, res) => {
     const assessmentData = req.body;
     const assessmentResults = readJsonFile(assessmentFilePath);
-
+    
     // Check if assessment for this user already exists, update if it does
     const existingIndex = assessmentResults.findIndex(result => result.userName === assessmentData.userName);
     if (existingIndex !== -1) {
@@ -144,31 +135,11 @@ app.post('/save-assessment', (req, res) => {
     } else {
         assessmentResults.push(assessmentData);
     }
-
+    
     writeJsonFile(assessmentFilePath, assessmentResults);
     res.json({ status: 'success' });
 });
 
-// Endpoint to get assessment data for a specific user
-app.get('/get-assessment/:username', (req, res) => {
-    const username = req.params.username;
-    const assessmentResults = readJsonFile(assessmentFilePath);
-    const userAssessment = assessmentResults.find(result => result.userName === username);
-    if (userAssessment) {
-        res.json({ status: 'success', result: userAssessment });
-    } else {
-        res.status(404).json({ error: 'Assessment not found for this user.' });
-    }
-});
-
-// Endpoint to handle profile picture upload
-app.post('/upload-picture', upload.single('profilePicture'), (req, res) => {
-    if (req.file) {
-        res.json({ status: 'success', message: 'Picture uploaded successfully.' });
-    } else {
-        res.status(400).json({ error: 'No file uploaded.' });
-    }
-});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

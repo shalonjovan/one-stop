@@ -3,213 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment Test</title>
+    <title>AI-Powered Career Assessment</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #eef2f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            color: #333;
-            padding: 2rem;
-        }
-
-        .container {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .step {
-            display: none;
-        }
-
-        .step.active {
-            display: block;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-        }
-
-        .input-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #555;
-        }
-
-        .input-group input, .input-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 1rem;
-        }
-
-        .bubbles-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .bubble {
-            padding: 1rem 1.5rem;
-            border-radius: 9999px;
-            background-color: #e2e8f0;
-            color: #475569;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-            user-select: none;
-        }
-
-        .bubble.selected {
-            background-color: #4a90e2;
-            color: #fff;
-            transform: scale(1.05);
-            box-shadow: 0 4px 6px rgba(74, 144, 226, 0.3);
-        }
-
-        .bubble:hover {
-            transform: scale(1.05);
-        }
-
-        .button-group {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .action-button {
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s, transform 0.2s;
-        }
-
-        .primary-button {
-            background-color: #4a90e2;
-            color: #fff;
-            flex-grow: 1;
-        }
-        .primary-button:hover {
-            background-color: #357bd8;
-            transform: translateY(-2px);
-        }
-
-        .secondary-button {
-            background-color: #e5e7eb;
-            color: #4b5563;
-        }
-        .secondary-button:hover {
-            background-color: #d1d5db;
-            transform: translateY(-2px);
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f0f4f8; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; color: #1e293b; padding: 2rem; }
+        .container { background: #ffffff; padding: 2.5rem; border-radius: 16px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); max-width: 650px; width: 100%; text-align: center; transition: all 0.3s ease; }
+        .step { display: none; }
+        .step.active { display: block; animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        h1 { font-size: 2.25rem; font-weight: 800; color: #0f172a; margin-bottom: 0.75rem; }
+        p.intro-text { color: #475569; margin-bottom: 2rem; font-size: 1.1rem; }
+        .progress-bar { display: flex; justify-content: space-between; margin-bottom: 2.5rem; position: relative; }
+        .progress-bar::before { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 4px; background-color: #e2e8f0; transform: translateY(-50%); z-index: 1; }
+        .progress-bar .line { position: absolute; top: 50%; left: 0; height: 4px; background-color: #3b82f6; transform: translateY(-50%); z-index: 2; width: 0%; transition: width 0.4s ease; }
+        .progress-step { width: 36px; height: 36px; background-color: #e2e8f0; color: #64748b; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; z-index: 3; border: 4px solid #e2e8f0; transition: all 0.4s ease; }
+        .progress-step.active { background-color: #3b82f6; color: #fff; border-color: #3b82f6; }
+        .input-group, .question-group { margin-bottom: 1.5rem; text-align: left; }
+        .input-group label, .question-group label { display: block; margin-bottom: 0.75rem; font-weight: 600; color: #334155; }
+        .input-group input, .input-group select { width: 100%; padding: 14px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; font-size: 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+        .bubbles-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+        .bubble { padding: 0.75rem 1.5rem; border-radius: 9999px; background-color: #f1f5f9; color: #475569; font-weight: 500; cursor: pointer; transition: all 0.2s ease-in-out; user-select: none; border: 1px solid #e2e8f0; }
+        .bubble.selected { background-color: #3b82f6; color: #fff; transform: scale(1.05); box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); border-color: #3b82f6; }
+        .bubble:hover:not(.selected) { transform: translateY(-2px); background-color: #e2e8f0; }
+        .button-group { margin-top: 2.5rem; display: flex; justify-content: space-between; gap: 1rem; }
+        .action-button { padding: 0.875rem 1.5rem; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 1rem; transition: all 0.2s ease; }
+        .primary-button { background-color: #3b82f6; color: #fff; flex-grow: 1; }
+        .primary-button:hover { background-color: #2563eb; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25); }
+        .secondary-button { background-color: #e2e8f0; color: #475569; }
+        .secondary-button:hover { background-color: #cbd5e1; transform: translateY(-2px); }
+        .completion-icon { font-size: 5rem; color: #16a34a; margin-bottom: 1rem; }
+        .loader { width: 48px; height: 48px; border: 5px solid #e2e8f0; border-bottom-color: #3b82f6; border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; margin: 2rem 0;}
+        @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .option-label { display: block; background: #f8fafc; border: 1px solid #e2e8f0; padding: 1rem; border-radius: 8px; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s ease; }
+        .option-label:hover { border-color: #3b82f6; background-color: #eff6ff; }
+        input[type="radio"] { display: none; }
+        input[type="radio"]:checked + .option-label { border-color: #3b82f6; background-color: #dbeafe; box-shadow: 0 0 0 2px #3b82f6; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Step 1: Student Information -->
+        <h1>AI-Powered Career Discovery</h1>
+        <p class="intro-text">Answer a few questions to unlock personalized career and education recommendations.</p>
+        
+        <div class="progress-bar">
+            <div class="line" id="progress-line"></div>
+            <div class="progress-step active" data-step="1">1</div>
+            <div class="progress-step" data-step="2">2</div>
+            <div class="progress-step" data-step="3">3</div>
+            <div class="progress-step" data-step="4">4</div>
+        </div>
+
         <div id="step1" class="step active">
-            <h1>Student Information</h1>
-            <div class="input-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Enter your full name" required>
+            <h2>Personal & Professional Info</h2>
+            <p class="text-sm text-gray-500 mb-6">This helps us get started.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                <div class="input-group"><label for="firstName">First Name</label><input type="text" id="firstName" placeholder="e.g., Jane" required></div>
+                <div class="input-group"><label for="lastName">Last Name</label><input type="text" id="lastName" placeholder="e.g., Doe" required></div>
+                <div class="input-group"><label for="age">Age</label><input type="number" id="age" placeholder="e.g., 17" required></div>
+                <div class="input-group"><label for="class">Class / Grade</label><input type="text" id="class" placeholder="e.g., 12th Grade" required></div>
             </div>
-            <div class="input-group">
-                <label for="age">Age</label>
-                <input type="number" id="age" placeholder="Enter your age" required>
-            </div>
-            <div class="input-group">
-                <label for="gender">Gender</label>
-                <select id="gender" required>
-                    <option value="" disabled selected>Select your gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="class">Class</label>
-                <input type="text" id="class" placeholder="e.g., 10th Grade" required>
-            </div>
-            <div class="button-group">
-                <button id="next-step-1" class="action-button primary-button">Next</button>
+            <div class="button-group justify-end">
+                <button id="next-step-1" class="action-button primary-button">Next →</button>
             </div>
         </div>
 
-        <!-- Step 2: Interests -->
         <div id="step2" class="step">
-            <h1 id="interest-heading">What are you interested in?</h1>
-            <div id="interest-options" class="bubbles-container"></div>
+            <h2>Stream of Study</h2>
+            <p class="text-sm text-gray-500 mb-6">What was your primary stream in your final years of school?</p>
+            <div id="stream-options" class="bubbles-container"></div>
             <div class="button-group">
-                <button id="prev-step-2" class="action-button secondary-button">Back</button>
-                <button id="next-step-2" class="action-button primary-button">Next</button>
+                <button onclick="showStep(0)" class="action-button secondary-button">← Back</button>
+                <button id="next-step-2" class="action-button primary-button">Next →</button>
             </div>
         </div>
 
-        <!-- Step 3: Specialized Fields -->
         <div id="step3" class="step">
-            <h1 id="specialized-heading">What specialized fields interest you?</h1>
-            <p class="text-sm text-gray-500 mb-4">(Select all that apply)</p>
-            <div id="specialized-options" class="bubbles-container"></div>
+            <h2>Let's Dive Deeper</h2>
+            <p class="text-sm text-gray-500 mb-6">Our AI has generated a few questions to understand your interests better.</p>
+            <div id="gemini-questions-container">
+                </div>
             <div class="button-group">
-                <button id="prev-step-3" class="action-button secondary-button">Back</button>
+                <button onclick="showStep(1)" class="action-button secondary-button">← Back</button>
+                <button id="next-step-3" class="action-button primary-button">Next →</button>
+            </div>
+        </div>
+
+        <div id="step4" class="step">
+            <h2>Personalized Recommendations</h2>
+            <p class="text-sm text-gray-500 mb-6">Based on your answers, here are some fields that might excite you. Select all that apply.</p>
+            <div id="specialized-options" class="bubbles-container">
+                 </div>
+            <div class="button-group">
+                <button onclick="showStep(2)" class="action-button secondary-button">← Back</button>
                 <button id="submit-button" class="action-button primary-button">Submit Assessment</button>
+            </div>
+        </div>
+        
+        <div id="step5" class="step">
+            <div class="completion-icon">✓</div>
+            <h2>Assessment Complete!</h2>
+            <p class="text-gray-600 mb-6">Thank you! Your personalized career insights are being saved to your profile.</p>
+            <div class="button-group justify-center">
+                 <button id="view-profile-button" class="action-button primary-button">Go to Your Profile</button>
             </div>
         </div>
     </div>
 
     <script>
+        // --- CONFIGURATION ---
         const backend = 'http://localhost:3000';
-        const steps = ['step1', 'step2', 'step3'];
+        const GEMINI_PROXY_URL = `${backend}/gemini-proxy`;
+        
+        // --- STATE MANAGEMENT ---
+        const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
         let currentStep = 0;
         let assessmentData = {};
+        const streams = ['Science (Biology)', 'Science (Maths/CS)', 'Commerce', 'Humanities / Arts'];
 
-        const interests = {
-            'Technology': ['AI & Machine Learning', 'Web Development', 'Cybersecurity', 'Data Science', 'Game Development'],
-            'Science': ['Biotechnology', 'Environmental Science', 'Astronomy', 'Physics', 'Chemistry'],
-            'Arts & Humanities': ['Graphic Design', 'Creative Writing', 'History', 'Music', 'Film'],
-            'Business': ['Finance', 'Marketing', 'Entrepreneurship', 'Human Resources', 'Accounting'],
-            'Healthcare': ['Medicine', 'Nursing', 'Pharmacology', 'Dentistry', 'Physical Therapy']
-        };
-
+        // --- UI FUNCTIONS ---
+        function updateProgressBar(stepIndex) {
+            const progressSteps = document.querySelectorAll('.progress-step');
+            const progressLine = document.getElementById('progress-line');
+            progressSteps.forEach((step, index) => step.classList.toggle('active', index <= stepIndex));
+            const percentage = stepIndex > 0 ? (stepIndex / (progressSteps.length - 1)) * 100 : 0;
+            progressLine.style.width = `${percentage}%`;
+        }
         function showStep(stepIndex) {
             steps.forEach((stepId, index) => {
-                const element = document.getElementById(stepId);
-                element.classList.toggle('active', index === stepIndex);
+                document.getElementById(stepId).classList.toggle('active', index === stepIndex);
             });
             currentStep = stepIndex;
+            if (stepIndex < steps.length - 1) updateProgressBar(stepIndex);
         }
-
         function createBubbles(containerId, options, isMultiSelect = false) {
             const container = document.getElementById(containerId);
             container.innerHTML = '';
             options.forEach(option => {
                 const bubble = document.createElement('div');
-                bubble.classList.add('bubble');
+                bubble.className = 'bubble';
                 bubble.textContent = option;
                 bubble.dataset.value = option;
                 bubble.addEventListener('click', () => {
@@ -224,64 +157,167 @@
                 container.appendChild(bubble);
             });
         }
+        function showLoader(containerId) {
+            document.getElementById(containerId).innerHTML = '<div class="loader"></div>';
+        }
 
+        // --- BACKEND COMMUNICATION ---
+        async function callAIProxy(prompt) {
+            try {
+                const response = await fetch(GEMINI_PROXY_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: prompt })
+                });
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || 'Backend API Error');
+                }
+                const data = await response.json();
+                return data.text.replace(/```json/g, '').replace(/```/g, '').trim();
+            } catch (error) {
+                console.error("AI Proxy call failed:", error);
+                alert("Failed to communicate with the AI. Please ensure the backend server is running and configured correctly.");
+                return null;
+            }
+        }
+
+        async function fetchAndDisplayGeminiQuestions(stream) {
+            showStep(2);
+            const container = document.getElementById('gemini-questions-container');
+            showLoader('gemini-questions-container');
+
+            // --- MODIFIED PROMPT: Asking for 15 questions ---
+            const prompt = `You are a career counselor AI. A student in class 12 has chosen the '${stream}' stream. Generate 15 insightful, multiple-choice questions to help them discover their specific interests. The questions should cover a wide range of topics within the field, from theoretical concepts to practical applications and work styles, to accurately gauge the student's personality and interests. Ensure the questions are distinct from each other. Provide the output in a clean JSON format like this: [{"question": "...", "options": ["...", "...", "..."]}, ...]`;
+            
+            const result = await callAIProxy(prompt);
+            if (result) {
+                try {
+                    const questions = JSON.parse(result);
+                    assessmentData.geminiQuestions = questions;
+                    renderQuestions(questions);
+                } catch (e) {
+                    console.error("Failed to parse AI questions response:", e);
+                    container.innerHTML = '<p class="text-red-500">Error: Could not parse AI response.</p>';
+                }
+            }
+        }
+        
+        async function fetchAndDisplaySpecializedFields() {
+            showStep(3);
+            showLoader('specialized-options');
+            
+            const answers = [];
+            assessmentData.geminiQuestions.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
+                if (selectedOption) answers.push({ question: q.question, answer: selectedOption.value });
+            });
+            assessmentData.geminiAnswers = answers;
+            
+            const answersSummary = answers.map(a => `For '${a.question}', they chose '${a.answer}'`).join('. ');
+            const prompt = `A student from the '${assessmentData.stream}' stream showed interest in: ${answersSummary}. Suggest 10-12 specialized fields of study or career paths. Provide output as a simple JSON array of strings: ["Field 1", "Field 2", ...]`;
+            
+            const result = await callAIProxy(prompt);
+             if (result) {
+                try {
+                    const fields = JSON.parse(result);
+                    createBubbles('specialized-options', fields, true);
+                } catch (e) {
+                    console.error("Failed to parse AI fields response:", e);
+                    document.getElementById('specialized-options').innerHTML = '<p class="text-red-500">Error: Could not parse AI response.</p>';
+                }
+            }
+        }
+
+        function renderQuestions(questions) {
+            const container = document.getElementById('gemini-questions-container');
+            container.innerHTML = '';
+            questions.forEach((q, index) => {
+                const questionGroup = document.createElement('div');
+                questionGroup.className = 'question-group';
+                const questionLabel = document.createElement('label');
+                questionLabel.textContent = `${index + 1}. ${q.question}`;
+                questionGroup.appendChild(questionLabel);
+                q.options.forEach((option, optionIndex) => {
+                    const optionId = `q${index}-o${optionIndex}`;
+                    const radioInput = document.createElement('input');
+                    radioInput.type = 'radio';
+                    radioInput.id = optionId;
+                    radioInput.name = `question-${index}`;
+                    radioInput.value = option;
+                    const optionLabel = document.createElement('label');
+                    optionLabel.className = 'option-label';
+                    optionLabel.htmlFor = optionId;
+                    optionLabel.textContent = option;
+                    questionGroup.appendChild(radioInput);
+                    questionGroup.appendChild(optionLabel);
+                });
+                container.appendChild(questionGroup);
+            });
+        }
+
+        // --- EVENT LISTENERS ---
         document.getElementById('next-step-1').addEventListener('click', () => {
-            const name = document.getElementById('name').value;
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
             const age = document.getElementById('age').value;
-            const gender = document.getElementById('gender').value;
-            const studentClass = document.getElementById('class').value;
-
-            if (name && age && gender && studentClass) {
-                assessmentData = { userName: name, age, gender, studentClass };
-                createBubbles('interest-options', Object.keys(interests));
+            const studentClass = document.getElementById('class').value.trim();
+            if (firstName && lastName && age && studentClass) {
+                assessmentData = { userName: `${firstName} ${lastName}`, age, studentClass };
+                createBubbles('stream-options', streams);
                 showStep(1);
             } else {
                 alert('Please fill out all the fields.');
             }
         });
-
         document.getElementById('next-step-2').addEventListener('click', () => {
-            const selectedBubble = document.querySelector('#interest-options .bubble.selected');
+            const selectedBubble = document.querySelector('#stream-options .bubble.selected');
             if (selectedBubble) {
-                const interest = selectedBubble.dataset.value;
-                assessmentData.generalInterest = interest;
-                createBubbles('specialized-options', interests[interest], true);
-                showStep(2);
+                assessmentData.stream = selectedBubble.dataset.value;
+                fetchAndDisplayGeminiQuestions(assessmentData.stream);
             } else {
-                alert('Please select a general interest.');
+                alert('Please select your stream of study.');
             }
         });
-
-        document.getElementById('prev-step-2').addEventListener('click', () => {
-            showStep(0);
+        document.getElementById('next-step-3').addEventListener('click', () => {
+            const totalQuestions = assessmentData.geminiQuestions.length;
+            const answeredQuestions = document.querySelectorAll('input[type="radio"]:checked').length;
+            if (answeredQuestions < totalQuestions) {
+                alert('Please answer all the questions.');
+                return;
+            }
+            fetchAndDisplaySpecializedFields();
         });
-
-        document.getElementById('prev-step-3').addEventListener('click', () => {
-            showStep(1);
-        });
-
         document.getElementById('submit-button').addEventListener('click', async () => {
             const specializedFields = Array.from(document.querySelectorAll('#specialized-options .bubble.selected')).map(el => el.dataset.value);
+            if (specializedFields.length === 0) {
+                alert('Please select at least one specialized field.');
+                return;
+            }
             assessmentData.specializedFields = specializedFields;
-
             try {
                 const res = await fetch(`${backend}/save-assessment`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(assessmentData)
                 });
-                const data = await res.json();
                 if (res.ok) {
-                    alert('Assessment saved successfully!');
-                    window.location.href = '/profile.html';
+                    showStep(4);
                 } else {
-                    alert(data.error);
+                    const data = await res.json();
+                    alert(data.error || 'An unknown error occurred.');
                 }
             } catch (error) {
                 console.error('Failed to save assessment:', error);
-                alert('Failed to save assessment. Please try again later.');
+                alert('Failed to save assessment. Please check your connection and try again.');
             }
         });
+        document.getElementById('view-profile-button').addEventListener('click', () => {
+             window.location.href = '/profile.html';
+        });
+
+        // Initialize first step
+        showStep(0);
     </script>
 </body>
 </html>
