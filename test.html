@@ -3,34 +3,502 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap Embed</title>
+    <title>Roadmaps - Pathfinder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        .roadmap-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
+        .card-hover {
+            transition: all 0.3s ease;
         }
-        .roadmap-title {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-        iframe {
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .career-button {
+            background: linear-gradient(145deg, #f0f4f8, #d1d9e0);
+            box-shadow: 5px 5px 10px #b8c5d1, -5px -5px 10px #ffffff;
+            transition: all 0.3s ease;
+        }
+        .career-button:hover {
+            transform: scale(1.05);
+            box-shadow: 8px 8px 16px #b8c5d1, -8px -8px 16px #ffffff;
+        }
+        .career-button:active {
+            transform: scale(0.95);
+            box-shadow: inset 5px 5px 10px #b8c5d1, inset -5px -5px 10px #ffffff;
+        }
+        .image-modal {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
         }
     </style>
 </head>
-<body>
-    <div class="roadmap-container">
-        <h2 class="roadmap-title">Learning Roadmap</h2>
-        <iframe src="https://roadmap.sh/r/embed?id=68d297b3e5bfa7fea1c26fbd" width="100%" height="500px" frameBorder="0"></iframe>
+<body class="bg-gray-50">
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 left-0 z-50 w-64 bg-gray-900 md:hidden">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <span class="text-xl font-bold text-white">Menu</span>
+                <button id="close-menu" class="text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="../colleges.html" class="block text-white hover:text-gray-300 py-2">Colleges</a>
+                <a href="../career_paths.html" class="block text-white hover:text-gray-300 py-2">Career Paths</a>
+                <a href="#" class="block text-white hover:text-gray-300 py-2 font-semibold">Roadmaps</a>
+                <a href="#" class="block text-white hover:text-gray-300 py-2">Study Groups</a>
+                <a href="#" class="block text-white hover:text-gray-300 py-2">Others</a>
+            </nav>
+        </div>
     </div>
+
+    <!-- Header Navigation Bar -->
+    <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+            <button id="menu-btn" class="text-white focus:outline-none md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path>
+                </svg>
+                <span class="text-xl font-bold">Pathfinder</span>
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+            <a href="../colleges.html"
+                class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="../career_paths.html"
+                class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career
+                Paths</a>
+            <a href="#"
+                class="text-white hover:text-gray-200 px-2 py-1 rounded-lg bg-gray-800 transition-colors duration-200 font-semibold">Roadmaps</a>
+            <a href="#"
+                class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study
+                Groups</a>
+            <a href="#"
+                class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Others</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 2a6 6 0 016 6v3.586l1.707 1.707A1 1 0 0118 14H2a1 1 0 01.293-.707L4 11.586V8a6 6 0 016-6zM10 18a3 3 0 003-3H7a3 3 0 003 3z" />
+                </svg>
+            </button>
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <a href="#"
+                class="text-sm px-4 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300">For
+                You</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h1 class="text-5xl font-bold mb-6">Career Roadmaps</h1>
+            <p class="text-xl mb-8 opacity-90">Choose your path after Class 10 or Class 12</p>
+        </div>
+    </section>
+
+    <!-- After Class 10 Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">After Class 10</h2>
+                
+                <!-- Search Bar for Class 10 -->
+                <div class="max-w-2xl mx-auto mb-8">
+                    <div class="relative">
+                        <input type="text" id="class10-search" 
+                               placeholder="Search career options after Class 10..."
+                               class="w-full px-6 py-4 text-gray-800 rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-indigo-300 text-lg border border-gray-200">
+                        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class 10 Career Options -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" id="class10-options">
+                <!-- Options will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- After Class 12 Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">After Class 12</h2>
+                
+                <!-- Search Bar for Class 12 -->
+                <div class="max-w-2xl mx-auto mb-8">
+                    <div class="relative">
+                        <input type="text" id="class12-search" 
+                               placeholder="Search career options after Class 12..."
+                               class="w-full px-6 py-4 text-gray-800 rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-indigo-300 text-lg border border-gray-200">
+                        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full transition-colors">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class 12 Career Options -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" id="class12-options">
+                <!-- Options will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 hidden image-modal">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="modal-content bg-white rounded-lg max-w-4xl w-full">
+                <div class="flex justify-between items-center p-4 border-b">
+                    <h3 id="modalTitle" class="text-xl font-bold"></h3>
+                    <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <img id="modalImage" class="modal-image mx-auto" src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path>
+                        </svg>
+                        <span class="text-xl font-bold">Pathfinder</span>
+                    </div>
+                    <p class="text-gray-400">Navigate your career journey with structured guidance.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Career Paths</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">After Class 10</a></li>
+                        <li><a href="#" class="hover:text-white">After Class 12</a></li>
+                        <li><a href="#" class="hover:text-white">Professional Courses</a></li>
+                        <li><a href="#" class="hover:text-white">Skill Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Study Materials</a></li>
+                        <li><a href="#" class="hover:text-white">Career Guidance</a></li>
+                        <li><a href="#" class="hover:text-white">Admission Help</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="hover:text-white">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-white">Facebook</a></li>
+                        <li><a href="#" class="hover:text-white">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Pathfinder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Career data - This would normally be loaded from roadmaps.json
+        const careerData = {
+            class10: [
+                {
+                    id: 1,
+                    name: "Science Stream",
+                    description: "Physics, Chemistry, Biology/Math focus",
+                    image: "images/science_stream.jpeg",
+                    icon: "🔬"
+                },
+                {
+                    id: 2,
+                    name: "Commerce Stream", 
+                    description: "Business, Accounting, Economics focus",
+                    image: "images/commerce_stream.jpeg",
+                    icon: "💼"
+                },
+                {
+                    id: 3,
+                    name: "Arts/Humanities",
+                    description: "Literature, History, Social Sciences",
+                    image: "images/arts_humanities.jpeg",
+                    icon: "📚"
+                },
+                {
+                    id: 4,
+                    name: "Vocational Courses",
+                    description: "Practical skill-based training",
+                    image: "images/vocational_courses.jpeg",
+                    icon: "🔧"
+                },
+                {
+                    id: 5,
+                    name: "Skill Based Courses",
+                    description: "Technology and digital skills",
+                    image: "images/skill_based.jpeg",
+                    icon: "💻"
+                },
+                {
+                    id: 6,
+                    name: "Diploma Courses",
+                    description: "Professional diploma programs",
+                    image: "images/diploma_courses.jpeg",
+                    icon: "🎓"
+                },
+                {
+                    id: 7,
+                    name: "Entrance Exams",
+                    description: "Competitive exam preparation",
+                    image: "images/entrance_exam.jpeg",
+                    icon: "📝"
+                },
+                {
+                    id: 8,
+                    name: "Government Jobs",
+                    description: "Public sector opportunities",
+                    image: "images/government_jobs.jpeg",
+                    icon: "🏛️"
+                }
+            ],
+            class12: [
+                {
+                    id: 1,
+                    name: "Engineering",
+                    description: "Technical and engineering fields",
+                    image: "images/engineering.jpeg",
+                    icon: "⚙️",
+                    iframe: "https://roadmap.sh/r/embed?id=engineering-roadmap"
+                },
+                {
+                    id: 2,
+                    name: "Medicine",
+                    description: "Medical and healthcare careers",
+                    image: "images/medicine.jpeg",
+                    icon: "⚕️",
+                    iframe: "https://roadmap.sh/r/embed?id=medicine-roadmap"
+                },
+                {
+                    id: 3,
+                    name: "Architecture",
+                    description: "Design and construction field",
+                    image: "images/architecture.jpeg",
+                    icon: "🏗️",
+                    iframe: "https://roadmap.sh/r/embed?id=architecture-roadmap"
+                },
+                {
+                    id: 4,
+                    name: "Defense",
+                    description: "Military and defense services",
+                    image: "images/defense.jpeg",
+                    icon: "🛡️",
+                    iframe: "https://roadmap.sh/r/embed?id=defense-roadmap"
+                },
+                {
+                    id: 5,
+                    name: "Banking",
+                    description: "Finance and banking sector",
+                    image: "images/banking.jpeg",
+                    icon: "🏦",
+                    iframe: "https://roadmap.sh/r/embed?id=banking-roadmap"
+                },
+                {
+                    id: 6,
+                    name: "Arts & Science",
+                    description: "Liberal arts and sciences",
+                    image: "images/arts_science.jpeg",
+                    icon: "🎨",
+                    iframe: "https://roadmap.sh/r/embed?id=arts-science-roadmap"
+                },
+                {
+                    id: 7,
+                    name: "Computer Science",
+                    description: "IT and software development",
+                    image: "images/computer_science.jpeg",
+                    icon: "💻",
+                    iframe: "https://roadmap.sh/r/embed?id=computer-science-roadmap"
+                }
+            ]
+        };
+
+        // Function to create career option card
+        function createCareerCard(option, isClass12 = false) {
+            return `
+                <div class="career-button rounded-xl p-6 text-center">
+                    <div class="text-4xl mb-4">${option.icon}</div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">${option.name}</h3>
+                    <p class="text-gray-600 text-sm mb-4">${option.description}</p>
+                    <div class="flex space-x-2 justify-center">
+                        <button onclick="showImage('${option.image}', '${option.name}')" 
+                                class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors text-sm">
+                            View Details
+                        </button>
+                        ${isClass12 ? `
+                        <button onclick="redirectToOnline(${option.id}, '${isClass12 ? 'class12' : 'class10'}')" 
+                                class="bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Display career options
+        function displayCareerOptions() {
+            const class10Container = document.getElementById('class10-options');
+            const class12Container = document.getElementById('class12-options');
+
+            class10Container.innerHTML = careerData.class10.map(option => createCareerCard(option, false)).join('');
+            class12Container.innerHTML = careerData.class12.map(option => createCareerCard(option, true)).join('');
+        }
+
+        // Show image modal
+        function showImage(imagePath, title) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            modalImage.src = imagePath;
+            modalTitle.textContent = title;
+            modal.classList.remove('hidden');
+        }
+
+        // Close image modal
+        document.getElementById('closeModal').addEventListener('click', () => {
+            document.getElementById('imageModal').classList.add('hidden');
+        });
+
+        // Close modal on backdrop click
+        document.getElementById('imageModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                document.getElementById('imageModal').classList.add('hidden');
+            }
+        });
+
+        // Redirect to online page
+        function redirectToOnline(id, type) {
+            window.location.href = `online.html?id=${id}&type=${type}`;
+        }
+
+        // Search functionality for Class 10
+        document.getElementById('class10-search').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const container = document.getElementById('class10-options');
+            
+            if (searchTerm.length < 2) {
+                container.innerHTML = careerData.class10.map(option => createCareerCard(option, false)).join('');
+                return;
+            }
+
+            const filtered = careerData.class10.filter(option => 
+                option.name.toLowerCase().includes(searchTerm) ||
+                option.description.toLowerCase().includes(searchTerm)
+            );
+
+            container.innerHTML = filtered.map(option => createCareerCard(option, false)).join('');
+        });
+
+        // Search functionality for Class 12
+        document.getElementById('class12-search').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const container = document.getElementById('class12-options');
+            
+            if (searchTerm.length < 2) {
+                container.innerHTML = careerData.class12.map(option => createCareerCard(option, true)).join('');
+                return;
+            }
+
+            const filtered = careerData.class12.filter(option => 
+                option.name.toLowerCase().includes(searchTerm) ||
+                option.description.toLowerCase().includes(searchTerm)
+            );
+
+            container.innerHTML = filtered.map(option => createCareerCard(option, true)).join('');
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            displayCareerOptions();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
