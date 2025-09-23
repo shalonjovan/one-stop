@@ -272,6 +272,12 @@
             insightsSection.style.display = 'block';
             insightsOutput.innerHTML = `<p class="text-gray-500 italic animate-pulse">Loading insights for "${fieldName}"...</p>`;
 
+            // Smooth scroll to insights section
+            insightsSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+
             const insight = careerData.insights[fieldName];
 
             if (insight) {
