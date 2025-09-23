@@ -10,7 +10,7 @@
     "gov_pri": "Government",
     "placement": 95,
     "review": 4.3,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/indian-institute-of-technology-jammu"
   },
   {
     "name": "Indian Institute of Management Jammu",
@@ -23,7 +23,7 @@
     "gov_pri": "Government",
     "placement": 98,
     "review": 4.5,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/indian-institute-of-management-jammu"
   },
   {
     "name": "National Institute of Technology Srinagar",
@@ -36,7 +36,7 @@
     "gov_pri": "Government",
     "placement": 85,
     "review": 4.1,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/national-institute-of-technology-srinagar"
   },
   {
     "name": "All India Institute of Medical Sciences, Vijaypur (AIIMS Jammu)",
@@ -48,7 +48,7 @@
     "gov_pri": "Government",
     "placement": 100,
     "review": 4.6,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/all-india-institute-of-medical-sciences-vijaypur-aiims-jammu"
   },
   {
     "name": "Shri Mata Vaishno Devi University (SMVDU)",
@@ -61,7 +61,7 @@
     "gov_pri": "Government",
     "placement": 78,
     "review": 3.9,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/shri-mata-vaishno-devi-university-smvdu"
   },
   {
     "name": "University of Jammu",
@@ -74,7 +74,7 @@
     "gov_pri": "Government",
     "placement": 65,
     "review": 3.8,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/university-of-jammu"
   },
   {
     "name": "University of Kashmir",
@@ -87,7 +87,7 @@
     "gov_pri": "Government",
     "placement": 62,
     "review": 3.7,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/university-of-kashmir"
   },
   {
     "name": "Central University of Kashmir",
@@ -100,7 +100,7 @@
     "gov_pri": "Government",
     "placement": 70,
     "review": 3.6,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/central-university-of-kashmir"
   },
   {
     "name": "Islamic University of Science & Technology (IUST)",
@@ -112,7 +112,7 @@
     "gov_pri": "Government",
     "placement": 75,
     "review": 3.8,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/islamic-university-of-science-technology-iust"
   },
   {
     "name": "Sher-i-Kashmir Institute of Medical Sciences (SKIMS), Soura",
@@ -124,7 +124,7 @@
     "gov_pri": "Government",
     "placement": 92,
     "review": 4.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/sher-i-kashmir-institute-of-medical-sciences-skims-soura"
   },
   {
     "name": "Government Medical College, Srinagar",
@@ -136,7 +136,7 @@
     "gov_pri": "Government",
     "placement": 88,
     "review": 4,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-medical-college-srinagar"
   },
   {
     "name": "Government Medical College, Jammu",
@@ -148,7 +148,7 @@
     "gov_pri": "Government",
     "placement": 90,
     "review": 4.1,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-medical-college-jammu"
   },
   {
     "name": "Acharya Shri Chander College of Medical Sciences (ASCOMS)",
@@ -160,7 +160,7 @@
     "gov_pri": "Private",
     "placement": 85,
     "review": 3.9,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/acharya-shri-chander-college-of-medical-sciences-ascoms"
   },
   {
     "name": "Model Institute of Engineering & Technology (MIET), Jammu",
@@ -172,7 +172,7 @@
     "gov_pri": "Private",
     "placement": 72,
     "review": 3.5,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/model-institute-of-engineering-technology-miet-jammu"
   },
   {
     "name": "Government College of Engineering & Technology (GCET), Safapora",
@@ -184,7 +184,7 @@
     "gov_pri": "Government",
     "placement": 68,
     "review": 3.4,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-college-of-engineering-technology-gcet-safapora"
   },
   {
     "name": "Government College for Women, M.A. Road, Srinagar",
@@ -196,7 +196,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-college-for-women-ma-road-srinagar"
   },
   {
     "name": "GGM Science College, Jammu",
@@ -208,7 +208,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/ggm-science-college-jammu"
   },
   {
     "name": "S.P. College (Srinagar)",
@@ -220,7 +220,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/sp-college-srinagar"
   },
   {
     "name": "Government Degree College Anantnag",
@@ -232,7 +232,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-anantnag"
   },
   {
     "name": "Government Degree College Baramulla",
@@ -244,7 +244,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-baramulla"
   },
   {
     "name": "Government Degree College Sopore",
@@ -256,7 +256,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-sopore"
   },
   {
     "name": "SKUAST Kashmir (Sher-e-Kashmir University of Agricultural Sciences & Technology)",
@@ -268,7 +268,7 @@
     "gov_pri": "Government",
     "placement": 70,
     "review": 3.6,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/skuast-kashmir-sher-e-kashmir-university-of-agricultural-sciences-technology"
   },
   {
     "name": "SKUAST Jammu",
@@ -280,7 +280,7 @@
     "gov_pri": "Government",
     "placement": 68,
     "review": 3.5,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/skuast-jammu"
   },
   {
     "name": "Government Polytechnic College, Srinagar",
@@ -292,7 +292,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-polytechnic-college-srinagar"
   },
   {
     "name": "JK Institute of Medical Sciences (JKIMs) Anantnag",
@@ -304,7 +304,7 @@
     "gov_pri": "Government",
     "placement": 95,
     "review": 4,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/jk-institute-of-medical-sciences-jkims-anantnag"
   },
   {
     "name": "Government Degree College Pulwama",
@@ -316,7 +316,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-pulwama"
   },
   {
     "name": "Islamia College of Science & Commerce, Srinagar",
@@ -328,7 +328,7 @@
     "gov_pri": "Autonomous/College",
     "placement": 50,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/islamia-college-of-science-commerce-srinagar"
   },
   {
     "name": "Government Degree College Rajouri",
@@ -340,7 +340,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-rajouri"
   },
   {
     "name": "Government Degree College Kathua",
@@ -352,7 +352,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-kathua"
   },
   {
     "name": "Government College of Engineering and Technology, Jammu",
@@ -364,7 +364,7 @@
     "gov_pri": "Government",
     "placement": 50,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-college-of-engineering-and-technology-jammu"
   },
   {
     "name": "Government S.P. College of Commerce, Srinagar",
@@ -376,7 +376,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-sp-college-of-commerce-srinagar"
   },
   {
     "name": "Government Degree College Kulgam",
@@ -388,7 +388,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-kulgam"
   },
   {
     "name": "Government Degree College Shopian",
@@ -400,7 +400,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-shopian"
   },
   {
     "name": "Government Degree College Budgam",
@@ -412,7 +412,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-budgam"
   },
   {
     "name": "Baba Ghulam Shah Badshah University (BGSBU)",
@@ -424,7 +424,7 @@
     "gov_pri": "Government",
     "placement": 60,
     "review": 3.3,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/baba-ghulam-shah-badshah-university-bgsbu"
   },
   {
     "name": "Government Degree College Sopore Women's College",
@@ -436,7 +436,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-sopore-womens-college"
   },
   {
     "name": "Government Degree College Bhaderwah",
@@ -448,7 +448,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-bhaderwah"
   },
   {
     "name": "Model Institute of Education & Technology (MIET) Srinagar",
@@ -460,7 +460,7 @@
     "gov_pri": "Private",
     "placement": 80,
     "review": 3.7,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/model-institute-of-education-technology-miet-srinagar"
   },
   {
     "name": "Government Degree College Handwara",
@@ -472,7 +472,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-handwara"
   },
   {
     "name": "Government Degree College Bandipora",
@@ -484,7 +484,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-bandipora"
   },
   {
     "name": "Government Degree College Anantnag Women's College",
@@ -496,7 +496,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-anantnag-womens-college"
   },
   {
     "name": "Government Degree College Udhampur",
@@ -508,7 +508,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-udhampur"
   },
   {
     "name": "Government College of Education (GCM), Srinagar",
@@ -520,7 +520,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-college-of-education-gcm-srinagar"
   },
   {
     "name": "S.K. Institute of Medical Sciences & Research (private/government mix)",
@@ -532,7 +532,7 @@
     "gov_pri": "Government",
     "placement": 95,
     "review": 4,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/sk-institute-of-medical-sciences-research-privategovernment-mix"
   },
   {
     "name": "Government Degree College Bijbehara",
@@ -544,7 +544,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-bijbehara"
   },
   {
     "name": "Government Degree College Baramulla Women's College",
@@ -556,7 +556,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-baramulla-womens-college"
   },
   {
     "name": "Government Degree College Pulwama Women's College",
@@ -568,7 +568,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-pulwama-womens-college"
   },
   {
     "name": "Government Polytechnic College Jammu",
@@ -580,7 +580,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-polytechnic-college-jammu"
   },
   {
     "name": "Government Degree College Ramban",
@@ -592,7 +592,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-ramban"
   },
   {
     "name": "Government Degree College Kishtwar",
@@ -604,7 +604,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-kishtwar"
   },
   {
     "name": "Government Degree College Reasi",
@@ -616,7 +616,7 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-reasi"
   },
   {
     "name": "Government Degree College Mendhar",
@@ -628,6 +628,6 @@
     "gov_pri": "Government",
     "placement": 45,
     "review": 3.2,
-    "link": "#"
+    "link": "./college-dashboard.html?data=./colleges/government-degree-college-mendhar"
   }
 ]
