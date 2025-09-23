@@ -81,11 +81,10 @@ app.post('/gemini-proxy', async (req, res) => {
             contents: [{ parts: [{ text: prompt }] }]
         });
         
-        // --- NEW: Check for blocked responses due to safety settings ---
         const candidate = response.data.candidates[0];
         if (!candidate.content || candidate.finishReason === 'SAFETY') {
             console.error('Gemini response blocked due to safety settings.');
-            return res.status(400).json({ error: 'The AI response was blocked for safety reasons. This can happen with certain topics. Please try a different stream or modify the prompts.' });
+            return res.status(400).json({ error: 'The AI response was blocked for safety reasons. Please try a different stream.' });
         }
         
         const text = candidate.content.parts[0].text;
@@ -128,7 +127,6 @@ app.post('/save-assessment', (req, res) => {
     const assessmentData = req.body;
     const assessmentResults = readJsonFile(assessmentFilePath);
     
-    // Check if assessment for this user already exists, update if it does
     const existingIndex = assessmentResults.findIndex(result => result.userName === assessmentData.userName);
     if (existingIndex !== -1) {
         assessmentResults[existingIndex] = assessmentData;
@@ -139,6 +137,26 @@ app.post('/save-assessment', (req, res) => {
     writeJsonFile(assessmentFilePath, assessmentResults);
     res.json({ status: 'success' });
 });
+
+
+// START: --- THIS IS THE NEW CODE BLOCK ---
+// This route handles GET requests to fetch a user's assessment results.
+app.get('/get-assessment/:username', (req, res) => {
+    const { username } = req.params;
+    const assessments = readJsonFile(assessmentFilePath);
+    
+    // Find the assessment that matches the username
+    const userAssessment = assessments.find(assessment => assessment.userName === username);
+    
+    if (userAssessment) {
+        // If found, send it back successfully
+        res.json({ result: userAssessment });
+    } else {
+        // If not found, send a 404 error
+        res.status(404).json({ error: 'Assessment not found for this user.' });
+    }
+});
+// END: --- THIS IS THE NEW CODE BLOCK ---
 
 
 app.listen(PORT, () => {

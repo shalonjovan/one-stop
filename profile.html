@@ -194,29 +194,28 @@ function getUserName() {
     }
 }
 
-        async function fetchAssessmentResults(username) {
-            try {
-                const res = await fetch(`${backend}/get-assessment/${username}`);
-                const data = await res.json();
-                if (res.ok) {
-                    displayResults(data.result);
-                    displayProfilePicture(username);
-                } else {
-                    displayResults(null);
-                }
-            } catch (error) {
-                console.error('Error fetching assessment results:', error);
-                // Display demo data for preview if server connection fails
-                displayResults({
-                    userName: "Alex Johnson",
-                    age: "22",
-                    gender: "Non-binary",
-                    studentClass: "Senior",
-                    generalInterest: "Technology & Innovation",
-                    specializedFields: ["Software Development", "AI & Machine Learning", "Data Science"]
-                });
-            }
+        // In your PROFILE page file (profile.html)
+
+async function fetchAssessmentResults(username) {
+    try {
+        const res = await fetch(`${backend}/get-assessment/${username}`);
+        const data = await res.json();
+        if (res.ok) {
+            // This is the success path: display the real data from the server
+            displayResults(data.result); 
+            displayProfilePicture(username);
+        } else {
+            // This happens if the server is running but can't find the user
+            displayResults(null);
         }
+    } catch (error) {
+        console.error('Error fetching assessment results:', error);
+        
+        // --- CHANGE ---
+        // Instead of showing demo data, we now show the "Not Found" message on connection error.
+        displayResults(null);
+    }
+}
 
         function displayResults(results) {
     if (!results) {
