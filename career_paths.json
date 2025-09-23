@@ -1,29 +1,29 @@
 [
   {
     "career": "Engineering",
-    "options": 39,
+    "options": 38,
     "logo": "./assets/icons/engineer.png"
   },
   {
     "career": "Computer Science & IT",
-    "options": 19,
+    "options": 36,
     "logo": "./assets/icons/cs_it.png"
   },
   
   {
     "career": "Medical Science",
-    "options": 6,
+    "options": 29,
     "logo": "./assets/icons/medical_science.png"
   },
   {
     "career": "Allied Medicine",
-    "options": 11,
+    "options": 15,
     "logo": "./assets/icons/allied_medicine.png"
   },
   
   {
     "career": "Mathematics & Statistics",
-    "options": 14,
+    "options": 21,
     "logo": "./assets/icons/math_statistics.png"
   },
   {
@@ -33,12 +33,12 @@
   },
   {
     "career": "Science",
-    "options": 27,
+    "options": 32,
     "logo": "./assets/icons/science.png"
   },
   {
-    "career": "Defense Services",
-    "options": 5,
+    "career": "Defense Serv2ices",
+    "options": 15,
     "logo": "./assets/icons/defense_services.png"
   },
   {
