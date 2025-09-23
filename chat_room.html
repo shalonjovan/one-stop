@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room - Pathfinder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .chat-container {
+            min-height: calc(100vh - 80px);
+        }
+    </style>
+</head>
+<body class="bg-teal-50">
+    <!-- Header Navigation Bar -->
+    <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+            <button id="menu-btn" class="text-white focus:outline-none md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path>
+                </svg>
+                <span class="text-xl font-bold">Pathfinder</span>
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+            <a href="./colleges.html"
+                class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="./career_paths.html"
+                class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career
+                Paths</a>
+            <a href="#"
+                class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
+            <a href="./study_groups.html"
+                class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study
+                Groups</a>
+            <a href="#"
+                class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Others</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <button class="text-white hover:text-gray-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <a href="#"
+                class="text-sm px-4 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300">For
+                You</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="chat-container flex flex-col items-center justify-center p-6">
+        <div class="w-full max-w-5xl">
+            <!-- Simple Header -->
+            <div class="text-center mb-8">
+                <h1 id="room-title" class="text-3xl font-bold text-gray-800 mb-2">Loading...</h1>
+                <p id="room-description" class="text-gray-600">Please wait while we load the chat room</p>
+            </div>
+
+            <!-- Chat Room Container -->
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl border border-teal-200 overflow-hidden">
+                <!-- Chat Status Bar -->
+                <div class="bg-teal-50 border-b border-teal-200 px-6 py-4 flex items-center justify-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-3 h-3 bg-teal-500 rounded-full animate-pulse shadow-sm"></div>
+                        <span id="status-text" class="text-teal-700 text-sm font-semibold">Chat Room Active</span>
+                        <div class="text-teal-600 text-xs bg-teal-100 px-2 py-1 rounded-full">Live</div>
+                    </div>
+                </div>
+
+                <!-- RumbleTalk Chat Integration -->
+                <div class="relative bg-teal-25">
+                    <div style="height: 600px;" class="w-full">
+                        <div id="chat-container" class="w-full h-full"></div>
+                        <div id="loading-message" class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-teal-50 to-cyan-50">
+                            <div class="text-center p-8 bg-white rounded-lg shadow-lg border border-teal-100">
+                                <div class="animate-spin rounded-full h-10 w-10 border-b-3 border-teal-600 mx-auto mb-6"></div>
+                                <div class="text-teal-700 mb-3 font-semibold text-lg">Loading chat room...</div>
+                                <div class="text-teal-500 text-sm">Please wait while we connect you to other students</div>
+                                <div class="mt-4 flex items-center justify-center space-x-1">
+                                    <div class="w-2 h-2 bg-teal-400 rounded-full animate-bounce"></div>
+                                    <div class="w-2 h-2 bg-teal-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                    <div class="w-2 h-2 bg-teal-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="text-center mt-8">
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-teal-100">
+                    <p class="text-teal-600 text-sm font-medium mb-2">💬 Join the conversation</p>
+                    <p class="text-gray-500 text-xs">Connect with fellow students, share knowledge, and build your network</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-700">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="./colleges.html" class="block px-3 py-2 text-white hover:bg-gray-800 rounded-md">Colleges</a>
+            <a href="./career_paths.html" class="block px-3 py-2 text-white hover:bg-gray-800 rounded-md">Career Paths</a>
+            <a href="#" class="block px-3 py-2 text-white hover:bg-gray-800 rounded-md">Roadmaps</a>
+            <a href="./study_groups.html" class="block px-3 py-2 text-white hover:bg-gray-800 rounded-md">Study Groups</a>
+            <a href="#" class="block px-3 py-2 text-white hover:bg-gray-800 rounded-md">Others</a>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Load chat room configuration
+        async function loadChatRoom() {
+            try {
+                const groupId = getUrlParameter('id');
+                const chatId = getUrlParameter('chatId');
+                const scriptSrc = getUrlParameter('scriptSrc');
+
+                if (!groupId || !chatId || !scriptSrc) {
+                    throw new Error('Missing required parameters');
+                }
+
+                // Fetch group data to get name and description
+                const response = await fetch('chat_rooms.json');
+                const data = await response.json();
+                const group = data.chatRooms.find(g => g.id === groupId);
+
+                if (group) {
+                    // Update page content with group info
+                    document.getElementById('room-title').textContent = group.name;
+                    document.getElementById('room-description').textContent = group.description;
+                    document.getElementById('status-text').textContent = group.name + ' Active';
+                    document.title = group.name + ' - Pathfinder';
+                } else {
+                    // Fallback if group not found
+                    document.getElementById('room-title').textContent = 'Study Group';
+                    document.getElementById('room-description').textContent = 'Connect and chat with other students';
+                }
+
+                // Set up the chat container with the correct ID
+                const chatContainer = document.getElementById('chat-container');
+                chatContainer.id = chatId;
+
+                // Load the RumbleTalk script
+                const script = document.createElement('script');
+                script.src = scriptSrc;
+                script.onload = function() {
+                    console.log('RumbleTalk script loaded successfully');
+                    // Start auto-login attempts
+                    startAutoLogin(chatId);
+                };
+                script.onerror = function() {
+                    console.error('Failed to load RumbleTalk script');
+                    showError('Failed to load chat. Please try again later.');
+                };
+                document.body.appendChild(script);
+
+            } catch (error) {
+                console.error('Failed to load chat room:', error);
+                showError('Failed to load chat room. Please check the URL and try again.');
+            }
+        }
+
+        function showError(message) {
+            const loadingMsg = document.getElementById('loading-message');
+            loadingMsg.innerHTML = `
+                <div class="text-center p-8 bg-white rounded-lg shadow-lg border border-red-100">
+                    <div class="text-red-700 mb-3 font-semibold text-lg">Error</div>
+                    <div class="text-red-500 text-sm">${message}</div>
+                    <button onclick="window.history.back()" class="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+                        Go Back
+                    </button>
+                </div>
+            `;
+        }
+
+        // Auto-login function for RumbleTalk
+        function startAutoLogin(chatId) {
+            let attempts = 0;
+            const maxAttempts = 15;
+            
+            const loginInterval = setInterval(() => {
+                attempts++;
+                console.log(`Auto-login attempt ${attempts} for ${chatId}`);
+                
+                const iframe = document.querySelector(`#${chatId} iframe`);
+                if (iframe) {
+                    try {
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        
+                        // Look for Guest button
+                        const guestButton = iframeDoc.querySelector('button[data-testid="guest-login"]') || 
+                                          iframeDoc.querySelector('.guest-login') ||
+                                          iframeDoc.querySelector('button:contains("Guest")') ||
+                                          iframeDoc.querySelector('[class*="guest"]') ||
+                                          iframeDoc.querySelector('input[value="Guest"]');
+                        
+                        if (guestButton) {
+                            console.log('Found guest button, clicking...');
+                            guestButton.click();
+                            
+                            // After clicking guest, look for username input
+                            setTimeout(() => {
+                                const usernameInput = iframeDoc.querySelector('input[type="text"]') ||
+                                                    iframeDoc.querySelector('input[placeholder*="name"]') ||
+                                                    iframeDoc.querySelector('input[name="username"]') ||
+                                                    iframeDoc.querySelector('#username');
+                                
+                                if (usernameInput) {
+                                    console.log('Found username input, entering "student"...');
+                                    usernameInput.value = 'student';
+                                    usernameInput.dispatchEvent(new Event('input'));
+                                    
+                                    // Look for submit/join button
+                                    const submitButton = iframeDoc.querySelector('button[type="submit"]') ||
+                                                       iframeDoc.querySelector('.join-btn') ||
+                                                       iframeDoc.querySelector('button:contains("Join")') ||
+                                                       iframeDoc.querySelector('[class*="submit"]');
+                                    
+                                    if (submitButton) {
+                                        console.log('Found submit button, clicking...');
+                                        setTimeout(() => submitButton.click(), 500);
+                                    }
+                                }
+                            }, 1000);
+                        }
+                    } catch (e) {
+                        console.log('Cross-origin restriction - cannot access iframe content');
+                    }
+                }
+                
+                if (attempts >= maxAttempts) {
+                    clearInterval(loginInterval);
+                    console.log('Auto-login attempts completed');
+                }
+            }, 3000); // Try every 3 seconds
+        }
+
+        // Hide loading message after chat loads
+        setTimeout(function() {
+            const loadingMsg = document.getElementById('loading-message');
+            if (loadingMsg) {
+                loadingMsg.style.display = 'none';
+            }
+        }, 8000);
+
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Initialize chat room when page loads
+        window.addEventListener('DOMContentLoaded', loadChatRoom);
+    </script>
+</body>
+</html>
