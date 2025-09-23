@@ -10,7 +10,7 @@
         "Estd. 1980"
     ],
     "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=Indian+Institute+of+Management+Jammu+Banner",
-    "logoUrl": "https://placehold.co/80x80/6366f1/ffffff?text=IND",
+    "logoUrl": "../assets/logo/IIMJammu.png",
     "lastUpdated": "24 Sep 25",
     "content": {
         "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        Indian Institute of Management Jammu, established in 2016, is a premier government business school located in Jagti, Jammu. As part of the prestigious IIM network, it offers world-class management education with rigorous academic curriculum and experienced faculty from top institutions. IIM Jammu has achieved consistent 100% placements with top recruiters including Infosys, Wipro, Accenture, Napier Healthcare, Carelon Global Solutions, Meril, and Cognizant. The institute offers MBA programs and specialized MBA in Hospital Administration & Healthcare Management.\n    </p>\n</div>",

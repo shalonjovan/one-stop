@@ -10,7 +10,7 @@
         "Estd. 2016"
     ],
     "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=All+India+Institute+of+Medical+Sciences,+Vijaypur+(AIIMS+Jammu)+Banner",
-    "logoUrl": "https://placehold.co/80x80/6366f1/ffffff?text=ALL",
+    "logoUrl": "../assets/logo/AIIMSJammu.png",
     "lastUpdated": "24 Sep 25",
     "content": {
         "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        All India Institute of Medical Sciences Jammu, established in 2019, is a premier government medical institution located in Vijaypur, Jammu. As part of the prestigious AIIMS network, it offers world-class medical education and healthcare services. The institute provides undergraduate MBBS programs with 100 seats, postgraduate MD/MS programs with 63+13 seats, and doctoral programs. AIIMS Jammu is known for its modern infrastructure, experienced faculty, and commitment to providing quality healthcare education and services to the region.\n    </p>\n</div>",

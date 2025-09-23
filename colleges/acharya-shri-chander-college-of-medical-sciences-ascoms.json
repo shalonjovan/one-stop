@@ -10,7 +10,7 @@
         "Estd. 1973"
     ],
     "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=Acharya+Shri+Chander+College+of+Medical+Sciences+(ASCOMS)+Banner",
-    "logoUrl": "https://placehold.co/80x80/6366f1/ffffff?text=ACH",
+    "logoUrl": "../assets/logo/ASCOMS.jpeg",
     "lastUpdated": "24 Sep 25",
     "content": {
         "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        Acharya Shri Chander College of Medical Sciences (ASCOMS), located in Sidhra, Jammu, is a prestigious A- NAAC accredited private institution offering world-class medical programs. The college is known for its excellent academic standards, state-of-the-art infrastructure, and strong industry connections. Students gain admission through NEET and benefit from experienced faculty, modern laboratories, and comprehensive learning resources. The institution maintains high placement rates and provides students with opportunities for research, internships, and skill development programs.\n    </p>\n</div>",

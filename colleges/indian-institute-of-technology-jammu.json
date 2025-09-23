@@ -10,7 +10,7 @@
         "Estd. 1980"
     ],
     "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=Indian+Institute+of+Technology+Jammu+Banner",
-    "logoUrl": "https://placehold.co/80x80/6366f1/ffffff?text=IND",
+    "logoUrl": "../assets/logo/IITJammu.png",
     "lastUpdated": "24 Sep 25",
     "content": {
         "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        Indian Institute of Technology Jammu, established in 2016, is a premier government institution located in Jagti, Jammu. As part of the prestigious IIT system, it offers world-class engineering and technology programs. The institute is known for its cutting-edge research facilities, experienced faculty, and strong industry partnerships. IIT Jammu provides undergraduate B.Tech programs in Computer Science, Mechanical, Chemical, Materials, and Electrical Engineering. The campus features modern infrastructure including smart classrooms, advanced laboratories, and comprehensive library resources.\n    </p>\n</div>",

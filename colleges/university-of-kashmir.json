@@ -10,7 +10,7 @@
         "Estd. 1948"
     ],
     "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=University+of+Kashmir+Banner",
-    "logoUrl": "https://placehold.co/80x80/6366f1/ffffff?text=UNI",
+    "logoUrl": "../assets/logo/UniversityOfKashmir.png",
     "lastUpdated": "24 Sep 25",
     "content": {
         "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        University of Kashmir, located in Hazratbal, Srinagar, is a prestigious A++ NAAC accredited government institution offering world-class university programs. The college is known for its excellent academic standards, state-of-the-art infrastructure, and strong industry connections. Students gain admission through CUET/University Entrance and benefit from experienced faculty, modern laboratories, and comprehensive learning resources. The institution maintains high placement rates and provides students with opportunities for research, internships, and skill development programs.\n    </p>\n</div>",
