@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room - RumbleTalk</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .chat-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 900px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #4a5568;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #718096;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .chat-wrapper {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .chat-wrapper:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(102, 126, 234, 0.4);
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: rgba(72, 187, 120, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(72, 187, 120, 0.3);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #48bb78;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(72, 187, 120, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(72, 187, 120, 0);
+            }
+        }
+
+        .status-text {
+            color: #2f855a;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .chat-container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .chat-container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">
+            <h1>Welcome to Chat Room</h1>
+            <p>Join the conversation and connect with others</p>
+        </div>
+
+        <div class="status-indicator">
+            <div class="status-dot"></div>
+            <div class="status-text">Chat Room is Live</div>
+        </div>
+
+        <div class="chat-wrapper">
+            <!-- RumbleTalk Chat Integration -->
+            <div style="height: 500px; position: relative;">
+                <div id="rt-2cef99416fe59f5b29457e27dc9f9828"></div>
+                <div id="loading-message" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #666; text-align: center;">
+                    <div style="margin-bottom: 10px;">Loading chat room...</div>
+                    <div style="font-size: 0.8em;">If the chat doesn't appear, please check your internet connection</div>
+                </div>
+                <script src="https://rumbletalk.com/client/?!7tl7dVq"></script>
+                <script>
+                    // Hide loading message after a delay
+                    setTimeout(function() {
+                        const loadingMsg = document.getElementById('loading-message');
+                        if (loadingMsg) {
+                            loadingMsg.style.display = 'none';
+                        }
+                    }, 5000);
+
+                    // Auto-login function
+                    function autoLogin() {
+                        // Look for RumbleTalk iframe
+                        const iframe = document.querySelector('#rt-2cef99416fe59f5b29457e27dc9f9828 iframe');
+                        if (iframe) {
+                            try {
+                                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                                
+                                // Look for Guest button
+                                const guestButton = iframeDoc.querySelector('button[data-testid="guest-login"]') || 
+                                                  iframeDoc.querySelector('.guest-login') ||
+                                                  iframeDoc.querySelector('button:contains("Guest")') ||
+                                                  iframeDoc.querySelector('[class*="guest"]') ||
+                                                  iframeDoc.querySelector('input[value="Guest"]');
+                                
+                                if (guestButton) {
+                                    console.log('Found guest button, clicking...');
+                                    guestButton.click();
+                                    
+                                    // After clicking guest, look for username input
+                                    setTimeout(() => {
+                                        const usernameInput = iframeDoc.querySelector('input[type="text"]') ||
+                                                            iframeDoc.querySelector('input[placeholder*="name"]') ||
+                                                            iframeDoc.querySelector('input[name="username"]') ||
+                                                            iframeDoc.querySelector('#username');
+                                        
+                                        if (usernameInput) {
+                                            console.log('Found username input, entering "joe"...');
+                                            usernameInput.value = 'joe';
+                                            usernameInput.dispatchEvent(new Event('input'));
+                                            
+                                            // Look for submit/join button
+                                            const submitButton = iframeDoc.querySelector('button[type="submit"]') ||
+                                                               iframeDoc.querySelector('.join-btn') ||
+                                                               iframeDoc.querySelector('button:contains("Join")') ||
+                                                               iframeDoc.querySelector('[class*="submit"]');
+                                            
+                                            if (submitButton) {
+                                                console.log('Found submit button, clicking...');
+                                                setTimeout(() => submitButton.click(), 500);
+                                            }
+                                        }
+                                    }, 1000);
+                                }
+                            } catch (e) {
+                                console.log('Cross-origin restriction - cannot access iframe content');
+                                // Fallback: Try to find elements in parent document
+                                autoLoginFallback();
+                            }
+                        } else {
+                            // No iframe found yet, try again
+                            console.log('No iframe found, retrying...');
+                        }
+                    }
+                    
+                    // Fallback method for cross-origin restrictions
+                    function autoLoginFallback() {
+                        // Look for any buttons or inputs that might be in the parent document
+                        const guestBtn = document.querySelector('button') || 
+                                        document.querySelector('[class*="guest"]') ||
+                                        document.querySelector('[data-guest]');
+                        
+                        if (guestBtn && guestBtn.textContent.toLowerCase().includes('guest')) {
+                            guestBtn.click();
+                        }
+                    }
+                    
+                    // Try auto-login multiple times as the iframe loads
+                    let attempts = 0;
+                    const maxAttempts = 20;
+                    const loginInterval = setInterval(() => {
+                        attempts++;
+                        console.log(`Auto-login attempt ${attempts}`);
+                        
+                        autoLogin();
+                        
+                        if (attempts >= maxAttempts) {
+                            clearInterval(loginInterval);
+                            console.log('Auto-login attempts completed');
+                        }
+                    }, 2000); // Try every 2 seconds
+                    
+                    // Also try when the page loads
+                    window.addEventListener('load', () => {
+                        setTimeout(autoLogin, 3000);
+                    });
+                </script>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Powered by RumbleTalk • Real-time messaging</p>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatWrapper = document.querySelector('.chat-wrapper');
+            
+            // Add loading state
+            chatWrapper.style.opacity = '0.8';
+            
+            // Simulate chat loading
+            setTimeout(() => {
+                chatWrapper.style.opacity = '1';
+                chatWrapper.style.transform = 'scale(1)';
+            }, 1000);
+            
+            // Add hover effects
+            const container = document.querySelector('.chat-container');
+            container.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            container.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
