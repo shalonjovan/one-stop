@@ -1,0 +1,83 @@
+[{
+    "id": "national-institute-of-technology-srinagar",
+    "name": "National Institute of Technology Srinagar",
+    "tagline": "Fees, Course, Admissions 2025",
+    "address": "Srinagar",
+    "ratings": "4.1/5",
+    "badges": [
+        "B+ NAAC accredited",
+        "Government Institute",
+        "Estd. 1980"
+    ],
+    "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=National+Institute+of+Technology+Srinagar+Banner",
+    "logoUrl": "../assets/logo/NITSrinagar.png",
+    "lastUpdated": "24 Sep 25",
+    "content": {
+        "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        National Institute of Technology Srinagar, established in 1960, is a premier government engineering institution located in Srinagar, Jammu & Kashmir. As part of the prestigious NIT system, it offers undergraduate, postgraduate, and doctoral programs in engineering and technology. The institute is known for its experienced faculty, modern infrastructure, and strong industry connections. NIT Srinagar offers B.Tech programs in multiple engineering disciplines, M.Tech programs, MBA, M.Sc, and Ph.D programs across various specializations.\n    </p>\n</div>",
+        "Courses": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Courses Offered</h2>\n    <ul class=\"space-y-4\">\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Bachelor of Technology (B.Tech)</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 4 years | Civil, Mechanical, Electrical, Chemical, IT, Computer Science Engineering</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Master of Technology (M.Tech)</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 2 years | 14 specializations available</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Master of Business Administration (MBA)</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 2 years | Management program</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Master of Science (M.Sc)</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 2 years | 4 specializations</p>\n        </li>\n    </ul>\n</div>",
+        "Fees": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Fee Structure</h2>\n    <div class=\"space-y-4\">\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">B.Tech Program</h3>\n            <p class=\"text-sm text-gray-500\">Total Fees: \u20b95.92 Lakhs for 4 years</p>\n            <p class=\"text-sm text-gray-500\">Per Semester: \u20b973,000 (General/OBC/EWS)</p>\n        </div>\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">M.Tech Program</h3>\n            <p class=\"text-sm text-gray-500\">Total Fees: \u20b92.56 Lakhs for 2 years</p>\n        </div>\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">MBA Program</h3>\n            <p class=\"text-sm text-gray-500\">Total Fees: \u20b91.76 Lakhs for 2 years</p>\n        </div>\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">M.Sc Program</h3>\n            <p class=\"text-sm text-gray-500\">Total Fees: \u20b947,080 for 2 years</p>\n        </div>\n    </div>\n</div>"
+    },
+    "placements": {
+        "salaryByYear": {
+            "labels": [
+                "2022",
+                "2023",
+                "2024"
+            ],
+            "highestSalary": [
+                3500000,
+                4200000,
+                4800000
+            ],
+            "averageSalary": [
+                600000,
+                720000,
+                850000
+            ]
+        },
+        "salaryDistribution": {
+            "2022": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    25,
+                    40,
+                    25,
+                    10
+                ]
+            },
+            "2023": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    20,
+                    35,
+                    30,
+                    15
+                ]
+            },
+            "2024": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    18,
+                    32,
+                    35,
+                    15
+                ]
+            }
+        }
+    }
+}]
