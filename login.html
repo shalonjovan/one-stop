@@ -4,95 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #eef2f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            color: #333;
-        }
-
-        .auth-container {
-            background: #fff;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 380px;
-            max-width: 90%;
-        }
-
-        h2 {
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            font-size: 2rem;
-        }
-
-        .input-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #555;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 1rem;
-        }
-
-        .auth-button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background-color: #4a90e2;
-            color: white;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s, transform 0.2s;
-        }
-
-        .auth-button:hover {
-            background-color: #357bd8;
-            transform: translateY(-2px);
-        }
-
-        .auth-options {
-            margin-top: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .link-text {
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .link-text a {
-            color: #4a90e2;
-            text-decoration: none;
-            font-weight: 600;
-        }
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#eef2f7;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;color:#333}.auth-container{background:#fff;padding:2.5rem;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.1);text-align:center;width:380px;max-width:90%}h2{margin-bottom:2rem;color:#2c3e50;font-size:2rem}.input-group{margin-bottom:1.5rem;text-align:left}.input-group label{display:block;margin-bottom:.5rem;font-weight:600;color:#555}.input-group input{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;font-size:1rem}.auth-button{width:100%;padding:12px;border:none;border-radius:8px;background-color:#4a90e2;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;transition:background-color .2s,transform .2s}.auth-button:hover{background-color:#357bd8;transform:translateY(-2px)}.separator{margin:1.5rem 0;display:flex;align-items:center;text-align:center;color:#999}.separator:after,.separator:before{content:'';flex:1;border-bottom:1px solid #ddd}.separator:not(:empty):before{margin-right:.75em}.separator:not(:empty):after{margin-left:.75em}.google-btn-container{display:flex;justify-content:center;margin-bottom:1.5rem}.switch-link{display:block;margin-top:1rem;color:#4a90e2;text-decoration:none;transition:text-decoration .2s}.switch-link:hover{text-decoration:underline}
     </style>
 </head>
 <body>
@@ -101,36 +16,38 @@
         <form id="login-form">
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" required>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" required>
             </div>
             <button type="submit" class="auth-button">Login</button>
         </form>
-        <div class="auth-options">
+        <div class="separator">or</div>
+        <div class="google-btn-container">
             <div id="googleLoginBtn"></div>
         </div>
-        <p class="link-text">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        <a href="signup.html" class="switch-link">Don't have an account? Sign Up</a>
     </div>
 
     <script>
         const backend = 'http://localhost:3000';
         
-        async function checkAndRedirect(username) {
+        // --- NEW: Reusable function to check assessment and redirect ---
+        async function checkAndRedirect(userName) {
             try {
-                const checkRes = await fetch(`${backend}/check-assessment/${username}`);
-                const checkData = await checkRes.json();
-                if (checkRes.ok && checkData.hasTakenAssessment) {
-                    window.location.href = '/profile.html';
+                const res = await fetch(`${backend}/check-assessment/${userName}`);
+                const data = await res.json();
+                
+                if (res.ok && data.hasTakenAssessment) {
+                    window.location.href = 'foryou.html'; // Go to recommendations if assessment is done
                 } else {
-                    window.location.href = '/assessment_test.html';
+                    window.location.href = 'assessment_test.html'; // Go to assessment if not done
                 }
             } catch (err) {
                 console.error('Failed to check assessment status:', err);
-                // Fallback to assessment page if check fails
-                window.location.href = '/assessment_test.html';
+                window.location.href = 'assessment_test.html'; // Fallback to assessment
             }
         }
 
@@ -138,18 +55,18 @@
             event.preventDefault();
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-
             try {
                 const res = await fetch(backend + '/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username, password })
                 });
-
                 const data = await res.json();
                 if (res.ok) {
-                    localStorage.setItem('currentUser', JSON.stringify({ username: data.user.username }));
-                    await checkAndRedirect(data.user.username);
+                    // Store user info in session storage
+                    sessionStorage.setItem('loggedInUser', JSON.stringify({ name: data.user.name }));
+                    // Call the new redirect function
+                    await checkAndRedirect(data.user.name);
                 } else {
                     alert(data.error);
                 }
@@ -159,13 +76,11 @@
             }
         });
 
-        // Google OAuth login
         window.onload = function() {
             google.accounts.id.initialize({
                 client_id: "709858001016-1ejbevrnot4n6tl77la9htdk9ktsfkl6.apps.googleusercontent.com",
                 callback: handleCredentialResponse
             });
-
             google.accounts.id.renderButton(
                 document.getElementById("googleLoginBtn"),
                 { theme: "outline", size: "large" }
@@ -173,21 +88,20 @@
         };
 
         async function handleCredentialResponse(response) {
-            const credential = response.credential;
-            const decoded = jwt_decode(credential);
+            const decoded = jwt_decode(response.credential);
             const googleUser = { email: decoded.email };
-
             try {
                 const res = await fetch(backend + '/google-login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(googleUser)
                 });
-
                 const data = await res.json();
                 if (res.ok) {
-                    localStorage.setItem('currentUser', JSON.stringify({ username: data.user.username, email: data.user.email, isGoogle: true }));
-                    await checkAndRedirect(data.user.username);
+                     // Store user info in session storage
+                    sessionStorage.setItem('loggedInUser', JSON.stringify({ name: data.user.name }));
+                     // Call the new redirect function
+                    await checkAndRedirect(data.user.name);
                 } else {
                     alert(data.error);
                 }
