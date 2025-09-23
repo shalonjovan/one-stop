@@ -1,0 +1,54 @@
+{
+  "chatRooms": [
+    {
+      "id": "study-group-general",
+      "name": "General Study Group",
+      "description": "Connect and chat with other students",
+      "tags": ["general", "study", "discussion"],
+      "chatConfig": {
+        "chatId": "rt-42990127a468599e1789d02db6c8283d",
+        "scriptSrc": "https://rumbletalk.com/client/?8QPtp72S"
+      }
+    },
+    {
+      "id": "engineering-hub",
+      "name": "Engineering Hub",
+      "description": "Connect with engineering students and discuss technical topics",
+      "tags": ["engineering", "technical", "projects"],
+      "chatConfig": {
+        "chatId": "rt-6c72118fbfbd965f15ec738e08c01ea6",
+        "scriptSrc": "https://rumbletalk.com/client/?V7RU-ioP"
+      }
+    },
+    {
+      "id": "medical-students",
+      "name": "Medical Students Forum",
+      "description": "A dedicated space for medical students to collaborate and study",
+      "tags": ["medical", "healthcare", "study-groups"],
+      "chatConfig": {
+        "chatId": "rt-d0714112fdd706ba2fd5d1b9345cba1b",
+        "scriptSrc": "https://rumbletalk.com/client/?aPbC!mwa"
+      }
+    },
+    {
+      "id": "computer-science",
+      "name": "CS Study Group",
+      "description": "Programming help, algorithm discussions, and CS career guidance",
+      "tags": ["programming", "algorithms", "coding", "cs"],
+      "chatConfig": {
+        "chatId": "rt-c98898f1e839fe0797eb9cce6440eb5f",
+        "scriptSrc": "https://rumbletalk.com/client/?OfsdQGKg"
+      }
+    },
+    {
+      "id": "pathfinder-main",
+      "name": "Pathfinder Main Chat",
+      "description": "Main discussion room for all Pathfinder users",
+      "tags": ["main", "general", "pathfinder", "community"],
+      "chatConfig": {
+        "chatId": "rt-2cef99416fe59f5b29457e27dc9f9828",
+        "scriptSrc": "https://rumbletalk.com/client/?!7tl7dVq"
+      }
+    }
+  ]
+}
