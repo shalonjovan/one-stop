@@ -1,7 +1,22 @@
 [
   {
+<<<<<<< HEAD
+    "username": "q",
+    "password": "q"
+=======
+<<<<<<< HEAD
+    "name": "user",
+    "username": "q",
+    "password": "q"
+  },
+  {
+    "name": "user",
+    "username": "a",
+    "password": "a"
+=======
     "username": "shalon",
     "password": "shalon"
+<<<<<<< HEAD
   },
   {
     "username": "shalonh",
@@ -10,5 +25,9 @@
   {
     "username": "a",
     "password": "a"
+=======
+>>>>>>> ba44f2095ab3b1c5cd9a1a1ece9559cd7335069c
+>>>>>>> 72be5dd3a2a988de7677664a2907464ccad91290
+>>>>>>> 1102c921003b438df62f3d7b855ba6b4e6aa7cc2
   }
 ]

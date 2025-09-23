@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships - Pathfinder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .scholarship-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .scholarship-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+             <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path></svg>
+                <span class="text-xl font-bold">Pathfinder</span>
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+            <a href="./colleges.html" class="text-white hover:text-gray-200">Colleges</a>
+            <a href="./career_paths.html" class="text-white hover:text-gray-200">Career Paths</a>
+            <a href="./scholarship.html" class="text-white hover:text-gray-200 font-bold">Scholarships</a>
+            <a href="#" class="text-white hover:text-gray-200">Roadmaps</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <a href="./foryou.html" class="text-sm px-4 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300">For You</a>
+        </div>
+    </header>
+
+    <main class="w-full">
+        <div class="max-w-7xl mx-auto p-4 sm:p-8">
+            <div class="text-center mb-10">
+                <h1 class="text-4xl font-extrabold text-slate-800">Find Scholarships</h1>
+                <p class="text-lg text-slate-500 mt-2">Explore opportunities to fund your education.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-md mb-8 sticky top-4 z-10 flex flex-col gap-4">
+                <div class="w-full">
+                    <input type="text" id="search-input" placeholder="Search by name or provider..." class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="w-full filter-grid">
+                    <select id="level-filter" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"><option value="">All Levels</option></select>
+                    <select id="type-filter" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"><option value="">All Types</option></select>
+                    <select id="gender-filter" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"><option value="">Any Gender</option></select>
+                    <select id="community-filter" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"><option value="">Any Community</option></select>
+                    <select id="income-filter" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"><option value="">Any Income</option></select>
+                    <select id="disability-filter" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"><option value="">Disability Status</option></select>
+                </div>
+            </div>
+
+            <div id="scholarship-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+             <div id="no-results" class="hidden text-center py-16">
+                <p class="text-xl text-slate-500">No scholarships found matching your criteria.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scholarshipGrid = document.getElementById('scholarship-grid');
+            const searchInput = document.getElementById('search-input');
+            const noResults = document.getElementById('no-results');
+            
+            // Filter elements
+            const filterSelects = {
+                level: document.getElementById('level-filter'),
+                type: document.getElementById('type-filter'),
+                gender: document.getElementById('gender-filter'),
+                community: document.getElementById('community-filter'),
+                income: document.getElementById('income-filter'),
+                disability: document.getElementById('disability-filter')
+            };
+
+            let allScholarships = [];
+
+            async function fetchScholarships() {
+                try {
+                    const response = await fetch('./scholarships.json');
+                    allScholarships = await response.json();
+                    populateFilters();
+                    renderScholarships(allScholarships);
+                } catch (error) {
+                    console.error('Failed to fetch scholarships:', error);
+                    scholarshipGrid.innerHTML = `<p class="text-red-500 col-span-full text-center">Could not load scholarship data.</p>`;
+                }
+            }
+
+            function populateFilters() {
+                const filtersData = {
+                    level: [...new Set(allScholarships.map(s => s.level))],
+                    type: [...new Set(allScholarships.map(s => s.type))],
+                    gender: [...new Set(allScholarships.map(s => s.gender))],
+                    community: [...new Set(allScholarships.map(s => s.community))],
+                    income: [...new Set(allScholarships.map(s => s.income))],
+                    disability: [...new Set(allScholarships.map(s => s.disability))]
+                };
+
+                for (const key in filtersData) {
+                    filtersData[key].forEach(value => {
+                        const option = document.createElement('option');
+                        option.value = value;
+                        option.textContent = value;
+                        filterSelects[key].appendChild(option);
+                    });
+                }
+            }
+
+            function renderScholarships(scholarships) {
+                scholarshipGrid.innerHTML = '';
+                noResults.classList.toggle('hidden', scholarships.length > 0);
+
+                scholarships.forEach(s => {
+                    const card = document.createElement('div');
+                    card.className = 'scholarship-card bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col';
+                    
+                    card.innerHTML = `
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">${s.name}</h3>
+                            <p class="text-md font-semibold text-blue-600 mb-4">${s.provider}</p>
+                            <p class="text-sm text-slate-600 mb-4"><span class="font-semibold">Benefits:</span> ${s.benefits}</p>
+                            <div class="flex flex-wrap gap-2 text-sm mb-4">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">${s.level}</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">${s.type}</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full font-medium">${s.region}</span>
+                            </div>
+                            <p class="text-sm text-slate-500"><span class="font-semibold">Key Eligibility:</span> ${s.eligibility}</p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="${s.link}" target="_blank" class="block w-full text-center bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                                Apply Now
+                            </a>
+                        </div>
+                    `;
+                    scholarshipGrid.appendChild(card);
+                });
+            }
+
+            function applyFilters() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedFilters = {
+                    level: filterSelects.level.value,
+                    type: filterSelects.type.value,
+                    gender: filterSelects.gender.value,
+                    community: filterSelects.community.value,
+                    income: filterSelects.income.value,
+                    disability: filterSelects.disability.value
+                };
+
+                const filteredScholarships = allScholarships.filter(s => {
+                    const matchesSearch = s.name.toLowerCase().includes(searchTerm) || s.provider.toLowerCase().includes(searchTerm) || s.eligibility.toLowerCase().includes(searchTerm);
+                    
+                    // Check every filter. If a filter is not selected (""), it should pass.
+                    const matchesAllFilters = Object.keys(selectedFilters).every(key => {
+                        return !selectedFilters[key] || s[key] === selectedFilters[key];
+                    });
+                    
+                    return matchesSearch && matchesAllFilters;
+                });
+
+                renderScholarships(filteredScholarships);
+            }
+
+            searchInput.addEventListener('keyup', applyFilters);
+            Object.values(filterSelects).forEach(select => {
+                select.addEventListener('change', applyFilters);
+            });
+
+            fetchScholarships();
+        });
+    </script>
+</body>
+</html>
