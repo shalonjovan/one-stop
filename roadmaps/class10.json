@@ -1,0 +1,60 @@
+{
+  "careers": [
+    {
+      "name": "Science Stream",
+      "tagline": "Physics, Chemistry, Biology/Math focus for future innovation",
+      "image": "images/science.png",
+      "info": "Science stream opens pathways for Engineering, Medicine, Research, and Technology careers. It provides a strong foundation in analytical thinking and problem-solving skills essential for modern careers in STEM fields.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2a361e5bfa7fea1c5aab0' width='100%' height='500px' frameBorder='0'></iframe>"
+    },
+    {
+      "name": "Commerce Stream",
+      "tagline": "Business, Accounting, Economics focus for commercial success",
+      "image": "images/commerce.png",
+      "info": "Commerce stream leads to prestigious careers in CA, Banking, Finance, Management, and Entrepreneurship. It develops business acumen and financial literacy crucial for the corporate world.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2a361e5bfa7fea1c5aab0' width='100%' height='500px' frameBorder='0'></iframe>"
+    },
+    {
+      "name": "Arts/Humanities",
+      "tagline": "Literature, History, Psychology for creative and social careers",
+      "image": "images/arts.png",
+      "info": "Arts/Humanities stream nurtures creativity and critical thinking, leading to careers in Journalism, Psychology, Law, Civil Services, Teaching, and Creative Industries. It develops communication and analytical skills.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2a361e5bfa7fea1c5aab0' width='100%' height='500px' frameBorder='0'></iframe>"
+    },
+    {
+      "name": "Vocational Courses",
+      "tagline": "Practical skills training for immediate employment",
+      "image": "images/vocational.png",
+      "info": "Vocational courses provide hands-on training in specific trades like Electrician, Plumber, Carpenter, Beauty & Wellness, Hospitality, and Retail. These courses offer quick entry into the job market with practical skills.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2a361e5bfa7fea1c5aab0' width='100%' height='500px' frameBorder='0'></iframe>"
+    },
+    {
+      "name": "Skill Based Courses",
+      "tagline": "Modern digital and technical skills for emerging careers",
+      "image": "images/skills.png",
+      "info": "Skill-based courses focus on Digital Marketing, Web Development, Graphic Design, Data Entry, Customer Service, and IT Support. These courses align with current market demands and offer flexible career options.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2a361e5bfa7fea1c5aab0' width='100%' height='500px' frameBorder='0'></iframe>"
+    },
+    {
+      "name": "Diploma Courses",
+      "tagline": "Specialized technical education for industry-ready professionals",
+      "image": "images/diploma.png",
+      "info": "Diploma courses in Engineering, Computer Applications, Hotel Management, Fashion Design, and Pharmacy provide specialized knowledge and practical training, making students industry-ready in shorter duration.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2a361e5bfa7fea1c5aab0' width='100%' height='500px' frameBorder='0'></iframe>"
+    },
+    {
+      "name": "Entrance Exams",
+      "tagline": "Competitive preparation for premier institutions",
+      "image": "images/entrance.png",
+      "info": "Entrance exam preparation for JEE, NEET, CLAT, NDA, and other competitive exams. These exams open doors to top institutions and prestigious career paths with comprehensive coaching and guidance.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2a361e5bfa7fea1c5aab0' width='100%' height='500px' frameBorder='0'></iframe>"
+    },
+    {
+      "name": "Government Jobs",
+      "tagline": "Secure public sector employment with stability",
+      "image": "images/government.png",
+      "info": "Government job preparation for SSC, Railway, Police, Banking, and other public sector positions. These jobs offer job security, good benefits, and opportunities to serve the nation with dignity and respect.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2a361e5bfa7fea1c5aab0' width='100%' height='500px' frameBorder='0'></iframe>"
+    }
+  ]
+}
