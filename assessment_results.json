@@ -1,11 +1,17 @@
 [
   {
+<<<<<<< HEAD
     "userName": "Santhosh Aaron",
     "age": "5",
+=======
+    "userName": "shalon jovan",
+    "age": "17",
+>>>>>>> ba44f2095ab3b1c5cd9a1a1ece9559cd7335069c
     "studentClass": "12",
     "stream": "Science (Maths/CS)",
     "geminiQuestions": [
       {
+<<<<<<< HEAD
         "question": "Which aspect of science excites you most?",
         "options": [
           "Theoretical understanding of fundamental concepts",
@@ -99,10 +105,56 @@
           "Direct application"
         ],
         "type": "single"
+=======
+        "question": "Which aspect of computer science excites you most?",
+        "options": [
+          "Software development and programming",
+          "Artificial intelligence and machine learning",
+          "Data science and analysis",
+          "Cybersecurity and network security"
+        ]
+      },
+      {
+        "question": "In mathematics, what area do you find most engaging?",
+        "options": [
+          "Algebra and calculus",
+          "Geometry and trigonometry",
+          "Statistics and probability",
+          "Number theory and abstract algebra"
+        ]
+      },
+      {
+        "question": "Would you prefer a career that involves:",
+        "options": [
+          "Extensive theoretical research",
+          "Practical application and problem-solving",
+          "A balance of both",
+          "Working independently on complex projects"
+        ]
+      },
+      {
+        "question": "Which type of work environment do you envision yourself thriving in?",
+        "options": [
+          "Fast-paced and dynamic",
+          "Structured and organized",
+          "Collaborative and team-oriented",
+          "Independent and self-directed"
+        ]
+      },
+      {
+        "question": "Are you more interested in understanding the 'why' or the 'how' of things?",
+        "options": [
+          "'Why' - exploring underlying principles",
+          "'How' - building and implementing solutions",
+          "Both equally",
+          "Neither, I prefer practical application"
+        ]
+>>>>>>> ba44f2095ab3b1c5cd9a1a1ece9559cd7335069c
       },
       {
         "question": "How important is it for you to see the tangible impact of your work?",
         "options": [
+<<<<<<< HEAD
           "Very important",
           "Somewhat important",
           "Not very important"
@@ -343,11 +395,99 @@
           "Possibly, depending on the opportunities",
           "Unlikely",
           "No"
+=======
+          "Very comfortable, I enjoy open-ended challenges",
+          "Moderately comfortable",
+          "Somewhat uncomfortable, I prefer clear instructions",
+          "Very uncomfortable, I need clear direction"
+        ]
+      },
+      {
+        "question": "Which of these fields aligns most with your interests?",
+        "options": [
+          "Robotics and automation",
+          "Bioinformatics and computational biology",
+          "Game development",
+          "Theoretical physics"
+        ]
+      },
+      {
+        "question": "Do you prefer working with:",
+        "options": [
+          "Abstract concepts and ideas",
+          "Concrete data and information",
+          "A combination of both",
+          "Neither, I prefer hands-on work"
+        ]
+      },
+      {
+        "question": "How important is creativity in your ideal career?",
+        "options": [
+          "Extremely important",
+          "Moderately important",
+          "Somewhat important",
+          "Not very important"
+        ]
+      },
+      {
+        "question": "Which skill are you most eager to develop further?",
+        "options": [
+          "Programming skills (e.g., Python, Java)",
+          "Mathematical modeling skills",
+          "Data analysis skills",
+          "Critical thinking and problem-solving skills"
+        ]
+      },
+      {
+        "question": "Are you more inclined towards solving problems using:",
+        "options": [
+          "Logical reasoning and deductive methods",
+          "Intuition and creative thinking",
+          "A combination of both",
+          "Neither, I prefer following established procedures"
+        ]
+      },
+      {
+        "question": "Would you be interested in a career with significant potential for innovation and groundbreaking discoveries?",
+        "options": [
+          "Yes, very much so",
+          "Yes, to some extent",
+          "Neutral",
+          "No, I prefer stability and established methods"
+        ]
+      },
+      {
+        "question": "How important is making a tangible impact on the world in your career?",
+        "options": [
+          "Extremely important",
+          "Moderately important",
+          "Somewhat important",
+          "Not very important"
+        ]
+      },
+      {
+        "question": "Which of these roles sounds most appealing?",
+        "options": [
+          "Research Scientist",
+          "Software Engineer",
+          "Data Analyst",
+          "Network Administrator"
+        ]
+      },
+      {
+        "question": "Do you prefer working on projects that are:",
+        "options": [
+          "Short-term and focused",
+          "Long-term and complex",
+          "A mix of both",
+          "I prefer variety and frequent change of projects"
+>>>>>>> ba44f2095ab3b1c5cd9a1a1ece9559cd7335069c
         ]
       }
     ],
     "geminiAnswers": [
       {
+<<<<<<< HEAD
         "question": "Which aspect of computer science excites you the most?",
         "answer": "Developing software applications"
       },
@@ -413,6 +553,73 @@
       "Applied Statistics in Engineering",
       "Human-Computer Interaction (HCI) with a focus on robotics",
       "Control Systems Engineering"
+=======
+        "question": "Which aspect of computer science excites you most?",
+        "answer": "Software development and programming"
+      },
+      {
+        "question": "In mathematics, what area do you find most engaging?",
+        "answer": "Geometry and trigonometry"
+      },
+      {
+        "question": "Would you prefer a career that involves:",
+        "answer": "A balance of both"
+      },
+      {
+        "question": "Which type of work environment do you envision yourself thriving in?",
+        "answer": "Structured and organized"
+      },
+      {
+        "question": "Are you more interested in understanding the 'why' or the 'how' of things?",
+        "answer": "'How' - building and implementing solutions"
+      },
+      {
+        "question": "How comfortable are you with ambiguity and uncertainty?",
+        "answer": "Somewhat uncomfortable, I prefer clear instructions"
+      },
+      {
+        "question": "Which of these fields aligns most with your interests?",
+        "answer": "Theoretical physics"
+      },
+      {
+        "question": "Do you prefer working with:",
+        "answer": "A combination of both"
+      },
+      {
+        "question": "How important is creativity in your ideal career?",
+        "answer": "Not very important"
+      },
+      {
+        "question": "Which skill are you most eager to develop further?",
+        "answer": "Data analysis skills"
+      },
+      {
+        "question": "Are you more inclined towards solving problems using:",
+        "answer": "Logical reasoning and deductive methods"
+      },
+      {
+        "question": "Would you be interested in a career with significant potential for innovation and groundbreaking discoveries?",
+        "answer": "Yes, very much so"
+      },
+      {
+        "question": "How important is making a tangible impact on the world in your career?",
+        "answer": "Extremely important"
+      },
+      {
+        "question": "Which of these roles sounds most appealing?",
+        "answer": "Software Engineer"
+      },
+      {
+        "question": "Do you prefer working on projects that are:",
+        "answer": "A mix of both"
+      }
+    ],
+    "specializedFields": [
+      "Data Science (with focus on physics simulations)",
+      "Computer Graphics (with focus on realistic rendering)",
+      "Geospatial Information Systems (GIS) Development",
+      "High-Performance Computing"
+>>>>>>> ba44f2095ab3b1c5cd9a1a1ece9559cd7335069c
     ]
   }
 ]

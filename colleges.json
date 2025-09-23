@@ -2,7 +2,7 @@
   {
     "name": "Indian Institute of Technology Jammu",
     "location": "Jagti, Jammu",
-    "logo": "./assets/logo/IITJammu.webp",
+    "logo": "./assets/logo/IITJammu.png",
     "nirf": 56,
     "naac": "B+",
     "exam": "JEE Advanced/ JEE Main",
@@ -15,7 +15,7 @@
   {
     "name": "Indian Institute of Management Jammu",
     "location": "Jagti, Jammu",
-    "logo": "./assets/logo/IIMJammu.webp",
+    "logo": "./assets/logo/IIMJammu.png",
     "nirf": 35,
     "naac": "B+",
     "exam": "CAT",
@@ -28,7 +28,7 @@
   {
     "name": "National Institute of Technology Srinagar",
     "location": "Srinagar",
-    "logo": "./assets/logo/NITSrinagar.webp",
+    "logo": "./assets/logo/NITSrinagar.png",
     "nirf": 73,
     "naac": "B+",
     "exam": "JEE Main/JoSAA",
@@ -41,7 +41,7 @@
   {
     "name": "All India Institute of Medical Sciences, Vijaypur (AIIMS Jammu)",
     "location": "Vijaypur, Jammu",
-    "logo": "./assets/logo/AIIMSJammu.webp",
+    "logo": "./assets/logo/AIIMSJammu.png",
     "naac": "A-",
     "exam": "NEET",
     "type": "Medical",
@@ -53,7 +53,7 @@
   {
     "name": "Shri Mata Vaishno Devi University (SMVDU)",
     "location": "Katra",
-    "logo": "./assets/logo/SMVDU.webp",
+    "logo": "./assets/logo/SMVDU.png",
     "nirf": 151,
     "naac": "A",
     "exam": "SMVDU Entrance/JEE/Other",
@@ -66,7 +66,7 @@
   {
     "name": "University of Jammu",
     "location": "Jammu",
-    "logo": "./assets/logo/UniversityOfJammu.webp",
+    "logo": "./assets/logo/UniversityOfJammu.png",
     "nirf": 51,
     "naac": "A++",
     "exam": "CUET/University Entrance",
@@ -79,7 +79,7 @@
   {
     "name": "University of Kashmir",
     "location": "Hazratbal, Srinagar",
-    "logo": "./assets/logo/UniversityOfKashmir.webp",
+    "logo": "./assets/logo/UniversityOfKashmir.png",
     "nirf": 69,
     "naac": "A++",
     "exam": "CUET/University Entrance",
@@ -92,7 +92,7 @@
   {
     "name": "Central University of Kashmir",
     "location": "Ganderbal",
-    "logo": "./assets/logo/CUKashmir.webp",
+    "logo": "./assets/logo/CUKashmir.png",
     "nirf": 69,
     "naac": "A",
     "exam": "CUET",
@@ -105,7 +105,7 @@
   {
     "name": "Islamic University of Science & Technology (IUST)",
     "location": "Awantipora",
-    "logo": "./assets/logo/IUST.webp",
+    "logo": "./assets/logo/IUST.jpeg",
     "naac": "A",
     "exam": "University Entrance/JEE",
     "type": "University/Engineering",
@@ -117,7 +117,7 @@
   {
     "name": "Sher-i-Kashmir Institute of Medical Sciences (SKIMS), Soura",
     "location": "Srinagar",
-    "logo": "./assets/logo/SKIMS.webp",
+    "logo": "./assets/logo/SKIMS.png",
     "naac": "A+",
     "exam": "NEET/PG",
     "type": "Medical",
@@ -129,7 +129,7 @@
   {
     "name": "Government Medical College, Srinagar",
     "location": "Srinagar",
-    "logo": "./assets/logo/GMC_Srinagar.webp",
+    "logo": "./assets/logo/GMC_Srinagar.png",
     "naac": "A",
     "exam": "NEET",
     "type": "Medical",
@@ -141,7 +141,7 @@
   {
     "name": "Government Medical College, Jammu",
     "location": "Jammu",
-    "logo": "./assets/logo/GMC_Jammu.webp",
+    "logo": "./assets/logo/GMC_Jammu.png",
     "naac": "A",
     "exam": "NEET",
     "type": "Medical",
@@ -153,7 +153,7 @@
   {
     "name": "Acharya Shri Chander College of Medical Sciences (ASCOMS)",
     "location": "Sidhra, Jammu",
-    "logo": "./assets/logo/ASCOMS.webp",
+    "logo": "./assets/logo/ASCOMS.jpeg",
     "naac": "A-",
     "exam": "NEET",
     "type": "Medical",
@@ -165,7 +165,7 @@
   {
     "name": "Model Institute of Engineering & Technology (MIET), Jammu",
     "location": "Jammu",
-    "logo": "./assets/logo/MIET.webp",
+    "logo": "./assets/logo/MIET.png",
     "naac": "A",
     "exam": "JKCET/JEE Main",
     "type": "Engineering",
@@ -176,8 +176,8 @@
   },
   {
     "name": "Government College of Engineering & Technology (GCET), Safapora",
-    "location": "Ganderbal",
-    "logo": "./assets/logo/GCET_Safapora.webp",
+    "location": "Ganderbal, Kashmir",
+    "logo": "./assets/logo/GCET_Safapora.png",
     "naac": "B++",
     "exam": "JKCET/JEE",
     "type": "Engineering",
@@ -189,7 +189,7 @@
   {
     "name": "Government College for Women, M.A. Road, Srinagar",
     "location": "Srinagar",
-    "logo": "./assets/logo/GCW_Srinagar.webp",
+    "logo": "./assets/logo/GCW_Srinagar.png",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Arts & Science",
@@ -201,7 +201,7 @@
   {
     "name": "GGM Science College, Jammu",
     "location": "Jammu",
-    "logo": "./assets/logo/GGMSC_Jammu.webp",
+    "logo": "./assets/logo/GGMSC_Jammu.jpg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Science",
@@ -213,7 +213,7 @@
   {
     "name": "S.P. College (Srinagar)",
     "location": "Srinagar",
-    "logo": "./assets/logo/SPCollege.webp",
+    "logo": "./assets/logo/SPCollege.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Arts & Science",
@@ -225,7 +225,7 @@
   {
     "name": "Government Degree College Anantnag",
     "location": "Anantnag",
-    "logo": "./assets/logo/GDC_Anantnag.webp",
+    "logo": "./assets/logo/GDC_Anantnag.png",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -237,7 +237,7 @@
   {
     "name": "Government Degree College Baramulla",
     "location": "Baramulla",
-    "logo": "./assets/logo/GDC_Baramulla.webp",
+    "logo": "./assets/logo/GDC_Baramulla.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -249,7 +249,7 @@
   {
     "name": "Government Degree College Sopore",
     "location": "Sopore",
-    "logo": "./assets/logo/GDC_Sopore.webp",
+    "logo": "./assets/logo/GDC_Sopore.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -261,7 +261,7 @@
   {
     "name": "SKUAST Kashmir (Sher-e-Kashmir University of Agricultural Sciences & Technology)",
     "location": "Wadura/ Shalimar",
-    "logo": "./assets/logo/SKUASTKashmir.webp",
+    "logo": "./assets/logo/SKUASTKashmir.jpeg",
     "naac": "A",
     "exam": "University Entrance",
     "type": "Agricultural University",
@@ -273,7 +273,7 @@
   {
     "name": "SKUAST Jammu",
     "location": "Jammu",
-    "logo": "./assets/logo/SKUASTJammu.webp",
+    "logo": "./assets/logo/SKUASTJammu.png",
     "naac": "A",
     "exam": "University Entrance",
     "type": "Agricultural University",
@@ -285,7 +285,7 @@
   {
     "name": "Government Polytechnic College, Srinagar",
     "location": "Srinagar",
-    "logo": "./assets/logo/GovtPolySrinagar.webp",
+    "logo": "./assets/logo/GovtPolySrinagar.jpg",
     "naac": "B",
     "exam": "Diploma Entrance",
     "type": "Polytechnic",
@@ -295,9 +295,9 @@
     "link": "#"
   },
   {
-    "name": "JK Institute of Medical Sciences (JIMs) Anantnag",
+    "name": "JK Institute of Medical Sciences (JKIMs) Anantnag",
     "location": "Anantnag",
-    "logo": "./assets/logo/JIMS_Anantnag.webp",
+    "logo": "./assets/logo/JIMS_Anantnag.png",
     "naac": "B+",
     "exam": "NEET/Other",
     "type": "Medical",
@@ -309,7 +309,7 @@
   {
     "name": "Government Degree College Pulwama",
     "location": "Pulwama",
-    "logo": "./assets/logo/GDC_Pulwama.webp",
+    "logo": "./assets/logo/GDC_Pulwama.png",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -321,7 +321,7 @@
   {
     "name": "Islamia College of Science & Commerce, Srinagar",
     "location": "Srinagar",
-    "logo": "./assets/logo/IslamiaCollege.webp",
+    "logo": "./assets/logo/IslamiaCollege.png",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Arts & Science",
@@ -333,7 +333,7 @@
   {
     "name": "Government Degree College Rajouri",
     "location": "Rajouri",
-    "logo": "./assets/logo/GDC_Rajouri.webp",
+    "logo": "./assets/logo/GDC_Rajouri.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -345,7 +345,7 @@
   {
     "name": "Government Degree College Kathua",
     "location": "Kathua",
-    "logo": "./assets/logo/GDC_Kathua.webp",
+    "logo": "./assets/logo/GDC_Kathua.png",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -355,9 +355,9 @@
     "link": "#"
   },
   {
-    "name": "Government College of Engineering, Jammu",
-    "location": "Gandhi Nagar, Jammu",
-    "logo": "./assets/logo/GCE_Jammu.webp",
+    "name": "Government College of Engineering and Technology, Jammu",
+    "location": "Jammu",
+    "logo": "./assets/logo/GCET_Jammu.jpeg",
     "naac": "B++",
     "exam": "JKCET/JEE",
     "type": "Engineering",
@@ -369,7 +369,7 @@
   {
     "name": "Government S.P. College of Commerce, Srinagar",
     "location": "Srinagar",
-    "logo": "./assets/logo/SP_Commerce.webp",
+    "logo": "./assets/logo/SP_Commerce.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Commerce",
@@ -381,7 +381,7 @@
   {
     "name": "Government Degree College Kulgam",
     "location": "Kulgam",
-    "logo": "./assets/logo/GDC_Kulgam.webp",
+    "logo": "./assets/logo/GDC_Kulgam.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -392,8 +392,8 @@
   },
   {
     "name": "Government Degree College Shopian",
-    "location": "Shopian",
-    "logo": "./assets/logo/GDC_Shopian.webp",
+    "location": "Shopian, Kashmir",
+    "logo": "./assets/logo/GDC_Shopian.png",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -405,7 +405,7 @@
   {
     "name": "Government Degree College Budgam",
     "location": "Budgam",
-    "logo": "./assets/logo/GDC_Budgam.webp",
+    "logo": "./assets/logo/GDC_Budgam.jpg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -417,7 +417,7 @@
   {
     "name": "Baba Ghulam Shah Badshah University (BGSBU)",
     "location": "Rajouri",
-    "logo": "./assets/logo/BGSBU.webp",
+    "logo": "./assets/logo/BGSBU.png",
     "naac": "A",
     "exam": "University Entrance",
     "type": "University",
@@ -429,7 +429,7 @@
   {
     "name": "Government Degree College Sopore Women's College",
     "location": "Sopore",
-    "logo": "./assets/logo/Womens_Sopore.webp",
+    "logo": "./assets/logo/Womens_Sopore.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -441,7 +441,7 @@
   {
     "name": "Government Degree College Bhaderwah",
     "location": "Doda",
-    "logo": "./assets/logo/GDC_Bhaderwah.webp",
+    "logo": "./assets/logo/GDC_Bhaderwah.png",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -453,7 +453,7 @@
   {
     "name": "Model Institute of Education & Technology (MIET) Srinagar",
     "location": "Srinagar",
-    "logo": "./assets/logo/MIET_Srinagar.webp",
+    "logo": "./assets/logo/MIET_Srinagar.jpeg",
     "naac": "B++",
     "exam": "University Entrance",
     "type": "Education/Engineering",
@@ -465,7 +465,7 @@
   {
     "name": "Government Degree College Handwara",
     "location": "Kupwara",
-    "logo": "./assets/logo/GDC_Handwara.webp",
+    "logo": "./assets/logo/GDC_Handwara.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -477,7 +477,7 @@
   {
     "name": "Government Degree College Bandipora",
     "location": "Bandipora",
-    "logo": "./assets/logo/GDC_Bandipora.webp",
+    "logo": "./assets/logo/GDC_Bandipora.png",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -489,7 +489,7 @@
   {
     "name": "Government Degree College Anantnag Women's College",
     "location": "Anantnag",
-    "logo": "./assets/logo/Womens_Anantnag.webp",
+    "logo": "./assets/logo/Womens_Anantnag.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -501,7 +501,7 @@
   {
     "name": "Government Degree College Udhampur",
     "location": "Udhampur",
-    "logo": "./assets/logo/GDC_Udhampur.webp",
+    "logo": "./assets/logo/GDC_Udhampur.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -513,7 +513,7 @@
   {
     "name": "Government College of Education (GCM), Srinagar",
     "location": "Srinagar",
-    "logo": "./assets/logo/GovtCollegeEducation_Srinagar.webp",
+    "logo": "./assets/logo/GovtCollegeEducation_Srinagar.jpeg",
     "naac": "B+",
     "exam": "B.Ed Entrance",
     "type": "Education",
@@ -525,7 +525,7 @@
   {
     "name": "S.K. Institute of Medical Sciences & Research (private/government mix)",
     "location": "Various",
-    "logo": "./assets/logo/SKIMS_Inst.webp",
+    "logo": "./assets/logo/SKIMS_Inst.svg",
     "naac": "A-",
     "exam": "NEET/PG",
     "type": "Medical",
@@ -537,7 +537,7 @@
   {
     "name": "Government Degree College Bijbehara",
     "location": "Anantnag",
-    "logo": "./assets/logo/GDC_Bijbehara.webp",
+    "logo": "./assets/logo/GDC_Bijbehara.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -549,7 +549,7 @@
   {
     "name": "Government Degree College Baramulla Women's College",
     "location": "Baramulla",
-    "logo": "./assets/logo/Womens_Baramulla.webp",
+    "logo": "./assets/logo/Womens_Baramulla.png",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -561,7 +561,7 @@
   {
     "name": "Government Degree College Pulwama Women's College",
     "location": "Pulwama",
-    "logo": "./assets/logo/Womens_Pulwama.webp",
+    "logo": "./assets/logo/Womens_Pulwama.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -573,7 +573,7 @@
   {
     "name": "Government Polytechnic College Jammu",
     "location": "Jammu",
-    "logo": "./assets/logo/Polytechnic_Jammu.webp",
+    "logo": "./assets/logo/Polytechnic_Jammu.jpeg",
     "naac": "B",
     "exam": "Diploma Entrance",
     "type": "Polytechnic",
@@ -597,7 +597,7 @@
   {
     "name": "Government Degree College Kishtwar",
     "location": "Kishtwar",
-    "logo": "./assets/logo/GDC_Kishtwar.webp",
+    "logo": "./assets/logo/GDC_Kishtwar.avif",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -609,7 +609,7 @@
   {
     "name": "Government Degree College Reasi",
     "location": "Reasi",
-    "logo": "./assets/logo/GDC_Reasi.webp",
+    "logo": "./assets/logo/GDC_Reasi.png",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
@@ -621,7 +621,7 @@
   {
     "name": "Government Degree College Mendhar",
     "location": "Poonch",
-    "logo": "./assets/logo/GDC_Mendhar.webp",
+    "logo": "./assets/logo/GDC_Mendhar.jpeg",
     "naac": "B+",
     "exam": "University Entrance",
     "type": "Degree College",
