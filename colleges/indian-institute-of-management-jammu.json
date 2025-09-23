@@ -1,0 +1,83 @@
+{
+    "id": "indian-institute-of-management-jammu",
+    "name": "Indian Institute of Management Jammu",
+    "tagline": "Fees, Course, Admissions 2025",
+    "address": "Jagti, Jammu",
+    "ratings": "4.5/5",
+    "badges": [
+        "B+ NAAC accredited",
+        "Government Institute",
+        "Estd. 1980"
+    ],
+    "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=Indian+Institute+of+Management+Jammu+Banner",
+    "logoUrl": "https://placehold.co/80x80/6366f1/ffffff?text=IND",
+    "lastUpdated": "24 Sep 25",
+    "content": {
+        "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        Indian Institute of Management Jammu, established in 2016, is a premier government business school located in Jagti, Jammu. As part of the prestigious IIM network, it offers world-class management education with rigorous academic curriculum and experienced faculty from top institutions. IIM Jammu has achieved consistent 100% placements with top recruiters including Infosys, Wipro, Accenture, Napier Healthcare, Carelon Global Solutions, Meril, and Cognizant. The institute offers MBA programs and specialized MBA in Hospital Administration & Healthcare Management.\n    </p>\n</div>",
+        "Courses": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Courses Offered</h2>\n    <ul class=\"space-y-4\">\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Master of Business Administration (MBA)</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 2 years | Batch Size: 244 students | CAT Score Required</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">MBA in Hospital Administration & Healthcare Management</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 2 years | Batch Size: 45 students | Specialized healthcare program</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Executive MBA</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 2 years | For working professionals</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">PhD in Management</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 4-5 years | Research-based program</p>\n        </li>\n    </ul>\n</div>",
+        "Fees": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Fee Structure</h2>\n    <div class=\"space-y-4\">\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">MBA Program</h3>\n            <p class=\"text-sm text-gray-500\">Total Program Fee: \u20b918-22 Lakhs (approx.)</p>\n            <p class=\"text-sm text-gray-500\">Includes tuition, accommodation, and other charges</p>\n        </div>\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">MBA HA&HM Program</h3>\n            <p class=\"text-sm text-gray-500\">Total Program Fee: \u20b918-22 Lakhs (approx.)</p>\n            <p class=\"text-sm text-gray-500\">Specialized healthcare management program</p>\n        </div>\n    </div>\n</div>"
+    },
+    "placements": {
+        "salaryByYear": {
+            "labels": [
+                "2022",
+                "2023",
+                "2024"
+            ],
+            "highestSalary": [
+                3200000,
+                6400000,
+                3200000
+            ],
+            "averageSalary": [
+                1378000,
+                1650000,
+                1548000
+            ]
+        },
+        "salaryDistribution": {
+            "2022": {
+                "labels": [
+                    "0-10L",
+                    "10-15L",
+                    "15-25L",
+                    ">25L"
+                ],
+                "data": [
+                    25,
+                    35,
+                    25,
+                    15
+                ]
+            },
+            "2023": {
+                "labels": [
+                    "0-10L",
+                    "10-15L",
+                    "15-25L",
+                    ">25L"
+                ],
+                "data": [
+                    20,
+                    30,
+                    35,
+                    15
+                ]
+            },
+            "2024": {
+                "labels": [
+                    "0-10L",
+                    "10-15L",
+                    "15-25L",
+                    ">25L"
+                ],
+                "data": [
+                    18,
+                    32,
+                    35,
+                    15
+                ]
+            }
+        }
+    }
+}

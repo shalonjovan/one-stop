@@ -1,0 +1,83 @@
+{
+    "id": "government-college-of-engineering-technology-gcet-safapora",
+    "name": "Government College of Engineering & Technology (GCET), Safapora",
+    "tagline": "Fees, Course, Admissions 2025",
+    "address": "Ganderbal, Kashmir",
+    "ratings": "3.4/5",
+    "badges": [
+        "B++ NAAC accredited",
+        "Government Institute",
+        "Estd. 1985"
+    ],
+    "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=Government+College+of+Engineering+and+Technology+(GCET),+Safapora+Banner",
+    "logoUrl": "https://placehold.co/80x80/6366f1/ffffff?text=GOV",
+    "lastUpdated": "24 Sep 25",
+    "content": {
+        "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        Government College of Engineering & Technology (GCET), Safapora, located in Ganderbal, Kashmir, is a prestigious B++ NAAC accredited government institution offering world-class engineering programs. The college is known for its excellent academic standards, state-of-the-art infrastructure, and strong industry connections. Students gain admission through JKCET/JEE and benefit from experienced faculty, modern laboratories, and comprehensive learning resources. The institution maintains high placement rates and provides students with opportunities for research, internships, and skill development programs.\n    </p>\n</div>",
+        "Courses": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Courses Offered</h2>\n    <p class=\"text-gray-700\">Course information will be updated soon. Please check the official website for the latest course offerings.</p>\n</div>",
+        "Fees": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Fee Structure</h2>\n    <p class=\"text-gray-700\">Fee information will be updated soon. Please contact admissions office for current fee structure.</p>\n</div>"
+    },
+    "placements": {
+        "salaryByYear": {
+            "labels": [
+                "2022",
+                "2023",
+                "2024"
+            ],
+            "highestSalary": [
+                3000000,
+                3300000,
+                3600000
+            ],
+            "averageSalary": [
+                500000,
+                575000,
+                650000
+            ]
+        },
+        "salaryDistribution": {
+            "2022": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    30,
+                    35,
+                    20,
+                    15
+                ]
+            },
+            "2023": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    25,
+                    35,
+                    25,
+                    15
+                ]
+            },
+            "2024": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    20,
+                    30,
+                    30,
+                    20
+                ]
+            }
+        }
+    }
+}
