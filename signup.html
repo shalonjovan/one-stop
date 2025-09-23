@@ -4,128 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-       <script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #eef2f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #333;
-        }
-
-        .auth-container {
-            background: #fff;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 380px;
-            max-width: 90%;
-        }
-
-        h2 {
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            font-size: 2rem;
-        }
-
-        .input-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #555;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .input-group input:focus {
-            outline: none;
-            border-color: #4a90e2;
-        }
-
-        .auth-button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background-color: #4a90e2;
-            color: #fff;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .auth-button:hover {
-            background-color: #357bd8;
-            transform: translateY(-2px);
-        }
-
-        .separator {
-            margin: 1.5rem 0;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #999;
-        }
-
-        .separator::before,
-        .separator::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .separator:not(:empty)::before {
-            margin-right: .75em;
-        }
-
-        .separator:not(:empty)::after {
-            margin-left: .75em;
-        }
-
-        .google-btn-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .switch-link {
-            display: block;
-            margin-top: 1rem;
-            color: #4a90e2;
-            text-decoration: none;
-            transition: text-decoration 0.2s;
-        }
-
-        .switch-link:hover {
-            text-decoration: underline;
-        }
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#eef2f7;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;color:#333}.auth-container{background:#fff;padding:2.5rem;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.1);text-align:center;width:380px;max-width:90%}h2{margin-bottom:2rem;color:#2c3e50;font-size:2rem}.input-group{margin-bottom:1.5rem;text-align:left}.input-group label{display:block;margin-bottom:.5rem;font-weight:600;color:#555}.input-group input{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;box-sizing:border-box;font-size:1rem;transition:border-color .3s}.input-group input:focus{outline:none;border-color:#4a90e2}.auth-button{width:100%;padding:12px;border:none;border-radius:8px;background-color:#4a90e2;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;transition:background-color .3s,transform .2s}.auth-button:hover{background-color:#357bd8;transform:translateY(-2px)}.separator{margin:1.5rem 0;display:flex;align-items:center;text-align:center;color:#999}.separator:after,.separator:before{content:'';flex:1;border-bottom:1px solid #ddd}.separator:not(:empty):before{margin-right:.75em}.separator:not(:empty):after{margin-left:.75em}.google-btn-container{display:flex;justify-content:center;margin-bottom:1.5rem}.switch-link{display:block;margin-top:1rem;color:#4a90e2;text-decoration:none;transition:text-decoration .2s}.switch-link:hover{text-decoration:underline}
     </style>
 </head>
 <body>
 
 <div class="auth-container">
-    <h2>Sign Up</h2>
+    <h2>Create Account</h2>
     <form id="signup-form">
+        <div class="input-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+        </div>
         <div class="input-group">
             <label for="username">Username</label>
             <input type="text" id="username" required>
@@ -145,19 +38,25 @@
 
 <script>
     const backend = 'http://localhost:3000';
+    
     document.getElementById('signup-form').addEventListener('submit', async (e) => {
         e.preventDefault();
+        const name = document.getElementById('name').value;
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         try {
             const res = await fetch(backend + '/signup', {
                 method: 'POST',
                 headers: {'Content-Type':'application/json'},
-                body: JSON.stringify({ username, password })
+                body: JSON.stringify({ name, username, password })
             });
             const data = await res.json();
-            if(res.ok){ alert('Sign up success!'); window.location.href='login.html'; }
-            else alert(data.error);
+            if(res.ok){ 
+                alert('Sign up successful! Please log in.'); 
+                window.location.href='login.html'; 
+            } else {
+                alert(data.error);
+            }
         } catch(err){ alert('Server error'); console.error(err);}
     });
 
@@ -167,32 +66,50 @@
             client_id: "709858001016-1ejbevrnot4n6tl77la9htdk9ktsfkl6.apps.googleusercontent.com",
             callback: handleCredentialResponse
         });
-
         google.accounts.id.renderButton(
             document.getElementById("googleLoginBtn"),
-            { theme: "outline", size: "large" }
+            { theme: "outline", size: "large", type: "standard", text: "signup_with" }
         );
     };
 
     async function handleCredentialResponse(response){
         const decoded = jwt_decode(response.credential);
-        const googleUser = {
-            name: decoded.name,
-            email: decoded.email,
-            picture: decoded.picture
-        };
+        const googleUser = { name: decoded.name, email: decoded.email };
         try {
-            const res = await fetch(backend+'/google-signup', {
+            const res = await fetch(backend + '/google-signup', {
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body: JSON.stringify(googleUser)
             });
             const data = await res.json();
             if(res.ok){ 
-                localStorage.setItem('googleUser', JSON.stringify(googleUser));
-                window.location.href = 'profile.html';
-            } else alert(data.error);
+                sessionStorage.setItem('loggedInUser', JSON.stringify({ name: data.user.name }));
+                // Redirect based on whether it was a login or a new signup
+                if (data.isLogin) {
+                    await checkAndRedirect(data.user.name);
+                } else {
+                    window.location.href = 'assessment_test.html'; // New users go to assessment
+                }
+            } else {
+                alert(data.error);
+            }
         } catch(err){ alert('Server error'); console.error(err);}
+    }
+    
+    // This helper function is now also used for Google users who already have an account
+    async function checkAndRedirect(username) {
+        try {
+            const res = await fetch(`${backend}/check-assessment/${username}`);
+            const data = await res.json();
+            if (res.ok && data.hasTakenAssessment) {
+                window.location.href = 'foryou.html';
+            } else {
+                window.location.href = 'assessment_test.html';
+            }
+        } catch (err) {
+            console.error('Failed to check assessment status:', err);
+            window.location.href = 'assessment_test.html';
+        }
     }
 </script>
 

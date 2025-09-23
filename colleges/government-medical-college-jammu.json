@@ -1,0 +1,83 @@
+[{
+    "id": "government-medical-college-jammu",
+    "name": "Government Medical College, Jammu",
+    "tagline": "Fees, Course, Admissions 2025",
+    "address": "Jammu",
+    "ratings": "4.1/5",
+    "badges": [
+        "A NAAC accredited",
+        "Government Institute",
+        "Estd. 1973"
+    ],
+    "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=Government+Medical+College,+Jammu+Banner",
+    "logoUrl": "../assets/logo/GMC_Jammu.png",
+    "lastUpdated": "24 Sep 25",
+    "content": {
+        "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        Government Medical College, Jammu, located in Jammu, is a prestigious A NAAC accredited government institution offering world-class medical programs. The college is known for its excellent academic standards, state-of-the-art infrastructure, and strong industry connections. Students gain admission through NEET and benefit from experienced faculty, modern laboratories, and comprehensive learning resources. The institution maintains high placement rates and provides students with opportunities for research, internships, and skill development programs.\n    </p>\n</div>",
+        "Courses": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Courses Offered</h2>\n    <p class=\"text-gray-700\">Course information will be updated soon. Please check the official website for the latest course offerings.</p>\n</div>",
+        "Fees": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Fee Structure</h2>\n    <p class=\"text-gray-700\">Fee information will be updated soon. Please contact admissions office for current fee structure.</p>\n</div>"
+    },
+    "placements": {
+        "salaryByYear": {
+            "labels": [
+                "2022",
+                "2023",
+                "2024"
+            ],
+            "highestSalary": [
+                3600000,
+                3960000,
+                4320000
+            ],
+            "averageSalary": [
+                600000,
+                690000,
+                780000
+            ]
+        },
+        "salaryDistribution": {
+            "2022": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    30,
+                    35,
+                    20,
+                    15
+                ]
+            },
+            "2023": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    25,
+                    35,
+                    25,
+                    15
+                ]
+            },
+            "2024": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    20,
+                    30,
+                    30,
+                    20
+                ]
+            }
+        }
+    }
+}]
