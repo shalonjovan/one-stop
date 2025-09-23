@@ -10,7 +10,7 @@
         "Estd. 1982"
     ],
     "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=Sher-i-Kashmir+Institute+of+Medical+Sciences+(SKIMS),+Soura+Banner",
-    "logoUrl": "https://placehold.co/80x80/6366f1/ffffff?text=SHE",
+    "logoUrl": "../assets/logo/SKIMS.svg",
     "lastUpdated": "24 Sep 25",
     "content": {
         "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        Sher-i-Kashmir Institute of Medical Sciences (SKIMS), Soura, located in Srinagar, is a prestigious A+ NAAC accredited government institution offering world-class medical programs. The college is known for its excellent academic standards, state-of-the-art infrastructure, and strong industry connections. Students gain admission through NEET/PG and benefit from experienced faculty, modern laboratories, and comprehensive learning resources. The institution maintains high placement rates and provides students with opportunities for research, internships, and skill development programs.\n    </p>\n</div>",
