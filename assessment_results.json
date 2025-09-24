@@ -209,5 +209,213 @@
       "Machine Learning for Scientific Discovery",
       "Robotics (with a focus on algorithmic control)"
     ]
+  },
+  {
+    "userName": "shalon",
+    "age": "17",
+    "studentClass": "12",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "Which of these aspects of computer science excites you the most?",
+        "options": [
+          "Developing software applications",
+          "Designing computer hardware",
+          "Creating algorithms and data structures",
+          "Working with artificial intelligence"
+        ]
+      },
+      {
+        "question": "In physics, what area interests you the most?",
+        "options": [
+          "Quantum mechanics",
+          "Astrophysics",
+          "Thermodynamics",
+          "Nuclear physics"
+        ]
+      },
+      {
+        "question": "What type of work environment do you prefer?",
+        "options": [
+          "Independent research",
+          "Collaborative teamwork",
+          "Structured and organized",
+          "Flexible and dynamic"
+        ]
+      },
+      {
+        "question": "Which mathematical field are you most drawn to?",
+        "options": [
+          "Calculus",
+          "Linear Algebra",
+          "Statistics",
+          "Discrete Mathematics"
+        ]
+      },
+      {
+        "question": "Are you more interested in theoretical understanding or practical application?",
+        "options": [
+          "Theoretical understanding",
+          "Practical application",
+          "A balance of both",
+          "Neither"
+        ]
+      },
+      {
+        "question": "How much do you enjoy problem-solving?",
+        "options": [
+          "I love it!",
+          "I enjoy it moderately",
+          "I find it challenging",
+          "I dislike it"
+        ]
+      },
+      {
+        "question": "Would you prefer working with data to solve real-world problems, or developing theoretical models?",
+        "options": [
+          "Working with data",
+          "Developing theoretical models",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "Which of these technological advancements excites you the most?",
+        "options": [
+          "Virtual Reality/Augmented Reality",
+          "Biotechnology",
+          "Nanotechnology",
+          "Space exploration technology"
+        ]
+      },
+      {
+        "question": "Do you prefer working on large-scale projects or smaller, more focused ones?",
+        "options": [
+          "Large-scale projects",
+          "Smaller, focused projects",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "How important is creativity to you in your work?",
+        "options": [
+          "Extremely important",
+          "Moderately important",
+          "Slightly important",
+          "Not important"
+        ]
+      },
+      {
+        "question": "Which subject from your class 12 curriculum do you find most engaging?",
+        "options": [
+          "Mathematics",
+          "Computer Science",
+          "Physics",
+          "Chemistry"
+        ]
+      },
+      {
+        "question": "Are you more inclined towards building something new or improving existing systems?",
+        "options": [
+          "Building something new",
+          "Improving existing systems",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "Do you prefer working indoors or outdoors?",
+        "options": [
+          "Indoors",
+          "Outdoors",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "How important is making a tangible impact on the world to you?",
+        "options": [
+          "Extremely important",
+          "Moderately important",
+          "Slightly important",
+          "Not important"
+        ]
+      },
+      {
+        "question": "Are you a detail-oriented person or do you prefer a more big-picture approach?",
+        "options": [
+          "Detail-oriented",
+          "Big-picture approach",
+          "A balance of both",
+          "Neither"
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "Which of these aspects of computer science excites you the most?",
+        "answer": "Designing computer hardware"
+      },
+      {
+        "question": "In physics, what area interests you the most?",
+        "answer": "Thermodynamics"
+      },
+      {
+        "question": "What type of work environment do you prefer?",
+        "answer": "Structured and organized"
+      },
+      {
+        "question": "Which mathematical field are you most drawn to?",
+        "answer": "Statistics"
+      },
+      {
+        "question": "Are you more interested in theoretical understanding or practical application?",
+        "answer": "A balance of both"
+      },
+      {
+        "question": "How much do you enjoy problem-solving?",
+        "answer": "I enjoy it moderately"
+      },
+      {
+        "question": "Would you prefer working with data to solve real-world problems, or developing theoretical models?",
+        "answer": "Developing theoretical models"
+      },
+      {
+        "question": "Which of these technological advancements excites you the most?",
+        "answer": "Space exploration technology"
+      },
+      {
+        "question": "Do you prefer working on large-scale projects or smaller, more focused ones?",
+        "answer": "Smaller, focused projects"
+      },
+      {
+        "question": "How important is creativity to you in your work?",
+        "answer": "Slightly important"
+      },
+      {
+        "question": "Which subject from your class 12 curriculum do you find most engaging?",
+        "answer": "Computer Science"
+      },
+      {
+        "question": "Are you more inclined towards building something new or improving existing systems?",
+        "answer": "Both equally"
+      },
+      {
+        "question": "Do you prefer working indoors or outdoors?",
+        "answer": "Both equally"
+      },
+      {
+        "question": "How important is making a tangible impact on the world to you?",
+        "answer": "Slightly important"
+      },
+      {
+        "question": "Are you a detail-oriented person or do you prefer a more big-picture approach?",
+        "answer": "Big-picture approach"
+      }
+    ],
+    "specializedFields": [
+      "Aerospace Engineering (focus on propulsion)"
+    ]
   }
 ]
