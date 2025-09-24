@@ -8,5 +8,20 @@
     "name": "hello",
     "username": "k",
     "password": "$2b$10$2cJeIf1v1e9pU4N4lU9IkOYlHbJvWhzjtC6jRndXKkLtltGw2AVKe"
+  },
+  {
+    "name": "tushyent",
+    "username": "v",
+    "password": "$2b$10$8MOwj0P/XHbn4ZdjQoEyT.OPacjbsHjYcv59t.OMNV/z.jRgsk1nW"
+  },
+  {
+    "name": "santhoooo",
+    "username": "santh",
+    "password": "$2b$10$8TAyI2.9lUwTvd2FGVHG5.6fLhQAK97YGV7HobobD.ptprQ0crqky"
+  },
+  {
+    "name": "Tushyent",
+    "username": "tush",
+    "password": "$2b$10$u3lLeCGYV0LVfgBfWQWQqeXPcw6//sSks26KSn.Q2VSxx1jmXETsi"
   }
 ]
