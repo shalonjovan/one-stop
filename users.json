@@ -13,5 +13,10 @@
     "name": "Shalon",
     "username": "c",
     "password": "$2b$10$ewda7DGm3z2mXe1y3Y/vOeRnDQjaKxYEblnDYnzcuFdmVeggNLPoe"
+  },
+  {
+    "name": "shalon",
+    "username": "shalon",
+    "password": "$2b$10$1enGaolh7gpisrqlvjtRc./jehtCLe7HHpv7pD9YWxZS8gSQcPCLy"
   }
 ]
