@@ -37,7 +37,7 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Changed background color */
+            background-color: #c8d8f0;
             margin: 0;
             min-height: 100vh;
         }
@@ -75,45 +75,90 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        #chatbot-button {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid #6366f1;
+        }
+
+        #chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        #chatbot-button img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body class="text-gray-800">
 
-    <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
+    <header class="relative z-20 w-full p-2 flex justify-between items-center text-white bg-gray-900">
         <div class="flex items-center space-x-2">
             <button id="menu-btn" class="text-white focus:outline-none md:hidden">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
             <div class="flex items-center space-x-2">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path>
-                </svg>
-                <span class="text-xl font-bold">Pathfinder</span>
+                <a href="index.html">
+                    <img src="./assets/mainlogo.png" alt="VidyaGyan Logo" class="w-10 h-10">
+                </a>
+                <span class="text-3xl font-bold text-white">VidyaGyan</span>
             </div>
         </div>
-        <nav class="hidden md:flex items-center space-x-6">
-            <a href="./colleges.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
-            <a href="./career_paths.html" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
-            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
-            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study Groups</a>
-            <a href="#" class="text-white hover:text-gray-200 px-2 py-1 rounded-lg hover:bg-gray-800 transition-colors duration-200">Others</a>
+        <nav class="hidden md:flex items-center space-x-4 text-base">
+            <a href="career_paths.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
+            <a href="roadmaps/roadmap.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
+            <a href="colleges.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="exams.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Exams</a>
+            <a href="resources.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Resources</a>
+            <a href="study_groups.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study Groups</a>
+            <a href="scholarship.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Scholarships</a>
         </nav>
-        <div class="flex items-center space-x-4">
-            <button class="text-white hover:text-gray-200">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 2a6 6 0 016 6v3.586l1.707 1.707A1 1 0 0118 14H2a1 1 0 01.293-.707L4 11.586V8a6 6 0 016-6zM10 18a3 3 0 003-3H7a3 3 0 003 3z" />
-                </svg>
-            </button>
-            <button class="text-white hover:text-gray-200">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                </svg>
-            </button>
-            <a href="#" class="text-sm px-4 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300">For You</a>
+        <div class="hidden md:flex items-center space-x-4">
+            <a href="home.html"
+                class="flex items-center space-x-2 text-white hover:text-gray-200 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">
+                <img src="assets/home.png" alt="Home" class="w-8 h-8">
+            </a>
+            <a href="profile.html"
+                class="flex items-center space-x-2 text-white hover:text-gray-200 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">
+                <img src="assets/profile.jpg" alt="Profile" class="w-8 h-8">
+            </a>
+            <a href="foryou.html"
+                class="text-sm px-6 py-3 rounded-full border-2 border-blue-500 text-blue-500 hover:text-white hover:bg-blue-500 transition-colors duration-300">For You</a>
         </div>
     </header>
+
+    <a href="chat.html" id="chatbot-button" title="Chat with us!">
+        <img src="./assets/images/chat.jpeg" alt="Chatbot" />
+    </a>
 
     <div class="container mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
         <div class="text-center mb-8">
@@ -121,7 +166,7 @@
             <p class="text-xl text-gray-600 animate-slideUp">Your personalized career assessment results</p>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 mb-8 animate-scaleIn shadow-lg">
+        <div class="bg-white rounded-3xl p-8 mb-8 animate-scaleIn shadow-lg border-2 border-indigo-500">
             <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
                 <div class="flex-shrink-0">
                     <div class="profile-picture-container relative">
@@ -151,11 +196,11 @@
                         </button>
     
                         <button onclick="shareProfile()" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
-        </svg>
-        Share Profile
-    </button>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                            </svg>
+                            Share Profile
+                        </button>
                     </div>
                 </div>
             </div>
@@ -168,6 +213,75 @@
             </div>
         </div>
     </div>
+
+    <footer class="bg-gray-900 text-gray-300 p-6 pt-10 mt-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div class="col-span-1 flex justify-center items-center">
+                <img src="./assets/mainlogo.png" alt="VidyaGyan Logo" class="w-75 h-60">
+            </div>
+
+            <div class="col-span-1 flex flex-col">
+                <h3 class="text-white font-bold text-xl mb-2">VidyaGyan</h3>
+                <p class="text-gray-400 text-sm mb-6">Your all-in-one platform for academic and career guidance.</p>
+                
+                <div class="mb-4">
+                    <h4 class="text-white font-semibold text-lg mb-2">Blastorz</h4>
+                    <div class="flex space-x-2 items-center mb-2">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                        </svg>
+                        <a href="mailto:team.blastorz@gmail.com" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                            team.blastorz@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex space-x-2 items-center">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <a href="members.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                            Team Blastorz Info
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Navigation</h4>
+                <ul class="space-y-3">
+                    <li><a href="home.html" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
+                    <li><a href="profile.html" class="text-gray-300 hover:text-white transition-colors duration-200">Profile</a></li>
+                    <li><a href="foryou.html" class="text-gray-300 hover:text-white transition-colors duration-200">For You</a></li>
+                </ul>
+            </div>
+
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Resources</h4>
+                <ul class="space-y-3">
+                    <li><a href="colleges.html" class="text-gray-300 hover:text-white transition-colors duration-200">Colleges</a></li>
+                    <li><a href="career_paths.html" class="text-gray-300 hover:text-white transition-colors duration-200">Career Paths</a></li>
+                    <li><a href="roadmaps/roadmap.html" class="text-gray-300 hover:text-white transition-colors duration-200">Roadmaps</a></li>
+                    <li><a href="exams.html" class="text-gray-300 hover:text-white transition-colors duration-200">Entrance Exams</a></li>
+                    <li><a href="resources.html" class="text-gray-300 hover:text-white transition-colors duration-200">Study Materials</a></li>
+                    <li><a href="scholarship.html" class="text-gray-300 hover:text-white transition-colors duration-200">Scholarships</a></li>
+                </ul>
+            </div>
+
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Community & Account</h4>
+                <ul class="space-y-3">
+                    <li><a href="login.html" class="text-gray-300 hover:text-white transition-colors duration-200">Login</a></li>
+                    <li><a href="signup.html" class="text-gray-300 hover:text-white transition-colors duration-200">Sign Up</a></li>
+                    <li><a href="study_groups.html" class="text-gray-300 hover:text-white transition-colors duration-200">Study Groups</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-6 pt-3 text-center">
+            <p class="text-gray-400 text-sm">
+                Copyright © 2025 - Team Blastorz 💥
+            </p>
+        </div>
+    </footer>
 
     <script>
     const backend = 'http://localhost:3000';
@@ -230,8 +344,9 @@
         }
 
         welcomeMessage.textContent = `Welcome back, ${results.userName}!`;
+        // THESE ARE THE SECOND AND THIRD CARDS THAT WERE CHANGED
         resultsDisplay.innerHTML = `
-            <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <div class="bg-white rounded-3xl p-8 shadow-lg border-2 border-indigo-500">
                 <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>Personal Details</h3>
                 <div class="space-y-4">
                     <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl border"><span class="text-gray-500">Name</span><span class="text-gray-800 font-semibold">${results.userName}</span></div>
@@ -240,7 +355,7 @@
                     <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl border"><span class="text-gray-500">Class</span><span class="text-gray-800 font-semibold">${results.studentClass}</span></div>
                 </div>
             </div>
-            <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <div class="bg-white rounded-3xl p-8 shadow-lg border-2 border-indigo-500">
                 <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>Assessment Results</h3>
                 <div class="mb-6">
                     <div class="flex justify-between items-center mb-2"><span class="text-gray-500">Primary Stream / Interest</span></div>
