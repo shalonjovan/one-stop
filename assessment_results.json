@@ -855,5 +855,217 @@
       "Operations Research in Healthcare",
       "Data Analytics (applied to biological research)"
     ]
+  },
+  {
+    "username": "k",
+    "userName": "hello",
+    "age": "19",
+    "studentClass": "12",
+    "gender": "Male",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "What aspect of science excites you the most?",
+        "options": [
+          "Discovering new things",
+          "Solving complex problems",
+          "Building and creating things",
+          "Understanding how things work"
+        ]
+      },
+      {
+        "question": "In computer science, which area interests you most?",
+        "options": [
+          "Artificial Intelligence",
+          "Web Development",
+          "Data Science",
+          "Cybersecurity"
+        ]
+      },
+      {
+        "question": "Which subject in your current syllabus do you find most engaging?",
+        "options": [
+          "Mathematics",
+          "Physics",
+          "Chemistry",
+          "Computer Science"
+        ]
+      },
+      {
+        "question": "If you could build a software application, what would it do?",
+        "options": [
+          "Solve a real-world problem",
+          "Automate a task",
+          "Create a game",
+          "Connect people"
+        ]
+      },
+      {
+        "question": "Which type of problem-solving do you prefer?",
+        "options": [
+          "Logical and analytical",
+          "Creative and innovative",
+          "Practical and hands-on",
+          "Theoretical and abstract"
+        ]
+      },
+      {
+        "question": "Are you more interested in theoretical concepts or practical applications?",
+        "options": [
+          "Theoretical concepts",
+          "Practical applications",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "Do you enjoy working independently or collaboratively?",
+        "options": [
+          "Independently",
+          "Collaboratively",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "What kind of work environment do you envision yourself in?",
+        "options": [
+          "Fast-paced and dynamic",
+          "Structured and organized",
+          "Creative and flexible",
+          "Quiet and focused"
+        ]
+      },
+      {
+        "question": "Which scientific field aligns most with your values?",
+        "options": [
+          "Environmental science",
+          "Medical science",
+          "Space exploration",
+          "Technological advancement"
+        ]
+      },
+      {
+        "question": "Are you more inclined towards research or development?",
+        "options": [
+          "Research",
+          "Development",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "Do you prefer working with data or physical objects?",
+        "options": [
+          "Data",
+          "Physical objects",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "What is your preferred learning style?",
+        "options": [
+          "Hands-on",
+          "Visual",
+          "Auditory",
+          "Reading/writing"
+        ]
+      },
+      {
+        "question": "Which skill are you most eager to develop further?",
+        "options": [
+          "Programming",
+          "Mathematical modeling",
+          "Data analysis",
+          "Scientific writing"
+        ]
+      },
+      {
+        "question": "Which career path seems most appealing to you?",
+        "options": [
+          "Software Engineer",
+          "Data Scientist",
+          "Research Scientist",
+          "Engineer"
+        ]
+      },
+      {
+        "question": "If you could work on any project, what would it be?",
+        "options": [
+          "Developing a new AI algorithm",
+          "Designing a sustainable energy solution",
+          "Creating a revolutionary medical device",
+          "Building a high-speed computing system"
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "What aspect of science excites you the most?",
+        "answer": "Solving complex problems"
+      },
+      {
+        "question": "In computer science, which area interests you most?",
+        "answer": "Artificial Intelligence"
+      },
+      {
+        "question": "Which subject in your current syllabus do you find most engaging?",
+        "answer": "Physics"
+      },
+      {
+        "question": "If you could build a software application, what would it do?",
+        "answer": "Automate a task"
+      },
+      {
+        "question": "Which type of problem-solving do you prefer?",
+        "answer": "Logical and analytical"
+      },
+      {
+        "question": "Are you more interested in theoretical concepts or practical applications?",
+        "answer": "Neither"
+      },
+      {
+        "question": "Do you enjoy working independently or collaboratively?",
+        "answer": "Independently"
+      },
+      {
+        "question": "What kind of work environment do you envision yourself in?",
+        "answer": "Fast-paced and dynamic"
+      },
+      {
+        "question": "Which scientific field aligns most with your values?",
+        "answer": "Space exploration"
+      },
+      {
+        "question": "Are you more inclined towards research or development?",
+        "answer": "Both equally"
+      },
+      {
+        "question": "Do you prefer working with data or physical objects?",
+        "answer": "Physical objects"
+      },
+      {
+        "question": "What is your preferred learning style?",
+        "answer": "Visual"
+      },
+      {
+        "question": "Which skill are you most eager to develop further?",
+        "answer": "Mathematical modeling"
+      },
+      {
+        "question": "Which career path seems most appealing to you?",
+        "answer": "Software Engineer"
+      },
+      {
+        "question": "If you could work on any project, what would it be?",
+        "answer": "Creating a revolutionary medical device"
+      }
+    ],
+    "specializedFields": [
+      "Biomedical Engineering",
+      "Control Systems Engineering",
+      "Theoretical Computer Science (with application to AI)"
+    ]
   }
 ]

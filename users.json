@@ -3,5 +3,10 @@
     "name": "Shalon",
     "username": "a",
     "password": "$2b$10$g1jE0lHN04tjnPAsvv2JouFLI6lqn29I4itBWuAobW4XxjpgNUgHq"
+  },
+  {
+    "name": "hello",
+    "username": "k",
+    "password": "$2b$10$2cJeIf1v1e9pU4N4lU9IkOYlHbJvWhzjtC6jRndXKkLtltGw2AVKe"
   }
 ]
