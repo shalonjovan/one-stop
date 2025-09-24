@@ -1,23 +1,17 @@
 [
   {
-<<<<<<< HEAD
-    "name": "User Q",
+    "name": "Sarvesh S",
     "username": "q",
-    "password": "q"
+    "password": "$2b$10$DbphA3hn59.tHIHjeTzv5uBkgCzG8G5OBFCErHM5SxJBFklkkxUea"
   },
   {
-    "name": "Santhosh Aaron",
-    "username": "santhosh",
-    "password": "password"
+    "name": "Shalon",
+    "username": "s",
+    "password": "$2b$10$PoxkvpiTieVP2RXptSFKr.OEenlvo6cXT.DDP0KUkt0bWBujufDEa"
   },
   {
-    "name": "Shalon Jovan",
-    "username": "shalon",
-    "password": "password"
-=======
-    "name": "Shalon Joven",
-    "email": "shalonjovan@gmail.com",
-    "isGoogle": true
->>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
+    "name": "Shalon",
+    "username": "c",
+    "password": "$2b$10$ewda7DGm3z2mXe1y3Y/vOeRnDQjaKxYEblnDYnzcuFdmVeggNLPoe"
   }
 ]
