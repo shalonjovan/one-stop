@@ -89,37 +89,6 @@ const matchFieldsToCollegeTypes = (specializedFields) => {
 
 // --- API Endpoints ---
 
-// --- ADDED: Endpoint to handle profile picture upload ---
-app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).json({ message: 'No file was uploaded.' });
-    }
-    // The file is now saved. Send a success response.
-    res.status(200).json({ message: 'Profile picture uploaded successfully!', filePath: req.file.path });
-});
-
-// --- ADDED: Endpoint to retrieve and serve a user's profile picture ---
-app.get('/profile-picture/:username', (req, res) => {
-    const { username } = req.params;
-    const extensions = ['.png', '.jpg', '.jpeg', '.gif']; // Common image extensions
-    let userImagePath = null;
-
-    // Check for the user's image file with different possible extensions
-    for (const ext of extensions) {
-        const potentialPath = path.join(__dirname, 'uploads', username + ext);
-        if (fs.existsSync(potentialPath)) {
-            userImagePath = potentialPath;
-            break;
-        }
-    }
-
-    if (userImagePath) {
-        res.sendFile(userImagePath);
-    } else {
-        res.status(404).json({ message: 'Profile picture not found.' });
-    }
-});
-
 app.get('/get-colleges', (req, res) => {
     const colleges = readJsonFile(collegesFilePath);
     res.json(colleges);
