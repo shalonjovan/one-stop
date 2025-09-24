@@ -342,100 +342,91 @@
     ]
   },
   {
-    "username": "c",
+    "username": "Jo",
     "userName": "Shalon",
     "age": "18",
     "studentClass": "12",
     "stream": "Science (Maths/CS)",
     "geminiQuestions": [
       {
-        "question": "What aspect of computer science excites you the most?",
-        "options": [
-          "Software Development",
-          "Artificial Intelligence",
-          "Cybersecurity",
-          "Data Science"
-        ]
-      },
-      {
-        "question": "Which scientific field are you most drawn to?",
+        "question": "Which of these subjects excites you the most?",
         "options": [
           "Physics",
           "Chemistry",
-          "Biology",
+          "Computer Science",
           "Mathematics"
         ]
       },
       {
-        "question": "Do you prefer working with abstract concepts or concrete applications?",
+        "question": "If you could build something from scratch, what would it be?",
         "options": [
-          "Abstract Concepts",
-          "Concrete Applications",
-          "Both Equally",
-          "Neither"
+          "A sophisticated computer program",
+          "A new type of material",
+          "A revolutionary machine",
+          "A complex mathematical model"
         ]
       },
       {
-        "question": "Are you more interested in theoretical understanding or practical problem-solving?",
-        "options": [
-          "Theoretical Understanding",
-          "Practical Problem-Solving",
-          "Both Equally",
-          "Neither"
-        ]
-      },
-      {
-        "question": "Which type of problem-solving do you enjoy most?",
+        "question": "What kind of problem-solving do you prefer?",
         "options": [
           "Logical and analytical",
-          "Creative and innovative",
-          "A blend of both",
-          "Neither"
+          "Creative and experimental",
+          "Practical and hands-on",
+          "Theoretical and abstract"
         ]
       },
       {
-        "question": "Would you prefer working independently or collaboratively on projects?",
+        "question": "Which field appeals more to you: theoretical research or practical application?",
+        "options": [
+          "Theoretical research",
+          "Practical application",
+          "Both equally",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "Are you more interested in understanding how things work or how to build things?",
+        "options": [
+          "How things work",
+          "How to build things",
+          "Both equally",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "Which aspect of computer science interests you most?",
+        "options": [
+          "Software development",
+          "Data science",
+          "Artificial intelligence",
+          "Cybersecurity"
+        ]
+      },
+      {
+        "question": "In a science project, what role would you prefer?",
+        "options": [
+          "Researcher",
+          "Designer",
+          "Developer",
+          "Presenter"
+        ]
+      },
+      {
+        "question": "Would you prefer working independently or collaboratively on a project?",
         "options": [
           "Independently",
           "Collaboratively",
-          "Both",
-          "Neither"
+          "Both equally",
+          "It depends on the project"
         ]
       },
       {
-        "question": "How much do you enjoy working with large datasets and analyzing data?",
+        "question": "What kind of work environment do you envision yourself in?",
         "options": [
-          "Very Much",
-          "Moderately",
-          "Not Much",
-          "Not at all"
-        ]
-      },
-      {
-        "question": "Are you fascinated by the intricacies of the human body or the workings of the universe?",
-        "options": [
-          "Human Body",
-          "Universe",
-          "Both",
-          "Neither"
-        ]
-      },
-      {
-        "question": "Do you prefer designing systems or using existing tools to solve problems?",
-        "options": [
-          "Designing Systems",
-          "Using Existing Tools",
-          "Both Equally",
-          "Neither"
-        ]
-      },
-      {
-        "question": "How important is making a tangible impact on society to you?",
-        "options": [
-          "Very Important",
-          "Moderately Important",
-          "Not Very Important",
-          "Not at all Important"
+          "Laboratory setting",
+          "Office environment",
+          "Field work",
+          "Flexible remote work"
         ]
       },
       {
@@ -444,113 +435,122 @@
           "Yes",
           "No",
           "Sometimes",
-          "Depends on the problem"
+          "It depends on the context"
         ]
       },
       {
-        "question": "Do you enjoy researching and discovering new things, or do you prefer applying existing knowledge?",
+        "question": "Do you enjoy working with large datasets and extracting meaningful insights?",
         "options": [
-          "Research and Discovery",
-          "Application of Knowledge",
-          "Both",
-          "Neither"
+          "Yes",
+          "No",
+          "Only if it involves programming",
+          "Not particularly"
         ]
       },
       {
-        "question": "Which area of technology interests you the most?",
+        "question": "Which area of mathematics interests you the most?",
+        "options": [
+          "Calculus",
+          "Algebra",
+          "Statistics",
+          "Geometry"
+        ]
+      },
+      {
+        "question": "Which of these technologies excites you the most?",
         "options": [
           "Robotics",
-          "Biotechnology",
           "Nanotechnology",
-          "Space Technology"
+          "Biotechnology",
+          "Quantum computing"
         ]
       },
       {
-        "question": "Which type of environment would you prefer to work in?",
+        "question": "Are you fascinated by the complexities of the human body and its functions?",
         "options": [
-          "Laboratory",
-          "Office",
-          "Field",
-          "Remote"
+          "Yes, particularly in relation to medicine",
+          "Yes, more from a biological perspective",
+          "No",
+          "Somewhat"
         ]
       },
       {
-        "question": "How important is it for you to contribute to scientific advancements?",
+        "question": "Would you rather work on cutting-edge research or apply existing knowledge to solve real-world problems?",
         "options": [
-          "Very Important",
-          "Somewhat Important",
-          "Not Very Important",
-          "Not at all Important"
+          "Cutting-edge research",
+          "Applying existing knowledge",
+          "Both equally",
+          "Neither particularly"
         ]
       }
     ],
     "geminiAnswers": [
       {
-        "question": "What aspect of computer science excites you the most?",
-        "answer": "Artificial Intelligence"
+        "question": "Which of these subjects excites you the most?",
+        "answer": "Chemistry"
       },
       {
-        "question": "Which scientific field are you most drawn to?",
-        "answer": "Mathematics"
+        "question": "If you could build something from scratch, what would it be?",
+        "answer": "A complex mathematical model"
       },
       {
-        "question": "Do you prefer working with abstract concepts or concrete applications?",
-        "answer": "Neither"
+        "question": "What kind of problem-solving do you prefer?",
+        "answer": "Logical and analytical"
       },
       {
-        "question": "Are you more interested in theoretical understanding or practical problem-solving?",
-        "answer": "Both Equally"
+        "question": "Which field appeals more to you: theoretical research or practical application?",
+        "answer": "Theoretical research"
       },
       {
-        "question": "Which type of problem-solving do you enjoy most?",
-        "answer": "A blend of both"
+        "question": "Are you more interested in understanding how things work or how to build things?",
+        "answer": "How to build things"
       },
       {
-        "question": "Would you prefer working independently or collaboratively on projects?",
-        "answer": "Both"
+        "question": "Which aspect of computer science interests you most?",
+        "answer": "Software development"
       },
       {
-        "question": "How much do you enjoy working with large datasets and analyzing data?",
-        "answer": "Very Much"
+        "question": "In a science project, what role would you prefer?",
+        "answer": "Researcher"
       },
       {
-        "question": "Are you fascinated by the intricacies of the human body or the workings of the universe?",
-        "answer": "Human Body"
+        "question": "Would you prefer working independently or collaboratively on a project?",
+        "answer": "Both equally"
       },
       {
-        "question": "Do you prefer designing systems or using existing tools to solve problems?",
-        "answer": "Designing Systems"
-      },
-      {
-        "question": "How important is making a tangible impact on society to you?",
-        "answer": "Not at all Important"
+        "question": "What kind of work environment do you envision yourself in?",
+        "answer": "Field work"
       },
       {
         "question": "Are you comfortable with ambiguity and uncertainty in problem-solving?",
+        "answer": "It depends on the context"
+      },
+      {
+        "question": "Do you enjoy working with large datasets and extracting meaningful insights?",
         "answer": "Yes"
       },
       {
-        "question": "Do you enjoy researching and discovering new things, or do you prefer applying existing knowledge?",
-        "answer": "Both"
+        "question": "Which area of mathematics interests you the most?",
+        "answer": "Calculus"
       },
       {
-        "question": "Which area of technology interests you the most?",
-        "answer": "Biotechnology"
+        "question": "Which of these technologies excites you the most?",
+        "answer": "Nanotechnology"
       },
       {
-        "question": "Which type of environment would you prefer to work in?",
-        "answer": "Laboratory"
+        "question": "Are you fascinated by the complexities of the human body and its functions?",
+        "answer": "No"
       },
       {
-        "question": "How important is it for you to contribute to scientific advancements?",
-        "answer": "Very Important"
+        "question": "Would you rather work on cutting-edge research or apply existing knowledge to solve real-world problems?",
+        "answer": "Applying existing knowledge"
       }
     ],
     "specializedFields": [
-      "Machine Learning in Healthcare",
-      "Data Science in Biology",
-      "Mathematical Modeling in Biology",
-      "Scientific Computing (Biomedical Applications)"
+      "Chemical Engineering",
+      "Mathematical Modeling in Chemistry",
+      "Software Engineering for Scientific Applications",
+      "Cheminformatics"
     ]
   },
   {
