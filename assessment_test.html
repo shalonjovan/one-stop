@@ -279,29 +279,35 @@
             fetchAndDisplaySpecializedFields();
         });
 
-        document.getElementById("submit-button").addEventListener("click", async () => {
-            const specializedFields = Array.from(document.querySelectorAll("#specialized-options .bubble.selected")).map(el => el.dataset.value);
-            if (specializedFields.length === 0) {
-                return alert("Please select at least one specialized field.");
-            }
-            assessmentData.specializedFields = specializedFields;
-            try {
-                const res = await fetch(`${backend}/save-assessment`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(assessmentData)
-                });
-                if (res.ok) {
-                    showStep(4);
-                } else {
-                    const data = await res.json();
-                    alert(data.error || "An unknown error occurred.");
-                }
-            } catch (error) {
-                console.error("Failed to save assessment:", error);
-                alert("Failed to save assessment. Please check your connection and try again.");
-            }
+        // In your assessment_test.html file
+
+document.getElementById("submit-button").addEventListener("click", async () => {
+    const specializedFields = Array.from(document.querySelectorAll("#specialized-options .bubble.selected")).map(el => el.dataset.value);
+    if (specializedFields.length === 0) {
+        return alert("Please select at least one specialized field.");
+    }
+    assessmentData.specializedFields = specializedFields;
+    try {
+        const res = await fetch(`${backend}/save-assessment`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(assessmentData)
         });
+        if (res.ok) {
+            // --- ADD THIS LINE ---
+            // Save the final data to sessionStorage for an instant profile load
+            sessionStorage.setItem('latestAssessment', JSON.stringify(assessmentData));
+            
+            showStep(4);
+        } else {
+            const data = await res.json();
+            alert(data.error || "An unknown error occurred.");
+        }
+    } catch (error) {
+        console.error("Failed to save assessment:", error);
+        alert("Failed to save assessment. Please check your connection and try again.");
+    }
+});
 
         document.getElementById('view-profile-button').addEventListener('click', () => {
              window.location.href = 'foryou.html';

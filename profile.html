@@ -361,14 +361,31 @@ async function fetchAssessmentResults(username) {
             }
         });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const userName = getUserName();
-            if (userName) {
-                fetchAssessmentResults(userName);
-            } else {
-                fetchAssessmentResults('demo_user');
-            }
-        });
+        // In your profile.html file
+
+document.addEventListener('DOMContentLoaded', () => {
+    // First, check for the instant data from the assessment page
+    const instantDataString = sessionStorage.getItem('latestAssessment');
+    
+    if (instantDataString) {
+        // If data is found, display it immediately
+        const instantData = JSON.parse(instantDataString);
+        displayResults(instantData);
+        displayProfilePicture(instantData.userName);
+
+        // Important: Remove the data so it's only used once for the redirect
+        sessionStorage.removeItem('latestAssessment');
+    } else {
+        // If no instant data is found, fetch from the server as usual
+        const userName = getUserName();
+        if (userName) {
+            fetchAssessmentResults(userName);
+        } else {
+            // This case handles if the user is somehow not logged in
+            displayResults(null); 
+        }
+    }
+});
     </script>
 </body>
 </html>
