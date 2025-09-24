@@ -1,14 +1,5 @@
 [
-    {
-        "Examination": "Diploma Programmes in Polytechnics",
-        "Tentative Date": "VISIT BOTE WEBSITE jksbotelive dot com",
-        "portion/syllabus": "10th standard syllabus - Mathematics (70 questions), Physics (50 questions), Chemistry (30 questions), English (30 questions)",
-        "background": "PCM (Physics, Chemistry, Mathematics) - Science stream",
-        "examination_for": "Admission to 3-year diploma polytechnic engineering courses",
-        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
-        "mark_split_up": "Total 180 marks - Mathematics: 70, Physics: 50, Chemistry: 30, English: 30",
-        "exam_registration_link": "https://jksbotelive.com/"
-    },
+    
     {
         "Examination": "Post Basic B.Sc.Nursing",
         "Tentative Date": "17th May, 2025",
@@ -30,7 +21,7 @@
         "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx "
     },
     {
-        "Examination": "B.Sc.Nursing/ParaMedical/Technology",
+        "Examination": "B.Sc.Nursing/ParaMedical/Techno",
         "Tentative Date": "27th April, 2025",
         "portion/syllabus": "12th standard syllabus - Physics (60 marks), Chemistry (60 marks), Biology (60 marks)",
         "background": "PCB (Physics, Chemistry, Biology)",
@@ -158,5 +149,15 @@
         "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
         "mark_split_up": "Total 120 marks - English: 20, Physics: 40, Chemistry: 40, Biology: 40",
         "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx "
+    },
+    {
+        "Examination": "Diploma Programmes in Polytechnics",
+        "Tentative Date": "VISIT BOTE WEBSITE jksbotelive dot com",
+        "portion/syllabus": "10th standard syllabus - Mathematics (70 questions), Physics (50 questions), Chemistry (30 questions), English (30 questions)",
+        "background": "PCM (Physics, Chemistry, Mathematics) - Science stream",
+        "examination_for": "Admission to 3-year diploma polytechnic engineering courses",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Total 180 marks - Mathematics: 70, Physics: 50, Chemistry: 30, English: 30",
+        "exam_registration_link": "https://jksbotelive.com/"
     }
 ]
