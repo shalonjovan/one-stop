@@ -52,8 +52,9 @@
             });
             const data = await res.json();
             if(res.ok){ 
-                alert('Sign up successful! Please log in.'); 
-                window.location.href='login.html'; 
+                // --- CHANGE: Immediately "log in" the user and go to assessment ---
+                sessionStorage.setItem('loggedInUser', JSON.stringify({ name: name, username: username }));
+                window.location.href = 'assessment_test.html'; 
             } else {
                 alert(data.error);
             }
@@ -83,12 +84,13 @@
             });
             const data = await res.json();
             if(res.ok){ 
-                sessionStorage.setItem('loggedInUser', JSON.stringify({ name: data.user.name }));
-                // Redirect based on whether it was a login or a new signup
-                if (data.isLogin) {
-                    await checkAndRedirect(data.user.name);
-                } else {
-                    window.location.href = 'assessment_test.html'; // New users go to assessment
+                // --- CHANGE: Save both name and unique username ---
+                sessionStorage.setItem('loggedInUser', JSON.stringify({ name: data.user.name, username: data.user.username }));
+
+                if (data.isLogin) { // If the Google user already existed
+                    await checkAndRedirect(data.user.username);
+                } else { // If it's a new Google user
+                    window.location.href = 'assessment_test.html';
                 }
             } else {
                 alert(data.error);
@@ -96,13 +98,12 @@
         } catch(err){ alert('Server error'); console.error(err);}
     }
     
-    // This helper function is now also used for Google users who already have an account
     async function checkAndRedirect(username) {
         try {
             const res = await fetch(`${backend}/check-assessment/${username}`);
             const data = await res.json();
             if (res.ok && data.hasTakenAssessment) {
-                window.location.href = 'foryou.html';
+                window.location.href = 'profile.html'; // Or foryou.html, your choice
             } else {
                 window.location.href = 'assessment_test.html';
             }

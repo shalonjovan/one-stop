@@ -50,25 +50,36 @@
         </div>
 
         <div id="step1" class="step active">
-            <h2>Personal & Professional Info</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
-                <div class="input-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" placeholder="Loading name..." readonly required>
-                </div>
-                <div class="input-group">
-                    <label for="age">Age</label>
-                    <input type="number" id="age" placeholder="e.g., 17" required>
-                </div>
-            </div>
-            <div class="input-group">
-                <label for="class">Class / Grade</label>
-                <input type="text" id="class" placeholder="e.g., 12th Grade" required>
-            </div>
-            <div class="button-group justify-end">
-                <button id="next-step-1" class="action-button primary-button">Next →</button>
-            </div>
+    <h2>Personal & Professional Info</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+        <div class="input-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Loading name..." readonly required>
         </div>
+        <div class="input-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" placeholder="e.g., 17" required>
+        </div>
+        <div class="input-group">
+            <label for="class">Class / Grade</label>
+            <input type="text" id="class" placeholder="e.g., 12th Grade" required>
+        </div>
+
+        <div class="input-group">
+            <label for="gender">Gender</label>
+            <select id="gender" class="w-full p-[14px] border border-gray-300 rounded-lg" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Non-binary">Non-binary</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+        </div>
+        </div>
+    <div class="button-group justify-end">
+        <button id="next-step-1" class="action-button primary-button">Next →</button>
+    </div>
+</div>
         
         <div id="step2" class="step">
             <h2>Stream of Study</h2>
@@ -97,221 +108,229 @@
     </div>
 
     <script>
-        const backend = 'http://localhost:3000';
-        const GEMINI_PROXY_URL = `${backend}/gemini-proxy`;
-        const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
-        let currentStep = 0;
-        let assessmentData = {};
-        const streams = ['Science (Biology)', 'Science (Maths/CS)', 'Commerce', 'Humanities / Arts'];
+    // --- CONFIGURATION ---
+    const backend = 'http://localhost:3000';
+    const GEMINI_PROXY_URL = `${backend}/gemini-proxy`;
+    
+    // --- STATE MANAGEMENT ---
+    const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
+    let currentStep = 0;
+    let assessmentData = {};
+    const streams = ['Science (Biology)', 'Science (Maths/CS)', 'Commerce', 'Humanities / Arts'];
 
-        // On Page Load, get user and pre-fill name
-        document.addEventListener('DOMContentLoaded', () => {
-            const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
-            if (loggedInUser && loggedInUser.name) {
-                document.getElementById('fullName').value = loggedInUser.name;
-            } else {
-                alert('You are not logged in. Redirecting to login page.');
-                window.location.href = 'login.html';
-            }
-        });
-
-        function showStep(stepIndex) {
-            steps.forEach((stepId, index) => document.getElementById(stepId).classList.toggle('active', index === stepIndex));
-            currentStep = stepIndex;
-            updateProgressBar(stepIndex);
-        }
-        
-        function updateProgressBar(stepIndex) {
-            const progressSteps = document.querySelectorAll(".progress-step");
-            const progressLine = document.getElementById("progress-line");
-            progressSteps.forEach((step, index) => {
-                step.classList.toggle("active", index <= stepIndex)
-            });
-            const percentage = stepIndex > 0 ? (stepIndex / (progressSteps.length - 1)) * 100 : 0;
-            progressLine.style.width = `${percentage}%`;
-        }
-        
-        function createBubbles(containerId, options, isMultiSelect = false) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = "";
-            options.forEach(option => {
-                const bubble = document.createElement("div");
-                bubble.className = "bubble";
-                bubble.textContent = option;
-                bubble.dataset.value = option;
-                bubble.addEventListener("click", () => {
-                    if (isMultiSelect) {
-                        bubble.classList.toggle("selected");
-                    } else {
-                        const selected = container.querySelector(".bubble.selected");
-                        if (selected) selected.classList.remove("selected");
-                        bubble.classList.add("selected");
-                    }
-                });
-                container.appendChild(bubble);
-            });
-        }
-        
-        function showLoader(containerId) {
-            document.getElementById(containerId).innerHTML = '<div class="loader"></div>';
-        }
-
-        async function callAIProxy(prompt) {
-            try {
-                const response = await fetch(GEMINI_PROXY_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ prompt: prompt })
-                });
-                if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(errorData.error || "Backend API Error");
-                }
-                const data = await response.json();
-                return data.text.replace(/```json/g, "").replace(/```/g, "").trim();
-            } catch (error) {
-                console.error("AI Proxy call failed:", error);
-                alert("Failed to communicate with the AI. Please ensure the backend server is running and configured correctly.");
-                return null;
-            }
-        }
-
-        async function fetchAndDisplayGeminiQuestions(stream) {
-            showStep(2);
-            const container = document.getElementById("gemini-questions-container");
-            showLoader("gemini-questions-container");
-            const prompt = `You are a career counselor AI. A student in class 12 has chosen the '${stream}' stream. Generate 15 insightful, multiple-choice questions to help them discover their specific interests. The questions should cover a wide range of topics within the field, from theoretical concepts to practical applications and work styles, to accurately gauge the student's personality and interests. Ensure the questions are distinct from each other. Provide the output in a clean JSON format like this: [{"question": "...", "options": ["...", "...", "..."]}, ...]`;
-            const result = await callAIProxy(prompt);
-            if (result) {
-                try {
-                    const questions = JSON.parse(result);
-                    assessmentData.geminiQuestions = questions;
-                    renderQuestions(questions);
-                } catch (e) {
-                    console.error("Failed to parse AI questions response:", e);
-                    container.innerHTML = '<p class="text-red-500">Error: Could not parse AI response.</p>';
-                }
-            }
-        }
-
-        async function fetchAndDisplaySpecializedFields() {
-            showStep(3);
-            showLoader("specialized-options");
-            const answers = [];
-            assessmentData.geminiQuestions.forEach((q, index) => {
-                const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
-                if (selectedOption) answers.push({ question: q.question, answer: selectedOption.value });
-            });
-            assessmentData.geminiAnswers = answers;
-            const answersSummary = answers.map(a => `For '${a.question}', they chose '${a.answer}'`).join(". ");
-            const prompt = `A student from the '${assessmentData.stream}' stream showed interest in: ${answersSummary}. Suggest 10-12 specialized fields of study or career paths. Provide output as a simple JSON array of strings: ["Field 1", "Field 2", ...]`;
-            const result = await callAIProxy(prompt);
-            if (result) {
-                try {
-                    const fields = JSON.parse(result);
-                    createBubbles("specialized-options", fields, true);
-                } catch (e) {
-                    console.error("Failed to parse AI fields response:", e);
-                    document.getElementById("specialized-options").innerHTML = '<p class="text-red-500">Error: Could not parse AI response.</p>';
-                }
-            }
-        }
-
-        function renderQuestions(questions) {
-            const container = document.getElementById("gemini-questions-container");
-            container.innerHTML = "";
-            questions.forEach((q, index) => {
-                const questionGroup = document.createElement("div");
-                questionGroup.className = "question-group";
-                const questionLabel = document.createElement("label");
-                questionLabel.textContent = `${index + 1}. ${q.question}`;
-                questionGroup.appendChild(questionLabel);
-                q.options.forEach((option, optionIndex) => {
-                    const optionId = `q${index}-o${optionIndex}`;
-                    const radioInput = document.createElement("input");
-                    radioInput.type = "radio";
-                    radioInput.id = optionId;
-                    radioInput.name = `question-${index}`;
-                    radioInput.value = option;
-                    const optionLabel = document.createElement("label");
-                    optionLabel.className = "option-label";
-                    optionLabel.htmlFor = optionId;
-                    optionLabel.textContent = option;
-                    questionGroup.appendChild(radioInput);
-                    questionGroup.appendChild(optionLabel);
-                });
-                container.appendChild(questionGroup);
-            });
-        }
-
-        // --- EVENT LISTENERS ---
-        document.getElementById('next-step-1').addEventListener('click', () => {
-            const fullName = document.getElementById('fullName').value.trim();
-            const age = document.getElementById('age').value;
-            const studentClass = document.getElementById('class').value.trim();
-            if (fullName && age && studentClass) {
-                assessmentData = { userName: fullName, age, studentClass };
-                createBubbles('stream-options', streams);
-                showStep(1);
-            } else {
-                alert('Please fill out all the fields.');
-            }
-        });
-
-        document.getElementById("next-step-2").addEventListener("click", () => {
-            const selectedBubble = document.querySelector("#stream-options .bubble.selected");
-            if (selectedBubble) {
-                assessmentData.stream = selectedBubble.dataset.value;
-                fetchAndDisplayGeminiQuestions(assessmentData.stream);
-            } else {
-                alert("Please select your stream of study.");
-            }
-        });
-
-        document.getElementById("next-step-3").addEventListener("click", () => {
-            if (!assessmentData.geminiQuestions) return; // Guard clause
-            const totalQuestions = assessmentData.geminiQuestions.length;
-            const answeredQuestions = document.querySelectorAll('input[type="radio"]:checked').length;
-            if (answeredQuestions < totalQuestions) {
-                alert("Please answer all the questions.");
-                return;
-            }
-            fetchAndDisplaySpecializedFields();
-        });
-
-        // In your assessment_test.html file
-
-document.getElementById("submit-button").addEventListener("click", async () => {
-    const specializedFields = Array.from(document.querySelectorAll("#specialized-options .bubble.selected")).map(el => el.dataset.value);
-    if (specializedFields.length === 0) {
-        return alert("Please select at least one specialized field.");
-    }
-    assessmentData.specializedFields = specializedFields;
-    try {
-        const res = await fetch(`${backend}/save-assessment`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(assessmentData)
-        });
-        if (res.ok) {
-            // --- ADD THIS LINE ---
-            // Save the final data to sessionStorage for an instant profile load
-            sessionStorage.setItem('latestAssessment', JSON.stringify(assessmentData));
-            
-            showStep(4);
+    // --- ON PAGE LOAD ---
+    // Get the logged-in user's full name and unique username to start the assessment
+    document.addEventListener('DOMContentLoaded', () => {
+        const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+        if (loggedInUser && loggedInUser.name && loggedInUser.username) {
+            document.getElementById('fullName').value = loggedInUser.name;
+            // Store the unique username in our assessment data object
+            assessmentData.username = loggedInUser.username;
         } else {
-            const data = await res.json();
-            alert(data.error || "An unknown error occurred.");
+            alert('You are not logged in. Redirecting to login page.');
+            window.location.href = 'login.html';
         }
-    } catch (error) {
-        console.error("Failed to save assessment:", error);
-        alert("Failed to save assessment. Please check your connection and try again.");
-    }
-});
+    });
 
-        document.getElementById('view-profile-button').addEventListener('click', () => {
-             window.location.href = 'foryou.html';
+    // --- UI HELPER FUNCTIONS ---
+    function showStep(stepIndex) {
+        steps.forEach((stepId, index) => document.getElementById(stepId).classList.toggle('active', index === stepIndex));
+        currentStep = stepIndex;
+        updateProgressBar(stepIndex);
+    }
+    
+    function updateProgressBar(stepIndex) {
+        const progressSteps = document.querySelectorAll(".progress-step");
+        const progressLine = document.getElementById("progress-line");
+        progressSteps.forEach((step, index) => {
+            step.classList.toggle("active", index <= stepIndex)
         });
-    </script>
+        const percentage = stepIndex > 0 ? (stepIndex / (progressSteps.length - 1)) * 100 : 0;
+        progressLine.style.width = `${percentage}%`;
+    }
+    
+    function createBubbles(containerId, options, isMultiSelect = false) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = "";
+        options.forEach(option => {
+            const bubble = document.createElement("div");
+            bubble.className = "bubble";
+            bubble.textContent = option;
+            bubble.dataset.value = option;
+            bubble.addEventListener("click", () => {
+                if (isMultiSelect) {
+                    bubble.classList.toggle("selected");
+                } else {
+                    const selected = container.querySelector(".bubble.selected");
+                    if (selected) selected.classList.remove("selected");
+                    bubble.classList.add("selected");
+                }
+            });
+            container.appendChild(bubble);
+        });
+    }
+    
+    function showLoader(containerId) {
+        document.getElementById(containerId).innerHTML = '<div class="loader"></div>';
+    }
+
+    // --- BACKEND & AI FUNCTIONS ---
+    async function callAIProxy(prompt) {
+        try {
+            const response = await fetch(GEMINI_PROXY_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt: prompt })
+            });
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Backend API Error");
+            }
+            const data = await response.json();
+            return data.text.replace(/```json/g, "").replace(/```/g, "").trim();
+        } catch (error) {
+            console.error("AI Proxy call failed:", error);
+            alert("Failed to communicate with the AI. Please ensure the backend server is running and configured correctly.");
+            return null;
+        }
+    }
+
+    async function fetchAndDisplayGeminiQuestions(stream) {
+        showStep(2);
+        const container = document.getElementById("gemini-questions-container");
+        showLoader("gemini-questions-container");
+        const prompt = `You are a career counselor AI. A student in class 12 has chosen the '${stream}' stream. Generate 15 insightful, multiple-choice questions to help them discover their specific interests. The questions should cover a wide range of topics within the field. Provide the output in a clean JSON format like this: [{"question": "...", "options": ["...", "...", "..."]}, ...]`;
+        const result = await callAIProxy(prompt);
+        if (result) {
+            try {
+                const questions = JSON.parse(result);
+                assessmentData.geminiQuestions = questions;
+                renderQuestions(questions);
+            } catch (e) {
+                console.error("Failed to parse AI questions response:", e);
+                container.innerHTML = '<p class="text-red-500">Error: Could not parse AI response.</p>';
+            }
+        }
+    }
+
+    async function fetchAndDisplaySpecializedFields() {
+        showStep(3);
+        showLoader("specialized-options");
+        const answers = [];
+        assessmentData.geminiQuestions.forEach((q, index) => {
+            const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
+            if (selectedOption) answers.push({ question: q.question, answer: selectedOption.value });
+        });
+        assessmentData.geminiAnswers = answers;
+        const answersSummary = answers.map(a => `For '${a.question}', they chose '${a.answer}'`).join(". ");
+        const prompt = `A student from the '${assessmentData.stream}' stream showed interest in: ${answersSummary}. Suggest 10-12 specialized fields of study or career paths. Provide output as a simple JSON array of strings: ["Field 1", "Field 2", ...]`;
+        const result = await callAIProxy(prompt);
+        if (result) {
+            try {
+                const fields = JSON.parse(result);
+                createBubbles("specialized-options", fields, true);
+            } catch (e) {
+                console.error("Failed to parse AI fields response:", e);
+                document.getElementById("specialized-options").innerHTML = '<p class="text-red-500">Error: Could not parse AI response.</p>';
+            }
+        }
+    }
+
+    function renderQuestions(questions) {
+        const container = document.getElementById("gemini-questions-container");
+        container.innerHTML = "";
+        questions.forEach((q, index) => {
+            const questionGroup = document.createElement("div");
+            questionGroup.className = "question-group";
+            const questionLabel = document.createElement("label");
+            questionLabel.textContent = `${index + 1}. ${q.question}`;
+            questionGroup.appendChild(questionLabel);
+            q.options.forEach((option, optionIndex) => {
+                const optionId = `q${index}-o${optionIndex}`;
+                const radioInput = document.createElement("input");
+                radioInput.type = "radio";
+                radioInput.id = optionId;
+                radioInput.name = `question-${index}`;
+                radioInput.value = option;
+                const optionLabel = document.createElement("label");
+                optionLabel.className = "option-label";
+                optionLabel.htmlFor = optionId;
+                optionLabel.textContent = option;
+                questionGroup.appendChild(radioInput);
+                questionGroup.appendChild(optionLabel);
+            });
+            container.appendChild(questionGroup);
+        });
+    }
+
+    // --- EVENT LISTENERS ---
+    document.getElementById('next-step-1').addEventListener('click', () => {
+        const fullName = document.getElementById('fullName').value.trim();
+        const age = document.getElementById('age').value;
+        const studentClass = document.getElementById('class').value.trim();
+        if (fullName && age && studentClass) {
+            // Merge new details with the existing assessmentData (which holds the unique username)
+            Object.assign(assessmentData, { 
+                userName: fullName, 
+                age, 
+                studentClass 
+            });
+            createBubbles('stream-options', streams);
+            showStep(1);
+        } else {
+            alert('Please fill out all the fields.');
+        }
+    });
+
+    document.getElementById("next-step-2").addEventListener("click", () => {
+        const selectedBubble = document.querySelector("#stream-options .bubble.selected");
+        if (selectedBubble) {
+            assessmentData.stream = selectedBubble.dataset.value;
+            fetchAndDisplayGeminiQuestions(assessmentData.stream);
+        } else {
+            alert("Please select your stream of study.");
+        }
+    });
+
+    document.getElementById("next-step-3").addEventListener("click", () => {
+        if (!assessmentData.geminiQuestions) return;
+        const totalQuestions = assessmentData.geminiQuestions.length;
+        const answeredQuestions = document.querySelectorAll('input[type="radio"]:checked').length;
+        if (answeredQuestions < totalQuestions) {
+            alert("Please answer all the questions.");
+            return;
+        }
+        fetchAndDisplaySpecializedFields();
+    });
+
+    document.getElementById("submit-button").addEventListener("click", async () => {
+        const specializedFields = Array.from(document.querySelectorAll("#specialized-options .bubble.selected")).map(el => el.dataset.value);
+        if (specializedFields.length === 0) {
+            return alert("Please select at least one specialized field.");
+        }
+        assessmentData.specializedFields = specializedFields;
+        try {
+            const res = await fetch(`${backend}/save-assessment`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(assessmentData)
+            });
+            if (res.ok) {
+                sessionStorage.setItem('latestAssessment', JSON.stringify(assessmentData));
+                showStep(4);
+            } else {
+                const data = await res.json();
+                alert(data.error || "An unknown error occurred.");
+            }
+        } catch (error) {
+            console.error("Failed to save assessment:", error);
+            alert("Failed to save assessment. Please check your connection and try again.");
+        }
+    });
+
+    document.getElementById('view-profile-button').addEventListener('click', () => {
+        window.location.href = 'profile.html'; // Or 'foryou.html' if you prefer
+    });
+</script>
 </body>
 </html>

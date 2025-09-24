@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Environment variables file
+.env
+
+# User-generated data files
+assessment_results.json
+users.json
+
+# Uploads folder
+uploads/
