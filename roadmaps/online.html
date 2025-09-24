@@ -389,6 +389,19 @@
     </style>
 </head>
 <body>
+    <!-- Add this inside <body>, for example in the header (top right corner) -->
+<div id="google_translate_element" class="p-2"></div>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      { pageLanguage: 'en' },
+      'google_translate_element'
+    );
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <!-- Main Content -->
     <div class="main-content">
         <div class="container">
