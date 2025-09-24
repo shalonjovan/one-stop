@@ -1,20 +1,12 @@
 [
   {
-<<<<<<< HEAD
-    "userName": "Santhosh Aaron",
-=======
     "userName": "shalon jovan",
->>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
     "age": "17",
     "studentClass": "12",
     "stream": "Science (Maths/CS)",
     "geminiQuestions": [
       {
-<<<<<<< HEAD
-        "question": "Which aspect of science excites you most?",
-=======
         "question": "Which aspect of science excites you the most?",
->>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
         "options": [
           "Understanding fundamental laws of nature",
           "Solving real-world problems through technology",
@@ -23,13 +15,6 @@
         ]
       },
       {
-<<<<<<< HEAD
-        "question": "What kind of problem-solving approach do you prefer?",
-        "options": [
-          "Logical and systematic",
-          "Intuitive and creative",
-          "A combination of both"
-=======
         "question": "In your free time, do you prefer to:",
         "options": [
           "Read scientific journals and articles",
@@ -72,361 +57,11 @@
           "Intuitively, using creative and innovative approaches",
           "Through logical deduction and mathematical reasoning",
           "Through experimentation and trial and error"
->>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
         ]
       }
     ],
     "geminiAnswers": [
       {
-<<<<<<< HEAD
-        "question": "Which aspect of science excites you most?",
-        "answer": "Conducting experiments and analyzing data"
-      },
-      {
-        "question": "What kind of problem-solving approach do you prefer?",
-        "answer": "Logical and systematic"
-      }
-    ],
-    "specializedFields": [
-      "Applied Mathematics",
-      "Mathematical Physics",
-      "Operations Research"
-    ]
-  },
-  {
-    "userName": "shalon jovan",
-    "age": "17",
-    "studentClass": "12",
-    "stream": "Science (Maths/CS)",
-    "geminiQuestions": [
-      {
-        "question": "Which aspect of computer science excites you most?",
-        "options": [
-          "Software development and programming",
-          "Artificial intelligence and machine learning",
-          "Data science and analysis",
-          "Cybersecurity and network security"
-        ]
-      },
-      {
-        "question": "Which of these roles sounds most appealing?",
-        "options": [
-          "Research Scientist",
-          "Software Engineer",
-          "Data Analyst",
-          "Network Administrator"
-        ]
-      }
-    ],
-    "geminiAnswers": [
-      {
-        "question": "Which aspect of computer science excites you most?",
-        "answer": "Software development and programming"
-      },
-      {
-        "question": "Which of these roles sounds most appealing?",
-        "answer": "Software Engineer"
-      }
-    ],
-    "specializedFields": [
-      "Data Science (with focus on physics simulations)",
-      "Computer Graphics (with focus on realistic rendering)",
-      "High-Performance Computing"
-    ]
-  },
-  {
-    "userName": "User Q",
-    "age": "17",
-    "studentClass": "12",
-    "stream": "Science (Maths/CS)",
-    "geminiQuestions": [
-      {
-        "question": "Which aspect of computer science excites you the most?",
-        "options": [
-          "Developing software applications",
-          "Designing computer hardware",
-          "Understanding algorithms and data structures",
-          "Creating artificial intelligence"
-        ]
-      },
-      {
-        "question": "In mathematics, what area do you find most engaging?",
-        "options": [
-          "Calculus and differential equations",
-          "Linear algebra and matrices",
-          "Statistics and probability",
-          "Number theory and abstract algebra"
-        ]
-      },
-      {
-        "question": "Which type of work environment would you prefer?",
-        "options": [
-          "Independent research in a quiet setting",
-          "Collaborative teamwork on a large project",
-          "A fast-paced startup environment",
-          "A structured environment in a large corporation"
-        ]
-      },
-      {
-        "question": "Which scientific field, besides computer science and mathematics, piques your interest?",
-        "options": [
-          "Physics",
-          "Chemistry",
-          "Biology",
-          "None of the above"
-        ]
-      },
-      {
-        "question": "Are you more interested in theoretical concepts or practical applications?",
-        "options": [
-          "Theoretical concepts",
-          "Practical applications",
-          "Both equally",
-          "Neither particularly"
-        ]
-      },
-      {
-        "question": "Do you prefer working with data that is:",
-        "options": [
-          "Structured and organized",
-          "Unstructured and messy",
-          "Both",
-          "Neither"
-        ]
-      },
-      {
-        "question": "What kind of problem-solving approach do you prefer?",
-        "options": [
-          "Logical and analytical",
-          "Creative and intuitive",
-          "A combination of both",
-          "Other"
-        ]
-      },
-      {
-        "question": "Which skill are you most eager to develop?",
-        "options": [
-          "Programming skills",
-          "Mathematical modeling skills",
-          "Data analysis skills",
-          "Problem-solving skills"
-        ]
-      },
-      {
-        "question": "How do you feel about working long hours to meet deadlines?",
-        "options": [
-          "Comfortable",
-          "Uncomfortable",
-          "It depends on the project",
-          "Neutral"
-        ]
-      },
-      {
-        "question": "Are you more inclined towards working with:",
-        "options": [
-          "Hardware",
-          "Software",
-          "Both",
-          "Neither"
-        ]
-      },
-      {
-        "question": "Which type of technology excites you the most?",
-        "options": [
-          "Artificial intelligence and machine learning",
-          "Robotics and automation",
-          "Bioinformatics and computational biology",
-          "Cloud computing and big data"
-        ]
-      },
-      {
-        "question": "Do you enjoy working on projects that involve:",
-        "options": [
-          "Designing and building new systems",
-          "Troubleshooting and fixing existing systems",
-          "Both",
-          "Neither"
-        ]
-      },
-      {
-        "question": "How important is it to you to make a positive impact on the world through your work?",
-        "options": [
-          "Very important",
-          "Somewhat important",
-          "Not very important",
-          "Not at all important"
-        ]
-      },
-      {
-        "question": "Do you prefer working on projects that are:",
-        "options": [
-          "Well-defined and structured",
-          "Open-ended and exploratory",
-          "Both",
-          "Neither"
-        ]
-      },
-      {
-        "question": "Would you prefer a career that involves primarily:",
-        "options": [
-          "Research and development",
-          "Product development and deployment",
-          "Management and leadership",
-          "Teaching and education"
-=======
-        "question": "Which skill do you value most in yourself?",
-        "options": [
-          "Analytical thinking",
-          "Problem-solving",
-          "Creativity and innovation",
-          "Practical application and execution"
-        ]
-      },
-      {
-        "question": "Are you more interested in the theoretical understanding of science or its practical applications?",
-        "options": [
-          "Theoretical understanding",
-          "Practical applications",
-          "Both equally",
-          "Neither particularly"
-        ]
-      },
-      {
-        "question": "Which career path appeals to you the most?",
-        "options": [
-          "Research Scientist",
-          "Software Engineer",
-          "Data Scientist",
-          "Bioengineer"
-        ]
-      },
-      {
-        "question": "How important is teamwork to you in a professional setting?",
-        "options": [
-          "Very important",
-          "Moderately important",
-          "Somewhat unimportant",
-          "Not important at all"
-        ]
-      },
-      {
-        "question": "Do you prefer working on long-term projects or short-term tasks?",
-        "options": [
-          "Long-term projects",
-          "Short-term tasks",
-          "A mix of both",
-          "It depends on the project"
-        ]
-      },
-      {
-        "question": "How comfortable are you with ambiguity and uncertainty?",
-        "options": [
-          "Very comfortable",
-          "Moderately comfortable",
-          "Somewhat uncomfortable",
-          "Very uncomfortable"
-        ]
-      },
-      {
-        "question": "Are you more interested in the human side of technology or the technical aspects?",
-        "options": [
-          "Human side (user experience, social impact)",
-          "Technical aspects (algorithms, coding)",
-          "Both equally",
-          "Neither particularly"
-        ]
-      },
-      {
-        "question": "Do you prefer working independently or collaboratively?",
-        "options": [
-          "Independently",
-          "Collaboratively",
-          "Both equally",
-          "It depends on the task"
-        ]
-      },
-      {
-        "question": "Which type of learning environment do you prefer?",
-        "options": [
-          "Structured and organized",
-          "Flexible and independent",
-          "Collaborative and interactive",
-          "A mix of structured and independent"
->>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
-        ]
-      }
-    ],
-    "geminiAnswers": [
-      {
-<<<<<<< HEAD
-        "question": "Which aspect of computer science excites you the most?",
-        "answer": "Designing computer hardware"
-      },
-      {
-        "question": "In mathematics, what area do you find most engaging?",
-        "answer": "Linear algebra and matrices"
-      },
-      {
-        "question": "Which type of work environment would you prefer?",
-        "answer": "Independent research in a quiet setting"
-      },
-      {
-        "question": "Which scientific field, besides computer science and mathematics, piques your interest?",
-        "answer": "Chemistry"
-      },
-      {
-        "question": "Are you more interested in theoretical concepts or practical applications?",
-        "answer": "Practical applications"
-      },
-      {
-        "question": "Do you prefer working with data that is:",
-        "answer": "Unstructured and messy"
-      },
-      {
-        "question": "What kind of problem-solving approach do you prefer?",
-        "answer": "Creative and intuitive"
-      },
-      {
-        "question": "Which skill are you most eager to develop?",
-        "answer": "Data analysis skills"
-      },
-      {
-        "question": "How do you feel about working long hours to meet deadlines?",
-        "answer": "Uncomfortable"
-      },
-      {
-        "question": "Are you more inclined towards working with:",
-        "answer": "Software"
-      },
-      {
-        "question": "Which type of technology excites you the most?",
-        "answer": "Bioinformatics and computational biology"
-      },
-      {
-        "question": "Do you enjoy working on projects that involve:",
-        "answer": "Troubleshooting and fixing existing systems"
-      },
-      {
-        "question": "How important is it to you to make a positive impact on the world through your work?",
-        "answer": "Very important"
-      },
-      {
-        "question": "Do you prefer working on projects that are:",
-        "answer": "Well-defined and structured"
-      },
-      {
-        "question": "Would you prefer a career that involves primarily:",
-        "answer": "Research and development"
-      }
-    ],
-    "specializedFields": [
-      "Computational Biology",
-      "Hardware-Software Co-design",
-      "Data Mining and Machine Learning (focus on unstructured data)",
-      "Chemical Informatics",
-      "Development of Bioinformatics Tools",
-      "Research in Embedded Systems (biomedical applications)"
-=======
         "question": "Which aspect of science excites you the most?",
         "answer": "Understanding fundamental laws of nature"
       },
@@ -492,7 +127,430 @@
       "Computational Physics",
       "Machine Learning for Scientific Discovery",
       "Robotics (with a focus on algorithmic control)"
->>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
+    ]
+  },
+  {
+    "userName": "Sarvesh S",
+    "age": "19",
+    "studentClass": "12",
+    "gender": "Male",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "Which aspect of science excites you most?",
+        "options": [
+          "Discovering fundamental laws of nature",
+          "Solving real-world problems through technology",
+          "Designing and building new things",
+          "Understanding the human body and its processes"
+        ]
+      },
+      {
+        "question": "What kind of work environment do you prefer?",
+        "options": [
+          "Independent research in a quiet lab",
+          "Collaborative teamwork on a large project",
+          "Fast-paced, dynamic environment with frequent deadlines",
+          "A structured environment with clear expectations"
+        ]
+      },
+      {
+        "question": "If you could choose a science-related field to study deeply, which would it be?",
+        "options": [
+          "Theoretical Physics",
+          "Artificial Intelligence",
+          "Biotechnology",
+          "Aerospace Engineering"
+        ]
+      },
+      {
+        "question": "Are you more interested in theoretical understanding or practical application?",
+        "options": [
+          "Theoretical understanding, focusing on concepts and principles",
+          "Practical application, focusing on building and implementing solutions",
+          "A balance of both",
+          "Neither particularly interests me"
+        ]
+      },
+      {
+        "question": "How comfortable are you with complex mathematical concepts?",
+        "options": [
+          "Very comfortable",
+          "Moderately comfortable",
+          "Somewhat uncomfortable",
+          "Very uncomfortable"
+        ]
+      },
+      {
+        "question": "Which type of problem-solving do you find most engaging?",
+        "options": [
+          "Analytical problem-solving involving logic and deduction",
+          "Creative problem-solving involving innovative solutions",
+          "Practical problem-solving involving hands-on experimentation",
+          "A mix of all three"
+        ]
+      },
+      {
+        "question": "Do you prefer working with data or with people?",
+        "options": [
+          "Working with data and numbers",
+          "Working with people and collaborating on projects",
+          "An equal balance of both",
+          "Neither particularly appeals to me"
+        ]
+      },
+      {
+        "question": "What kind of impact do you want to make in the world?",
+        "options": [
+          "Advance scientific knowledge",
+          "Develop innovative technologies",
+          "Improve human health",
+          "Solve environmental challenges"
+        ]
+      },
+      {
+        "question": "How important is it to you to work on projects with immediate tangible results?",
+        "options": [
+          "Very important",
+          "Moderately important",
+          "Not very important",
+          "Not at all important"
+        ]
+      },
+      {
+        "question": "Are you more inclined towards software development or hardware development?",
+        "options": [
+          "Software development",
+          "Hardware development",
+          "Both equally",
+          "Neither particularly interests me"
+        ]
+      },
+      {
+        "question": "Which area of computer science intrigues you the most?",
+        "options": [
+          "Artificial Intelligence/Machine Learning",
+          "Data Science/Analysis",
+          "Cybersecurity",
+          "Software Engineering"
+        ]
+      },
+      {
+        "question": "Do you enjoy working on intricate details or big-picture ideas?",
+        "options": [
+          "Intricate details",
+          "Big-picture ideas",
+          "Both equally",
+          "Neither particularly interests me"
+        ]
+      },
+      {
+        "question": "How important is it to you to contribute to a field that constantly evolves?",
+        "options": [
+          "Very important",
+          "Moderately important",
+          "Not very important",
+          "Not at all important"
+        ]
+      },
+      {
+        "question": "Would you prefer to work independently or as part of a team?",
+        "options": [
+          "Independently",
+          "As part of a team",
+          "Either is fine",
+          "I don't have a preference"
+        ]
+      },
+      {
+        "question": "Are you more interested in understanding how things work or creating new things?",
+        "options": [
+          "Understanding how things work",
+          "Creating new things",
+          "Both equally",
+          "Neither particularly interests me"
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "Which aspect of science excites you most?",
+        "answer": "Solving real-world problems through technology"
+      },
+      {
+        "question": "What kind of work environment do you prefer?",
+        "answer": "Independent research in a quiet lab"
+      },
+      {
+        "question": "If you could choose a science-related field to study deeply, which would it be?",
+        "answer": "Artificial Intelligence"
+      },
+      {
+        "question": "Are you more interested in theoretical understanding or practical application?",
+        "answer": "Theoretical understanding, focusing on concepts and principles"
+      },
+      {
+        "question": "How comfortable are you with complex mathematical concepts?",
+        "answer": "Moderately comfortable"
+      },
+      {
+        "question": "Which type of problem-solving do you find most engaging?",
+        "answer": "Creative problem-solving involving innovative solutions"
+      },
+      {
+        "question": "Do you prefer working with data or with people?",
+        "answer": "An equal balance of both"
+      },
+      {
+        "question": "What kind of impact do you want to make in the world?",
+        "answer": "Solve environmental challenges"
+      },
+      {
+        "question": "How important is it to you to work on projects with immediate tangible results?",
+        "answer": "Very important"
+      },
+      {
+        "question": "Are you more inclined towards software development or hardware development?",
+        "answer": "Software development"
+      },
+      {
+        "question": "Which area of computer science intrigues you the most?",
+        "answer": "Artificial Intelligence/Machine Learning"
+      },
+      {
+        "question": "Do you enjoy working on intricate details or big-picture ideas?",
+        "answer": "Big-picture ideas"
+      },
+      {
+        "question": "How important is it to you to contribute to a field that constantly evolves?",
+        "answer": "Very important"
+      },
+      {
+        "question": "Would you prefer to work independently or as part of a team?",
+        "answer": "Independently"
+      },
+      {
+        "question": "Are you more interested in understanding how things work or creating new things?",
+        "answer": "Creating new things"
+      }
+    ],
+    "specializedFields": [
+      "Machine Learning for Environmental Applications",
+      "Computational Biology and Bioinformatics (focused on AI)",
+      "AI-driven Environmental Modeling and Prediction",
+      "Natural Language Processing for Environmental Data Analysis"
+    ]
+  },
+  {
+    "username": "Jo",
+    "userName": "Shalon",
+    "age": "18",
+    "studentClass": "12",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "Which of these subjects excites you the most?",
+        "options": [
+          "Physics",
+          "Chemistry",
+          "Computer Science",
+          "Mathematics"
+        ]
+      },
+      {
+        "question": "If you could build something from scratch, what would it be?",
+        "options": [
+          "A sophisticated computer program",
+          "A new type of material",
+          "A revolutionary machine",
+          "A complex mathematical model"
+        ]
+      },
+      {
+        "question": "What kind of problem-solving do you prefer?",
+        "options": [
+          "Logical and analytical",
+          "Creative and experimental",
+          "Practical and hands-on",
+          "Theoretical and abstract"
+        ]
+      },
+      {
+        "question": "Which field appeals more to you: theoretical research or practical application?",
+        "options": [
+          "Theoretical research",
+          "Practical application",
+          "Both equally",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "Are you more interested in understanding how things work or how to build things?",
+        "options": [
+          "How things work",
+          "How to build things",
+          "Both equally",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "Which aspect of computer science interests you most?",
+        "options": [
+          "Software development",
+          "Data science",
+          "Artificial intelligence",
+          "Cybersecurity"
+        ]
+      },
+      {
+        "question": "In a science project, what role would you prefer?",
+        "options": [
+          "Researcher",
+          "Designer",
+          "Developer",
+          "Presenter"
+        ]
+      },
+      {
+        "question": "Would you prefer working independently or collaboratively on a project?",
+        "options": [
+          "Independently",
+          "Collaboratively",
+          "Both equally",
+          "It depends on the project"
+        ]
+      },
+      {
+        "question": "What kind of work environment do you envision yourself in?",
+        "options": [
+          "Laboratory setting",
+          "Office environment",
+          "Field work",
+          "Flexible remote work"
+        ]
+      },
+      {
+        "question": "Are you comfortable with ambiguity and uncertainty in problem-solving?",
+        "options": [
+          "Yes",
+          "No",
+          "Sometimes",
+          "It depends on the context"
+        ]
+      },
+      {
+        "question": "Do you enjoy working with large datasets and extracting meaningful insights?",
+        "options": [
+          "Yes",
+          "No",
+          "Only if it involves programming",
+          "Not particularly"
+        ]
+      },
+      {
+        "question": "Which area of mathematics interests you the most?",
+        "options": [
+          "Calculus",
+          "Algebra",
+          "Statistics",
+          "Geometry"
+        ]
+      },
+      {
+        "question": "Which of these technologies excites you the most?",
+        "options": [
+          "Robotics",
+          "Nanotechnology",
+          "Biotechnology",
+          "Quantum computing"
+        ]
+      },
+      {
+        "question": "Are you fascinated by the complexities of the human body and its functions?",
+        "options": [
+          "Yes, particularly in relation to medicine",
+          "Yes, more from a biological perspective",
+          "No",
+          "Somewhat"
+        ]
+      },
+      {
+        "question": "Would you rather work on cutting-edge research or apply existing knowledge to solve real-world problems?",
+        "options": [
+          "Cutting-edge research",
+          "Applying existing knowledge",
+          "Both equally",
+          "Neither particularly"
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "Which of these subjects excites you the most?",
+        "answer": "Chemistry"
+      },
+      {
+        "question": "If you could build something from scratch, what would it be?",
+        "answer": "A complex mathematical model"
+      },
+      {
+        "question": "What kind of problem-solving do you prefer?",
+        "answer": "Logical and analytical"
+      },
+      {
+        "question": "Which field appeals more to you: theoretical research or practical application?",
+        "answer": "Theoretical research"
+      },
+      {
+        "question": "Are you more interested in understanding how things work or how to build things?",
+        "answer": "How to build things"
+      },
+      {
+        "question": "Which aspect of computer science interests you most?",
+        "answer": "Software development"
+      },
+      {
+        "question": "In a science project, what role would you prefer?",
+        "answer": "Researcher"
+      },
+      {
+        "question": "Would you prefer working independently or collaboratively on a project?",
+        "answer": "Both equally"
+      },
+      {
+        "question": "What kind of work environment do you envision yourself in?",
+        "answer": "Field work"
+      },
+      {
+        "question": "Are you comfortable with ambiguity and uncertainty in problem-solving?",
+        "answer": "It depends on the context"
+      },
+      {
+        "question": "Do you enjoy working with large datasets and extracting meaningful insights?",
+        "answer": "Yes"
+      },
+      {
+        "question": "Which area of mathematics interests you the most?",
+        "answer": "Calculus"
+      },
+      {
+        "question": "Which of these technologies excites you the most?",
+        "answer": "Nanotechnology"
+      },
+      {
+        "question": "Are you fascinated by the complexities of the human body and its functions?",
+        "answer": "No"
+      },
+      {
+        "question": "Would you rather work on cutting-edge research or apply existing knowledge to solve real-world problems?",
+        "answer": "Applying existing knowledge"
+      }
+    ],
+    "specializedFields": [
+      "Chemical Engineering",
+      "Mathematical Modeling in Chemistry",
+      "Software Engineering for Scientific Applications",
+      "Cheminformatics"
     ]
   }
 ]
