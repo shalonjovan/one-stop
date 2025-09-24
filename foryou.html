@@ -97,28 +97,26 @@
 
             try {
                 const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
-                if (!loggedInUser || !loggedInUser.name) {
+                if (!loggedInUser || !loggedInUser.username) {
                     showError('You must be logged in to see recommendations. Please log in and take the assessment.');
                     welcomeMessage.textContent = 'Please log in to continue.';
                     return;
                 }
                 welcomeMessage.textContent = `Hi ${loggedInUser.name}, here are your personalized recommendations.`;
 
-                const [assessmentRes, collegesRes] = await Promise.all([
-                    fetch(`${backend}/get-assessment-results?username=${loggedInUser.name}`),
-                    fetch(`${backend}/get-colleges`)
-                ]);
-
-                if (!assessmentRes.ok) {
-                    showError('Could not find your assessment results. Please complete the assessment first.');
+                // Get college recommendations using the new endpoint
+                const recommendationsRes = await fetch(`${backend}/get-recommendations/${loggedInUser.username}`);
+                if (!recommendationsRes.ok) {
+                    const errorData = await recommendationsRes.json();
+                    showError(errorData.error || 'Could not get college recommendations. Please complete the assessment first.');
                     return;
                 }
-                const assessmentData = await assessmentRes.json();
-                const collegesData = await collegesRes.json();
+                
+                const recommendationsData = await recommendationsRes.json();
+                console.log('Recommendations data:', recommendationsData);
 
-                renderInterests(assessmentData);
-                const recommendations = findMatchingColleges(assessmentData, collegesData);
-                renderRecommendations(recommendations);
+                renderInterests(recommendationsData);
+                renderRecommendations(recommendationsData.recommendedColleges);
                 
                 loader.classList.add('hidden');
                 recommendationContent.classList.remove('hidden');
@@ -132,37 +130,31 @@
         function renderInterests(data) {
             const container = document.getElementById('user-interests');
             container.innerHTML = '';
-            const interests = data.specializedFields || [];
+            
+            // Add stream tag
             if(data.stream){
                 const streamTag = document.createElement('span');
                 streamTag.className = 'tag bg-indigo-100 text-indigo-800';
                 streamTag.textContent = `Stream: ${data.stream}`;
                 container.appendChild(streamTag);
             }
+            
+            // Add interests tags
+            const interests = data.userInterests || [];
             interests.forEach(interest => {
                 const tag = document.createElement('span');
                 tag.className = 'tag';
                 tag.textContent = interest;
                 container.appendChild(tag);
             });
-        }
-
-        function findMatchingColleges(assessment, colleges) {
-            const userInterests = new Set(assessment.specializedFields || []);
-            const keywords = new Set();
-            userInterests.forEach(interest => {
-                if (interest.toLowerCase().includes('learning') || interest.toLowerCase().includes('data')) {
-                    keywords.add("Computer Science");
-                }
-                 if (interest.toLowerCase().includes('web') || interest.toLowerCase().includes('software')) {
-                    keywords.add("Computer Science");
-                }
-                interest.split(' ').forEach(word => keywords.add(word));
-            });
             
-            return colleges.filter(college => {
-                const courseHTML = college.content.Courses.toLowerCase();
-                return Array.from(keywords).some(keyword => courseHTML.includes(keyword.toLowerCase()));
+            // Add matched types tags
+            const matchedTypes = data.matchedTypes || [];
+            matchedTypes.forEach(type => {
+                const tag = document.createElement('span');
+                tag.className = 'tag bg-green-100 text-green-800';
+                tag.textContent = `Type: ${type}`;
+                container.appendChild(tag);
             });
         }
 
@@ -170,8 +162,13 @@
             const container = document.getElementById('college-recommendations');
             container.innerHTML = '';
             
-            if (recommendations.length === 0) {
-                container.innerHTML = `<div class="bg-white p-6 rounded-xl shadow-sm text-center text-slate-500"><p>No direct college matches found based on your specific interests.</p></div>`;
+            if (!recommendations || recommendations.length === 0) {
+                container.innerHTML = `
+                    <div class="bg-white p-6 rounded-xl shadow-sm text-center text-slate-500">
+                        <p>No direct college matches found based on your specific interests.</p>
+                        <p class="mt-2 text-sm">Try exploring more colleges or retake the assessment to get better matches.</p>
+                    </div>
+                `;
                 return;
             }
 
@@ -179,19 +176,35 @@
                 const card = document.createElement('div');
                 card.className = 'bg-white rounded-xl shadow-sm overflow-hidden';
                 const collegeId = rec.id;
-                const badgesHTML = rec.badges.map(badge => `<span class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${badge}</span>`).join('');
+                const badgesHTML = (rec.badges || []).map(badge => 
+                    `<span class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-1 rounded-full">${badge}</span>`
+                ).join('');
+
+                // Create a ratings display
+                const ratingsDisplay = rec.ratings || (rec.review ? `${rec.review}/5` : 'N/A');
+                
+                // Create NIRF and NAAC display
+                const nirfDisplay = rec.nirf ? `NIRF: ${rec.nirf}` : '';
+                const naacDisplay = rec.naac ? `NAAC: ${rec.naac}` : '';
+                const placementDisplay = rec.placement ? `${rec.placement}% Placement` : '';
 
                 card.innerHTML = `
                     <div class="p-6">
                         <div class="flex items-start justify-between">
                             <div class="flex items-center gap-4">
-                                <img src="${rec.logoUrl}" alt="${rec.name} Logo" class="w-16 h-16 rounded-lg">
+                                <img src="${rec.logoUrl || rec.basicInfo?.logo || 'https://via.placeholder.com/64x64?text=LOGO'}" 
+                                     alt="${rec.name} Logo" class="w-16 h-16 rounded-lg object-cover">
                                 <div>
                                     <h3 class="text-xl font-bold text-slate-800">${rec.name}</h3>
-                                    <p class="text-sm text-slate-500">${rec.address}</p>
+                                    <p class="text-sm text-slate-500">${rec.address || rec.location || 'Location not specified'}</p>
+                                    <div class="flex gap-2 mt-1 text-xs text-slate-600">
+                                        ${nirfDisplay ? `<span>${nirfDisplay}</span>` : ''}
+                                        ${naacDisplay ? `<span>${naacDisplay}</span>` : ''}
+                                        ${placementDisplay ? `<span class="text-green-600">${placementDisplay}</span>` : ''}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="text-lg font-bold text-indigo-600">${rec.ratings}</div>
+                            <div class="text-lg font-bold text-indigo-600">${ratingsDisplay}</div>
                         </div>
                         <div class="flex flex-wrap gap-2 mt-4">${badgesHTML}</div>
                     </div>
@@ -204,8 +217,12 @@
                         </nav>
                     </div>
                     <div class="p-6">
-                        <div class="tab-content active" data-tab-content="info">${rec.content["College Info"]}</div>
-                        <div class="tab-content" data-tab-content="courses">${rec.content.Courses}</div>
+                        <div class="tab-content active" data-tab-content="info">
+                            ${rec.content ? rec.content["College Info"] : '<p>College information not available.</p>'}
+                        </div>
+                        <div class="tab-content" data-tab-content="courses">
+                            ${rec.content ? rec.content["Courses"] : '<p>Course information not available.</p>'}
+                        </div>
                         <div class="tab-content" data-tab-content="placements">
                             <h3 class="text-xl font-semibold mb-4">Placement Statistics</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -214,16 +231,22 @@
                                     <canvas id="salary-chart-${collegeId}"></canvas>
                                 </div>
                                 <div>
-                                     <h4 class="font-medium text-center mb-2">Salary Distribution (2024)</h4>
+                                     <h4 class="font-medium text-center mb-2">Salary Distribution (Latest Year)</h4>
                                     <canvas id="dist-chart-${collegeId}"></canvas>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-content" data-tab-content="fees">${rec.content.Fees}</div>
+                        <div class="tab-content" data-tab-content="fees">
+                            ${rec.content ? rec.content["Fees"] : '<p>Fee information not available.</p>'}
+                        </div>
                     </div>
                 `;
                 container.appendChild(card);
-                renderCharts(collegeId, rec.placements);
+                
+                // Render charts if placement data exists
+                if (rec.placements) {
+                    renderCharts(collegeId, rec.placements);
+                }
             });
             setupTabs();
         }
@@ -248,40 +271,71 @@
         }
         
         function renderCharts(collegeId, placementData) {
-            const salaryCtx = document.getElementById(`salary-chart-${collegeId}`).getContext('2d');
-            new Chart(salaryCtx, {
-                type: 'bar',
-                data: {
-                    labels: placementData.salaryByYear.labels,
-                    datasets: [
-                        {
-                            label: 'Highest Salary (LPA)',
-                            data: placementData.salaryByYear.highestSalary.map(s => s / 100000),
-                            backgroundColor: '#4f46e5',
-                        },
-                        {
-                            label: 'Average Salary (LPA)',
-                            data: placementData.salaryByYear.averageSalary.map(s => s / 100000),
-                            backgroundColor: '#a5b4fc',
+            // Only render if data exists
+            if (!placementData.salaryByYear) return;
+            
+            try {
+                const salaryCtx = document.getElementById(`salary-chart-${collegeId}`).getContext('2d');
+                new Chart(salaryCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: placementData.salaryByYear.labels,
+                        datasets: [
+                            {
+                                label: 'Highest Salary (LPA)',
+                                data: placementData.salaryByYear.highestSalary.map(s => s / 100000),
+                                backgroundColor: '#4f46e5',
+                            },
+                            {
+                                label: 'Average Salary (LPA)',
+                                data: placementData.salaryByYear.averageSalary.map(s => s / 100000),
+                                backgroundColor: '#a5b4fc',
+                            }
+                        ]
+                    },
+                    options: { 
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Salary (LPA)'
+                                }
+                            }
                         }
-                    ]
-                },
-                options: { responsive: true }
-            });
-            const distCtx = document.getElementById(`dist-chart-${collegeId}`).getContext('2d');
-            const latestYearData = placementData.salaryDistribution['2024'];
-            new Chart(distCtx, {
-                type: 'pie',
-                data: {
-                    labels: latestYearData.labels,
-                    datasets: [{
-                        label: 'Placement %',
-                        data: latestYearData.data,
-                        backgroundColor: ['#a5b4fc', '#818cf8', '#6366f1', '#4f46e5']
-                    }]
-                },
-                options: { responsive: true }
-            });
+                    }
+                });
+
+                // Get latest year data for distribution chart
+                const latestYear = placementData.salaryByYear.labels[placementData.salaryByYear.labels.length - 1];
+                const latestYearData = placementData.salaryDistribution[latestYear];
+                
+                if (latestYearData) {
+                    const distCtx = document.getElementById(`dist-chart-${collegeId}`).getContext('2d');
+                    new Chart(distCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: latestYearData.labels,
+                            datasets: [{
+                                label: 'Placement %',
+                                data: latestYearData.data,
+                                backgroundColor: ['#a5b4fc', '#818cf8', '#6366f1', '#4f46e5']
+                            }]
+                        },
+                        options: { 
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom'
+                                }
+                            }
+                        }
+                    });
+                }
+            } catch (error) {
+                console.error('Error rendering charts for', collegeId, error);
+            }
         }
     </script>
 </body>

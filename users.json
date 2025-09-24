@@ -1,15 +1,20 @@
 [
   {
-    "name": "Sarvesh S",
-    "username": "q",
-    "password": "$2b$10$DbphA3hn59.tHIHjeTzv5uBkgCzG8G5OBFCErHM5SxJBFklkkxUea"
+    "name": "shalon",
+    "username": "shalon",
+    "password": "$2b$10$5rsdBBP8/t6YKdbiCgHjL.lQ7jmjlqinjoGUQ.TYpAGkH1F0KMgZC"
   },
   {
-    "name": "Shalon",
-    "username": "s",
-    "password": "$2b$10$PoxkvpiTieVP2RXptSFKr.OEenlvo6cXT.DDP0KUkt0bWBujufDEa"
+    "name": "joe",
+    "username": "joe",
+    "password": "$2b$10$B3ZvzcH2wEIIvuD5c6mGveM/GYj4JuYwNB.Ce92p3VEiPID7x0cRG"
   },
   {
+<<<<<<< HEAD
+    "name": "tush",
+    "username": "tush",
+    "password": "$2b$10$Pue3HCq2yCl39ZHJmY7ITOsrE3PUwa3Il6SBdoSleOfM/VPgeGNGW"
+=======
     "name": "Shalon",
     "username": "c",
     "password": "$2b$10$ewda7DGm3z2mXe1y3Y/vOeRnDQjaKxYEblnDYnzcuFdmVeggNLPoe"
@@ -38,10 +43,5 @@
     "name": "Gan",
     "username": "g",
     "password": "$2b$10$vaQ2uIuGx1Vyp5loC5fAM.YaIzrcFK/IZV4MuaBCLQ9ZCFQIa1LTu"
-  },
-  {
-    "name": "shalon",
-    "username": "l",
-    "password": "$2b$10$bBbKQ8M8xK//owuQ53F1..HnkSTziwDxvCejRMlGfnNJA28HTusTq"
   }
 ]
