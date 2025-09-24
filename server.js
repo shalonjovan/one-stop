@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 const multer = require('multer');
 const axios = require('axios');
-const bcrypt = require('bcrypt'); // CHANGE: Added bcrypt for password hashing
+const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 const app = express();
@@ -48,21 +48,71 @@ const writeJsonFile = (filePath, data) => {
     }
 };
 
+// --- ADDED: Ensure the 'uploads' directory exists ---
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir);
+}
+
+// --- ADDED: Multer setup for storing profile pictures ---
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/'); // The directory where files will be stored
+    },
+    filename: function (req, file, cb) {
+        // Use the username from the request body to create a unique filename
+        // This will overwrite the previous picture if a new one is uploaded for the same user
+        const username = req.body.username;
+        const fileExtension = path.extname(file.originalname);
+        cb(null, username + fileExtension);
+    }
+});
+
+const upload = multer({ storage: storage });
 
 // --- API Endpoints ---
+
+// --- ADDED: Endpoint to handle profile picture upload ---
+app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ message: 'No file was uploaded.' });
+    }
+    // The file is now saved. Send a success response.
+    res.status(200).json({ message: 'Profile picture uploaded successfully!', filePath: req.file.path });
+});
+
+// --- ADDED: Endpoint to retrieve and serve a user's profile picture ---
+app.get('/profile-picture/:username', (req, res) => {
+    const { username } = req.params;
+    const extensions = ['.png', '.jpg', '.jpeg', '.gif']; // Common image extensions
+    let userImagePath = null;
+
+    // Check for the user's image file with different possible extensions
+    for (const ext of extensions) {
+        const potentialPath = path.join(__dirname, 'uploads', username + ext);
+        if (fs.existsSync(potentialPath)) {
+            userImagePath = potentialPath;
+            break;
+        }
+    }
+
+    if (userImagePath) {
+        res.sendFile(userImagePath);
+    } else {
+        res.status(404).json({ message: 'Profile picture not found.' });
+    }
+});
 
 app.get('/get-colleges', (req, res) => {
     const colleges = readJsonFile(collegesFilePath);
     res.json(colleges);
 });
 
-// CHANGE: This route was renamed and changed to use req.params to match your frontend.
 app.get('/get-assessment/:username', (req, res) => {
-    const { username } = req.params; // Use req.params to get username from the URL path
+    const { username } = req.params;
     if (!username) return res.status(400).json({ error: 'Username is required.' });
 
     const allResults = readJsonFile(assessmentFilePath);
-    // CHANGE: The lookup now uses the unique 'username' instead of the full 'userName'.
     const userResult = allResults.find(result => result.username === username);
 
     if (userResult) {
@@ -75,7 +125,6 @@ app.get('/get-assessment/:username', (req, res) => {
 app.get('/check-assessment/:username', (req, res) => {
     const { username } = req.params;
     const allResults = readJsonFile(assessmentFilePath);
-    // CHANGE: The lookup now uses the unique 'username' for consistency.
     const hasTaken = allResults.some(result => result.username === username);
     res.json({ hasTakenAssessment: hasTaken });
 });
@@ -97,7 +146,6 @@ app.post('/gemini-proxy', async (req, res) => {
     }
 });
 
-// CHANGE: The signup and login routes are now async to handle password hashing.
 app.post('/signup', async (req, res) => {
     const { name, username, password } = req.body;
     if (!name || !username || !password) {
@@ -107,9 +155,8 @@ app.post('/signup', async (req, res) => {
     if (users.some(u => u.username === username)) {
         return res.status(400).json({ error: 'Username already exists' });
     }
-    // CHANGE: Hash the password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
-    users.push({ name, username, password: hashedPassword }); // Store the hashed password
+    users.push({ name, username, password: hashedPassword });
     writeJsonFile(usersFilePath, users);
     res.json({ status: 'success' });
 });
@@ -121,7 +168,6 @@ app.post('/google-signup', (req, res) => {
         const existingUser = users.find(u => u.email === email);
         return res.json({ status: 'success', isLogin: true, user: { name: existingUser.name, username: existingUser.username } });
     }
-    // CHANGE: Use email as username for Google users for consistency
     const username = email;
     const newUser = { name, email, username, isGoogle: true };
     users.push(newUser);
@@ -135,7 +181,6 @@ app.post('/login', async (req, res) => {
     const user = users.find(u => u.username === username);
     
     if (user && !user.isGoogle) {
-        // CHANGE: Compare the provided password with the stored hash
         const isMatch = await bcrypt.compare(password, user.password);
         if (isMatch) {
             res.json({ status: 'success', user: { name: user.name, username: user.username } });
@@ -160,13 +205,8 @@ app.post('/google-login', (req, res) => {
 
 app.post('/save-assessment', (req, res) => {
     const assessmentData = req.body;
-    // CHANGE: Add the unique username to the assessment data for linking
-    const username = assessmentData.userName; // This assumes frontend sends the full name as userName
-    // To make it robust, you'd ideally get a unique ID from a logged-in session.
-    // For now, let's assume the full name is unique enough for this app.
-    
     const assessmentResults = readJsonFile(assessmentFilePath, []);
-    const existingIndex = assessmentResults.findIndex(result => result.userName === assessmentData.userName);
+    const existingIndex = assessmentResults.findIndex(result => result.username === assessmentData.username);
     if (existingIndex !== -1) {
         assessmentResults[existingIndex] = assessmentData;
     } else {
