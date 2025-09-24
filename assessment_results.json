@@ -214,8 +214,13 @@
     ]
   },
   {
+<<<<<<< HEAD
     "username": "he",
     "userName": "he",
+=======
+    "username": "l",
+    "userName": "shalon",
+>>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
     "age": "17",
     "studentClass": "12",
     "stream": "Science (Maths/CS)",
@@ -224,6 +229,7 @@
         "question": "Which aspect of computer science excites you the most?",
         "options": [
           "Software Development",
+<<<<<<< HEAD
           "Artificial Intelligence",
           "Data Science",
           "Cybersecurity"
@@ -231,10 +237,21 @@
       },
       {
         "question": "In mathematics, what area captivates your interest?",
+=======
+          "Data Science/Machine Learning",
+          "Cybersecurity",
+          "Artificial Intelligence",
+          "Networking"
+        ]
+      },
+      {
+        "question": "In mathematics, what area captures your interest?",
+>>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
         "options": [
           "Algebra",
           "Calculus",
           "Statistics",
+<<<<<<< HEAD
           "Geometry"
         ]
       },
@@ -249,42 +266,295 @@
       },
       {
         "question": "Which scientific field, outside of computer science, interests you?",
+=======
+          "Geometry",
+          "Number Theory"
+        ]
+      },
+      {
+        "question": "Which scientific field, beyond pure maths and CS, intrigues you?",
+>>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
         "options": [
           "Physics",
           "Chemistry",
           "Biology",
+<<<<<<< HEAD
           "None"
+=======
+          "Astronomy",
+          "Environmental Science"
+>>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
         ]
       },
       {
         "question": "Are you more interested in theoretical concepts or practical applications?",
         "options": [
-          "Theoretical",
-          "Practical",
-          "Both equally",
+          "Theoretical Concepts",
+          "Practical Applications",
+          "Both Equally",
           "Neither"
         ]
       },
       {
+<<<<<<< HEAD
         "question": "Do you prefer working independently or collaboratively?",
+=======
+        "question": "Do you prefer working independently or collaboratively on projects?",
+>>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
         "options": [
           "Independently",
           "Collaboratively",
-          "Both",
-          "Neither"
+          "A Mix of Both",
+          "It Depends on the Project"
         ]
       },
       {
+<<<<<<< HEAD
         "question": "What type of problem-solving do you enjoy most?",
         "options": [
           "Logical and analytical",
           "Creative and innovative",
+=======
+        "question": "What kind of problem-solving approach do you prefer?",
+        "options": [
+          "Analytical and Logical",
+          "Creative and Intuitive",
+          "A Combination of Both",
+          "Other"
+        ]
+      },
+      {
+        "question": "How important is the impact of your work on society to you?",
+        "options": [
+          "Very Important",
+          "Somewhat Important",
+          "Not Very Important",
+          "Not Important at All"
+        ]
+      },
+      {
+        "question": "Would you prefer a job that involves mostly indoor or outdoor work?",
+        "options": [
+          "Mostly Indoor",
+          "Mostly Outdoor",
+          "A Mix of Both",
+          "It Doesn't Matter"
+        ]
+      },
+      {
+        "question": "Are you comfortable with ambiguity and uncertainty?",
+        "options": [
+          "Yes",
+          "No",
+          "Sometimes",
+          "It Depends"
+        ]
+      },
+      {
+        "question": "Do you enjoy working with large datasets and extracting insights?",
+        "options": [
+          "Yes",
+          "No",
+          "Maybe",
+          "Unsure"
+        ]
+      },
+      {
+        "question": "Are you fascinated by the intricacies of how computers function at a low level?",
+        "options": [
+          "Yes",
+          "No",
+          "Slightly",
+          "Not at all"
+        ]
+      },
+      {
+        "question": "How much do you enjoy designing and building things, whether physical or digital?",
+        "options": [
+          "A lot",
+          "Moderately",
+          "A little",
+          "Not at all"
+        ]
+      },
+      {
+        "question": "Do you prefer working with established systems or creating new ones?",
+        "options": [
+          "Established Systems",
+          "Creating New Systems",
+>>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
           "Both",
           "Neither"
         ]
       },
       {
+<<<<<<< HEAD
         "question": "How important is creativity in your ideal career?",
+=======
+        "question": "Are you a detail-oriented person or do you prefer to focus on the big picture?",
+        "options": [
+          "Detail-Oriented",
+          "Big Picture Focus",
+          "Both",
+          "Neither"
+        ]
+      },
+      {
+        "question": "How important is a fast-paced and constantly evolving work environment to you?",
+        "options": [
+          "Very Important",
+          "Somewhat Important",
+          "Not Very Important",
+          "Not at all Important"
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "Which aspect of computer science excites you the most?",
+        "answer": "Data Science/Machine Learning"
+      },
+      {
+        "question": "In mathematics, what area captures your interest?",
+        "answer": "Calculus"
+      },
+      {
+        "question": "Which scientific field, beyond pure maths and CS, intrigues you?",
+        "answer": "Chemistry"
+      },
+      {
+        "question": "Are you more interested in theoretical concepts or practical applications?",
+        "answer": "Both Equally"
+      },
+      {
+        "question": "Do you prefer working independently or collaboratively on projects?",
+        "answer": "It Depends on the Project"
+      },
+      {
+        "question": "What kind of problem-solving approach do you prefer?",
+        "answer": "Analytical and Logical"
+      },
+      {
+        "question": "How important is the impact of your work on society to you?",
+        "answer": "Very Important"
+      },
+      {
+        "question": "Would you prefer a job that involves mostly indoor or outdoor work?",
+        "answer": "Mostly Outdoor"
+      },
+      {
+        "question": "Are you comfortable with ambiguity and uncertainty?",
+        "answer": "No"
+      },
+      {
+        "question": "Do you enjoy working with large datasets and extracting insights?",
+        "answer": "Maybe"
+      },
+      {
+        "question": "Are you fascinated by the intricacies of how computers function at a low level?",
+        "answer": "Not at all"
+      },
+      {
+        "question": "How much do you enjoy designing and building things, whether physical or digital?",
+        "answer": "A lot"
+      },
+      {
+        "question": "Do you prefer working with established systems or creating new ones?",
+        "answer": "Creating New Systems"
+      },
+      {
+        "question": "Are you a detail-oriented person or do you prefer to focus on the big picture?",
+        "answer": "Both"
+      },
+      {
+        "question": "How important is a fast-paced and constantly evolving work environment to you?",
+        "answer": "Very Important"
+      }
+    ],
+    "specializedFields": [
+      "Data Science with a focus on Chemical Applications",
+      "Bioinformatics (with emphasis on drug discovery)",
+      "Scientific Computing (with applications in chemistry)"
+    ]
+  },
+  {
+<<<<<<< HEAD
+    "username": "joe",
+    "userName": "joe",
+    "age": "18",
+    "studentClass": "12",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "Which aspect of computer science excites you the most?",
+        "options": [
+          "Software Development",
+          "Data Science/Machine Learning",
+          "Cybersecurity",
+          "Artificial Intelligence",
+          "Computer Networks"
+        ]
+      },
+      {
+        "question": "In mathematics, what area do you find most engaging?",
+        "options": [
+          "Algebra",
+          "Calculus",
+          "Statistics",
+          "Geometry",
+          "Number Theory"
+        ]
+      },
+      {
+        "question": "If you could build a software application, what problem would you like to solve?",
+        "options": [
+          "Improving accessibility for people with disabilities",
+          "Optimizing resource allocation in a business",
+          "Creating a new entertainment platform",
+          "Developing a tool for scientific research",
+          "Solving a real-world environmental issue"
+        ]
+      },
+      {
+        "question": "Which field best reflects your preferred work environment?",
+        "options": [
+          "Independent research",
+          "Collaborative teamwork",
+          "Fast-paced startup",
+          "Stable corporate setting",
+          "Academic institution"
+        ]
+      },
+      {
+        "question": "Are you more interested in theoretical concepts or practical applications?",
+        "options": [
+          "Theoretical concepts and abstract thinking",
+          "Practical applications and tangible results",
+          "A balance of both",
+          "I'm not sure yet"
+        ]
+      },
+      {
+        "question": "Which scientific breakthrough has most impressed you?",
+        "options": [
+          "The discovery of the structure of DNA",
+          "The development of the internet",
+          "The creation of artificial organs",
+          "The advancements in space exploration",
+          "The development of renewable energy sources"
+        ]
+      },
+      {
+        "question": "Do you prefer working with large datasets or smaller, more focused projects?",
+        "options": [
+          "Large datasets and big-picture thinking",
+          "Smaller, more focused projects",
+          "I'm comfortable with both"
+        ]
+      },
+      {
+        "question": "How important is the potential for innovation and creativity in your future career?",
+>>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
         "options": [
           "Very Important",
           "Somewhat Important",
