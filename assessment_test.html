@@ -264,23 +264,28 @@
     }
 
     // --- EVENT LISTENERS ---
-    document.getElementById('next-step-1').addEventListener('click', () => {
-        const fullName = document.getElementById('fullName').value.trim();
-        const age = document.getElementById('age').value;
-        const studentClass = document.getElementById('class').value.trim();
-        if (fullName && age && studentClass) {
-            // Merge new details with the existing assessmentData (which holds the unique username)
-            Object.assign(assessmentData, { 
-                userName: fullName, 
-                age, 
-                studentClass 
-            });
-            createBubbles('stream-options', streams);
-            showStep(1);
-        } else {
-            alert('Please fill out all the fields.');
-        }
-    });
+    // --- EVENT LISTENERS ---
+document.getElementById('next-step-1').addEventListener('click', () => {
+    const fullName = document.getElementById('fullName').value.trim();
+    const age = document.getElementById('age').value;
+    const studentClass = document.getElementById('class').value.trim();
+    const gender = document.getElementById('gender').value; // <-- 1. ADD THIS LINE to get the gender
+
+    // Also add 'gender' to the validation check
+    if (fullName && age && studentClass && gender) {
+        // Merge new details with the existing assessmentData (which holds the unique username)
+        Object.assign(assessmentData, { 
+            userName: fullName, 
+            age, 
+            studentClass,
+            gender: gender // <-- 2. ADD THIS LINE to save the gender
+        });
+        createBubbles('stream-options', streams);
+        showStep(1);
+    } else {
+        alert('Please fill out all the fields.');
+    }
+});
 
     document.getElementById("next-step-2").addEventListener("click", () => {
         const selectedBubble = document.querySelector("#stream-options .bubble.selected");
