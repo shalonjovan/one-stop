@@ -214,13 +214,8 @@
     ]
   },
   {
-<<<<<<< HEAD
-    "username": "he",
-    "userName": "he",
-=======
     "username": "l",
     "userName": "shalon",
->>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
     "age": "17",
     "studentClass": "12",
     "stream": "Science (Maths/CS)",
@@ -229,15 +224,6 @@
         "question": "Which aspect of computer science excites you the most?",
         "options": [
           "Software Development",
-<<<<<<< HEAD
-          "Artificial Intelligence",
-          "Data Science",
-          "Cybersecurity"
-        ]
-      },
-      {
-        "question": "In mathematics, what area captivates your interest?",
-=======
           "Data Science/Machine Learning",
           "Cybersecurity",
           "Artificial Intelligence",
@@ -246,44 +232,22 @@
       },
       {
         "question": "In mathematics, what area captures your interest?",
->>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
         "options": [
           "Algebra",
           "Calculus",
           "Statistics",
-<<<<<<< HEAD
-          "Geometry"
-        ]
-      },
-      {
-        "question": "If you could build a software application, what kind would it be?",
-        "options": [
-          "Game",
-          "Productivity Tool",
-          "Educational App",
-          "Social Media Platform"
-        ]
-      },
-      {
-        "question": "Which scientific field, outside of computer science, interests you?",
-=======
           "Geometry",
           "Number Theory"
         ]
       },
       {
         "question": "Which scientific field, beyond pure maths and CS, intrigues you?",
->>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
         "options": [
           "Physics",
           "Chemistry",
           "Biology",
-<<<<<<< HEAD
-          "None"
-=======
           "Astronomy",
           "Environmental Science"
->>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
         ]
       },
       {
@@ -296,11 +260,7 @@
         ]
       },
       {
-<<<<<<< HEAD
-        "question": "Do you prefer working independently or collaboratively?",
-=======
         "question": "Do you prefer working independently or collaboratively on projects?",
->>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
         "options": [
           "Independently",
           "Collaboratively",
@@ -309,12 +269,6 @@
         ]
       },
       {
-<<<<<<< HEAD
-        "question": "What type of problem-solving do you enjoy most?",
-        "options": [
-          "Logical and analytical",
-          "Creative and innovative",
-=======
         "question": "What kind of problem-solving approach do you prefer?",
         "options": [
           "Analytical and Logical",
@@ -382,15 +336,11 @@
         "options": [
           "Established Systems",
           "Creating New Systems",
->>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
           "Both",
           "Neither"
         ]
       },
       {
-<<<<<<< HEAD
-        "question": "How important is creativity in your ideal career?",
-=======
         "question": "Are you a detail-oriented person or do you prefer to focus on the big picture?",
         "options": [
           "Detail-Oriented",
@@ -478,7 +428,6 @@
     ]
   },
   {
-<<<<<<< HEAD
     "username": "joe",
     "userName": "joe",
     "age": "18",
@@ -554,7 +503,6 @@
       },
       {
         "question": "How important is the potential for innovation and creativity in your future career?",
->>>>>>> 67c93055bcff89ea83b9e9bbdf84cadd1da14a73
         "options": [
           "Very Important",
           "Somewhat Important",
@@ -693,6 +641,219 @@
       "Computer-Aided Chemical Engineering",
       "Human-Computer Interaction (HCI) Design for Scientific Applications",
       "Process Automation Engineering"
+    ]
+  },
+  {
+    "username": "a",
+    "userName": "Shalon",
+    "age": "18",
+    "studentClass": "12",
+    "gender": "Male",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "What aspect of science excites you the most?",
+        "options": [
+          "Discovering new things and pushing boundaries",
+          "Solving complex problems and creating efficient systems",
+          "Understanding how things work on a fundamental level",
+          "Applying scientific knowledge to solve real-world problems"
+        ]
+      },
+      {
+        "question": "Which of these subjects do you find most engaging?",
+        "options": [
+          "Mathematics",
+          "Computer Science",
+          "Physics",
+          "Chemistry"
+        ]
+      },
+      {
+        "question": "Do you prefer working with abstract concepts or tangible objects?",
+        "options": [
+          "Abstract concepts",
+          "Tangible objects",
+          "Both equally",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "Are you more drawn to theoretical research or practical applications?",
+        "options": [
+          "Theoretical research",
+          "Practical applications",
+          "A balance of both",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "Which of these skills best describes you?",
+        "options": [
+          "Analytical thinking and problem-solving",
+          "Creativity and innovation",
+          "Communication and collaboration",
+          "Leadership and management"
+        ]
+      },
+      {
+        "question": "Would you prefer a career that involves independent work or teamwork?",
+        "options": [
+          "Independent work",
+          "Teamwork",
+          "Both equally",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "Which area of technology interests you the most?",
+        "options": [
+          "Artificial intelligence",
+          "Data science",
+          "Software development",
+          "Cybersecurity"
+        ]
+      },
+      {
+        "question": "Imagine you're solving a complex problem. What approach do you prefer?",
+        "options": [
+          "Breaking it down into smaller, manageable parts",
+          "Thinking outside the box and exploring unconventional solutions",
+          "Collaborating with others to find the best approach",
+          "Using a systematic and methodical approach"
+        ]
+      },
+      {
+        "question": "Are you more interested in the 'why' or the 'how' of things?",
+        "options": [
+          "The 'why' (understanding the underlying principles)",
+          "The 'how' (building and creating)",
+          "Both equally",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "Which type of environment do you thrive in?",
+        "options": [
+          "Structured and organized",
+          "Flexible and adaptable",
+          "Fast-paced and dynamic",
+          "Calm and quiet"
+        ]
+      },
+      {
+        "question": "Do you enjoy working with large datasets and analyzing information?",
+        "options": [
+          "Yes",
+          "No",
+          "Unsure",
+          "Sometimes"
+        ]
+      },
+      {
+        "question": "Are you fascinated by the intricacies of the human body and biological systems?",
+        "options": [
+          "Yes",
+          "No",
+          "Unsure",
+          "Sometimes"
+        ]
+      },
+      {
+        "question": "Would you be comfortable working with complex mathematical equations and algorithms?",
+        "options": [
+          "Yes",
+          "No",
+          "Unsure",
+          "Sometimes"
+        ]
+      },
+      {
+        "question": "Are you interested in contributing to advancements in medical technology or healthcare?",
+        "options": [
+          "Yes",
+          "No",
+          "Unsure",
+          "Sometimes"
+        ]
+      },
+      {
+        "question": "Do you prefer working on projects that have a direct impact on society?",
+        "options": [
+          "Yes",
+          "No",
+          "Unsure",
+          "Sometimes"
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "What aspect of science excites you the most?",
+        "answer": "Discovering new things and pushing boundaries"
+      },
+      {
+        "question": "Which of these subjects do you find most engaging?",
+        "answer": "Mathematics"
+      },
+      {
+        "question": "Do you prefer working with abstract concepts or tangible objects?",
+        "answer": "Tangible objects"
+      },
+      {
+        "question": "Are you more drawn to theoretical research or practical applications?",
+        "answer": "Theoretical research"
+      },
+      {
+        "question": "Which of these skills best describes you?",
+        "answer": "Analytical thinking and problem-solving"
+      },
+      {
+        "question": "Would you prefer a career that involves independent work or teamwork?",
+        "answer": "Teamwork"
+      },
+      {
+        "question": "Which area of technology interests you the most?",
+        "answer": "Artificial intelligence"
+      },
+      {
+        "question": "Imagine you're solving a complex problem. What approach do you prefer?",
+        "answer": "Breaking it down into smaller, manageable parts"
+      },
+      {
+        "question": "Are you more interested in the 'why' or the 'how' of things?",
+        "answer": "Neither particularly"
+      },
+      {
+        "question": "Which type of environment do you thrive in?",
+        "answer": "Structured and organized"
+      },
+      {
+        "question": "Do you enjoy working with large datasets and analyzing information?",
+        "answer": "Yes"
+      },
+      {
+        "question": "Are you fascinated by the intricacies of the human body and biological systems?",
+        "answer": "Yes"
+      },
+      {
+        "question": "Would you be comfortable working with complex mathematical equations and algorithms?",
+        "answer": "Yes"
+      },
+      {
+        "question": "Are you interested in contributing to advancements in medical technology or healthcare?",
+        "answer": "Yes"
+      },
+      {
+        "question": "Do you prefer working on projects that have a direct impact on society?",
+        "answer": "No"
+      }
+    ],
+    "specializedFields": [
+      "Machine Learning for Healthcare",
+      "Biomedical Engineering (focus on computational modeling)",
+      "Operations Research in Healthcare",
+      "Data Analytics (applied to biological research)"
     ]
   }
 ]

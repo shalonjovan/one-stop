@@ -14,6 +14,40 @@ const PORT = 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
+// server.js
+
+// ... (your existing code) ...
+
+// --- ADDED: Multer setup for storing profile pictures ---
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/'); // The directory where files will be stored
+    },
+    filename: function (req, file, cb) {
+        // Use the username from the request body to create a unique filename
+        // This will overwrite the previous picture if a new one is uploaded for the same user
+        const username = req.body.username;
+        const fileExtension = path.extname(file.originalname);
+        cb(null, username + fileExtension);
+    }
+});
+
+// --- ADD THIS LINE TO FIX THE ERROR ---
+const upload = multer({ storage: storage });
+
+// --- API Endpoints ---
+
+// --- ADDED: Endpoint to handle profile picture upload ---
+app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ message: 'No file was uploaded.' });
+    }
+    // The file is now saved. Send a success response.
+    res.status(200).json({ message: 'Profile picture uploaded successfully!', filePath: req.file.path });
+});
+
+// ... (rest of your code) ...
+
 // --- Gemini API Configuration ---
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
@@ -90,12 +124,49 @@ const matchFieldsToCollegeTypes = (specializedFields) => {
 // --- API Endpoints ---
 
 // --- ADDED: Endpoint to handle profile picture upload ---
+// server.js
+
 app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ message: 'No file was uploaded.' });
     }
-    // The file is now saved. Send a success response.
-    res.status(200).json({ message: 'Profile picture uploaded successfully!', filePath: req.file.path });
+
+    // --- THIS IS THE CRUCIAL ADDITION ---
+    // Now, we save the file path to the user's data.
+
+    const { username } = req.body; // Get username from the form data
+    const filePath = `/uploads/${req.file.filename}`; // The public URL path to the file
+
+    if (!username) {
+        return res.status(400).json({ message: 'Username is required to save the picture.' });
+    }
+
+    try {
+        const users = readJsonFile(usersFilePath);
+        const userIndex = users.findIndex(u => u.username === username);
+
+        if (userIndex !== -1) {
+            // Add or update the profilePicture property for the user
+            users[userIndex].profilePicture = filePath;
+            writeJsonFile(usersFilePath, users);
+
+            console.log(`Updated profile picture for ${username}. Path: ${filePath}`);
+
+            // The file is saved and the user record is updated. Send a success response.
+            res.status(200).json({
+                message: 'Profile picture uploaded successfully!',
+                filePath: filePath
+            });
+
+        } else {
+            // Handle case where user is not found
+            res.status(404).json({ message: 'User not found.' });
+        }
+
+    } catch (error) {
+        console.error('Error updating user data with profile picture:', error);
+        res.status(500).json({ message: 'Server error while updating user data.' });
+    }
 });
 
 // --- ADDED: Endpoint to retrieve and serve a user's profile picture ---
