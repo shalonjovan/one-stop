@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidyaGyan - Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        /* Custom CSS for the Chatbot Button */
+        #chatbot-button {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid #6366f1;
+        }
+
+        #chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        #chatbot-button img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-[#c8d8f0] flex flex-col min-h-screen">
+
+    <!-- Header Navigation Bar -->
+    <header class="relative z-20 w-full p-2 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="text-white focus:outline-none md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <!-- Logo and Site Name -->
+            <div class="flex items-center space-x-2">
+                <a href="index.html">
+                    <img src="./assets/mainlogo.png" alt="VidyaGyan Logo" class="w-10 h-10">
+                </a>
+                <span class="text-3xl font-bold text-white">VidyaGyan</span>
+            </div>
+        </div>
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-4 text-base">
+            <a href="career_paths.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
+            <a href="roadmaps/roadmap.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
+            <a href="colleges.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="exams.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Exams</a>
+            <a href="resources.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Resources</a>
+            <a href="study_groups.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study Groups</a>
+            <a href="scholarship.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Scholarships</a>
+        </nav>
+        <!-- Action Buttons (Home, Profile, and For You) -->
+        <div class="hidden md:flex items-center space-x-4">
+            <a href="home.html"
+                class="flex items-center space-x-2 text-white hover:text-gray-200 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">
+                <!-- Home Icon -->
+                <img src="assets/home.png" alt="Home" class="w-8 h-8">
+            </a>
+            <a href="profile.html"
+                class="flex items-center space-x-2 text-white hover:text-gray-200 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">
+                <!-- Profile Icon -->
+                <img src="assets/profile.jpg" alt="Profile" class="w-8 h-8">
+            </a>
+            <a href="foryou.html"
+                class="text-sm px-6 py-3 rounded-full border-2 border-blue-500 text-blue-500 hover:text-white hover:bg-blue-500 transition-colors duration-300">For You</a>
+        </div>
+    </header>
+
+    <!-- Main Content Section for Dashboard -->
+    <main class="flex-grow p-8">
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <!-- User Welcome Section -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-8 text-center sm:text-left">
+                <h1 class="text-4xl font-bold text-gray-900 mb-2">Hey! Welcome Back!</h1>
+                <p class="text-gray-600">Your personalized career and education journey starts here. Explore our key features to find your path.</p>
+            </div>
+
+            <!-- Key Features Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Aptitude & Interest Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center w-12 h-12 bg-indigo-100 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.048A12.015 12.015 0 002.944 12c.94 2.898 2.54 5.454 4.093 7.027m7.027-4.093l2.251-2.251m-2.251 2.251l-2.251-2.251M12 21a9 9 0 100-18 9 9 0 000 18z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Personalized Quiz</h2>
+                    <p class="text-gray-600">Take a short quiz to discover your interests and get personalized course suggestions.</p>
+                    <a href="foryou.html" class="mt-4 inline-block text-indigo-600 hover:underline">Start the Quiz &rarr;</a>
+                </div>
+
+                <!-- Course-to-Career Mapping Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Career Roadmaps</h2>
+                    <p class="text-gray-600">Visualize your academic journey with detailed charts showing course-to-career paths.</p>
+                    <a href="roadmaps/roadmap.html" class="mt-4 inline-block text-green-600 hover:underline">View Roadmaps &rarr;</a>
+                </div>
+
+                <!-- Colleges Directory Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m-1 0v-1a1 1 0 011-1h2a1 1 0 011 1v1m-6 0h6"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Nearby Colleges</h2>
+                    <p class="text-gray-600">Find government colleges near you with details on courses, eligibility, and facilities.</p>
+                    <a href="colleges.html" class="mt-4 inline-block text-blue-600 hover:underline">Find Colleges &rarr;</a>
+                </div>
+                
+                <!-- Timeline Tracker Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Important Dates</h2>
+                    <p class="text-gray-600">Never miss a deadline with our timeline tracker for admissions and scholarships.</p>
+                    <a href="exams.html" class="mt-4 inline-block text-red-600 hover:underline">Exams Infos & Dates &rarr;</a>
+                </div>
+
+                <!-- Study Materials Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center w-12 h-12 bg-yellow-100 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753s1.169 2.753 2.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Study Materials</h2>
+                    <p class="text-gray-600">Access a curated library of e-books and study resources tailored to your subjects.</p>
+                    <a href="resources.html" class="mt-4 inline-block text-yellow-600 hover:underline">Browse Resources &rarr;</a>
+                </div>
+
+                <!-- Study Groups Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center w-12 h-12 bg-pink-100 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h2a2 2 0 002-2V4a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2M17 20v-2a2 2 0 00-2-2H9a2 2 0 00-2 2v2M9 16H9a2 2 0 012-2h2a2 2 0 012 2h-6zM12 10a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Study Groups</h2>
+                    <p class="text-gray-600">Connect with peers, collaborate on assignments, and form study groups with ease.</p>
+                    <a href="study_groups.html" class="mt-4 inline-block text-pink-600 hover:underline">Join a Group &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Sidebar Menu (Mobile) -->
+    <nav id="sidebar" class="sidebar fixed top-0 left-0 h-full bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg z-30 shadow-lg md:hidden">
+        <div class="p-6">
+            <h2 class="text-xl font-bold mb-4">Menu</h2>
+            <ul class="space-y-4">
+                <li><a href="index.html" class="block p-2 rounded-lg text-gray-800 hover:bg-blue-100 transition-colors duration-200">Home</a></li>
+                <li><a href="colleges.html" class="block p-2 rounded-lg text-gray-800 hover:bg-blue-100 transition-colors duration-200">College Directory</a></li>
+                <li><a href="career_paths.html" class="block p-2 rounded-lg text-gray-800 hover:bg-blue-100 transition-colors duration-200">Career Paths</a></li>
+                <li><a href="roadmaps/roadmap.html" class="block p-2 rounded-lg text-gray-800 hover:bg-blue-100 transition-colors duration-200">Roadmaps</a></li>
+                <li><a href="study_groups.html" class="block p-2 rounded-lg text-gray-800 hover:bg-blue-100 transition-colors duration-200">Study Groups</a></li>
+                <li><a href="resources.html" class="block p-2 rounded-lg text-gray-800 hover:bg-blue-100 transition-colors duration-200">Study Materials</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+    </script>
+    
+    <!-- Chatbot Button -->
+    <a href="chat.html" id="chatbot-button" title="Chat with us!">
+        <img src="./assets/images/chat.jpeg" alt="Chatbot" />
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 p-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+            <!-- Logo Column (spans full height) -->
+            <div class="col-span-1 flex justify-center items-center">
+                <img src="./assets/mainlogo.png" alt="VidyaGyan Logo" class="w-75 h-60">
+            </div>
+
+            <!-- VidyaGyan Info Column -->
+            <div class="col-span-1 flex flex-col">
+                <h3 class="text-white font-bold text-xl mb-2">VidyaGyan</h3>
+                <p class="text-gray-400 text-sm mb-6">Your all-in-one platform for academic and career guidance.</p>
+                
+                <div class="mb-4">
+                    <h4 class="text-white font-semibold text-lg mb-2">Blastorz</h4>
+                    <div class="flex space-x-2 items-center mb-2">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                        </svg>
+                        <a href="mailto:team.blastorz@gmail.com" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                            team.blastorz@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex space-x-2 items-center">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <a href="members.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                            Team Blastorz Info
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Column -->
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Navigation</h4>
+                <ul class="space-y-3">
+                    <li><a href="home.html" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
+                    <li><a href="profile.html" class="text-gray-300 hover:text-white transition-colors duration-200">Profile</a></li>
+                    <li><a href="foryou.html" class="text-gray-300 hover:text-white transition-colors duration-200">For You</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources Column -->
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Resources</h4>
+                <ul class="space-y-3">
+                    <li><a href="colleges.html" class="text-gray-300 hover:text-white transition-colors duration-200">Colleges</a></li>
+                    <li><a href="career_paths.html" class="text-gray-300 hover:text-white transition-colors duration-200">Career Paths</a></li>
+                    <li><a href="roadmaps/roadmap.html" class="text-gray-300 hover:text-white transition-colors duration-200">Roadmaps</a></li>
+                    <li><a href="exams.html" class="text-gray-300 hover:text-white transition-colors duration-200">Entrance Exams</a></li>
+                    <li><a href="resources.html" class="text-gray-300 hover:text-white transition-colors duration-200">Study Materials</a></li>
+                    <li><a href="scholarship.html" class="text-gray-300 hover:text-white transition-colors duration-200">Scholarships</a></li>
+                </ul>
+            </div>
+
+            <!-- Community & Account Column -->
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Community & Account</h4>
+                <ul class="space-y-3">
+                    <li><a href="login.html" class="text-gray-300 hover:text-white transition-colors duration-200">Login</a></li>
+                    <li><a href="signup.html" class="text-gray-300 hover:text-white transition-colors duration-200">Sign Up</a></li>
+                    <li><a href="study_groups.html" class="text-gray-300 hover:text-white transition-colors duration-200">Study Groups</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-700 mt-6 pt-3 text-center">
+            <p class="text-gray-400 text-sm">
+                Copyright © 2025 - Team Blastorz 💥
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

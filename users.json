@@ -17,6 +17,10 @@
   {
     "name": "shalon",
     "username": "shalon",
-    "password": "$2b$10$1enGaolh7gpisrqlvjtRc./jehtCLe7HHpv7pD9YWxZS8gSQcPCLy"
+    "password": "$2b$10$1enGaolh7gpisrqlvjtRc./jehtCLe7HHpv7pD9YWxZS8gSQcPCLy",
+
+    "name": "Shalon",
+    "username": "Jo",
+    "password": "$2b$10$fRXnfQmuea0mL/Zj32cgHeN8AU4u3/PAcdGRFH0bZ.G1tLIc3dGmm"
   }
 ]
