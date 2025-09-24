@@ -1,12 +1,17 @@
 [
   {
-    "name": "Shalon Joven",
-    "email": "shalonjovan@gmail.com",
-    "isGoogle": true
+    "name": "Sarvesh S",
+    "username": "q",
+    "password": "$2b$10$DbphA3hn59.tHIHjeTzv5uBkgCzG8G5OBFCErHM5SxJBFklkkxUea"
   },
   {
-    "name": "shalon",
-    "username": "shalon",
-    "password": "shalon"
+    "name": "Shalon",
+    "username": "s",
+    "password": "$2b$10$PoxkvpiTieVP2RXptSFKr.OEenlvo6cXT.DDP0KUkt0bWBujufDEa"
+  },
+  {
+    "name": "Shalon",
+    "username": "c",
+    "password": "$2b$10$ewda7DGm3z2mXe1y3Y/vOeRnDQjaKxYEblnDYnzcuFdmVeggNLPoe"
   }
 ]

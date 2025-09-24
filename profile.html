@@ -170,205 +170,117 @@
     </div>
 
     <script>
-        const backend = 'http://localhost:3000';
-        const profilePicture = document.getElementById('profile-picture');
-        const pictureUpload = document.getElementById('picture-upload');
-        const resultsDisplay = document.getElementById('results-display');
-        const welcomeMessage = document.getElementById('welcome-message');
+    const backend = 'http://localhost:3000';
+    const profilePicture = document.getElementById('profile-picture');
+    const pictureUpload = document.getElementById('picture-upload');
+    const resultsDisplay = document.getElementById('results-display');
+    const welcomeMessage = document.getElementById('welcome-message');
 
-        // In your PROFILE page file
-function getUserName() {
-    try {
-        // First, try to get the user from localStorage
-        const storedUser = localStorage.getItem('currentUser');
-        if (storedUser) {
-            return storedUser;
+    /**
+     * Retrieves the logged-in user's information from sessionStorage.
+     */
+    function getLoggedInUser() {
+        try {
+            const userString = sessionStorage.getItem('loggedInUser');
+            return userString ? JSON.parse(userString) : null;
+        } catch (e) {
+            console.error("Error parsing user data from sessionStorage:", e);
+            return null;
         }
-
-        // If no user is stored, fallback to the demo user
-        return 'demo_user';
-
-    } catch (e) {
-        console.error("Error retrieving user data from localStorage:", e);
-        return 'demo_user'; // Fallback in case of an error
     }
-}
 
-        // In your PROFILE page file (profile.html)
-
-async function fetchAssessmentResults(username) {
-    try {
-        const res = await fetch(`${backend}/get-assessment/${username}`);
-        const data = await res.json();
-        if (res.ok) {
-            // This is the success path: display the real data from the server
-            displayResults(data.result); 
-            displayProfilePicture(username);
-        } else {
-            // This happens if the server is running but can't find the user
+    /**
+     * Fetches the full assessment results from the backend for a given user.
+     */
+    async function fetchAssessmentResults(username) {
+        // Encode the username to handle special characters in the URL
+        const encodedUsername = encodeURIComponent(username);
+        try {
+            const res = await fetch(`${backend}/get-assessment/${encodedUsername}`);
+            const data = await res.json();
+            if (res.ok) {
+                displayResults(data.result);
+                displayProfilePicture(username);
+            } else {
+                displayResults(null);
+            }
+        } catch (error) {
+            console.error('Error fetching assessment results:', error);
             displayResults(null);
         }
-    } catch (error) {
-        console.error('Error fetching assessment results:', error);
-        
-        // --- CHANGE ---
-        // Instead of showing demo data, we now show the "Not Found" message on connection error.
-        displayResults(null);
     }
-}
 
-        function displayResults(results) {
-    if (!results) {
-        welcomeMessage.textContent = "Welcome!";
-        resultsDisplay.innerHTML = `
-            <div class="bg-white rounded-3xl p-8 text-center col-span-2 shadow-lg">
-                <div class="mb-6">
-                    <svg class="w-20 h-20 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                    </svg>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Assessment Not Found</h2>
-                    <p class="text-gray-600 text-lg mb-6">Ready to discover your career path? Take our comprehensive assessment to get personalized insights.</p>
-                    
-                    <a href="assessment_test.html" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-xl transition-all duration-300 text-lg font-semibold">
-                        Start Assessment
-                    </a>
+    /**
+     * Renders the assessment results on the page.
+     */
+    function displayResults(results) {
+        if (!results) {
+            welcomeMessage.textContent = "Welcome!";
+            resultsDisplay.innerHTML = `
+                <div class="bg-white rounded-3xl p-8 text-center col-span-2 shadow-lg">
+                    <div class="mb-6">
+                        <svg class="w-20 h-20 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Assessment Not Found</h2>
+                        <p class="text-gray-600 text-lg mb-6">Ready to discover your career path? Take our comprehensive assessment to get personalized insights.</p>
+                        <a href="assessment_test.html" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-xl transition-all duration-300 text-lg font-semibold">Start Assessment</a>
                     </div>
+                </div>
+            `;
+            return;
+        }
+
+        welcomeMessage.textContent = `Welcome back, ${results.userName}!`;
+        resultsDisplay.innerHTML = `
+            <div class="bg-white rounded-3xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>Personal Details</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl border"><span class="text-gray-500">Name</span><span class="text-gray-800 font-semibold">${results.userName}</span></div>
+                    <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl border"><span class="text-gray-500">Age</span><span class="text-gray-800 font-semibold">${results.age}</span></div>
+                    <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl border"><span class="text-gray-500">Gender</span><span class="text-gray-800 font-semibold">${results.gender}</span></div>
+                    <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl border"><span class="text-gray-500">Class</span><span class="text-gray-800 font-semibold">${results.studentClass}</span></div>
+                </div>
+            </div>
+            <div class="bg-white rounded-3xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>Assessment Results</h3>
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2"><span class="text-gray-500">Primary Stream / Interest</span></div>
+                    <div class="p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border"><span class="text-gray-800 font-semibold text-lg">${results.stream}</span></div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-4"><span class="text-gray-500">Recommended Fields</span><span class="text-gray-400 text-sm">${results.specializedFields.length} areas</span></div>
+                    <div class="space-y-3">
+                        ${results.specializedFields.map((field) => `<div class="p-3 bg-gray-50 rounded-xl border hover:bg-gray-100 transition-all duration-300"><span class="text-gray-700 font-medium">${field}</span></div>`).join('')}
+                    </div>
+                </div>
             </div>
         `;
-        return;
     }
 
-    welcomeMessage.textContent = `Welcome back, ${results.userName}!`;
-    
-    // The rest of the function remains the same
-    resultsDisplay.innerHTML = `
-        <div class="bg-white rounded-3xl p-8 shadow-lg">
-            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                </svg>
-                Personal Details
-            </h3>
-            <div class="space-y-4">
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-                    <span class="text-gray-500">Name</span>
-                    <span class="text-gray-800 font-semibold">${results.userName}</span>
-                </div>
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-                    <span class="text-gray-500">Age</span>
-                    <span class="text-gray-800 font-semibold">${results.age}</span>
-                </div>
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-                    <span class="text-gray-500">Gender</span>
-                    <span class="text-gray-800 font-semibold">${results.gender}</span>
-                </div>
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-                    <span class="text-gray-500">Class</span>
-                    <span class="text-gray-800 font-semibold">${results.studentClass}</span>
-                </div>
-            </div>
-        </div>
+    function displayProfilePicture(username) { /* ... Your existing code for this function ... */ }
+    function retakeAssessment() { window.location.href = 'assessment_test.html'; }
+    function shareProfile() { /* ... Your existing code for this function ... */ }
+    pictureUpload.addEventListener('change', async (event) => { /* ... Your existing code for this event listener ... */ });
 
-        <div class="bg-white rounded-3xl p-8 shadow-lg">
-            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                </svg>
-                Assessment Results
-            </h3>
-            
-            <div class="mb-6">
-                <div class="flex justify-between items-center mb-2">
-                    <span class="text-gray-500">General Interest</span>
-                </div>
-                <div class="p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border border-gray-200">
-                    <span class="text-gray-800 font-semibold text-lg">${results.generalInterest}</span>
-                </div>
-            </div>
-
-            <div>
-                <div class="flex justify-between items-center mb-4">
-                    <span class="text-gray-500">Specialized Fields</span>
-                    <span class="text-gray-400 text-sm">${results.specializedFields.length} areas</span>
-                </div>
-                <div class="space-y-3">
-                    ${results.specializedFields.map((field, index) => `
-                        <div class="p-3 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-all duration-300">
-                            <span class="text-gray-700 font-medium">${field}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        </div>
-    `;
-}
-
-        function displayProfilePicture(username) {
-            profilePicture.src = `${backend}/uploads/${username}.jpg?t=${new Date().getTime()}`;
-            profilePicture.onerror = () => {
-                profilePicture.src = "https://placehold.co/160x160/e5e7eb/4b5563?text=Profile";
-            };
-        }
-
-        function retakeAssessment() {
-            window.location.href = 'assessment_test.html';
-        }
-
-        function shareProfile() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'My Career Assessment Results',
-                    text: 'Check out my career assessment results!',
-                    url: window.location.href
-                });
+    // --- Main logic that runs when the page loads ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const instantDataString = sessionStorage.getItem('latestAssessment');
+        
+        if (instantDataString) {
+            const instantData = JSON.parse(instantDataString);
+            displayResults(instantData);
+            displayProfilePicture(instantData.username); // Use the unique username
+            sessionStorage.removeItem('latestAssessment');
+        } else {
+            // This is the fallback for refresh
+            const user = getLoggedInUser();
+            if (user && user.username) {
+                // --- FIX: Use the unique 'username' for fetching, not the full 'name' ---
+                fetchAssessmentResults(user.username);
             } else {
-                navigator.clipboard.writeText(window.location.href).then(() => {
-                    alert('Profile link copied to clipboard!');
-                });
+                displayResults(null); 
             }
         }
-
-        pictureUpload.addEventListener('change', async (event) => {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const user = getUserName();
-            if (!user) {
-                alert("You must be logged in to upload a picture.");
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append('profilePicture', file);
-            formData.append('username', user);
-
-            try {
-                const res = await fetch(`${backend}/upload-picture`, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (res.ok) {
-                    alert('Profile picture uploaded successfully!');
-                    displayProfilePicture(user);
-                } else {
-                    const data = await res.json();
-                    alert(data.error);
-                }
-            } catch (error) {
-                console.error('Failed to upload picture:', error);
-                alert('Failed to upload picture. Please try again.');
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const userName = getUserName();
-            if (userName) {
-                fetchAssessmentResults(userName);
-            } else {
-                fetchAssessmentResults('demo_user');
-            }
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
