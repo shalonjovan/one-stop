@@ -18,5 +18,17 @@
     "name": "Shalon",
     "username": "Jo",
     "password": "$2b$10$fRXnfQmuea0mL/Zj32cgHeN8AU4u3/PAcdGRFH0bZ.G1tLIc3dGmm"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  },
+  {
+    "name": "Tushyent",
+    "username": "Tush",
+    "password": "$2b$10$.ZuJWsNgteaGHD1xYYv0heapj7.BNrAKAqSRX06oI0qxA5dMlBLcC"
+=======
+>>>>>>> b75b1e5831086cb2cccc1ce4e156646382c48190
+>>>>>>> 9230aa782cc5aec3f345c774daf071379809d24b
+>>>>>>> 4b2f22c48107afa06c2a276b2845b98838e23738
   }
 ]

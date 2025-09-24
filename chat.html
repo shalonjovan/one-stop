@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Career Assistant | Pathfinder</title>
+    <title>Career Assistant | VidyaGyan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -15,12 +19,12 @@
         }
 
         :root {
-            --primary-color: #2563eb;
+            --primary-color: #5687f1;
             --primary-dark: #1d4ed8;
             --accent-color: #3b82f6;
             --text-color: #1f2937;
             --light-text: #ffffff;
-            --light-bg: #f8fafc;
+            --light-bg: #93b7eb;
             --border-radius: 12px;
             --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --navbar-bg: #1e293b;
@@ -36,94 +40,36 @@
             flex-direction: column;
         }
 
-        /* Navbar Styles */
-        .navbar {
-            background-color: var(--navbar-bg);
-            padding: 0.75rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            color: white;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .logo i {
-            margin-right: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: white;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .nav-right .notification-btn,
-        .nav-right .profile-btn {
-            background: none;
-            border: none;
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            cursor: pointer;
-            padding: 0.5rem;
+        /* Custom CSS for the Chatbot Button */
+        #chatbot-button {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            cursor: pointer;
             transition: all 0.3s ease;
+            border: 3px solid #6366f1;
         }
 
-        .nav-right .notification-btn:hover,
-        .nav-right .profile-btn:hover {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.1);
+        #chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
         }
 
-        .for-you-btn {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .for-you-btn:hover {
-            background-color: var(--primary-dark);
-        }
-
-        .hamburger {
-            display: none;
-            color: white;
-            font-size: 1.25rem;
-            cursor: pointer;
+        #chatbot-button img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            border-radius: 50%;
         }
 
         /* Chat Styles */
@@ -174,7 +120,7 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            background-color: var(--light-bg);
+            background-color: #f8fafc;
         }
 
         .message {
@@ -253,31 +199,11 @@
             border-radius: 0 8px 8px 0;
         }
 
-        .footer {
-            background-color: var(--navbar-bg);
-            color: #cbd5e1;
-            text-align: center;
-            padding: 1rem;
-            margin-top: auto;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
             .chat-container {
                 margin: 10px;
                 height: calc(100vh - 120px);
-            }
-
-            .navbar {
-                padding: 0.75rem 1rem;
             }
 
             .message {
@@ -287,33 +213,65 @@
     </style>
 </head>
 
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">
-            <i class="fas fa-compass"></i>
-            Pathfinder
-        </div>
-        <ul class="nav-links">
-            <li><a href="./colleges.html">Colleges</a></li>
-            <li><a href="./career_paths.html">Career Paths</a></li>
-            <li><a href="#roadmaps">Roadmaps</a></li>
-            <li><a href="#study-groups">Study Groups</a></li>
-            <li><a href="#others">Others</a></li>
-        </ul>
-        <div class="nav-right">
-            <button class="notification-btn" title="Notifications">
-                <i class="fas fa-bell"></i>
+<body class="bg-gray-100">
+
+    <!-- Header Navigation Bar -->
+    <header class="relative z-20 w-full p-2 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="text-white focus:outline-none md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
             </button>
-            <button class="profile-btn" title="Profile" onclick = "location.href='profile.html'">
-                <i class="fas fa-user"></i>
-            </button>
-            <button class="for-you-btn">For You</button>
+            <!-- Logo and Site Name -->
+            <div class="flex items-center space-x-2">
+                <a href="index.html">
+                    <img src="./assets/mainlogo.png" alt="VidyaGyan Logo" class="w-10 h-10">
+                </a>
+                <span class="text-3xl font-bold text-white">VidyaGyan</span>
+            </div>
         </div>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-4 text-base">
+            <a href="career_paths.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
+            <a href="roadmaps/roadmap.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
+            <a href="colleges.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="exams.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Exams</a>
+            <a href="resources.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Resources</a>
+            <a href="study_groups.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study Groups</a>
+            <a href="scholarship.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Scholarships</a>
+        </nav>
+        <!-- Action Buttons (Home, Profile, and For You) -->
+        <div class="hidden md:flex items-center space-x-4">
+            <a href="home.html"
+                class="flex items-center space-x-2 text-white hover:text-gray-200 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">
+                <!-- Home Icon -->
+                <img src="assets/home.png" alt="Home" class="w-8 h-8">
+            </a>
+            <a href="profile.html"
+                class="flex items-center space-x-2 text-white hover:text-gray-200 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">
+                <!-- Profile Icon -->
+                <img src="assets/profile.jpg" alt="Profile" class="w-8 h-8">
+            </a>
+            <a href="foryou.html"
+                class="text-sm px-6 py-3 rounded-full border-2 border-blue-500 text-blue-500 hover:text-white hover:bg-blue-500 transition-colors duration-300">For You</a>
         </div>
-    </nav>
+    </header>
+
+    <!-- Chatbot Button (since we're on chat page, it can link to home or be disabled) -->
+    <a href="home.html" id="chatbot-button" title="Go to Home">
+        <img src="./assets/images/chat.jpeg" alt="Chatbot" />
+    </a>
 
     <!-- Chat Container -->
     <div class="chat-container">
@@ -332,7 +290,7 @@
         <div class="chat-window" id="chat-window">
             <!-- Initial welcome message -->
             <div class="message bot-message">
-                Hey there! 🎓 Congratulations on completing your studies! I'm your Pathfinder career assistant, and I'm here to help you discover amazing career paths that match who you are and what you love doing.
+                Hey there! 🎓 Congratulations on completing your studies! I'm your VidyaGyan career assistant, and I'm here to help you discover amazing career paths that match who you are and what you love doing.
 
 Whether you've just finished 10th or 12th grade, choosing your next step can feel overwhelming - but don't worry, we'll figure it out together!
 
@@ -353,8 +311,79 @@ To get started, could you tell me:
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Pathfinder. Helping students discover their perfect career path.</p>
+    <footer class="bg-gray-900 text-gray-300 p-6 pt-10 mt-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+            <!-- Logo Column (spans full height) -->
+            <div class="col-span-1 flex justify-center items-center">
+                <img src="./assets/mainlogo.png" alt="VidyaGyan Logo" class="w-75 h-60">
+            </div>
+
+            <!-- VidyaGyan Info Column -->
+            <div class="col-span-1 flex flex-col">
+                <h3 class="text-white font-bold text-xl mb-2">VidyaGyan</h3>
+                <p class="text-gray-400 text-sm mb-6">Your all-in-one platform for academic and career guidance.</p>
+                
+                <div class="mb-4">
+                    <h4 class="text-white font-semibold text-lg mb-2">Blastorz</h4>
+                    <div class="flex space-x-2 items-center mb-2">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                        </svg>
+                        <a href="mailto:team.blastorz@gmail.com" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                            team.blastorz@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex space-x-2 items-center">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <a href="members.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                            Team Blastorz Info
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Column -->
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Navigation</h4>
+                <ul class="space-y-3">
+                    <li><a href="home.html" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
+                    <li><a href="profile.html" class="text-gray-300 hover:text-white transition-colors duration-200">Profile</a></li>
+                    <li><a href="foryou.html" class="text-gray-300 hover:text-white transition-colors duration-200">For You</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources Column -->
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Resources</h4>
+                <ul class="space-y-3">
+                    <li><a href="colleges.html" class="text-gray-300 hover:text-white transition-colors duration-200">Colleges</a></li>
+                    <li><a href="career_paths.html" class="text-gray-300 hover:text-white transition-colors duration-200">Career Paths</a></li>
+                    <li><a href="roadmaps/roadmap.html" class="text-gray-300 hover:text-white transition-colors duration-200">Roadmaps</a></li>
+                    <li><a href="exams.html" class="text-gray-300 hover:text-white transition-colors duration-200">Entrance Exams</a></li>
+                    <li><a href="resources.html" class="text-gray-300 hover:text-white transition-colors duration-200">Study Materials</a></li>
+                    <li><a href="scholarship.html" class="text-gray-300 hover:text-white transition-colors duration-200">Scholarships</a></li>
+                </ul>
+            </div>
+
+            <!-- Community & Account Column -->
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Community & Account</h4>
+                <ul class="space-y-3">
+                    <li><a href="login.html" class="text-gray-300 hover:text-white transition-colors duration-200">Login</a></li>
+                    <li><a href="signup.html" class="text-gray-300 hover:text-white transition-colors duration-200">Sign Up</a></li>
+                    <li><a href="study_groups.html" class="text-gray-300 hover:text-white transition-colors duration-200">Study Groups</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-700 mt-6 pt-3 text-center">
+            <p class="text-gray-400 text-sm">
+                Copyright © 2025 - Team Blastorz 💥
+            </p>
+        </div>
     </footer>
 
     <script>
@@ -365,7 +394,7 @@ To get started, could you tell me:
         const apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent";
 
         // System prompt for Gemini (will be included in each request)
-        const systemPrompt = `You are PathfinderBot, a friendly and encouraging career assistant specifically designed for Indian students who have completed their 10th or 12th grade and are unsure about their next steps.
+        const systemPrompt = `You are VidyaGyanBot, a friendly and encouraging career assistant specifically designed for Indian students who have completed their 10th or 12th grade and are unsure about their next steps.
 
 Your guidelines:
 1. Your primary goal is to help students discover career paths and educational options based on their interests, favorite subjects, strengths, and dreams.
@@ -471,7 +500,7 @@ Your guidelines:
                 // Add conversation history
                 conversationHistory.forEach((msg, index) => {
                     if (index === 0) {
-                        fullPrompt += `Assistant: Hey there! 🎓 Congratulations on completing your studies! I'm your Pathfinder career assistant, and I'm here to help you discover amazing career paths that match who you are and what you love doing.
+                        fullPrompt += `Assistant: Hey there! 🎓 Congratulations on completing your studies! I'm your VidyaGyan career assistant, and I'm here to help you discover amazing career paths that match who you are and what you love doing.
 
 Whether you've just finished 10th or 12th grade, choosing your next step can feel overwhelming - but don't worry, we'll figure it out together!
 
@@ -530,14 +559,8 @@ To get started, could you tell me:
             }
         }
 
-        // Hamburger menu functionality
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('mobile-menu-active');
-        });
-
         // Initialize the chat
-        console.log("Student career guidance chat initialized! 🚀");
+        console.log("VidyaGyan career guidance chat initialized! 🚀");
     </script>
 </body>
 
