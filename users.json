@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "name": "sa",
     "username": "sa",
     "password": "$2b$10$JvbVG6Kx3xX8xvsVNnSZL.ipivPGbILfSM2bjF2/sX14Xqos0YKlG"
@@ -13,5 +14,30 @@
     "name": "go",
     "username": "go",
     "password": "$2b$10$gfrX9IRr12QER9bnBpJgv.pW2/j12K9CvjzA8bAXeIphFwmrgxZ7C"
+=======
+    "name": "Shalon",
+    "username": "a",
+    "password": "$2b$10$g1jE0lHN04tjnPAsvv2JouFLI6lqn29I4itBWuAobW4XxjpgNUgHq"
+  },
+  {
+    "name": "hello",
+    "username": "k",
+    "password": "$2b$10$2cJeIf1v1e9pU4N4lU9IkOYlHbJvWhzjtC6jRndXKkLtltGw2AVKe"
+  },
+  {
+    "name": "tushyent",
+    "username": "v",
+    "password": "$2b$10$8MOwj0P/XHbn4ZdjQoEyT.OPacjbsHjYcv59t.OMNV/z.jRgsk1nW"
+  },
+  {
+    "name": "santhoooo",
+    "username": "santh",
+    "password": "$2b$10$8TAyI2.9lUwTvd2FGVHG5.6fLhQAK97YGV7HobobD.ptprQ0crqky"
+  },
+  {
+    "name": "Tushyent",
+    "username": "tush",
+    "password": "$2b$10$u3lLeCGYV0LVfgBfWQWQqeXPcw6//sSks26KSn.Q2VSxx1jmXETsi"
+>>>>>>> c9f6c4026839b86412ad24ccf74ac1e233f8e85b
   }
 ]
