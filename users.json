@@ -25,6 +25,12 @@
     "password": "$2b$10$2cJeIf1v1e9pU4N4lU9IkOYlHbJvWhzjtC6jRndXKkLtltGw2AVKe"
   },
   {
+<<<<<<< HEAD
+    "name": "Tushyent NP",
+    "email": "tushyent2410053@ssn.edu.in",
+    "username": "tushyent2410053@ssn.edu.in",
+    "isGoogle": true
+=======
     "name": "tushyent",
     "username": "v",
     "password": "$2b$10$8MOwj0P/XHbn4ZdjQoEyT.OPacjbsHjYcv59t.OMNV/z.jRgsk1nW"
