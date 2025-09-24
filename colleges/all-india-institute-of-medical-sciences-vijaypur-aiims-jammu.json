@@ -1,0 +1,83 @@
+[{
+    "id": "all-india-institute-of-medical-sciences-vijaypur-aiims-jammu",
+    "name": "All India Institute of Medical Sciences, Vijaypur (AIIMS Jammu)",
+    "tagline": "Fees, Course, Admissions 2025",
+    "address": "Vijaypur, Jammu",
+    "ratings": "4.6/5",
+    "badges": [
+        "A- NAAC accredited",
+        "Government Institute",
+        "Estd. 2016"
+    ],
+    "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=All+India+Institute+of+Medical+Sciences,+Vijaypur+(AIIMS+Jammu)+Banner",
+    "logoUrl": "../assets/logo/AIIMSJammu.png",
+    "lastUpdated": "24 Sep 25",
+    "content": {
+        "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        All India Institute of Medical Sciences Jammu, established in 2019, is a premier government medical institution located in Vijaypur, Jammu. As part of the prestigious AIIMS network, it offers world-class medical education and healthcare services. The institute provides undergraduate MBBS programs with 100 seats, postgraduate MD/MS programs with 63+13 seats, and doctoral programs. AIIMS Jammu is known for its modern infrastructure, experienced faculty, and commitment to providing quality healthcare education and services to the region.\n    </p>\n</div>",
+        "Courses": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Courses Offered</h2>\n    <ul class=\"space-y-4\">\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Bachelor of Medicine and Bachelor of Surgery (MBBS)</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 5.5 years (including internship) | Seats: 125 | NEET UG Required</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Bachelor of Science (B.Sc) Nursing</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 4 years | Post-basic nursing programs available</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Doctor of Medicine (MD)</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 3 years | Multiple specializations | NEET PG Required</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">Master of Surgery (MS)</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 3 years | Surgical specializations</p>\n        </li>\n        <li class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">PhD Programs</h3>\n            <p class=\"text-sm text-gray-500\">Duration: 3-5 years | Medical and allied sciences</p>\n        </li>\n    </ul>\n</div>",
+        "Fees": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Fee Structure</h2>\n    <div class=\"space-y-4\">\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">MBBS Program</h3>\n            <p class=\"text-sm text-gray-500\">Total Fees: \u20b929,280 for 5.5 years</p>\n            <p class=\"text-sm text-gray-500\">Annual Fee: \u20b95,856 (Highly subsidized)</p>\n        </div>\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">B.Sc Nursing</h3>\n            <p class=\"text-sm text-gray-500\">Total Fees: \u20b96,365 for 4 years</p>\n        </div>\n        <div class=\"p-4 rounded-md border border-gray-200\">\n            <h3 class=\"font-bold text-lg\">MD/MS Programs</h3>\n            <p class=\"text-sm text-gray-500\">MD Fees: \u20b95,111 for 3 years</p>\n            <p class=\"text-sm text-gray-500\">MS Fees: \u20b95,111 for 3 years</p>\n        </div>\n    </div>\n</div>"
+    },
+    "placements": {
+        "salaryByYear": {
+            "labels": [
+                "2022",
+                "2023",
+                "2024"
+            ],
+            "highestSalary": [
+                3000000,
+                3200000,
+                3500000
+            ],
+            "averageSalary": [
+                800000,
+                900000,
+                1000000
+            ]
+        },
+        "salaryDistribution": {
+            "2022": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    20,
+                    40,
+                    30,
+                    10
+                ]
+            },
+            "2023": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    15,
+                    35,
+                    35,
+                    15
+                ]
+            },
+            "2024": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    12,
+                    30,
+                    40,
+                    18
+                ]
+            }
+        }
+    }
+}]
