@@ -123,6 +123,8 @@ const matchFieldsToCollegeTypes = (specializedFields) => {
 
 // --- API Endpoints ---
 
+<<<<<<< HEAD
+=======
 // --- ADDED: Endpoint to handle profile picture upload ---
 // server.js
 
@@ -191,6 +193,7 @@ app.get('/profile-picture/:username', (req, res) => {
     }
 });
 
+>>>>>>> c9f6c4026839b86412ad24ccf74ac1e233f8e85b
 app.get('/get-colleges', (req, res) => {
     const colleges = readJsonFile(collegesFilePath);
     res.json(colleges);

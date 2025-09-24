@@ -1,5 +1,20 @@
 [
   {
+<<<<<<< HEAD
+    "name": "sa",
+    "username": "sa",
+    "password": "$2b$10$JvbVG6Kx3xX8xvsVNnSZL.ipivPGbILfSM2bjF2/sX14Xqos0YKlG"
+  },
+  {
+    "name": "hi",
+    "username": "hi",
+    "password": "$2b$10$8Sj71JMt5BlQXfwLo4wB1uQr1Rn9I2Dw1zmtTa6e/6xqbkOv4h9Wu"
+  },
+  {
+    "name": "go",
+    "username": "go",
+    "password": "$2b$10$gfrX9IRr12QER9bnBpJgv.pW2/j12K9CvjzA8bAXeIphFwmrgxZ7C"
+=======
     "name": "Shalon",
     "username": "a",
     "password": "$2b$10$g1jE0lHN04tjnPAsvv2JouFLI6lqn29I4itBWuAobW4XxjpgNUgHq"
