@@ -552,5 +552,216 @@
       "Software Engineering for Scientific Applications",
       "Cheminformatics"
     ]
+  },
+  {
+    "username": "shalon",
+    "userName": "shalon",
+    "age": "17",
+    "studentClass": "12",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "Which aspect of computer science excites you the most?",
+        "options": [
+          "Software Development",
+          "Data Science & Analytics",
+          "Cybersecurity",
+          "Artificial Intelligence"
+        ]
+      },
+      {
+        "question": "If you could build a robot, what task would you program it to perform?",
+        "options": [
+          "Household chores",
+          "Medical assistance",
+          "Space exploration",
+          "Manufacturing"
+        ]
+      },
+      {
+        "question": "Which scientific field are you most drawn to?",
+        "options": [
+          "Physics",
+          "Chemistry",
+          "Biology",
+          "Engineering"
+        ]
+      },
+      {
+        "question": "Do you prefer working with theoretical concepts or practical applications?",
+        "options": [
+          "Theoretical",
+          "Practical",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "Are you more interested in analyzing existing systems or designing new ones?",
+        "options": [
+          "Analyzing",
+          "Designing",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "What type of problem-solving do you enjoy most?",
+        "options": [
+          "Logical & Mathematical",
+          "Creative & Innovative",
+          "Analytical & Investigative",
+          "Collaborative & Teamwork-based"
+        ]
+      },
+      {
+        "question": "Which area of technology interests you the most?",
+        "options": [
+          "Robotics",
+          "Nanotechnology",
+          "Biotechnology",
+          "Renewable Energy"
+        ]
+      },
+      {
+        "question": "Would you prefer a career that involves working independently or collaboratively?",
+        "options": [
+          "Independently",
+          "Collaboratively",
+          "Both",
+          "Neither"
+        ]
+      },
+      {
+        "question": "Are you comfortable working with large amounts of data?",
+        "options": [
+          "Yes",
+          "No",
+          "Maybe",
+          "Unsure"
+        ]
+      },
+      {
+        "question": "How important is making a tangible impact on the world to your career choice?",
+        "options": [
+          "Very Important",
+          "Somewhat Important",
+          "Not Very Important",
+          "Not Important"
+        ]
+      },
+      {
+        "question": "What kind of work environment do you prefer?",
+        "options": [
+          "Fast-paced and dynamic",
+          "Structured and organized",
+          "Flexible and independent",
+          "Collaborative and team-oriented"
+        ]
+      },
+      {
+        "question": "Which skill best describes your strength?",
+        "options": [
+          "Problem-solving",
+          "Critical thinking",
+          "Communication",
+          "Coding"
+        ]
+      },
+      {
+        "question": "Are you more interested in the 'how' or the 'why' behind scientific discoveries?",
+        "options": [
+          "How (Practical application)",
+          "Why (Theoretical understanding)",
+          "Both equally",
+          "Neither"
+        ]
+      },
+      {
+        "question": "Do you prefer working indoors or outdoors?",
+        "options": [
+          "Indoors",
+          "Outdoors",
+          "Both",
+          "Neither"
+        ]
+      },
+      {
+        "question": "Imagine you have unlimited resources; what scientific problem would you tackle first?",
+        "options": [
+          "Climate change",
+          "Disease eradication",
+          "Space exploration",
+          "Artificial general intelligence"
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "Which aspect of computer science excites you the most?",
+        "answer": "Cybersecurity"
+      },
+      {
+        "question": "If you could build a robot, what task would you program it to perform?",
+        "answer": "Space exploration"
+      },
+      {
+        "question": "Which scientific field are you most drawn to?",
+        "answer": "Physics"
+      },
+      {
+        "question": "Do you prefer working with theoretical concepts or practical applications?",
+        "answer": "Both equally"
+      },
+      {
+        "question": "Are you more interested in analyzing existing systems or designing new ones?",
+        "answer": "Both equally"
+      },
+      {
+        "question": "What type of problem-solving do you enjoy most?",
+        "answer": "Analytical & Investigative"
+      },
+      {
+        "question": "Which area of technology interests you the most?",
+        "answer": "Robotics"
+      },
+      {
+        "question": "Would you prefer a career that involves working independently or collaboratively?",
+        "answer": "Collaboratively"
+      },
+      {
+        "question": "Are you comfortable working with large amounts of data?",
+        "answer": "Maybe"
+      },
+      {
+        "question": "How important is making a tangible impact on the world to your career choice?",
+        "answer": "Somewhat Important"
+      },
+      {
+        "question": "What kind of work environment do you prefer?",
+        "answer": "Structured and organized"
+      },
+      {
+        "question": "Which skill best describes your strength?",
+        "answer": "Communication"
+      },
+      {
+        "question": "Are you more interested in the 'how' or the 'why' behind scientific discoveries?",
+        "answer": "How (Practical application)"
+      },
+      {
+        "question": "Do you prefer working indoors or outdoors?",
+        "answer": "Outdoors"
+      },
+      {
+        "question": "Imagine you have unlimited resources; what scientific problem would you tackle first?",
+        "answer": "Artificial general intelligence"
+      }
+    ],
+    "specializedFields": [
+      "Cybersecurity for Space Systems",
+      "Quantum Computing for Cybersecurity",
+      "Applied Cryptography"
+    ]
   }
 ]
