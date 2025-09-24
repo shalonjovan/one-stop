@@ -1,0 +1,53 @@
+{
+  "careers": [
+    {
+      "name": "Engineering",
+      "tagline": "Technical innovation in Civil, Mechanical, Computer Science and more",
+      "image": "images/engineering.jpeg",
+      "info": "Engineering offers diverse specializations including Computer Science, Mechanical, Civil, Electrical, Electronics, Aerospace, and Chemical Engineering. It combines scientific principles with practical applications to solve real-world problems and drive technological advancement.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2958ee5bfa7fea1c1d4ef' width='100%' height='500px' frameBorder='0'></iframe>"
+    },
+    {
+      "name": "Medicine",
+      "tagline": "Healthcare careers in MBBS, Dentistry, Nursing and allied sciences",
+      "image": "images/medicine.jpeg",
+      "info": "Medical field encompasses MBBS, BDS, BAMS, BHMS, Nursing, Pharmacy, Physiotherapy, and Medical Laboratory Technology. It offers the opportunity to save lives, improve health outcomes, and contribute to medical research and innovation.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2947de5bfa7fea1c18f1b' width='100%' height='500px' frameBorder='0' ></iframe>"
+    },
+    {
+      "name": "Architecture",
+      "tagline": "Creative design of buildings, spaces and urban environments",
+      "image": "images/architecture.jpeg",
+      "info": "Architecture combines creativity with technical knowledge to design buildings, landscapes, and urban spaces. It includes specializations in Interior Design, Urban Planning, Landscape Architecture, and Sustainable Design, shaping the built environment of the future.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d29d1be5bfa7fea1c3e7b9' width='100%' height='500px' frameBorder='0' ></iframe>"
+    },
+    {
+      "name": "Defense",
+      "tagline": "Military service in Army, Navy, Air Force and paramilitary",
+      "image": "images/defense.jpeg",
+      "info": "Defense careers include Indian Army, Navy, Air Force, Coast Guard, and Paramilitary forces. These careers offer opportunities to serve the nation, develop leadership skills, and work with cutting-edge technology in challenging environments.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d29b4be5bfa7fea1c36b3a' width='100%' height='500px' frameBorder='0' ></iframe>"
+    },
+    {
+      "name": "Banking & Finance",
+      "tagline": "Financial services in banking, investment and economic sectors",
+      "image": "images/banking.jpeg",
+      "info": "Banking and Finance sector includes careers in Public and Private Banks, Insurance, Investment Banking, Financial Planning, Stock Market Analysis, and Fintech. It offers opportunities in risk management, financial consulting, and economic development.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2988ae5bfa7fea1c2abe4' width='100%' height='500px' frameBorder='0' ></iframe>"
+    },
+    {
+      "name": "Arts & Science",
+      "tagline": "Pure sciences, research and liberal arts education",
+      "image": "images/arts_science.jpeg",
+      "info": "Pure Sciences include Physics, Chemistry, Biology, Mathematics, and Environmental Science leading to research careers, teaching, and scientific innovation. Liberal Arts encompasses Literature, Philosophy, History, and Social Sciences fostering critical thinking and cultural understanding.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d297b3e5bfa7fea1c26fbd' width='100%' height='500px' frameBorder='0' ></iframe>"
+    },
+    {
+      "name": "Computer Science",
+      "tagline": "Software development, AI, cybersecurity and digital innovation",
+      "image": "images/computer_science.jpeg",
+      "info": "Computer Science offers specializations in Software Engineering, Artificial Intelligence, Machine Learning, Cybersecurity, Data Science, Web Development, Mobile App Development, and Cloud Computing. It's at the forefront of digital transformation and technological innovation.",
+      "iframe": "<iframe src='https://roadmap.sh/r/embed?id=68d2958ee5bfa7fea1c1d4ef' width='100%' height='500px' frameBorder='0'></iframe>"
+    }
+  ]
+}

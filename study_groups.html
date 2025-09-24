@@ -59,36 +59,6 @@
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
 
-        .filter-modal {
-            background-color: rgba(30, 41, 59, 0.8);
-        }
-        
-        .filter-content {
-            background-color: #ffffff;
-            border: 2px solid #3b82f6;
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
-        }
-
-        .filter-input, .filter-select {
-            border: 2px solid #bfdbfe;
-            transition: all 0.3s ease;
-        }
-
-        .filter-input:focus, .filter-select:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .apply-btn {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            transition: all 0.3s ease;
-        }
-
-        .apply-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
-        }
-
         .header-bg {
             background: #1e293b;
         }
@@ -139,8 +109,8 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
             justify-content: center;
             align-items: start;
         }
@@ -154,18 +124,6 @@
         @media (min-width: 769px) and (max-width: 1024px) {
             .grid-container {
                 grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1025px) {
-            .grid-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (min-width: 1400px) {
-            .grid-container {
-                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -242,17 +200,11 @@
     <!-- Main Content -->
     <main class="main-content p-8">
         <div class="w-full max-w-7xl mx-auto mb-6">
-            <div class="flex justify-between items-center mb-8">
-                <div class="flex-1 text-center">
+            <div class="flex justify-center items-center mb-8">
+                <div class="text-center">
                     <h1 class="page-title text-4xl font-bold drop-shadow-lg">Study Groups</h1>
                     <p class="text-gray-600 mt-2">Join active study groups and collaborate with peers</p>
                 </div>
-                <button id="filter-btn" class="flex items-center space-x-2 px-6 py-3 rounded-full bg-slate-800 text-white border-2 border-slate-700 hover:bg-slate-700 hover:border-slate-600 transition-all duration-300 shadow-lg ml-4">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 9.414V16a1 1 0 01-1.293.954l-2-1A1 1 0 018 15V9.414L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
-                    </svg>
-                    <span class="font-bold">Filters</span>
-                </button>
             </div>
             
             <div class="grid-container" id="groups-grid">
@@ -261,45 +213,10 @@
         </div>
     </main>
 
-    <!-- Filter Modal -->
-    <div id="filter-modal" class="filter-modal fixed inset-0 flex items-center justify-center p-4 hidden z-50">
-        <div class="filter-content rounded-2xl shadow-2xl p-8 w-full max-w-md mx-auto">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-900">Search & Filter Groups</h2>
-                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-all">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="space-y-6">
-                <div>
-                    <label for="search" class="block text-gray-800 font-semibold mb-2">Search</label>
-                    <input type="text" id="search-input" class="filter-input w-full px-4 py-3 rounded-xl placeholder-gray-400 focus:outline-none transition-all" placeholder="Group name or subject...">
-                </div>
-                <div>
-                    <label for="tag-select" class="block text-gray-800 font-semibold mb-2">Subject/Tag</label>
-                    <select id="tag-select" class="filter-select block w-full px-4 py-3 rounded-xl focus:outline-none transition-all appearance-none bg-white">
-                        <option value="">All Subjects</option>
-                    </select>
-                </div>
-                <button id="apply-filter-btn" class="apply-btn w-full px-6 py-4 rounded-xl text-white font-semibold text-lg shadow-lg">Apply Filters</button>
-            </div>
-        </div>
-    </div>
-
     <script>
         const groupsGrid = document.getElementById('groups-grid');
-        const filterBtn = document.getElementById('filter-btn');
-        const filterModal = document.getElementById('filter-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-        const applyFilterBtn = document.getElementById('apply-filter-btn');
-        const searchInput = document.getElementById('search-input');
-        const tagSelect = document.getElementById('tag-select');
 
         let groupsData = [];
-        let allTags = new Set();
 
         function getIconForGroup(tags) {
             // Return appropriate chat/study icon based on tags
@@ -400,31 +317,12 @@
             });
         }
 
-        function populateTagFilter() {
-            // Clear existing options except "All Subjects"
-            tagSelect.innerHTML = '<option value="">All Subjects</option>';
-            
-            // Add unique tags to the select dropdown
-            Array.from(allTags).sort().forEach(tag => {
-                const option = document.createElement('option');
-                option.value = tag;
-                option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
-                tagSelect.appendChild(option);
-            });
-        }
-
         async function fetchStudyGroups() {
             try {
                 const response = await fetch('chat_rooms.json');
                 const data = await response.json();
                 groupsData = data.chatRooms || [];
                 
-                // Collect all unique tags
-                groupsData.forEach(group => {
-                    group.tags.forEach(tag => allTags.add(tag));
-                });
-                
-                populateTagFilter();
                 renderGroups(groupsData);
             } catch (error) {
                 console.error('Failed to fetch study groups:', error);
@@ -540,51 +438,9 @@
                     }
                 ];
                 
-                // Collect tags from fallback data
-                groupsData.forEach(group => {
-                    group.tags.forEach(tag => allTags.add(tag));
-                });
-                
-                populateTagFilter();
                 renderGroups(groupsData);
             }
         }
-
-        function applyFilters() {
-            const searchText = searchInput.value.toLowerCase();
-            const selectedTag = tagSelect.value.toLowerCase();
-
-            const filteredGroups = groupsData.filter(group => {
-                const matchesSearch = group.name.toLowerCase().includes(searchText) || 
-                                    group.description.toLowerCase().includes(searchText) ||
-                                    group.tags.some(tag => tag.toLowerCase().includes(searchText));
-                const matchesTag = selectedTag === '' || group.tags.some(tag => tag.toLowerCase() === selectedTag);
-                
-                return matchesSearch && matchesTag;
-            });
-
-            renderGroups(filteredGroups);
-            filterModal.classList.add('hidden');
-        }
-
-        // Event Listeners
-        filterBtn.addEventListener('click', () => {
-            filterModal.classList.remove('hidden');
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            filterModal.classList.add('hidden');
-        });
-
-        filterModal.addEventListener('click', (e) => {
-            if (e.target === filterModal) {
-                filterModal.classList.add('hidden');
-            }
-        });
-
-        applyFilterBtn.addEventListener('click', () => {
-            applyFilters();
-        });
 
         // Mobile menu toggle
         document.getElementById('menu-btn').addEventListener('click', function() {

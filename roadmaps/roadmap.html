@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Roadmaps - Pathfinder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #617ba2;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        .header {
+            position: relative;
+            z-index: 20;
+            width: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            background-color: #1f2937;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .menu-btn {
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: none;
+        }
+
+        .menu-btn svg {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo svg {
+            width: 2rem;
+            height: 2rem;
+            color: white;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #d1d5db;
+            background-color: #374151;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .icon-btn {
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .icon-btn:hover {
+            color: #d1d5db;
+        }
+
+        .icon-btn svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .for-you-btn {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .for-you-btn:hover {
+            background-color: rgb(105, 96, 195);
+            color: #596b91;
+        }
+
+        /* Hero Section - Career Roadmap background */
+        .hero-section {
+            padding: 3rem 1rem;
+            text-align: center;
+            color: white;
+            background: #667fb6;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            opacity: 0.95;
+        }
+
+        .main-content {
+            background: #c8d8f0;
+            min-height: 80vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a202c;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto 2rem auto;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 0.75rem 3rem 0.75rem 1rem;
+            border: 2px solid #9bb5d6;
+            border-radius: 2rem;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            outline: none;
+            background: white;
+        }
+
+        .search-bar:focus {
+            border-color: #6b8db5;
+            box-shadow: 0 0 0 3px rgba(107, 141, 181, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #6b8db5;
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .search-btn:hover {
+            background: #5a7ca3;
+        }
+
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        .career-card {
+            background: white;
+            border: 2px solid #3b82f6;
+            border-radius: 1rem;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .career-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-color: #2563eb;
+        }
+
+        .career-icon {
+            width: 8rem;
+            height: 8rem;
+            background: #cbdbf1;
+            border: 2px solid #3b82f6;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            padding: 0.75rem;
+        }
+
+        .career-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .career-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .career-tagline {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .view-details-btn {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .view-details-btn:hover {
+            background: #4338ca;
+        }
+
+        .roadmap-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #10b981;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .roadmap-icon:hover {
+            background: #059669;
+            transform: scale(1.05);
+        }
+
+        .roadmap-icon::before {
+            content: "↗";
+            font-size: 1.2rem;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #6b7280;
+            font-size: 1.125rem;
+            margin-top: 2rem;
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .careers-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .careers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .main-content {
+                padding: 1rem;
+            }
+
+            .career-card {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .careers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                padding: 0.75rem;
+            }
+            
+            .header-right {
+                gap: 0.5rem;
+            }
+            
+            .for-you-btn {
+                padding: 0.375rem 0.75rem;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation Bar -->
+    <header class="header">
+        <div class="header-left">
+            <button id="menu-btn" class="menu-btn">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <div class="logo">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path>
+                </svg>
+                <span class="logo-text">Pathfinder</span>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="../colleges.html">Colleges</a>
+            <a href="../career_paths.html">Career Paths</a>
+            <a href="#" style="color: #93c5fd;">Roadmaps</a>
+            <a href="#">Study Groups</a>
+            <a href="#">Others</a>
+        </nav>
+        <div class="header-right">
+            <button class="icon-btn">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 2a6 6 0 016 6v3.586l1.707 1.707A1 1 0 0118 14H2a1 1 0 01.293-.707L4 11.586V8a6 6 0 016-6zM10 18a3 3 0 003-3H7a3 3 0 003 3z" />
+                </svg>
+            </button>
+            <button class="icon-btn">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <a href="#" class="for-you-btn">For You</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1 class="hero-title">Career Roadmaps</h1>
+        <p class="hero-subtitle">Choose your path after Class 10 or Class 12</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="section">
+                <h2 class="section-title">After Class 10</h2>
+                <div class="search-container">
+                    <input type="text" class="search-bar" id="class10Search" 
+                           placeholder="Search career options after Class 10...">
+                    <button class="search-btn">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="careers-grid" id="class10Grid"></div>
+                <div class="no-results" id="class10NoResults">No career options found matching your search.</div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">After Class 12</h2>
+                <div class="search-container">
+                    <input type="text" class="search-bar" id="class12Search" 
+                           placeholder="Search career options after Class 12...">
+                    <button class="search-btn">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="careers-grid" id="class12Grid"></div>
+                <div class="no-results" id="class12NoResults">No career options found matching your search.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let class10Data = [];
+        let class12Data = [];
+
+        // Career images mapping (using ../assets/icons/ path)
+        const careerImages = {
+            'Science Stream': '../assets/icons/science.png',
+            'Commerce Stream': '../assets/icons/math_statistics.png',
+            'Arts/Humanities': '../assets/icons/performing_arts.png',
+            'Vocational Courses': '../assets/icons/arts_design.png',
+            'Skill Based Courses': '../assets/icons/skills.png',
+            'Diploma Courses': '../assets/icons/engineer.png',
+            'Entrance Exams': '../assets/icons/education_training.png',
+            'Government Jobs': '../assets/icons/government.png',
+            'Engineering': '../assets/icons/engineer.png',
+            'Medicine': '../assets/icons/medical_science.png',
+            'Architecture': '../assets/icons/architect.png',
+            'Defense': '../assets/icons/defense_services.png',
+            'Banking & Finance': '../assets/icons/banking_finance.png',
+            'Arts & Science': '../assets/icons/arts_design.png',
+            'Computer Science': '../assets/icons/cs_it.png'
+        };
+
+        // Load JSON data
+        async function loadData() {
+            try {
+                const [class10Response, class12Response] = await Promise.all([
+                    fetch('class10.json'),
+                    fetch('class12.json')
+                ]);
+                
+                class10Data = await class10Response.json();
+                class12Data = await class12Response.json();
+                
+                displayCareers(class10Data.careers, 'class10Grid');
+                displayCareers(class12Data.careers, 'class12Grid');
+            } catch (error) {
+                console.error('Error loading data:', error);
+                // Fallback to show message
+                document.getElementById('class10Grid').innerHTML = '<p style="text-align: center; color: #6b7280;">Error loading career data. Please refresh the page.</p>';
+                document.getElementById('class12Grid').innerHTML = '<p style="text-align: center; color: #6b7280;">Error loading career data. Please refresh the page.</p>';
+            }
+        }
+
+        // Display career cards
+        function displayCareers(careers, gridId) {
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = '';
+            
+            careers.forEach(career => {
+                const card = document.createElement('div');
+                card.className = 'career-card';
+                const imageUrl = careerImages[career.name] || '../assets/icons/default.png';
+                
+                card.innerHTML = 
+                    '<div class="career-icon">' +
+                        '<img src="' + imageUrl + '" alt="' + career.name + '" onerror="this.style.display=\'none\'; this.parentElement.innerHTML=\'<div style=&quot;color: #6b8db5; font-size: 1.5rem;&quot;>📚</div>\'">' +
+                    '</div>' +
+                    '<div class="career-name">' + career.name + '</div>' +
+                    '<div class="career-tagline">' + career.tagline + '</div>' +
+                    '<div class="card-actions">' +
+                        '<a href="offline.html?career=' + encodeURIComponent(career.name) + '&type=' + (gridId === 'class10Grid' ? 'class10' : 'class12') + '" class="view-details-btn">' +
+                            'View Details' +
+                        '</a>' +
+                        '<a href="online.html?career=' + encodeURIComponent(career.name) + '&type=' + (gridId === 'class10Grid' ? 'class10' : 'class12') + '" class="roadmap-icon"></a>' +
+                    '</div>';
+                grid.appendChild(card);
+            });
+        }
+
+        // Search functionality
+        function setupSearch(searchId, gridId, dataSource) {
+            const searchInput = document.getElementById(searchId);
+            const noResultsDiv = document.getElementById(searchId.replace('Search', 'NoResults'));
+            
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredCareers = dataSource.careers.filter(career => 
+                    career.name.toLowerCase().includes(searchTerm) || 
+                    career.tagline.toLowerCase().includes(searchTerm)
+                );
+                
+                displayCareers(filteredCareers, gridId);
+                
+                if (filteredCareers.length === 0 && searchTerm !== '') {
+                    noResultsDiv.style.display = 'block';
+                } else {
+                    noResultsDiv.style.display = 'none';
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            // Add mobile menu functionality if needed
+            console.log('Mobile menu clicked');
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadData();
+            setupSearch('class10Search', 'class10Grid', class10Data);
+            setupSearch('class12Search', 'class12Grid', class12Data);
+        });
+    </script>
+</body>
+</html>
