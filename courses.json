@@ -1,0 +1,113 @@
+{
+    "Medicine & Health Sciences": {
+        "Undergraduate & Diplomas": [
+            "MBBS (Bachelor of Medicine & Bachelor of Surgery)",
+            "B.Sc Nursing / B.Sc (Hons) Nursing",
+            "B.Sc in Medical Laboratory Technology",
+            "Diploma in Nursing & Allied Health Sciences",
+            "General Nursing & Midwifery (GNM)",
+            "Auxiliary Nurse Midwife (ANM)",
+            "DNB (Diplomate of National Board)",
+            "Post Graduate Diploma (Dermatology, Ophthalmology, etc.)"
+        ],
+        "MD (Doctor of Medicine) Specializations": [
+            "Anaesthesiology",
+            "Anatomy",
+            "Biochemistry",
+            "Community Medicine",
+            "Dermatology",
+            "Emergency Medicine",
+            "Forensic Medicine / Forensic Medicine & Toxicology",
+            "General Medicine",
+            "Hospital Administration",
+            "Microbiology",
+            "Ophthalmology",
+            "Pathology",
+            "Pediatrics",
+            "Pharmacology",
+            "Physiology",
+            "Psychiatry",
+            "Radiology",
+            "Radiotherapy / Radiation Oncology",
+            "Pulmonary Medicine",
+            "Transfusion Medicine & Blood Bank"
+        ],
+        "MS (Master of Surgery) Specializations": [
+            "ENT",
+            "General Surgery",
+            "Obstetrics & Gynaecology",
+            "Ophthalmology",
+            "Orthopaedics",
+            "Anatomy"
+        ],
+        "Super-Speciality Courses": [
+            "DM Endocrinology & Metabolism",
+            "DM Pulmonary Medicine",
+            "M.Ch Paediatric Surgery",
+            "MDS Conservative Dentistry",
+            "MDS Orthodontics",
+            "MDS Oral & Maxillofacial Surgery"
+        ]
+    },
+    "Engineering & Technology": {
+        "Undergraduate (B.E. / B.Tech / B.Arch / B.Des)": [
+            "Civil Engineering",
+            "Computer Science / Computer Science Engineering",
+            "Electrical Engineering",
+            "Electronics & Communication Engineering",
+            "Mechanical Engineering",
+            "Biomedical Engineering",
+            "Chemical Engineering",
+            "Information Technology",
+            "Metallurgical & Materials Engineering",
+            "Materials Engineering",
+            "Robotics & Automation",
+            "Food Technology",
+            "Agriculture Engineering",
+            "Architecture & Planning (B.Arch)",
+            "Design (B.Des)",
+            "Engineering Physics",
+            "Mathematics & Computing"
+        ],
+        "Postgraduate (M.E. / M.Tech)": [
+            "Computer Science Engineering",
+            "Structural Engineering",
+            "Electronics & Communication Engineering",
+            "Mechanical Engineering",
+            "Food Technology",
+            "AI",
+            "Electrical Engineering",
+            "Tunnel Engineering",
+            "VLSI Design / Microelectronics and VLSI Design",
+            "Thermal & Energy Systems",
+            "Communications & Signal Processing",
+            "Data Science",
+            "Information Security",
+            "Computer Technology",
+            "Water Resources Engineering",
+            "Communication & Information Technology",
+            "Mechanical Systems Design",
+            "Thermal Engineering",
+            "Chemical Engineering",
+            "Environmental Engineering"
+        ],
+        "Diploma in Engineering": [
+            "Information Technology",
+            "Mechanical Engineering",
+            "Civil Engineering",
+            "Electrical Engineering",
+            "Automobile Engineering",
+            "Medical Lab Technology",
+            "Architecture Assistantship",
+            "Instrumentation & Control Engineering",
+            "Travel & Tourism",
+            "Computer Science & Engineering",
+            "Wood Technology",
+            "Leather Technology",
+            "Electronics & Communication"
+        ],
+        "Other": [
+            "Ph.D (Engineering / Technology)"
+        ]
+    }
+}
