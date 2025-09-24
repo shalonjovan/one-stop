@@ -1,0 +1,83 @@
+[{
+    "id": "sher-i-kashmir-institute-of-medical-sciences-skims-soura",
+    "name": "Sher-i-Kashmir Institute of Medical Sciences (SKIMS), Soura",
+    "tagline": "Fees, Course, Admissions 2025",
+    "address": "Srinagar",
+    "ratings": "4.2/5",
+    "badges": [
+        "A+ NAAC accredited",
+        "Government Institute",
+        "Estd. 1982"
+    ],
+    "bannerUrl": "https://placehold.co/1200x250/1a1a1a/ffffff?text=Sher-i-Kashmir+Institute+of+Medical+Sciences+(SKIMS),+Soura+Banner",
+    "logoUrl": "../assets/logo/SKIMS.svg",
+    "lastUpdated": "24 Sep 25",
+    "content": {
+        "College Info": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <p class=\"text-gray-700 leading-relaxed\">\n        Sher-i-Kashmir Institute of Medical Sciences (SKIMS), Soura, located in Srinagar, is a prestigious A+ NAAC accredited government institution offering world-class medical programs. The college is known for its excellent academic standards, state-of-the-art infrastructure, and strong industry connections. Students gain admission through NEET/PG and benefit from experienced faculty, modern laboratories, and comprehensive learning resources. The institution maintains high placement rates and provides students with opportunities for research, internships, and skill development programs.\n    </p>\n</div>",
+        "Courses": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Courses Offered</h2>\n    <p class=\"text-gray-700\">Course information will be updated soon. Please check the official website for the latest course offerings.</p>\n</div>",
+        "Fees": "<div class=\"bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4\">\n    <h2 class=\"text-2xl font-semibold text-gray-800 mb-4\">Fee Structure</h2>\n    <p class=\"text-gray-700\">Fee information will be updated soon. Please contact admissions office for current fee structure.</p>\n</div>"
+    },
+    "placements": {
+        "salaryByYear": {
+            "labels": [
+                "2022",
+                "2023",
+                "2024"
+            ],
+            "highestSalary": [
+                4800000,
+                5280000,
+                5760000
+            ],
+            "averageSalary": [
+                800000,
+                919999,
+                1040000
+            ]
+        },
+        "salaryDistribution": {
+            "2022": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    30,
+                    35,
+                    20,
+                    15
+                ]
+            },
+            "2023": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    25,
+                    35,
+                    25,
+                    15
+                ]
+            },
+            "2024": {
+                "labels": [
+                    "0-5L",
+                    "5-10L",
+                    "10-20L",
+                    ">20L"
+                ],
+                "data": [
+                    20,
+                    30,
+                    30,
+                    20
+                ]
+            }
+        }
+    }
+}]

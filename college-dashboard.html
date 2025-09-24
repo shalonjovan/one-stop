@@ -30,9 +30,40 @@
             color: #1f2937;
             font-weight: 600;
         }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .stat-card-green {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+        .stat-card-orange {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+        .placement-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .year-stats {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 16px 0;
+        }
     </style>
 </head>
-<body >
+<body>
     
      <!-- Header -->
         <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
@@ -66,7 +97,7 @@
                     </svg>
                 </button>
                 <!-- Profile Icon -->
-                <button onclick="window.location.href='./login.html'" class="text-white hover:text-gray-200">
+                <button onclick = "location.href='profile.html'" class="text-white hover:text-gray-200">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
                     </svg>
@@ -209,31 +240,129 @@
             // Switch content based on the section
             switch (section) {
                 case "Placements":
+                    const latestYear = college.placements.salaryByYear.labels[college.placements.salaryByYear.labels.length - 1];
+                    const latestHighest = college.placements.salaryByYear.highestSalary[college.placements.salaryByYear.highestSalary.length - 1];
+                    const latestAverage = college.placements.salaryByYear.averageSalary[college.placements.salaryByYear.averageSalary.length - 1];
+                    
+                    // Calculate placement percentage (assuming from salary distribution)
+                    const latestDistribution = college.placements.salaryDistribution[latestYear];
+                    const totalPlaced = latestDistribution.data.reduce((a, b) => a + b, 0);
+                    const highSalaryCount = latestDistribution.data[latestDistribution.data.length - 1] + latestDistribution.data[latestDistribution.data.length - 2];
+                    
                     contentDiv.innerHTML = `
-                        <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm mt-4 space-y-8">
-                            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Placement Statistics</h2>
-                            
-                            <!-- Highest Salary Histogram -->
-                            <div>
-                                <h3 class="text-xl font-medium text-gray-700 mb-2">Highest Salary Over Years</h3>
-                                <canvas id="${college.id}-highest-salary-chart"></canvas>
-                            </div>
-
-                            <!-- Average Salary Histogram -->
-                            <div>
-                                <h3 class="text-xl font-medium text-gray-700 mb-2">Average Salary Over Years</h3>
-                                <canvas id="${college.id}-average-salary-chart"></canvas>
-                            </div>
-
-                            <!-- Salary Distribution Chart -->
-                            <div>
-                                <div class="flex items-center space-x-4 mb-4">
-                                    <h3 class="text-xl font-medium text-gray-700">Salary Distribution by Year:</h3>
-                                    <select id="${college.id}-year-select" class="rounded-md border border-gray-300 px-3 py-1">
-                                        ${Object.keys(college.placements.salaryDistribution).map(year => `<option value="${year}">${year}</option>`).join('')}
-                                    </select>
+                        <div class="space-y-8">
+                            <!-- Placement Summary Cards -->
+                            <div class="placement-summary">
+                                <h2 class="text-2xl font-bold mb-6">Placement Highlights ${latestYear}</h2>
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold">₹${(latestHighest / 100000).toFixed(1)}L</div>
+                                        <div class="text-sm opacity-90">Highest Package</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold">₹${(latestAverage / 100000).toFixed(1)}L</div>
+                                        <div class="text-sm opacity-90">Average Package</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold">${totalPlaced}+</div>
+                                        <div class="text-sm opacity-90">Students Placed</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold">${Math.round((highSalaryCount / totalPlaced) * 100)}%</div>
+                                        <div class="text-sm opacity-90">Above 10L Package</div>
+                                    </div>
                                 </div>
-                                <canvas id="${college.id}-distribution-chart"></canvas>
+                            </div>
+
+                            <!-- Year-wise Statistics -->
+                            <div class="year-stats">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Year-wise Placement Statistics</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    ${college.placements.salaryByYear.labels.map((year, index) => {
+                                        const highest = college.placements.salaryByYear.highestSalary[index];
+                                        const average = college.placements.salaryByYear.averageSalary[index];
+                                        const distribution = college.placements.salaryDistribution[year];
+                                        const placed = distribution.data.reduce((a, b) => a + b, 0);
+                                        return `
+                                            <div class="bg-gray-50 p-4 rounded-lg">
+                                                <div class="text-lg font-semibold text-gray-800 mb-2">${year}</div>
+                                                <div class="space-y-2 text-sm">
+                                                    <div class="flex justify-between">
+                                                        <span class="text-gray-600">Highest:</span>
+                                                        <span class="font-medium">₹${(highest / 100000).toFixed(1)}L</span>
+                                                    </div>
+                                                    <div class="flex justify-between">
+                                                        <span class="text-gray-600">Average:</span>
+                                                        <span class="font-medium">₹${(average / 100000).toFixed(1)}L</span>
+                                                    </div>
+                                                    <div class="flex justify-between">
+                                                        <span class="text-gray-600">Placed:</span>
+                                                        <span class="font-medium">${placed} students</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `;
+                                    }).join('')}
+                                </div>
+                            </div>
+
+                            <!-- Charts Section -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                <!-- Salary Trends Chart -->
+                                <div class="bg-white p-6 rounded-lg shadow-sm">
+                                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Salary Trends Over Years</h3>
+                                    <div class="chart-container">
+                                        <canvas id="${college.id}-salary-trends-chart"></canvas>
+                                    </div>
+                                </div>
+
+                                <!-- Salary Distribution Chart -->
+                                <div class="bg-white p-6 rounded-lg shadow-sm">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 class="text-xl font-semibold text-gray-800">Salary Distribution</h3>
+                                        <select id="${college.id}-year-select" class="rounded-md border border-gray-300 px-3 py-1 text-sm">
+                                            ${Object.keys(college.placements.salaryDistribution).map(year => `<option value="${year}">${year}</option>`).join('')}
+                                        </select>
+                                    </div>
+                                    <div class="chart-container">
+                                        <canvas id="${college.id}-distribution-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Detailed Breakdown -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Placement Analysis by Salary Range</h3>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full table-auto">
+                                        <thead>
+                                            <tr class="border-b border-gray-200">
+                                                <th class="text-left py-3 px-2 font-semibold text-gray-800">Year</th>
+                                                <th class="text-center py-3 px-2 font-semibold text-gray-800">0-5L</th>
+                                                <th class="text-center py-3 px-2 font-semibold text-gray-800">5-10L</th>
+                                                <th class="text-center py-3 px-2 font-semibold text-gray-800">10-20L</th>
+                                                <th class="text-center py-3 px-2 font-semibold text-gray-800">>20L</th>
+                                                <th class="text-center py-3 px-2 font-semibold text-gray-800">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            ${Object.keys(college.placements.salaryDistribution).map(year => {
+                                                const data = college.placements.salaryDistribution[year].data;
+                                                const total = data.reduce((a, b) => a + b, 0);
+                                                return `
+                                                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                                                        <td class="py-3 px-2 font-medium">${year}</td>
+                                                        <td class="text-center py-3 px-2">${data[0]} <span class="text-sm text-gray-500">(${Math.round(data[0]/total*100)}%)</span></td>
+                                                        <td class="text-center py-3 px-2">${data[1]} <span class="text-sm text-gray-500">(${Math.round(data[1]/total*100)}%)</span></td>
+                                                        <td class="text-center py-3 px-2">${data[2]} <span class="text-sm text-gray-500">(${Math.round(data[2]/total*100)}%)</span></td>
+                                                        <td class="text-center py-3 px-2">${data[3]} <span class="text-sm text-gray-500">(${Math.round(data[3]/total*100)}%)</span></td>
+                                                        <td class="text-center py-3 px-2 font-semibold">${total}</td>
+                                                    </tr>
+                                                `;
+                                            }).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     `;
@@ -261,44 +390,79 @@
 
         // Function to render the charts for the Placements section
         function renderCharts(college) {
-            const highestSalaryCtx = document.getElementById(`${college.id}-highest-salary-chart`).getContext('2d');
-            new Chart(highestSalaryCtx, {
-                type: 'bar',
+            // Combined Salary Trends Chart
+            const salaryTrendsCtx = document.getElementById(`${college.id}-salary-trends-chart`).getContext('2d');
+            new Chart(salaryTrendsCtx, {
+                type: 'line',
                 data: {
                     labels: college.placements.salaryByYear.labels,
-                    datasets: [{
-                        label: 'Highest Salary (in Lakhs)',
-                        data: college.placements.salaryByYear.highestSalary.map(salary => salary / 100000),
-                        backgroundColor: '#4f46e5',
-                        borderColor: '#4f46e5',
-                        borderWidth: 1
-                    }]
+                    datasets: [
+                        {
+                            label: 'Highest Salary (₹L)',
+                            data: college.placements.salaryByYear.highestSalary.map(salary => salary / 100000),
+                            backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                            borderColor: '#4f46e5',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#4f46e5',
+                            pointBorderColor: '#ffffff',
+                            pointBorderWidth: 2,
+                            pointRadius: 6
+                        },
+                        {
+                            label: 'Average Salary (₹L)',
+                            data: college.placements.salaryByYear.averageSalary.map(salary => salary / 100000),
+                            backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                            borderColor: '#22c55e',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#22c55e',
+                            pointBorderColor: '#ffffff',
+                            pointBorderWidth: 2,
+                            pointRadius: 6
+                        }
+                    ]
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ₹' + context.parsed.y.toFixed(1) + 'L';
+                                }
+                            }
+                        }
+                    },
                     scales: {
-                        y: { beginAtZero: true }
-                    }
-                }
-            });
-
-            const averageSalaryCtx = document.getElementById(`${college.id}-average-salary-chart`).getContext('2d');
-            new Chart(averageSalaryCtx, {
-                type: 'bar',
-                data: {
-                    labels: college.placements.salaryByYear.labels,
-                    datasets: [{
-                        label: 'Average Salary (in Lakhs)',
-                        data: college.placements.salaryByYear.averageSalary.map(salary => salary / 100000),
-                        backgroundColor: '#22c55e',
-                        borderColor: '#22c55e',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: { beginAtZero: true }
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return '₹' + value + 'L';
+                                }
+                            }
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
                     }
                 }
             });
@@ -313,28 +477,57 @@
                     distributionChart.destroy();
                 }
                 distributionChart = new Chart(distributionCtx, {
-                    type: 'bar',
+                    type: 'doughnut',
                     data: {
                         labels: data.labels,
                         datasets: [{
-                            label: `Number of People in ${year}`,
+                            label: `Students Placed in ${year}`,
                             data: data.data,
-                            backgroundColor: '#ef4444',
-                            borderColor: '#ef4444',
-                            borderWidth: 1
+                            backgroundColor: [
+                                '#ef4444',
+                                '#f59e0b',
+                                '#10b981',
+                                '#3b82f6'
+                            ],
+                            borderColor: [
+                                '#dc2626',
+                                '#d97706',
+                                '#059669',
+                                '#2563eb'
+                            ],
+                            borderWidth: 2,
+                            hoverOffset: 8
                         }]
                     },
                     options: {
                         responsive: true,
-                        scales: {
-                            y: { beginAtZero: true }
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 20,
+                                    usePointStyle: true
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                        const percentage = Math.round((context.parsed / total) * 100);
+                                        return `${context.label}: ${context.parsed} students (${percentage}%)`;
+                                    }
+                                }
+                            }
                         }
                     }
                 });
             }
 
-            // Initial chart render
-            updateDistributionChart(yearSelect.value);
+            // Initial chart render with latest year
+            const latestYear = Object.keys(college.placements.salaryDistribution).pop();
+            yearSelect.value = latestYear;
+            updateDistributionChart(latestYear);
 
             // Update chart on year selection change
             yearSelect.addEventListener('change', (event) => {
