@@ -307,14 +307,14 @@
      * Fetches the full assessment results from the backend for a given user.
      */
     async function fetchAssessmentResults(username) {
-        // Encode the username to handle special characters in the URL
         const encodedUsername = encodeURIComponent(username);
         try {
             const res = await fetch(`${backend}/get-assessment/${encodedUsername}`);
             const data = await res.json();
             if (res.ok) {
                 displayResults(data.result);
-                displayProfilePicture(username);
+                // This function will now fetch the picture from the backend
+                displayProfilePicture(username); 
             } else {
                 displayResults(null);
             }
@@ -344,7 +344,6 @@
         }
 
         welcomeMessage.textContent = `Welcome back, ${results.userName}!`;
-        // THESE ARE THE SECOND AND THIRD CARDS THAT WERE CHANGED
         resultsDisplay.innerHTML = `
             <div class="bg-white rounded-3xl p-8 shadow-lg border-2 border-indigo-500">
                 <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>Personal Details</h3>
@@ -371,31 +370,109 @@
         `;
     }
 
-    function displayProfilePicture(username) { /* ... Your existing code for this function ... */ }
-    function retakeAssessment() { window.location.href = 'assessment_test.html'; }
-    function shareProfile() { /* ... Your existing code for this function ... */ }
-    pictureUpload.addEventListener('change', async (event) => { /* ... Your existing code for this event listener ... */ });
-
-    // --- Main logic that runs when the page loads ---
-    document.addEventListener('DOMContentLoaded', () => {
-        const instantDataString = sessionStorage.getItem('latestAssessment');
-        
-        if (instantDataString) {
-            const instantData = JSON.parse(instantDataString);
-            displayResults(instantData);
-            displayProfilePicture(instantData.username); // Use the unique username
-            sessionStorage.removeItem('latestAssessment');
-        } else {
-            // This is the fallback for refresh
-            const user = getLoggedInUser();
-            if (user && user.username) {
-                // --- FIX: Use the unique 'username' for fetching, not the full 'name' ---
-                fetchAssessmentResults(user.username);
+    // --- MODIFIED FUNCTION ---
+    /**
+     * Fetches and displays the user's profile picture from the backend.
+     */
+    async function displayProfilePicture(username) {
+        try {
+            // Fetch the picture from a new endpoint, adding a timestamp to prevent caching issues
+            const res = await fetch(`${backend}/profile-picture/${username}?t=${new Date().getTime()}`);
+            if (res.ok) {
+                const imageBlob = await res.blob();
+                profilePicture.src = URL.createObjectURL(imageBlob);
             } else {
-                displayResults(null); 
+                // If no picture is found, keep the placeholder
+                console.log('No profile picture found for user.');
             }
+        } catch (error) {
+            console.error('Error fetching profile picture:', error);
+        }
+    }
+
+    function retakeAssessment() { window.location.href = 'assessment_test.html'; }
+    
+    function shareProfile() { 
+        // Implement share functionality, e.g., using the Web Share API
+        if (navigator.share) {
+            navigator.share({
+                title: 'My Career Profile',
+                text: 'Check out my career assessment results on VidyaGyan!',
+                url: window.location.href,
+            })
+            .then(() => console.log('Successful share'))
+            .catch((error) => console.log('Error sharing', error));
+        } else {
+            // Fallback for browsers that don't support Web Share API
+            alert('Sharing is not supported on this browser. You can copy the URL from the address bar.');
+        }
+    }
+    
+    // --- MODIFIED EVENT LISTENER ---
+    /**
+     * Handles the file upload event.
+     */
+    pictureUpload.addEventListener('change', async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        // --- 1. Show a preview of the image instantly ---
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            profilePicture.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+
+        // --- 2. Upload the image to the backend ---
+        const user = getLoggedInUser();
+        if (!user || !user.username) {
+            alert("You must be logged in to upload a picture.");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('profilePicture', file); // 'profilePicture' should match your backend (e.g., multer field name)
+        formData.append('username', user.username);
+
+        try {
+            const res = await fetch(`${backend}/upload-profile-picture`, {
+                method: 'POST',
+                body: formData,
+            });
+
+            const data = await res.json();
+            if (res.ok) {
+                alert('Profile picture updated successfully!');
+            } else {
+                throw new Error(data.message || 'Failed to upload picture.');
+            }
+        } catch (error) {
+            console.error('Error uploading profile picture:', error);
+            alert(`Error: ${error.message}`);
+            // Optionally, revert to the old picture if upload fails
+            displayProfilePicture(user.username);
         }
     });
+
+    // --- Main logic that runs when the page loads ---
+    // --- Main logic that runs when the page loads ---
+    document.addEventListener('DOMContentLoaded', () => {
+        // First, get the logged-in user
+        const user = getLoggedInUser();
+
+        // Check if a user is logged in
+        if (user && user.username) {
+            // --- THIS IS THE FIX ---
+            // Fetch the assessment results AND the profile picture independently.
+            // This ensures the photo loads even if the assessment doesn't exist.
+            fetchAssessmentResults(user.username);
+            displayProfilePicture(user.username);
+
+        } else {
+            // If no user is logged in, show the default "no results" view
+            displayResults(null); 
+        }
+    }); 
 </script>
 </body>
 </html>
