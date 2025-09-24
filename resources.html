@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Resources - VidyaGyan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        /* Custom CSS for the Chatbot Button */
+        #chatbot-button {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid #6366f1;
+        }
+
+        #chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        #chatbot-button img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        /* Custom animations */
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .resource-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .category-filter {
+            transition: all 0.3s ease;
+        }
+
+        .category-filter.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .search-bar {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header Navigation Bar -->
+    <header class="relative z-20 w-full p-2 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="text-white focus:outline-none md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <!-- Logo and Site Name -->
+            <div class="flex items-center space-x-2">
+                <a href="index.html">
+                    <img src="./assets/mainlogo.png" alt="VidyaGyan Logo" class="w-10 h-10">
+                </a>
+                <span class="text-3xl font-bold text-white">VidyaGyan</span>
+            </div>
+        </div>
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-4 text-base">
+            <a href="career_paths.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Career Paths</a>
+            <a href="roadmaps/roadmap.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Roadmaps</a>
+            <a href="colleges.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Colleges</a>
+            <a href="exams.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Exams</a>
+            <a href="resources.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200 bg-gray-800">Resources</a>
+            <a href="study_groups.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Study Groups</a>
+            <a href="scholarship.html"
+                class="text-white px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">Scholarships</a>
+        </nav>
+        <!-- Action Buttons (Home, Profile, and For You) -->
+        <div class="hidden md:flex items-center space-x-4">
+            <a href="home.html"
+                class="flex items-center space-x-2 text-white hover:text-gray-200 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">
+                <!-- Home Icon -->
+                <img src="assets/home.png" alt="Home" class="w-8 h-8">
+            </a>
+            <a href="profile.html"
+                class="flex items-center space-x-2 text-white hover:text-gray-200 px-3 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200">
+                <!-- Profile Icon -->
+                <img src="assets/profile.jpg" alt="Profile" class="w-8 h-8">
+            </a>
+            <a href="foryou.html"
+                class="text-sm px-6 py-3 rounded-full border-2 border-blue-500 text-blue-500 hover:text-white hover:bg-blue-500 transition-colors duration-300">For You</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 text-white py-16 fade-in">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-5xl font-bold mb-4">Educational Resources</h1>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">Discover curated learning materials, tools, and platforms to accelerate your academic journey. From interactive courses to comprehensive textbooks - find everything you need to succeed.</p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto mb-8">
+                    <input 
+                        type="text" 
+                        id="searchInput"
+                        placeholder="Search resources by name, subject, or type..." 
+                        class="search-bar w-full px-6 py-4 rounded-full text-gray-800 text-lg focus:outline-none"
+                    >
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <button class="category-filter active bg-white text-purple-600 px-6 py-2 rounded-full font-semibold" data-category="all">All Resources</button>
+                    <button class="category-filter bg-white bg-opacity-20 text-white px-6 py-2 rounded-full font-semibold" data-category="website">Websites</button>
+                    <button class="category-filter bg-white bg-opacity-20 text-white px-6 py-2 rounded-full font-semibold" data-category="YouTube channel">YouTube</button>
+                    <button class="category-filter bg-white bg-opacity-20 text-white px-6 py-2 rounded-full font-semibold" data-category="math">Mathematics</button>
+                    <button class="category-filter bg-white bg-opacity-20 text-white px-6 py-2 rounded-full font-semibold" data-category="science">Science</button>
+                    <button class="category-filter bg-white bg-opacity-20 text-white px-6 py-2 rounded-full font-semibold" data-category="coding">Programming</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Grid -->
+        <section class="py-12 px-4">
+            <div class="container mx-auto">
+                <div id="resourcesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Resources will be dynamically inserted here -->
+                </div>
+                
+                <!-- No Results Message -->
+                <div id="noResults" class="text-center py-12 hidden">
+                    <div class="bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto">
+                        <div class="text-gray-500 mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.347 0-4.518.642-6.391 1.76l-.75-.75A9.01 9.01 0 0112 13.5c3.019 0 5.789 1.247 7.766 3.25l-.75.75A7.962 7.962 0 0012 15z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">No Resources Found</h3>
+                        <p class="text-gray-600">Try adjusting your search criteria or browse all resources.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Resources Section -->
+        <section class="bg-gradient-to-r from-indigo-50 to-purple-50 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Featured Learning Platforms</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-all duration-300">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Interactive Learning</h3>
+                        <p class="text-gray-600">Hands-on courses and interactive problem-solving platforms</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-all duration-300">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Video Content</h3>
+                        <p class="text-gray-600">High-quality educational videos and lecture series</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-all duration-300">
+                        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Reference Materials</h3>
+                        <p class="text-gray-600">Comprehensive textbooks and documentation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot Button -->
+    <a href="chat.html" id="chatbot-button" title="Chat with us!">
+        <img src="./assets/images/chat.jpeg" alt="Chatbot" />
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 p-6 pt-10 mt-16">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
+            <!-- Logo Column (spans full height) -->
+            <div class="col-span-1 flex justify-center items-center">
+                <img src="./assets/mainlogo.png" alt="VidyaGyan Logo" class="w-75 h-60">
+            </div>
+
+            <!-- VidyaGyan Info Column -->
+            <div class="col-span-1 flex flex-col">
+                <h3 class="text-white font-bold text-xl mb-2">VidyaGyan</h3>
+                <p class="text-gray-400 text-sm mb-6">Your all-in-one platform for academic and career guidance.</p>
+                
+                <div class="mb-4">
+                    <h4 class="text-white font-semibold text-lg mb-2">Blastorz</h4>
+                    <div class="flex space-x-2 items-center mb-2">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                        </svg>
+                        <a href="mailto:team.blastorz@gmail.com" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                            team.blastorz@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex space-x-2 items-center">
+                        <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <a href="members.html" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">
+                            Team Blastorz Info
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Column -->
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Navigation</h4>
+                <ul class="space-y-3">
+                    <li><a href="home.html" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a></li>
+                    <li><a href="profile.html" class="text-gray-300 hover:text-white transition-colors duration-200">Profile</a></li>
+                    <li><a href="foryou.html" class="text-gray-300 hover:text-white transition-colors duration-200">For You</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources Column -->
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Resources</h4>
+                <ul class="space-y-3">
+                    <li><a href="colleges.html" class="text-gray-300 hover:text-white transition-colors duration-200">Colleges</a></li>
+                    <li><a href="career_paths.html" class="text-gray-300 hover:text-white transition-colors duration-200">Career Paths</a></li>
+                    <li><a href="roadmaps/roadmap.html" class="text-gray-300 hover:text-white transition-colors duration-200">Roadmaps</a></li>
+                    <li><a href="exams.html" class="text-gray-300 hover:text-white transition-colors duration-200">Entrance Exams</a></li>
+                    <li><a href="resources.html" class="text-gray-300 hover:text-white transition-colors duration-200">Study Materials</a></li>
+                    <li><a href="scholarship.html" class="text-gray-300 hover:text-white transition-colors duration-200">Scholarships</a></li>
+                </ul>
+            </div>
+
+            <!-- Community & Account Column -->
+            <div class="col-span-1">
+                <h4 class="text-white font-semibold text-lg mb-4">Community & Account</h4>
+                <ul class="space-y-3">
+                    <li><a href="login.html" class="text-gray-300 hover:text-white transition-colors duration-200">Login</a></li>
+                    <li><a href="signup.html" class="text-gray-300 hover:text-white transition-colors duration-200">Sign Up</a></li>
+                    <li><a href="study_groups.html" class="text-gray-300 hover:text-white transition-colors duration-200">Study Groups</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-700 mt-6 pt-3 text-center">
+            <p class="text-gray-400 text-sm">
+                Copyright © 2025 - Team Blastorz 💥
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Educational resources data
+        const resources = [
+            {
+                "name": "Khan Academy",
+                "type": "website",
+                "url": "https://www.khanacademy.org",
+                "description": "Free lessons in math, science, computing, history, and more.",
+                "tags": ["math", "science", "biology", "chemistry", "physics", "k12", "conceptual"]
+            },
+            {
+                "name": "CrashCourse",
+                "type": "YouTube channel",
+                "url": "https://www.youtube.com/user/crashcourse",
+                "description": "High-energy video courses on history, chemistry, biology, physics, economics, and more.",
+                "tags": ["video", "history", "chemistry", "biology", "physics", "economics"]
+            },
+            {
+                "name": "MIT OpenCourseWare",
+                "type": "website",
+                "url": "https://ocw.mit.edu",
+                "description": "Free lecture notes, exams, and videos from MIT courses across disciplines.",
+                "tags": ["engineering", "computer_science", "mathematics", "electrical", "mechanical", "advanced"]
+            },
+            {
+                "name": "Coursera (audit mode)",
+                "type": "website",
+                "url": "https://www.coursera.org",
+                "description": "Access to course videos and materials for free by auditing courses from top universities.",
+                "tags": ["MOOC", "computer_science", "data_science", "business", "technology", "audit"]
+            },
+            {
+                "name": "edX (audit mode)",
+                "type": "website",
+                "url": "https://www.edx.org",
+                "description": "Free course content from universities worldwide in audit mode.",
+                "tags": ["MOOC", "engineering", "humanities", "computer_science", "audit"]
+            },
+            {
+                "name": "Wikipedia",
+                "type": "website",
+                "url": "https://www.wikipedia.org",
+                "description": "Free online encyclopedia covering all subjects.",
+                "tags": ["reference", "encyclopedia", "all_subjects", "research"]
+            },
+            {
+                "name": "Paul's Online Math Notes",
+                "type": "website",
+                "url": "http://tutorial.math.lamar.edu",
+                "description": "Extensive notes and worked examples in algebra, calculus, differential equations.",
+                "tags": ["calculus", "algebra", "differential_equations", "notes", "worked_examples"]
+            },
+            {
+                "name": "Brilliant",
+                "type": "website",
+                "url": "https://brilliant.org",
+                "description": "Interactive problem-solving courses in math, science, and computer science (free tier).",
+                "tags": ["interactive", "math", "physics", "computer_science", "problem_solving"]
+            },
+            {
+                "name": "GeeksforGeeks",
+                "type": "website",
+                "url": "https://www.geeksforgeeks.org",
+                "description": "Computer science tutorials, coding practice, and interview preparation.",
+                "tags": ["coding", "data_structures", "algorithms", "interview_prep", "programming"]
+            },
+            {
+                "name": "NPTEL",
+                "type": "website",
+                "url": "https://nptel.ac.in",
+                "description": "Free video courses by Indian Institutes of Technology and Indian Institute of Science.",
+                "tags": ["engineering", "science", "technology", "india", "lecture_videos"]
+            },
+            {
+                "name": "Unacademy",
+                "type": "YouTube channel",
+                "url": "https://www.youtube.com/c/unacademy",
+                "description": "Free live classes and recordings for competitive exams in India (NEET, JEE, UPSC, etc.).",
+                "tags": ["competitive_exams", "neet", "jee", "upsc", "free_classes"]
+            },
+            {
+                "name": "PatrickJMT",
+                "type": "YouTube channel",
+                "url": "https://www.youtube.com/user/patrickJMT",
+                "description": "Math tutorial videos covering algebra, calculus, differential equations.",
+                "tags": ["math", "calculus", "tutorial", "video", "worked_examples"]
+            },
+            {
+                "name": "TED-Ed",
+                "type": "YouTube channel",
+                "url": "https://www.youtube.com/user/TEDEducation",
+                "description": "Animated educational videos across a wide variety of topics.",
+                "tags": ["animation", "educational", "short_videos", "all_subjects"]
+            },
+            {
+                "name": "SureChem (ChemWiki)",
+                "type": "website",
+                "url": "https://chem.libretexts.org",
+                "description": "Open-access chemistry textbook and resources.",
+                "tags": ["chemistry", "textbook", "open_access", "organic", "inorganic"]
+            },
+            {
+                "name": "OpenStax",
+                "type": "website",
+                "url": "https://openstax.org",
+                "description": "Peer-reviewed, openly licensed textbooks for college courses.",
+                "tags": ["textbooks", "physics", "biology", "chemistry", "calculus"]
+            },
+            {
+                "name": "Project Gutenberg",
+                "type": "website",
+                "url": "https://www.gutenberg.org",
+                "description": "Free eBooks of public domain works (ebooks in literature, history, science).",
+                "tags": ["ebooks", "literature", "history", "public_domain"]
+            },
+            {
+                "name": "Desmos",
+                "type": "website",
+                "url": "https://www.desmos.com",
+                "description": "Free graphing calculator and interactive math tools.",
+                "tags": ["graphing", "calculator", "interactive", "math"]
+            },
+            {
+                "name": "Wolfram Alpha (free tier)",
+                "type": "website",
+                "url": "https://www.wolframalpha.com",
+                "description": "Computational knowledge engine (limited free queries).",
+                "tags": ["computational", "math", "science", "analysis"]
+            },
+            {
+                "name": "Codecademy (free courses)",
+                "type": "website",
+                "url": "https://www.codecademy.com",
+                "description": "Interactive coding lessons in various programming languages (free tier).",
+                "tags": ["coding", "programming", "interactive", "web_development"]
+            }
+        ];
+
+        let filteredResources = [...resources];
+
+        function getTypeIcon(type) {
+            if (type.includes('YouTube')) {
+                return `<svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>`;
+            } else {
+                return `<svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                </svg>`;
+            }
+        }
+
+        function getTagColor(tag) {
+            const colors = {
+                'math': 'bg-blue-100 text-blue-800',
+                'science': 'bg-green-100 text-green-800',
+                'coding': 'bg-purple-100 text-purple-800',
+                'video': 'bg-red-100 text-red-800',
+                'interactive': 'bg-yellow-100 text-yellow-800',
+                'engineering': 'bg-indigo-100 text-indigo-800',
+                'medical': 'bg-pink-100 text-pink-800'
+            };
+            return colors[tag] || 'bg-gray-100 text-gray-800';
+        }
+
+        function createResourceCard(resource) {
+            const mainTags = resource.tags.slice(0, 3);
+            const tagsHtml = mainTags.map(tag => 
+                `<span class="px-2 py-1 text-xs rounded-full ${getTagColor(tag)}">${tag}</span>`
+            ).join('');
+
+            return `
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl" data-name="${resource.name.toLowerCase()}" data-type="${resource.type}" data-tags="${resource.tags.join(',')}">
+                    <div class="bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 p-1">
+                        <div class="bg-white rounded-lg p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    ${getTypeIcon(resource.type)}
+                                    <span class="text-sm font-medium text-gray-700 bg-gray-100 px-2 py-1 rounded-full">${resource.type}</span>
+                                </div>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">${resource.name}</h3>
+                            <p class="text-gray-600 text-sm mb-4">${resource.description}</p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${tagsHtml}
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <a href="${resource.url}" target="_blank" rel="noopener noreferrer" 
+                                   class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200 flex items-center space-x-2">
+                                    <span>Visit Resource</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderResources(resourcesToRender) {
+            const grid = document.getElementById('resourcesGrid');
+            const noResults = document.getElementById('noResults');
+            
+            if (resourcesToRender.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                grid.innerHTML = resourcesToRender.map(resource => createResourceCard(resource)).join('');
+            }
+        }
+
+        function filterResources() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const activeCategory = document.querySelector('.category-filter.active').dataset.category;
+            
+            filteredResources = resources.filter(resource => {
+                const matchesSearch = resource.name.toLowerCase().includes(searchTerm) ||
+                                    resource.description.toLowerCase().includes(searchTerm) ||
+                                    resource.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+                
+                const matchesCategory = activeCategory === 'all' || 
+                                      resource.type === activeCategory ||
+                                      resource.tags.some(tag => tag.toLowerCase().includes(activeCategory.toLowerCase()));
+                
+                return matchesSearch && matchesCategory;
+            });
+            
+            renderResources(filteredResources);
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterResources);
+
+        document.querySelectorAll('.category-filter').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.category-filter').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.remove('bg-white', 'text-purple-600');
+                    btn.classList.add('bg-white', 'bg-opacity-20', 'text-white');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                this.classList.remove('bg-white', 'bg-opacity-20', 'text-white');
+                this.classList.add('bg-white', 'text-purple-600');
+                
+                filterResources();
+            });
+        });
+
+        // Mobile menu functionality
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            // Add mobile menu toggle functionality here
+            console.log('Mobile menu clicked');
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderResources(resources);
+        });
