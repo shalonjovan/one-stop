@@ -1,17 +1,17 @@
 [
   {
-<<<<<<< HEAD
-    "name": "user",
+    "name": "User Q",
     "username": "q",
     "password": "q"
   },
   {
-    "name": "user",
-    "username": "a",
-    "password": "a"
-=======
+    "name": "Santhosh Aaron",
+    "username": "santhosh",
+    "password": "password"
+  },
+  {
+    "name": "Shalon Jovan",
     "username": "shalon",
-    "password": "shalon"
->>>>>>> ba44f2095ab3b1c5cd9a1a1ece9559cd7335069c
+    "password": "password"
   }
 ]
