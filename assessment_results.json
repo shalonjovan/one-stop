@@ -1,30 +1,84 @@
 [
   {
+<<<<<<< HEAD
     "userName": "Santhosh Aaron",
+=======
+    "userName": "shalon jovan",
+>>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
     "age": "17",
     "studentClass": "12",
     "stream": "Science (Maths/CS)",
     "geminiQuestions": [
       {
+<<<<<<< HEAD
         "question": "Which aspect of science excites you most?",
+=======
+        "question": "Which aspect of science excites you the most?",
+>>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
         "options": [
-          "Theoretical understanding of fundamental concepts",
-          "Solving real-world problems using scientific principles",
-          "Designing and building new technologies",
+          "Understanding fundamental laws of nature",
+          "Solving real-world problems through technology",
+          "Developing new theories and models",
           "Conducting experiments and analyzing data"
         ]
       },
       {
+<<<<<<< HEAD
         "question": "What kind of problem-solving approach do you prefer?",
         "options": [
           "Logical and systematic",
           "Intuitive and creative",
           "A combination of both"
+=======
+        "question": "In your free time, do you prefer to:",
+        "options": [
+          "Read scientific journals and articles",
+          "Build or program something new",
+          "Engage in theoretical discussions and debates",
+          "Work on hands-on projects and experiments"
+        ]
+      },
+      {
+        "question": "Which field of science interests you the most?",
+        "options": [
+          "Physics",
+          "Computer Science",
+          "Chemistry",
+          "Biology (Biotechnology)"
+        ]
+      },
+      {
+        "question": "What type of work environment do you envision yourself thriving in?",
+        "options": [
+          "A collaborative research lab",
+          "An independent programming environment",
+          "A quiet, contemplative space for theoretical work",
+          "A fast-paced, dynamic startup"
+        ]
+      },
+      {
+        "question": "Do you prefer working with:",
+        "options": [
+          "Abstract concepts and mathematical models",
+          "Tangible objects and physical systems",
+          "Data and algorithms",
+          "Living organisms and biological processes"
+        ]
+      },
+      {
+        "question": "How do you approach problem-solving?",
+        "options": [
+          "Systematically, breaking down problems into smaller parts",
+          "Intuitively, using creative and innovative approaches",
+          "Through logical deduction and mathematical reasoning",
+          "Through experimentation and trial and error"
+>>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
         ]
       }
     ],
     "geminiAnswers": [
       {
+<<<<<<< HEAD
         "question": "Which aspect of science excites you most?",
         "answer": "Conducting experiments and analyzing data"
       },
@@ -219,11 +273,92 @@
           "Product development and deployment",
           "Management and leadership",
           "Teaching and education"
+=======
+        "question": "Which skill do you value most in yourself?",
+        "options": [
+          "Analytical thinking",
+          "Problem-solving",
+          "Creativity and innovation",
+          "Practical application and execution"
+        ]
+      },
+      {
+        "question": "Are you more interested in the theoretical understanding of science or its practical applications?",
+        "options": [
+          "Theoretical understanding",
+          "Practical applications",
+          "Both equally",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "Which career path appeals to you the most?",
+        "options": [
+          "Research Scientist",
+          "Software Engineer",
+          "Data Scientist",
+          "Bioengineer"
+        ]
+      },
+      {
+        "question": "How important is teamwork to you in a professional setting?",
+        "options": [
+          "Very important",
+          "Moderately important",
+          "Somewhat unimportant",
+          "Not important at all"
+        ]
+      },
+      {
+        "question": "Do you prefer working on long-term projects or short-term tasks?",
+        "options": [
+          "Long-term projects",
+          "Short-term tasks",
+          "A mix of both",
+          "It depends on the project"
+        ]
+      },
+      {
+        "question": "How comfortable are you with ambiguity and uncertainty?",
+        "options": [
+          "Very comfortable",
+          "Moderately comfortable",
+          "Somewhat uncomfortable",
+          "Very uncomfortable"
+        ]
+      },
+      {
+        "question": "Are you more interested in the human side of technology or the technical aspects?",
+        "options": [
+          "Human side (user experience, social impact)",
+          "Technical aspects (algorithms, coding)",
+          "Both equally",
+          "Neither particularly"
+        ]
+      },
+      {
+        "question": "Do you prefer working independently or collaboratively?",
+        "options": [
+          "Independently",
+          "Collaboratively",
+          "Both equally",
+          "It depends on the task"
+        ]
+      },
+      {
+        "question": "Which type of learning environment do you prefer?",
+        "options": [
+          "Structured and organized",
+          "Flexible and independent",
+          "Collaborative and interactive",
+          "A mix of structured and independent"
+>>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
         ]
       }
     ],
     "geminiAnswers": [
       {
+<<<<<<< HEAD
         "question": "Which aspect of computer science excites you the most?",
         "answer": "Designing computer hardware"
       },
@@ -291,6 +426,73 @@
       "Chemical Informatics",
       "Development of Bioinformatics Tools",
       "Research in Embedded Systems (biomedical applications)"
+=======
+        "question": "Which aspect of science excites you the most?",
+        "answer": "Understanding fundamental laws of nature"
+      },
+      {
+        "question": "In your free time, do you prefer to:",
+        "answer": "Build or program something new"
+      },
+      {
+        "question": "Which field of science interests you the most?",
+        "answer": "Physics"
+      },
+      {
+        "question": "What type of work environment do you envision yourself thriving in?",
+        "answer": "A collaborative research lab"
+      },
+      {
+        "question": "Do you prefer working with:",
+        "answer": "Data and algorithms"
+      },
+      {
+        "question": "How do you approach problem-solving?",
+        "answer": "Intuitively, using creative and innovative approaches"
+      },
+      {
+        "question": "Which skill do you value most in yourself?",
+        "answer": "Analytical thinking"
+      },
+      {
+        "question": "Are you more interested in the theoretical understanding of science or its practical applications?",
+        "answer": "Theoretical understanding"
+      },
+      {
+        "question": "Which career path appeals to you the most?",
+        "answer": "Software Engineer"
+      },
+      {
+        "question": "How important is teamwork to you in a professional setting?",
+        "answer": "Moderately important"
+      },
+      {
+        "question": "Do you prefer working on long-term projects or short-term tasks?",
+        "answer": "Short-term tasks"
+      },
+      {
+        "question": "How comfortable are you with ambiguity and uncertainty?",
+        "answer": "Moderately comfortable"
+      },
+      {
+        "question": "Are you more interested in the human side of technology or the technical aspects?",
+        "answer": "Technical aspects (algorithms, coding)"
+      },
+      {
+        "question": "Do you prefer working independently or collaboratively?",
+        "answer": "Independently"
+      },
+      {
+        "question": "Which type of learning environment do you prefer?",
+        "answer": "Collaborative and interactive"
+      }
+    ],
+    "specializedFields": [
+      "Theoretical Physics",
+      "Computational Physics",
+      "Machine Learning for Scientific Discovery",
+      "Robotics (with a focus on algorithmic control)"
+>>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
     ]
   }
 ]

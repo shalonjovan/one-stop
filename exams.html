@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exams - Pathfinder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .exam-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .exam-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="relative z-20 w-full p-4 flex justify-between items-center text-white bg-gray-900">
+        <div class="flex items-center space-x-2">
+             <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.669 4.39 9.176 3.5 7.5 3.5c-1.676 0-3.169.89-4.5 2.753m4.5-2.753C8.831 4.39 10.324 3.5 12 3.5c1.676 0 3.169.89 4.5 2.753m-4.5-2.753c1.676 0 3.169.89 4.5 2.753m0 0C17.676 8.39 19.169 9.5 20.5 9.5c1.331 0 2.5-1.11 2.5-2.753V6.253m-2.5 0v13m-2.5-13c-1.331 0-2.5 1.11-2.5 2.753s1.169 2.753 2.5 2.753m-2.5-2.753c1.331 0 2.5 1.11 2.5 2.753s-1.169 2.753-2.5 2.753"></path></svg>
+                <span class="text-xl font-bold">Pathfinder</span>
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+            <a href="./colleges.html" class="text-white hover:text-gray-200">Colleges</a>
+            <a href="./career_paths.html" class="text-white hover:text-gray-200">Career Paths</a>
+            <a href="./scholarship.html" class="text-white hover:text-gray-200">Scholarships</a>
+            <a href="./exams.html" class="text-white hover:text-gray-200 font-bold">Exams</a>
+            <a href="#" class="text-white hover:text-gray-200">Roadmaps</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <a href="./foryou.html" class="text-sm px-4 py-2 rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300">For You</a>
+        </div>
+    </header>
+
+    <main class="w-full">
+        <div class="max-w-7xl mx-auto p-4 sm:p-8">
+            <div class="text-center mb-10">
+                <h1 class="text-4xl font-extrabold text-slate-800">Entrance Examinations</h1>
+                <p class="text-lg text-slate-500 mt-2">Explore entrance exams for various educational programs.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-md mb-8 sticky top-4 z-10 flex flex-col gap-4">
+                <div class="w-full">
+                    <input type="text" id="search-input" placeholder="Search by exam name or course..." class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="w-full filter-grid">
+                    <select id="background-filter" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">All Backgrounds</option>
+                    </select>
+                    <select id="month-filter" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">All Months</option>
+                    </select>
+                    <select id="course-filter" class="w-full px-4 py-3 rounded-lg border-2 border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">All Courses</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="exam-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+             <div id="no-results" class="hidden text-center py-16">
+                <p class="text-xl text-slate-500">No exams found matching your criteria.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Make createGoogleCalendarLink globally accessible
+        function createGoogleCalendarLink(exam) {
+            const parseExamDate = (dateStr) => {
+                if (dateStr.includes("2025")) {
+                    const months = {
+                        "January": "01", "February": "02", "March": "03", "April": "04",
+                        "May": "05", "June": "06", "July": "07", "August": "08",
+                        "September": "09", "October": "10", "November": "11", "December": "12"
+                    };
+                    
+                    const match = dateStr.match(/(\d{1,2})\w*\s+(\w+),?\s*2025/);
+                    if (match) {
+                        const day = match[1].padStart(2, '0');
+                        const monthName = match[2];
+                        const month = months[monthName];
+                        if (month) {
+                            return `2025-${month}-${day}`;
+                        }
+                    }
+                }
+                return null;
+            };
+
+            const examDate = parseExamDate(exam["Tentative Date"]);
+            if (!examDate) {
+                alert("Unable to determine exact date for this exam. Please check the exam details and add to calendar manually.");
+                return;
+            }
+
+            const title = encodeURIComponent(`${exam.Examination} - Entrance Exam`);
+            const details = encodeURIComponent(
+                `Examination: ${exam.Examination}\n\n` +
+                `Purpose: ${exam.examination_for}\n\n` +
+                `Background Required: ${exam.background}\n\n` +
+                `Marking Scheme: ${exam.marking_scheme}\n\n` +
+                // `Syllabus: ${exam["portion/syllabus"]}\n\n` +
+                `Registration: ${exam.exam_registration_link}`
+            );
+            
+            const startDateTime = `${examDate}T09:00:00`;
+            const endDateTime = `${examDate}T12:00:00`;
+            
+            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDateTime.replace(/[-:]/g, '')}/${endDateTime.replace(/[-:]/g, '')}&details=${details}&location=Exam Center (TBD)&sf=true&output=xml`;
+            
+            window.open(googleCalendarUrl, '_blank');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const examGrid = document.getElementById('exam-grid');
+            const searchInput = document.getElementById('search-input');
+            const noResults = document.getElementById('no-results');
+            
+            // Filter elements
+            const filterSelects = {
+                background: document.getElementById('background-filter'),
+                month: document.getElementById('month-filter'),
+                course: document.getElementById('course-filter')
+            };
+
+            let allExams = [];
+
+            // Function to extract month from date string
+            function extractMonth(dateStr) {
+                const monthMatch = dateStr.match(/\b(January|February|March|April|May|June|July|August|September|October|November|December)\b/i);
+                return monthMatch ? monthMatch[1] : null;
+            }
+
+            async function fetchExams() {
+                try {
+                    const response = await fetch('./exams.json');
+                    allExams = await response.json();
+                    populateFilters();
+                    renderExams(allExams);
+                } catch (error) {
+                    console.error('Failed to fetch exam data:', error);
+                    examGrid.innerHTML = `<p class="text-red-500 col-span-full text-center">Could not load exam data. Please check if exams.json file exists.</p>`;
+                }
+            }
+
+            function populateFilters() {
+                const filtersData = {
+                    background: [...new Set(allExams.map(e => e.background))],
+                    month: [...new Set(allExams.map(e => extractMonth(e["Tentative Date"])).filter(month => month !== null))],
+                    course: [...new Set(allExams.map(e => e.examination_for))]
+                };
+
+                // Sort months in chronological order
+                const monthOrder = ["January", "February", "March", "April", "May", "June", 
+                                  "July", "August", "September", "October", "November", "December"];
+                filtersData.month.sort((a, b) => monthOrder.indexOf(a) - monthOrder.indexOf(b));
+
+                for (const key in filtersData) {
+                    filtersData[key].forEach(value => {
+                        const option = document.createElement('option');
+                        option.value = value;
+                        option.textContent = value;
+                        filterSelects[key].appendChild(option);
+                    });
+                }
+            }
+
+            function parseExamDate(dateStr) {
+                if (dateStr.includes("2025")) {
+                    const months = {
+                        "January": "01", "February": "02", "March": "03", "April": "04",
+                        "May": "05", "June": "06", "July": "07", "August": "08",
+                        "September": "09", "October": "10", "November": "11", "December": "12"
+                    };
+                    
+                    const match = dateStr.match(/(\d{1,2})\w*\s+(\w+),?\s*2025/);
+                    if (match) {
+                        const day = match[1].padStart(2, '0');
+                        const monthName = match[2];
+                        const month = months[monthName];
+                        if (month) {
+                            return `2025-${month}-${day}`;
+                        }
+                    }
+                }
+                return null;
+            }
+
+            function renderExams(exams) {
+                examGrid.innerHTML = '';
+                noResults.classList.toggle('hidden', exams.length > 0);
+
+                exams.forEach(e => {
+                    const card = document.createElement('div');
+                    card.className = 'exam-card bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col';
+                    
+                    const dateColor = e["Tentative Date"].includes("2025") ? "text-green-600" : "text-orange-600";
+                    const hasValidDate = parseExamDate(e["Tentative Date"]) !== null;
+                    
+                    card.innerHTML = `
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">${e.Examination}</h3>
+                            <p class="text-md font-semibold ${dateColor} mb-4">📅 ${e["Tentative Date"]}</p>
+                            <p class="text-sm text-slate-600 mb-4"><span class="font-semibold">For:</span> ${e.examination_for}</p>
+                            
+                            <div class="mb-4">
+                                <p class="text-sm text-slate-700 mb-2"><span class="font-semibold">Background:</span></p>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">${e.background}</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <p class="text-sm text-slate-700 mb-1"><span class="font-semibold">Marking Scheme:</span></p>
+                                <p class="text-sm text-slate-600">${e.marking_scheme}</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <p class="text-sm text-slate-700 mb-1"><span class="font-semibold">Marks Distribution:</span></p>
+                                <p class="text-sm text-slate-600">${e.mark_split_up}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 space-y-3">
+                            <a href="${e.exam_registration_link}" target="_blank" class="block w-full text-center bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                                Register Now
+                            </a>
+                            ${hasValidDate ? `
+                                <button onclick="createGoogleCalendarLink(${JSON.stringify(e).replace(/"/g, '&quot;')})" class="w-full text-center bg-green-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Add to Google Calendar
+                                </button>
+                            ` : `
+                                <button disabled class="w-full text-center bg-gray-400 text-white font-bold py-3 px-4 rounded-lg cursor-not-allowed flex items-center justify-center gap-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Date TBD
+                                </button>
+                            `}
+                        </div>
+                    `;
+                    examGrid.appendChild(card);
+                });
+            }
+
+            function applyFilters() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedFilters = {
+                    background: filterSelects.background.value,
+                    month: filterSelects.month.value,
+                    course: filterSelects.course.value
+                };
+
+                const filteredExams = allExams.filter(e => {
+                    const matchesSearch = e.Examination.toLowerCase().includes(searchTerm) || 
+                                        e.examination_for.toLowerCase().includes(searchTerm) || 
+                                        e.background.toLowerCase().includes(searchTerm);
+                    
+                    const matchesAllFilters = Object.keys(selectedFilters).every(key => {
+                        if (!selectedFilters[key]) return true;
+                        
+                        switch(key) {
+                            case 'background':
+                                return e.background === selectedFilters[key];
+                            case 'month':
+                                return extractMonth(e["Tentative Date"]) === selectedFilters[key];
+                            case 'course':
+                                return e.examination_for === selectedFilters[key];
+                            default:
+                                return true;
+                        }
+                    });
+                    
+                    return matchesSearch && matchesAllFilters;
+                });
+
+                renderExams(filteredExams);
+            }
+
+            searchInput.addEventListener('keyup', applyFilters);
+            Object.values(filterSelects).forEach(select => {
+                select.addEventListener('change', applyFilters);
+            });
+
+            fetchExams();
+        });
+    </script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "name": "User Q",
     "username": "q",
     "password": "q"
@@ -13,5 +14,10 @@
     "name": "Shalon Jovan",
     "username": "shalon",
     "password": "password"
+=======
+    "name": "Shalon Joven",
+    "email": "shalonjovan@gmail.com",
+    "isGoogle": true
+>>>>>>> 0574c1df72d295f1dce7c53c920e721cf3feed2d
   }
 ]

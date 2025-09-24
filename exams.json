@@ -1,0 +1,162 @@
+[
+    {
+        "Examination": "Diploma Programmes in Polytechnics",
+        "Tentative Date": "VISIT BOTE WEBSITE jksbotelive dot com",
+        "portion/syllabus": "10th standard syllabus - Mathematics (70 questions), Physics (50 questions), Chemistry (30 questions), English (30 questions)",
+        "background": "PCM (Physics, Chemistry, Mathematics) - Science stream",
+        "examination_for": "Admission to 3-year diploma polytechnic engineering courses",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Total 180 marks - Mathematics: 70, Physics: 50, Chemistry: 30, English: 30",
+        "exam_registration_link": "https://jksbotelive.com/"
+    },
+    {
+        "Examination": "Post Basic B.Sc.Nursing",
+        "Tentative Date": "17th May, 2025",
+        "portion/syllabus": "Anatomy & Physiology (20 marks), Community Health Nursing I&II (40 marks), Nutrition (20 marks), Nursing Art & First Aid (20 marks), Midwifery (20 marks)",
+        "background": "PCB (Physics, Chemistry, Biology) with nursing qualification",
+        "examination_for": "Admission to Post Basic B.Sc. Nursing course for diploma nurses",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Total 120 marks - Subject-wise distribution as per syllabus",
+        "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx"
+    },
+    {
+        "Examination": "Para Medical Diploma Courses(12th Based)",
+        "Tentative Date": "20th April, 2025",
+        "portion/syllabus": "12th standard syllabus - Physics, Chemistry, Biology, English (Class 12 level)",
+        "background": "PCB (Physics, Chemistry, Biology)",
+        "examination_for": "Admission to paramedical diploma courses like GNM, ANM",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Total 120 marks - Physics: 40, Chemistry: 40, Biology: 40",
+        "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx "
+    },
+    {
+        "Examination": "B.Sc.Nursing/ParaMedical/Technology",
+        "Tentative Date": "27th April, 2025",
+        "portion/syllabus": "12th standard syllabus - Physics (60 marks), Chemistry (60 marks), Biology (60 marks)",
+        "background": "PCB (Physics, Chemistry, Biology)",
+        "examination_for": "Admission to B.Sc. Nursing, B.Sc. Paramedical, B.Sc. Technology courses",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Total 180 marks - Physics: 60, Chemistry: 60, Biology: 60",
+        "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx "
+    },
+    {
+        "Examination": "BPharmacy/DPharmacy",
+        "Tentative Date": "24th May, 2025",
+        "portion/syllabus": "12th standard syllabus - Physics, Chemistry, Biology/Mathematics",
+        "background": "PCB or PCM (Physics, Chemistry, Biology/Mathematics)",
+        "examination_for": "Admission to Bachelor of Pharmacy and Diploma in Pharmacy courses",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Total 180 marks - Subject-wise equal distribution",
+        "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx "
+    },
+    {
+        "Examination": "M.Sc.Nursing",
+        "Tentative Date": "22nd June, 2025",
+        "portion/syllabus": "Management of Nursing Services (5 marks), Community Health Nursing (8 marks), Nursing Research & Statistics (5 marks), Mental Health Nursing (10 marks), Midwifery & Obstetrical Nursing (15 marks), Child Health Nursing (10 marks), Medical Surgical Nursing (remaining marks)",
+        "background": "B.Sc. Nursing with 1 year work experience",
+        "examination_for": "Admission to Master of Science in Nursing specializations",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Total 120 marks - Subject-wise distribution as per detailed syllabus",
+        "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx "
+    },
+    {
+        "Examination": "MD/MS/PG Diploma course",
+        "Tentative Date": "As Notified by NBEMS",
+        "portion/syllabus": "NEET PG syllabus - Clinical subjects based on MBBS curriculum",
+        "background": "MBBS degree with completion of internship",
+        "examination_for": "Admission to MD/MS and PG Diploma medical courses",
+        "marking_scheme": "As per NBEMS guidelines",
+        "mark_split_up": "As notified by NBEMS",
+        "exam_registration_link": "https://www.jkbopee.gov.in/ "
+    },
+    {
+        "Examination": "M.Sc. Technology",
+        "Tentative Date": "6th July, 2025",
+        "portion/syllabus": "Subject-specific technical syllabus based on undergraduate degree",
+        "background": "B.Sc./B.Tech in relevant technical field",
+        "examination_for": "Admission to Master of Science in Technology courses",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Subject-specific distribution based on course",
+        "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx "
+    },
+    {
+        "Examination": "PGDRP",
+        "Tentative Date": "2025",
+        "portion/syllabus": "Subject-specific syllabus for postgraduate diploma",
+        "background": "Graduate degree in relevant field",
+        "examination_for": "Admission to Postgraduate Diploma in Rural Practice",
+        "marking_scheme": "Standard marking scheme",
+        "mark_split_up": "As per course requirements",
+        "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx "
+    },
+    {
+        "Examination": "Common Entrance Test (Engineering)",
+        "Tentative Date": "12th April, 2025",
+        "portion/syllabus": "12th standard syllabus - Mathematics (60 marks), Physics (60 marks), Chemistry (60 marks)",
+        "background": "PCM (Physics, Chemistry, Mathematics)",
+        "examination_for": "Admission to B.Tech/B.E. engineering courses",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Total 180 marks - Mathematics: 60, Physics: 60, Chemistry: 60",
+        "exam_registration_link": "https://www.jkbopee.gov.in/Pages/Applicant/CAF.aspx?id=1"
+    },
+    {
+        "Examination": "B. Architecture",
+        "Tentative Date": "2025",
+        "portion/syllabus": "12th standard syllabus - Mathematics, Physics, Chemistry with aptitude test",
+        "background": "PCM (Physics, Chemistry, Mathematics)",
+        "examination_for": "Admission to Bachelor of Architecture course",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Mathematics, Physics, Chemistry with spatial aptitude",
+        "exam_registration_link": "https://www.jkbopee.gov.in/Pages/Applicant/CAF.aspx?id=1 "
+    },
+    {
+        "Examination": "Common Entrance Test (Medical)",
+        "Tentative Date": "To be notified after NEET result",
+        "portion/syllabus": "Based on NEET qualification - counseling based on NEET scores",
+        "background": "PCB (Physics, Chemistry, Biology)",
+        "examination_for": "Admission to MBBS, BDS, and other medical courses",
+        "marking_scheme": "Based on NEET scores",
+        "mark_split_up": "NEET-based counseling",
+        "exam_registration_link": "https://www.jkbopee.gov.in/ "
+    },
+    {
+        "Examination": "MD/MS Ayurveda",
+        "Tentative Date": "To be notified after NEET result",
+        "portion/syllabus": "NEET PG syllabus with Ayurveda specialization",
+        "background": "BAMS degree with completion of internship",
+        "examination_for": "Admission to MD/MS Ayurveda courses",
+        "marking_scheme": "NEET PG based",
+        "mark_split_up": "As per NEET PG pattern",
+        "exam_registration_link": "https://www.jkbopee.gov.in/"
+    },
+    {
+        "Examination": "MDS Course",
+        "Tentative Date": "As Notified by NBEMS",
+        "portion/syllabus": "NEET MDS syllabus - Dental subjects",
+        "background": "BDS degree with completion of internship",
+        "examination_for": "Admission to Master of Dental Surgery courses",
+        "marking_scheme": "As per NBEMS guidelines",
+        "mark_split_up": "As notified by NBEMS",
+        "exam_registration_link": "https://www.jkbopee.gov.in/ "
+    },
+    {
+        "Examination": "B. Ed. (CET)",
+        "Tentative Date": "26th April, 2025",
+        "portion/syllabus": "General English (45 marks), General Awareness (45 marks), Teaching Aptitude (45 marks), Reasoning (45 marks)",
+        "background": "Graduate degree in any discipline",
+        "examination_for": "Admission to Bachelor of Education course",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Total 180 marks - 45 marks each for 4 sections",
+        "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx "
+    },
+    {
+        "Examination": "10th Based Para Medical Course",
+        "Tentative Date": "19th April, 2025",
+        "portion/syllabus": "10th standard syllabus - English (20 marks), Physics (40 marks), Chemistry (40 marks), Biology (40 marks)",
+        "background": "PCB (Physics, Chemistry, Biology) - 10th standard",
+        "examination_for": "Admission to 10th based paramedical diploma courses",
+        "marking_scheme": "+1 mark for correct answer, -0.25 marks for wrong answer",
+        "mark_split_up": "Total 120 marks - English: 20, Physics: 40, Chemistry: 40, Biology: 40",
+        "exam_registration_link": "https://www.jkbopee.gov.in/OnlineApplicationList.aspx "
+    }
+]
