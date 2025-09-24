@@ -31,9 +31,223 @@
         .completion-icon { font-size: 5rem; color: #16a34a; margin-bottom: 1rem; }
         .loader { width: 48px; height: 48px; border: 5px solid #e2e8f0; border-bottom-color: #3b82f6; border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; margin: 2rem 0;}
         @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .option-label { display: block; background: #f8fafc; border: 1px solid #e2e8f0; padding: 1rem; border-radius: 8px; margin-bottom: 0.75rem; cursor: pointer; }
-        input[type="radio"] { display: none; }
-        input[type="radio"]:checked + .option-label { border-color: #3b82f6; background-color: #dbeafe; box-shadow: 0 0 0 2px #3b82f6; }
+        
+        /* Enhanced Question Styles */
+        .questions-container {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding-right: 8px;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 #f1f5f9;
+        }
+        
+        .questions-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .questions-container::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 3px;
+        }
+        
+        .questions-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        
+        .questions-container::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        .question-card {
+            background: #ffffff;
+            border: 2px solid #f1f5f9;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        
+        .question-card:hover {
+            border-color: #e2e8f0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+        
+        .question-card.has-selection {
+            border-color: #3b82f6;
+            background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
+        }
+        
+        .question-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+        }
+        
+        .options-grid {
+            display: grid;
+            gap: 0.75rem;
+        }
+        
+        .option-item {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .option-input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            color: #475569;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option-label::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            transition: width 0.3s ease;
+            z-index: 1;
+        }
+        
+        .option-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .option-radio {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #cbd5e1;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            position: relative;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+        
+        .option-radio::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.2s ease;
+        }
+        
+        .option-text {
+            flex: 1;
+            transition: color 0.2s ease;
+        }
+        
+        .option-label:hover {
+            border-color: #3b82f6;
+            background: #f0f9ff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+        
+        .option-input:checked + .option-label {
+            border-color: #3b82f6;
+            background: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .option-input:checked + .option-label::before {
+            width: 100%;
+        }
+        
+        .option-input:checked + .option-label .option-radio {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .option-input:checked + .option-label .option-radio::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .option-input:checked + .option-label .option-text {
+            color: white;
+            font-weight: 600;
+        }
+        
+        .questions-progress {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding: 0.75rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .progress-text {
+            font-weight: 600;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+        
+        .progress-bar-mini {
+            width: 120px;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-fill-mini {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
     </style>
 </head>
 <body>
@@ -50,36 +264,36 @@
         </div>
 
         <div id="step1" class="step active">
-    <h2>Personal & Professional Info</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
-        <div class="input-group">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" placeholder="Loading name..." readonly required>
-        </div>
-        <div class="input-group">
-            <label for="age">Age</label>
-            <input type="number" id="age" placeholder="e.g., 17" required>
-        </div>
-        <div class="input-group">
-            <label for="class">Class / Grade</label>
-            <input type="text" id="class" placeholder="e.g., 12th Grade" required>
-        </div>
+            <h2>Personal & Professional Info</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                <div class="input-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Loading name..." readonly required>
+                </div>
+                <div class="input-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="e.g., 17" required>
+                </div>
+                <div class="input-group">
+                    <label for="class">Class / Grade</label>
+                    <input type="text" id="class" placeholder="e.g., 12th Grade" required>
+                </div>
 
-        <div class="input-group">
-            <label for="gender">Gender</label>
-            <select id="gender" class="w-full p-[14px] border border-gray-300 rounded-lg" required>
-                <option value="" disabled selected>Select your gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Non-binary">Non-binary</option>
-                <option value="Prefer not to say">Prefer not to say</option>
-            </select>
+                <div class="input-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" class="w-full p-[14px] border border-gray-300 rounded-lg" required>
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Non-binary">Non-binary</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                </div>
+            </div>
+            <div class="button-group justify-end">
+                <button id="next-step-1" class="action-button primary-button">Next →</button>
+            </div>
         </div>
-        </div>
-    <div class="button-group justify-end">
-        <button id="next-step-1" class="action-button primary-button">Next →</button>
-    </div>
-</div>
         
         <div id="step2" class="step">
             <h2>Stream of Study</h2>
@@ -87,18 +301,29 @@
             <div id="stream-options" class="bubbles-container"></div>
             <div class="button-group"><button onclick="showStep(0)" class="action-button secondary-button">← Back</button><button id="next-step-2" class="action-button primary-button">Next →</button></div>
         </div>
+        
         <div id="step3" class="step">
             <h2>Let's Dive Deeper</h2>
-            <p class="text-sm text-gray-500 mb-6">Our AI has generated questions to understand your interests better.</p>
-            <div id="gemini-questions-container"></div>
+            <p class="text-sm text-gray-500 mb-4">Our AI has generated questions to understand your interests better.</p>
+            
+            <div class="questions-progress" id="questions-progress" style="display: none;">
+                <span class="progress-text" id="progress-text">0 of 0 answered</span>
+                <div class="progress-bar-mini">
+                    <div class="progress-fill-mini" id="progress-fill-mini"></div>
+                </div>
+            </div>
+            
+            <div id="gemini-questions-container" class="questions-container"></div>
             <div class="button-group"><button onclick="showStep(1)" class="action-button secondary-button">← Back</button><button id="next-step-3" class="action-button primary-button">Next →</button></div>
         </div>
+        
         <div id="step4" class="step">
             <h2>Personalized Recommendations</h2>
             <p class="text-sm text-gray-500 mb-6">Based on your answers, here are some fields that might excite you. Select all that apply.</p>
             <div id="specialized-options" class="bubbles-container"></div>
             <div class="button-group"><button onclick="showStep(2)" class="action-button secondary-button">← Back</button><button id="submit-button" class="action-button primary-button">Submit Assessment</button></div>
         </div>
+        
         <div id="step5" class="step">
             <div class="completion-icon">✓</div>
             <h2>Assessment Complete!</h2>
@@ -119,12 +344,10 @@
     const streams = ['Science (Biology)', 'Science (Maths/CS)', 'Commerce', 'Humanities / Arts'];
 
     // --- ON PAGE LOAD ---
-    // Get the logged-in user's full name and unique username to start the assessment
     document.addEventListener('DOMContentLoaded', () => {
         const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
         if (loggedInUser && loggedInUser.name && loggedInUser.username) {
             document.getElementById('fullName').value = loggedInUser.name;
-            // Store the unique username in our assessment data object
             assessmentData.username = loggedInUser.username;
         } else {
             alert('You are not logged in. Redirecting to login page.');
@@ -172,6 +395,20 @@
     
     function showLoader(containerId) {
         document.getElementById(containerId).innerHTML = '<div class="loader"></div>';
+    }
+
+    function updateQuestionsProgress() {
+        if (!assessmentData.geminiQuestions) return;
+        
+        const totalQuestions = assessmentData.geminiQuestions.length;
+        const answeredQuestions = document.querySelectorAll('input[type="radio"]:checked').length;
+        
+        const progressText = document.getElementById('progress-text');
+        const progressFill = document.getElementById('progress-fill-mini');
+        
+        progressText.textContent = `${answeredQuestions} of ${totalQuestions} answered`;
+        const percentage = (answeredQuestions / totalQuestions) * 100;
+        progressFill.style.width = `${percentage}%`;
     }
 
     // --- BACKEND & AI FUNCTIONS ---
@@ -238,54 +475,104 @@
 
     function renderQuestions(questions) {
         const container = document.getElementById("gemini-questions-container");
+        const progressContainer = document.getElementById("questions-progress");
+        
         container.innerHTML = "";
+        progressContainer.style.display = "flex";
+        
         questions.forEach((q, index) => {
-            const questionGroup = document.createElement("div");
-            questionGroup.className = "question-group";
-            const questionLabel = document.createElement("label");
-            questionLabel.textContent = `${index + 1}. ${q.question}`;
-            questionGroup.appendChild(questionLabel);
+            const questionCard = document.createElement("div");
+            questionCard.className = "question-card";
+            
+            const questionNumber = document.createElement("div");
+            questionNumber.className = "question-number";
+            questionNumber.textContent = index + 1;
+            
+            const questionText = document.createElement("div");
+            questionText.className = "question-text";
+            questionText.textContent = q.question;
+            
+            const optionsGrid = document.createElement("div");
+            optionsGrid.className = "options-grid";
+            
             q.options.forEach((option, optionIndex) => {
+                const optionItem = document.createElement("div");
+                optionItem.className = "option-item";
+                
                 const optionId = `q${index}-o${optionIndex}`;
+                
                 const radioInput = document.createElement("input");
                 radioInput.type = "radio";
+                radioInput.className = "option-input";
                 radioInput.id = optionId;
                 radioInput.name = `question-${index}`;
                 radioInput.value = option;
+                
                 const optionLabel = document.createElement("label");
                 optionLabel.className = "option-label";
                 optionLabel.htmlFor = optionId;
-                optionLabel.textContent = option;
-                questionGroup.appendChild(radioInput);
-                questionGroup.appendChild(optionLabel);
+                
+                const optionContent = document.createElement("div");
+                optionContent.className = "option-content";
+                
+                const optionRadio = document.createElement("div");
+                optionRadio.className = "option-radio";
+                
+                const optionTextEl = document.createElement("span");
+                optionTextEl.className = "option-text";
+                optionTextEl.textContent = option;
+                
+                optionContent.appendChild(optionRadio);
+                optionContent.appendChild(optionTextEl);
+                optionLabel.appendChild(optionContent);
+                
+                optionItem.appendChild(radioInput);
+                optionItem.appendChild(optionLabel);
+                optionsGrid.appendChild(optionItem);
+                
+                // Add event listener to update progress and card state
+                radioInput.addEventListener('change', () => {
+                    updateQuestionsProgress();
+                    // Update question card appearance
+                    const hasSelection = document.querySelector(`input[name="question-${index}"]:checked`);
+                    if (hasSelection) {
+                        questionCard.classList.add('has-selection');
+                    } else {
+                        questionCard.classList.remove('has-selection');
+                    }
+                });
             });
-            container.appendChild(questionGroup);
+            
+            questionCard.appendChild(questionNumber);
+            questionCard.appendChild(questionText);
+            questionCard.appendChild(optionsGrid);
+            container.appendChild(questionCard);
         });
+        
+        // Initialize progress
+        updateQuestionsProgress();
     }
 
     // --- EVENT LISTENERS ---
-    // --- EVENT LISTENERS ---
-document.getElementById('next-step-1').addEventListener('click', () => {
-    const fullName = document.getElementById('fullName').value.trim();
-    const age = document.getElementById('age').value;
-    const studentClass = document.getElementById('class').value.trim();
-    const gender = document.getElementById('gender').value; // <-- 1. ADD THIS LINE to get the gender
+    document.getElementById('next-step-1').addEventListener('click', () => {
+        const fullName = document.getElementById('fullName').value.trim();
+        const age = document.getElementById('age').value;
+        const studentClass = document.getElementById('class').value.trim();
+        const gender = document.getElementById('gender').value;
 
-    // Also add 'gender' to the validation check
-    if (fullName && age && studentClass && gender) {
-        // Merge new details with the existing assessmentData (which holds the unique username)
-        Object.assign(assessmentData, { 
-            userName: fullName, 
-            age, 
-            studentClass,
-            gender: gender // <-- 2. ADD THIS LINE to save the gender
-        });
-        createBubbles('stream-options', streams);
-        showStep(1);
-    } else {
-        alert('Please fill out all the fields.');
-    }
-});
+        if (fullName && age && studentClass && gender) {
+            Object.assign(assessmentData, { 
+                userName: fullName, 
+                age, 
+                studentClass,
+                gender: gender
+            });
+            createBubbles('stream-options', streams);
+            showStep(1);
+        } else {
+            alert('Please fill out all the fields.');
+        }
+    });
 
     document.getElementById("next-step-2").addEventListener("click", () => {
         const selectedBubble = document.querySelector("#stream-options .bubble.selected");
@@ -334,7 +621,7 @@ document.getElementById('next-step-1').addEventListener('click', () => {
     });
 
     document.getElementById('view-profile-button').addEventListener('click', () => {
-        window.location.href = 'profile.html'; // Or 'foryou.html' if you prefer
+        window.location.href = 'profile.html';
     });
 </script>
 </body>
