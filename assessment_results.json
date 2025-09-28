@@ -61,255 +61,7 @@
         ]
       },
       {
-<<<<<<< HEAD
         "question": "Are you drawn to fields that involve significant research and development?",
-=======
-        "question": "Which area of medicine or healthcare appeals to you the most?",
-        "options": [
-          "Surgery",
-          "Research and development",
-          "Patient care",
-          "Public health"
-        ]
-      },
-      {
-        "question": "How important is it to you to help people directly?",
-        "options": [
-          "Very important",
-          "Somewhat important",
-          "Not very important",
-          "Not at all important"
-        ]
-      },
-      {
-        "question": "Are you comfortable working with animals?",
-        "options": [
-          "Yes",
-          "No",
-          "Only certain animals",
-          "It depends on the context"
-        ]
-      },
-      {
-        "question": "Do you prefer working independently or as part of a team?",
-        "options": [
-          "Independently",
-          "As part of a team",
-          "Both equally",
-          "I haven't thought about it"
-        ]
-      },
-      {
-        "question": "What kind of career environment do you envision yourself in?",
-        "options": [
-          "Academic research",
-          "Industry (e.g., pharmaceutical)",
-          "Government or non-profit",
-          "Entrepreneurship"
-        ]
-      },
-      {
-        "question": "Which biological process fascinates you the most?",
-        "options": [
-          "Photosynthesis",
-          "Cellular respiration",
-          "DNA replication",
-          "Evolution"
-        ]
-      },
-      {
-        "question": "Are you interested in the ethical implications of biological research?",
-        "options": [
-          "Yes, very much so",
-          "Somewhat",
-          "Not really",
-          "Not at all"
-        ]
-      },
-      {
-        "question": "Would you be interested in studying plants?",
-        "options": [
-          "Yes",
-          "No",
-          "Maybe",
-          "I haven't considered it"
-        ]
-      },
-      {
-        "question": "How important is it for you to make a tangible impact on the world?",
-        "options": [
-          "Very important",
-          "Important",
-          "Moderately important",
-          "Not very important"
-        ]
-      }
-    ],
-    "geminiAnswers": [
-      {
-        "question": "Which aspect of Biology excites you the most?",
-        "answer": "Understanding the human body and its functions"
-      },
-      {
-        "question": "If you could research any biological phenomenon, what would it be?",
-        "answer": "The impact of climate change on ecosystems"
-      },
-      {
-        "question": "Which field of science interests you most in conjunction with Biology?",
-        "answer": "Computer Science (Bioinformatics)"
-      },
-      {
-        "question": "Do you prefer working in a lab setting or outdoors?",
-        "answer": "Mostly fieldwork and observation"
-      },
-      {
-        "question": "What kind of problem-solving do you enjoy?",
-        "answer": "Creative and innovative"
-      },
-      {
-        "question": "Are you more interested in studying individual organisms or entire ecosystems?",
-        "answer": "Both equally"
-      },
-      {
-        "question": "Which area of medicine or healthcare appeals to you the most?",
-        "answer": "Public health"
-      },
-      {
-        "question": "How important is it to you to help people directly?",
-        "answer": "Somewhat important"
-      },
-      {
-        "question": "Are you comfortable working with animals?",
-        "answer": "Only certain animals"
-      },
-      {
-        "question": "Do you prefer working independently or as part of a team?",
-        "answer": "Both equally"
-      },
-      {
-        "question": "What kind of career environment do you envision yourself in?",
-        "answer": "Industry (e.g., pharmaceutical)"
-      },
-      {
-        "question": "Which biological process fascinates you the most?",
-        "answer": "Photosynthesis"
-      },
-      {
-        "question": "Are you interested in the ethical implications of biological research?",
-        "answer": "Yes, very much so"
-      },
-      {
-        "question": "Would you be interested in studying plants?",
-        "answer": "Yes"
-      },
-      {
-        "question": "How important is it for you to make a tangible impact on the world?",
-        "answer": "Moderately important"
-      }
-    ],
-    "specializedFields": [
-      "Environmental Epidemiology",
-      "Bioinformatics in Public Health",
-      "Systems Biology (focus on ecosystems)",
-      "Agricultural Biotechnology (sustainable crops)",
-      "Climate Change Impacts on Human Health",
-      "Science Communication (focus on environmental issues)"
-    ]
-  },
-  {
-    "username": "l",
-    "userName": "shalon",
-    "age": "17",
-    "studentClass": "12",
-    "stream": "Science (Maths/CS)",
-    "geminiQuestions": [
-      {
-        "question": "Which aspect of computer science excites you the most?",
-        "options": [
-          "Software Development",
-          "Data Science/Machine Learning",
-          "Cybersecurity",
-          "Artificial Intelligence",
-          "Networking"
-        ]
-      },
-      {
-        "question": "In mathematics, what area captures your interest?",
-        "options": [
-          "Algebra",
-          "Calculus",
-          "Statistics",
-          "Geometry",
-          "Number Theory"
-        ]
-      },
-      {
-        "question": "Which scientific field, beyond pure maths and CS, intrigues you?",
-        "options": [
-          "Physics",
-          "Chemistry",
-          "Biology",
-          "Astronomy",
-          "Environmental Science"
-        ]
-      },
-      {
-        "question": "Are you more interested in theoretical concepts or practical applications?",
-        "options": [
-          "Theoretical Concepts",
-          "Practical Applications",
-          "Both Equally",
-          "Neither"
-        ]
-      },
-      {
-        "question": "Do you prefer working independently or collaboratively on projects?",
-        "options": [
-          "Independently",
-          "Collaboratively",
-          "A Mix of Both",
-          "It Depends on the Project"
-        ]
-      },
-      {
-        "question": "What kind of problem-solving approach do you prefer?",
-        "options": [
-          "Analytical and Logical",
-          "Creative and Intuitive",
-          "A Combination of Both",
-          "Other"
-        ]
-      },
-      {
-        "question": "How important is the impact of your work on society to you?",
-        "options": [
-          "Very Important",
-          "Somewhat Important",
-          "Not Very Important",
-          "Not Important at All"
-        ]
-      },
-      {
-        "question": "Would you prefer a job that involves mostly indoor or outdoor work?",
-        "options": [
-          "Mostly Indoor",
-          "Mostly Outdoor",
-          "A Mix of Both",
-          "It Doesn't Matter"
-        ]
-      },
-      {
-        "question": "Are you comfortable with ambiguity and uncertainty?",
-        "options": [
-          "Yes",
-          "No",
-          "Sometimes",
-          "It Depends"
-        ]
-      },
-      {
-        "question": "Do you enjoy working with large datasets and extracting insights?",
->>>>>>> c9f6c4026839b86412ad24ccf74ac1e233f8e85b
         "options": [
           "Yes",
           "No",
@@ -347,7 +99,6 @@
       {
         "question": "Would you prefer a career focused on creating new technologies or improving existing ones?",
         "options": [
-<<<<<<< HEAD
           "Creating new technologies",
           "Improving existing ones",
           "Both equally",
@@ -356,16 +107,6 @@
       },
       {
         "question": "How important is the potential for making a significant impact on society in your career choice?",
-=======
-          "Established Systems",
-          "Creating New Systems",
-          "Both",
-          "Neither"
-        ]
-      },
-      {
-        "question": "Are you a detail-oriented person or do you prefer to focus on the big picture?",
->>>>>>> c9f6c4026839b86412ad24ccf74ac1e233f8e85b
         "options": [
           "Very important",
           "Moderately important",
@@ -472,7 +213,6 @@
     ]
   },
   {
-<<<<<<< HEAD
     "username": "hi",
     "userName": "hi",
     "age": "17",
@@ -687,10 +427,6 @@
   {
     "username": "go",
     "userName": "go",
-=======
-    "username": "joe",
-    "userName": "joe",
->>>>>>> c9f6c4026839b86412ad24ccf74ac1e233f8e85b
     "age": "18",
     "studentClass": "12",
     "stream": "Science (Maths/CS)",
@@ -747,49 +483,8 @@
       {
         "question": "Do you prefer working independently or collaboratively on projects?",
         "options": [
-<<<<<<< HEAD
           "Independently",
           "Collaboratively",
-=======
-          "The discovery of the structure of DNA",
-          "The development of the internet",
-          "The creation of artificial organs",
-          "The advancements in space exploration",
-          "The development of renewable energy sources"
-        ]
-      },
-      {
-        "question": "Do you prefer working with large datasets or smaller, more focused projects?",
-        "options": [
-          "Large datasets and big-picture thinking",
-          "Smaller, more focused projects",
-          "I'm comfortable with both"
-        ]
-      },
-      {
-        "question": "How important is the potential for innovation and creativity in your future career?",
-        "options": [
-          "Very Important",
-          "Somewhat Important",
-          "Not Important",
-          "Not Applicable"
-        ]
-      },
-      {
-        "question": "Which skill are you most eager to develop further?",
-        "options": [
-          "Programming",
-          "Data Analysis",
-          "Problem-solving",
-          "Communication"
-        ]
-      },
-      {
-        "question": "Would you prefer a career involving research or development?",
-        "options": [
-          "Research",
-          "Development",
->>>>>>> c9f6c4026839b86412ad24ccf74ac1e233f8e85b
           "Both",
           "Neither"
         ]
@@ -1801,6 +1496,219 @@
       "Machine Learning Engineering",
       "Artificial Intelligence (AI) in Healthcare",
       "Scientific Computing"
+    ]
+  },
+  {
+    "username": "shalonjovan@gmail.com",
+    "userName": "Shalon Joven",
+    "age": "17",
+    "studentClass": "12",
+    "gender": "Male",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "When faced with a complex problem, what aspect do you find most satisfying?",
+        "options": [
+          "A) Devising elegant mathematical proofs or theoretical models.",
+          "B) Writing efficient code to automate a process or solve a computational challenge.",
+          "C) Analyzing large datasets to find hidden patterns and insights.",
+          "D) Designing the architecture for a robust and scalable software system."
+        ]
+      },
+      {
+        "question": "Which of these projects excites you the most?",
+        "options": [
+          "A) Developing an algorithm to optimize resource allocation in a complex system.",
+          "B) Building a secure and interactive web application for users.",
+          "C) Training a machine learning model to predict future trends from data.",
+          "D) Designing and implementing a new programming language feature or operating system component."
+        ]
+      },
+      {
+        "question": "In mathematics, what kind of problems capture your attention the most?",
+        "options": [
+          "A) Exploring abstract concepts like number theory, topology, or advanced calculus.",
+          "B) Applying statistical methods to understand real-world phenomena.",
+          "C) Using discrete mathematics for algorithm design and logic.",
+          "D) Modeling physical systems or financial markets with differential equations."
+        ]
+      },
+      {
+        "question": "If you were to work with data, what would be your preferred role?",
+        "options": [
+          "A) Ensuring the security and privacy of sensitive information.",
+          "B) Creating interactive visualizations to tell a story with data.",
+          "C) Building and maintaining large-scale databases.",
+          "D) Developing algorithms to process and extract insights from raw data."
+        ]
+      },
+      {
+        "question": "In a software development team, which role would you naturally gravitate towards?",
+        "options": [
+          "A) Designing the user interface and user experience (UI/UX).",
+          "B) Writing the core logic and backend services.",
+          "C) Testing and ensuring the quality and reliability of the software.",
+          "D) Managing project timelines and coordinating team efforts."
+        ]
+      },
+      {
+        "question": "What interests you more about a computer?",
+        "options": [
+          "A) How the hardware components (CPU, memory) interact at a low level.",
+          "B) The operating system and how it manages resources and runs programs.",
+          "C) The applications and software that users interact with daily.",
+          "D) The network infrastructure that allows computers to communicate globally."
+        ]
+      },
+      {
+        "question": "Which challenge do you find more engaging?",
+        "options": [
+          "A) Inventing entirely new computational methods or theoretical frameworks.",
+          "B) Optimizing existing systems for speed, efficiency, or resource usage.",
+          "C) Finding novel applications for established technologies to solve new problems.",
+          "D) Ensuring the reliability and robustness of critical systems."
+        ]
+      },
+      {
+        "question": "When learning a new programming language or tool, what aspect do you focus on first?",
+        "options": [
+          "A) Understanding its underlying principles and theoretical foundations.",
+          "B) Immediately trying to build a small project or application with it.",
+          "C) Exploring its capabilities for data analysis or machine learning.",
+          "D) Comparing its performance and efficiency against other tools."
+        ]
+      },
+      {
+        "question": "If your work could significantly impact one area, which would you choose?",
+        "options": [
+          "A) Advancing scientific research (e.g., physics, biology, chemistry).",
+          "B) Improving everyday technology and user experience.",
+          "C) Solving complex societal problems (e.g., healthcare, environment, education).",
+          "D) Securing information and systems from cyber threats."
+        ]
+      },
+      {
+        "question": "Do you prefer exploring 'what if' scenarios and abstract concepts, or building tangible solutions to immediate problems?",
+        "options": [
+          "A) Exploring abstract 'what if' scenarios and foundational theories.",
+          "B) Building tangible solutions to immediate, practical problems.",
+          "C) A balance of both, deriving practical solutions from theoretical understanding.",
+          "D) Focusing on understanding the 'why' behind existing systems and their limitations."
+        ]
+      },
+      {
+        "question": "Where do you see the most scope for creativity in computing?",
+        "options": [
+          "A) Designing intuitive and visually appealing user interfaces.",
+          "B) Crafting elegant and efficient algorithms.",
+          "C) Developing innovative AI models that mimic human intelligence.",
+          "D) Inventing new ways to secure data and communications."
+        ]
+      },
+      {
+        "question": "In a research project involving advanced mathematics and computing, which role sounds most appealing?",
+        "options": [
+          "A) Developing the mathematical models and proving their properties.",
+          "B) Implementing the models in code and running simulations.",
+          "C) Analyzing the results and drawing conclusions from the data.",
+          "D) Designing experiments and collecting the necessary data."
+        ]
+      },
+      {
+        "question": "What aspect of the internet or digital infrastructure fascinates you most?",
+        "options": [
+          "A) How search engines rank and retrieve information from billions of pages.",
+          "B) The underlying protocols and networks that enable global communication.",
+          "C) The security measures that protect online transactions and user data.",
+          "D) The massive data centers and cloud computing platforms that power services."
+        ]
+      },
+      {
+        "question": "If you had unlimited time to delve into one area right now, what would it be?",
+        "options": [
+          "A) Advanced topics in quantum computing or cryptography.",
+          "B) Building a complex video game or interactive simulation.",
+          "C) Deep diving into the ethics and societal impact of AI.",
+          "D) Mastering multiple programming languages and development frameworks."
+        ]
+      },
+      {
+        "question": "Which type of problem do you find most intellectually stimulating?",
+        "options": [
+          "A) Proving a mathematical conjecture that has stumped experts.",
+          "B) Debugging a notoriously difficult software bug in a large system.",
+          "C) Identifying subtle biases or errors in a machine learning model.",
+          "D) Designing a new, more efficient database schema for a complex application."
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "When faced with a complex problem, what aspect do you find most satisfying?",
+        "answer": "A) Devising elegant mathematical proofs or theoretical models."
+      },
+      {
+        "question": "Which of these projects excites you the most?",
+        "answer": "A) Developing an algorithm to optimize resource allocation in a complex system."
+      },
+      {
+        "question": "In mathematics, what kind of problems capture your attention the most?",
+        "answer": "A) Exploring abstract concepts like number theory, topology, or advanced calculus."
+      },
+      {
+        "question": "If you were to work with data, what would be your preferred role?",
+        "answer": "A) Ensuring the security and privacy of sensitive information."
+      },
+      {
+        "question": "In a software development team, which role would you naturally gravitate towards?",
+        "answer": "A) Designing the user interface and user experience (UI/UX)."
+      },
+      {
+        "question": "What interests you more about a computer?",
+        "answer": "A) How the hardware components (CPU, memory) interact at a low level."
+      },
+      {
+        "question": "Which challenge do you find more engaging?",
+        "answer": "C) Finding novel applications for established technologies to solve new problems."
+      },
+      {
+        "question": "When learning a new programming language or tool, what aspect do you focus on first?",
+        "answer": "B) Immediately trying to build a small project or application with it."
+      },
+      {
+        "question": "If your work could significantly impact one area, which would you choose?",
+        "answer": "B) Improving everyday technology and user experience."
+      },
+      {
+        "question": "Do you prefer exploring 'what if' scenarios and abstract concepts, or building tangible solutions to immediate problems?",
+        "answer": "A) Exploring abstract 'what if' scenarios and foundational theories."
+      },
+      {
+        "question": "Where do you see the most scope for creativity in computing?",
+        "answer": "A) Designing intuitive and visually appealing user interfaces."
+      },
+      {
+        "question": "In a research project involving advanced mathematics and computing, which role sounds most appealing?",
+        "answer": "A) Developing the mathematical models and proving their properties."
+      },
+      {
+        "question": "What aspect of the internet or digital infrastructure fascinates you most?",
+        "answer": "B) The underlying protocols and networks that enable global communication."
+      },
+      {
+        "question": "If you had unlimited time to delve into one area right now, what would it be?",
+        "answer": "A) Advanced topics in quantum computing or cryptography."
+      },
+      {
+        "question": "Which type of problem do you find most intellectually stimulating?",
+        "answer": "A) Proving a mathematical conjecture that has stumped experts."
+      }
+    ],
+    "specializedFields": [
+      "Theoretical Computer Science",
+      "Algorithm Engineering and Optimization",
+      "Information Security Research and Engineering",
+      "Human-Computer Interaction (HCI) Research"
     ]
   }
 ]

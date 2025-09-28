@@ -50,9 +50,7 @@ app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) 
 
 // --- Gemini API Configuration ---
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
-
-// Serve static frontend files
+const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 app.use(express.static(path.join(__dirname, '/')));
 
 // Define file paths
