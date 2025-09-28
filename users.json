@@ -9,5 +9,11 @@
     "name": "sa",
     "username": "sa",
     "password": "$2b$10$oxn3qn5XLNmHmArQdxhGG.tgU4ocuZbbozEu.IOBVSODKovvayLcW"
+  },
+  {
+    "name": "Blastorz",
+    "email": "team.blastorz@gmail.com",
+    "username": "team.blastorz@gmail.com",
+    "isGoogle": true
   }
 ]
