@@ -14,6 +14,8 @@ const app = express();
 //   console.log(`Server running on port ${PORT}`);
 // });
 
+// In-memory users storage
+let users = []; // temporary, resets on redeploy
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -335,18 +337,33 @@ app.post('/gemini-proxy', async (req, res) => {
     }
 });
 
+// app.post('/signup', async (req, res) => {
+//     const { name, username, password } = req.body;
+//     if (!name || !username || !password) {
+//         return res.status(400).json({ error: 'Full name, username and password are required' });
+//     }
+//     let users = readJsonFile(usersFilePath);
+//     if (users.some(u => u.username === username)) {
+//         return res.status(400).json({ error: 'Username already exists' });
+//     }
+//     const hashedPassword = await bcrypt.hash(password, 10);
+//     users.push({ name, username, password: hashedPassword });
+//     writeJsonFile(usersFilePath, users);
+//     res.json({ status: 'success' });
+// });
 app.post('/signup', async (req, res) => {
     const { name, username, password } = req.body;
     if (!name || !username || !password) {
         return res.status(400).json({ error: 'Full name, username and password are required' });
     }
-    let users = readJsonFile(usersFilePath);
+
     if (users.some(u => u.username === username)) {
         return res.status(400).json({ error: 'Username already exists' });
     }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     users.push({ name, username, password: hashedPassword });
-    writeJsonFile(usersFilePath, users);
+    console.log("Users after signup:", users); // debug log
     res.json({ status: 'success' });
 });
 
@@ -364,43 +381,57 @@ app.post('/google-signup', (req, res) => {
     res.json({ status: 'success', isLogin: false, user: { name: newUser.name, username: newUser.username } });
 });
 
+// app.post('/login', async (req, res) => {
+//     const { username, password } = req.body;
+//     let users = readJsonFile(usersFilePath);
+
+//     // Debug: log all users loaded
+//     console.log("Users in file:", users);
+
+//     // Debug: log the login attempt
+//     console.log("Login attempt:", { username, password });
+
+//     const user = users.find(u => u.username === username);
+
+//     // Debug: log whether the user was found
+//     console.log("Found user:", user);
+
+//     if (user && !user.isGoogle) {
+//         try {
+//             const isMatch = await bcrypt.compare(password, user.password);
+
+//             // Debug: log the password match result
+//             console.log("Password match result:", isMatch);
+
+//             if (isMatch) {
+//                 res.json({ status: 'success', user: { name: user.name, username: user.username } });
+//             } else {
+//                 console.error("Password mismatch for user:", username);
+//                 res.status(401).json({ error: 'Invalid username or password.' });
+//             }
+//         } catch (err) {
+//             console.error("Error comparing password:", err);
+//             res.status(500).json({ error: 'Server error during login.' });
+//         }
+//     } else {
+//         console.error("User not found or is a Google account:", username);
+//         res.status(401).json({ error: 'Invalid username or password.' });
+//     }
+// });
+
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
-    let users = readJsonFile(usersFilePath);
-
-    // Debug: log all users loaded
-    console.log("Users in file:", users);
-
-    // Debug: log the login attempt
-    console.log("Login attempt:", { username, password });
-
     const user = users.find(u => u.username === username);
 
-    // Debug: log whether the user was found
-    console.log("Found user:", user);
-
-    if (user && !user.isGoogle) {
-        try {
-            const isMatch = await bcrypt.compare(password, user.password);
-
-            // Debug: log the password match result
-            console.log("Password match result:", isMatch);
-
-            if (isMatch) {
-                res.json({ status: 'success', user: { name: user.name, username: user.username } });
-            } else {
-                console.error("Password mismatch for user:", username);
-                res.status(401).json({ error: 'Invalid username or password.' });
-            }
-        } catch (err) {
-            console.error("Error comparing password:", err);
-            res.status(500).json({ error: 'Server error during login.' });
+    if (user) {
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (isMatch) {
+            return res.json({ status: 'success', user: { name: user.name, username: user.username } });
         }
-    } else {
-        console.error("User not found or is a Google account:", username);
-        res.status(401).json({ error: 'Invalid username or password.' });
     }
+    res.status(401).json({ error: 'Invalid username or password.' });
 });
+
 
 
 app.post('/google-login', (req, res) => {
