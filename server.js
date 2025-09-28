@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+
 // app.listen(PORT, () => {
 //   console.log(`Server running on port ${PORT}`);
 // });
@@ -367,19 +367,41 @@ app.post('/google-signup', (req, res) => {
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
     let users = readJsonFile(usersFilePath);
+
+    // Debug: log all users loaded
+    console.log("Users in file:", users);
+
+    // Debug: log the login attempt
+    console.log("Login attempt:", { username, password });
+
     const user = users.find(u => u.username === username);
-    
+
+    // Debug: log whether the user was found
+    console.log("Found user:", user);
+
     if (user && !user.isGoogle) {
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (isMatch) {
-            res.json({ status: 'success', user: { name: user.name, username: user.username } });
-        } else {
-            res.status(401).json({ error: 'Invalid username or password.' });
+        try {
+            const isMatch = await bcrypt.compare(password, user.password);
+
+            // Debug: log the password match result
+            console.log("Password match result:", isMatch);
+
+            if (isMatch) {
+                res.json({ status: 'success', user: { name: user.name, username: user.username } });
+            } else {
+                console.error("Password mismatch for user:", username);
+                res.status(401).json({ error: 'Invalid username or password.' });
+            }
+        } catch (err) {
+            console.error("Error comparing password:", err);
+            res.status(500).json({ error: 'Server error during login.' });
         }
     } else {
+        console.error("User not found or is a Google account:", username);
         res.status(401).json({ error: 'Invalid username or password.' });
     }
 });
+
 
 app.post('/google-login', (req, res) => {
     const { email } = req.body;
@@ -411,6 +433,7 @@ app.post('/save-assessment', (req, res) => {
     res.json({ status: 'success' });
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
