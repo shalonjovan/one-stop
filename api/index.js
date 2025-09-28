@@ -13,46 +13,35 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// --- ADDED: Multer setup for storing profile pictures ---
+// IMPORTANT: Fix static file serving for Vercel
+app.use(express.static(path.join(__dirname, '../')));
+app.use('/assets', express.static(path.join(__dirname, '../assets')));
+app.use('/colleges', express.static(path.join(__dirname, '../colleges')));
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+
+// Multer setup
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/'); // The directory where files will be stored
+        cb(null, 'uploads/');
     },
     filename: function (req, file, cb) {
-        // Use the username from the request body to create a unique filename
-        // This will overwrite the previous picture if a new one is uploaded for the same user
         const username = req.body.username;
         const fileExtension = path.extname(file.originalname);
         cb(null, username + fileExtension);
     }
 });
 
-// --- ADD THIS LINE TO FIX THE ERROR ---
 const upload = multer({ storage: storage });
 
-// --- API Endpoints ---
-
-// --- ADDED: Endpoint to handle profile picture upload ---
-app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).json({ message: 'No file was uploaded.' });
-    }
-    // The file is now saved. Send a success response.
-    res.status(200).json({ message: 'Profile picture uploaded successfully!', filePath: req.file.path });
-});
-
-// ... (rest of your code) ...
-
-// --- Gemini API Configuration ---
+// Gemini API Configuration
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
-app.use(express.static(path.join(__dirname, '../')));
 
 // Define file paths
-const usersFilePath = 'users.json';
-const assessmentFilePath = 'assessment_results.json';
-const collegesFilePath = 'colleges.json';
-const coursesFilePath = 'courses.json';
+const usersFilePath = path.join(__dirname, '../users.json');
+const assessmentFilePath = path.join(__dirname, '../assessment_results.json');
+const collegesFilePath = path.join(__dirname, '../colleges.json');
+const coursesFilePath = path.join(__dirname, '../courses.json');
 
 // Utility functions (read/write JSON)
 const readJsonFile = (filePath, defaultValue = []) => {
@@ -79,7 +68,6 @@ const writeJsonFile = (filePath, data) => {
 
 // Helper function to extract college filename from link
 const getCollegeFileName = (link) => {
-    // Extract filename from link like "./college-dashboard.html?data=./colleges/college-name"
     const match = link.match(/\.\/colleges\/(.+)$/);
     return match ? match[1] : null;
 };
@@ -114,21 +102,15 @@ const matchFieldsToCollegeTypes = (specializedFields) => {
     return Array.from(matchedTypes);
 };
 
-// --- API Endpoints ---
-
-// --- ADDED: Endpoint to handle profile picture upload ---
-// server.js
+// --- ALL YOUR EXISTING API ENDPOINTS (keep everything as is) ---
 
 app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ message: 'No file was uploaded.' });
     }
 
-    // --- THIS IS THE CRUCIAL ADDITION ---
-    // Now, we save the file path to the user's data.
-
-    const { username } = req.body; // Get username from the form data
-    const filePath = `/uploads/${req.file.filename}`; // The public URL path to the file
+    const { username } = req.body;
+    const filePath = `/uploads/${req.file.filename}`;
 
     if (!username) {
         return res.status(400).json({ message: 'Username is required to save the picture.' });
@@ -139,20 +121,17 @@ app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) 
         const userIndex = users.findIndex(u => u.username === username);
 
         if (userIndex !== -1) {
-            // Add or update the profilePicture property for the user
             users[userIndex].profilePicture = filePath;
             writeJsonFile(usersFilePath, users);
 
             console.log(`Updated profile picture for ${username}. Path: ${filePath}`);
 
-            // The file is saved and the user record is updated. Send a success response.
             res.status(200).json({
                 message: 'Profile picture uploaded successfully!',
                 filePath: filePath
             });
 
         } else {
-            // Handle case where user is not found
             res.status(404).json({ message: 'User not found.' });
         }
 
@@ -162,15 +141,13 @@ app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) 
     }
 });
 
-// --- ADDED: Endpoint to retrieve and serve a user's profile picture ---
 app.get('/profile-picture/:username', (req, res) => {
     const { username } = req.params;
-    const extensions = ['.png', '.jpg', '.jpeg', '.gif']; // Common image extensions
+    const extensions = ['.png', '.jpg', '.jpeg', '.gif'];
     let userImagePath = null;
 
-    // Check for the user's image file with different possible extensions
     for (const ext of extensions) {
-        const potentialPath = path.join(__dirname, 'uploads', username + ext);
+        const potentialPath = path.join(__dirname, '../uploads', username + ext);
         if (fs.existsSync(potentialPath)) {
             userImagePath = potentialPath;
             break;
@@ -189,25 +166,22 @@ app.get('/get-colleges', (req, res) => {
     res.json(colleges);
 });
 
-// Fixed endpoint to match frontend call
 app.get('/get-assessment-results', (req, res) => {
     const { username } = req.query;
     if (!username) return res.status(400).json({ error: 'Username is required.' });
 
     const allResults = readJsonFile(assessmentFilePath);
-    // Look for both username and userName for backwards compatibility
     const userResult = allResults.find(result => 
         result.username === username || result.userName === username
     );
 
     if (userResult) {
-        res.json(userResult); // Return the result directly, not wrapped in {result: ...}
+        res.json(userResult);
     } else {
         res.status(404).json({ error: 'Assessment results not found for this user.' });
     }
 });
 
-// Keep the old endpoint for backwards compatibility
 app.get('/get-assessment/:username', (req, res) => {
     const { username } = req.params;
     if (!username) return res.status(400).json({ error: 'Username is required.' });
@@ -233,12 +207,10 @@ app.get('/check-assessment/:username', (req, res) => {
     res.json({ hasTakenAssessment: hasTaken });
 });
 
-// New endpoint to get college recommendations based on assessment
 app.get('/get-recommendations/:username', (req, res) => {
     const { username } = req.params;
     
     try {
-        // Get user's assessment results
         const allResults = readJsonFile(assessmentFilePath);
         const userResult = allResults.find(result => 
             result.username === username || result.userName === username
@@ -248,19 +220,14 @@ app.get('/get-recommendations/:username', (req, res) => {
             return res.status(404).json({ error: 'Assessment results not found.' });
         }
         
-        // Get colleges data
         const collegesData = readJsonFile(collegesFilePath, []);
-        
-        // Match specialized fields to college types
         const specializedFields = userResult.specializedFields || [];
         const matchedTypes = matchFieldsToCollegeTypes(specializedFields);
         
-        // Find colleges matching the types
         let recommendedColleges = collegesData.filter(college => {
             return matchedTypes.some(type => college.type.includes(type));
         });
         
-        // If no specific matches, include general universities and engineering colleges
         if (recommendedColleges.length === 0) {
             recommendedColleges = collegesData.filter(college => 
                 college.type.includes('University') || 
@@ -269,19 +236,17 @@ app.get('/get-recommendations/:username', (req, res) => {
             );
         }
         
-        // Load detailed data for each recommended college
         const detailedColleges = [];
         recommendedColleges.forEach(college => {
             const fileName = getCollegeFileName(college.link);
             if (fileName) {
-                const detailedDataPath = `./colleges/${fileName}.json`;
+                const detailedDataPath = path.join(__dirname, '../colleges', `${fileName}.json`);
                 const detailedData = readJsonFile(detailedDataPath, null);
                 
                 if (detailedData && detailedData.length > 0) {
-                    // Merge basic info with detailed info
                     const mergedData = {
-                        ...detailedData[0], // Detailed data from individual file
-                        basicInfo: college,  // Basic info from colleges.json
+                        ...detailedData[0],
+                        basicInfo: college,
                         nirf: college.nirf,
                         naac: college.naac,
                         placement: college.placement,
@@ -298,7 +263,7 @@ app.get('/get-recommendations/:username', (req, res) => {
         res.json({
             userInterests: specializedFields,
             matchedTypes,
-            recommendedColleges: detailedColleges.slice(0, 10), // Limit to top 10
+            recommendedColleges: detailedColleges.slice(0, 10),
             stream: userResult.stream,
             totalFound: detailedColleges.length
         });
@@ -387,7 +352,6 @@ app.post('/save-assessment', (req, res) => {
     const assessmentData = req.body;
     
     const assessmentResults = readJsonFile(assessmentFilePath, []);
-    // Look for existing assessment using both username and userName
     const existingIndex = assessmentResults.findIndex(result => 
         result.username === assessmentData.username || 
         result.userName === assessmentData.userName
@@ -402,8 +366,61 @@ app.post('/save-assessment', (req, res) => {
     res.json({ status: 'success' });
 });
 
-// Export the Express API for Vercel
+// IMPORTANT: Add these route handlers for HTML pages and static files
+
+// Handle specific HTML pages
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './index.html'));
+    res.sendFile(path.join(__dirname, '../index.html'));
 });
+
+// Serve all HTML files
+app.get('/*.html', (req, res) => {
+    const htmlFile = req.params[0] + '.html';
+    const filePath = path.join(__dirname, '../', htmlFile);
+    
+    if (fs.existsSync(filePath)) {
+        res.sendFile(filePath);
+    } else {
+        res.status(404).send('Page not found');
+    }
+});
+
+// Serve JavaScript files
+app.get('/*.js', (req, res) => {
+    const jsFile = req.params[0] + '.js';
+    const filePath = path.join(__dirname, '../', jsFile);
+    
+    if (fs.existsSync(filePath)) {
+        res.type('application/javascript');
+        res.sendFile(filePath);
+    } else {
+        res.status(404).send('Script not found');
+    }
+});
+
+// Serve CSS files
+app.get('/*.css', (req, res) => {
+    const cssFile = req.params[0] + '.css';
+    const filePath = path.join(__dirname, '../', cssFile);
+    
+    if (fs.existsSync(filePath)) {
+        res.type('text/css');
+        res.sendFile(filePath);
+    } else {
+        res.status(404).send('Style not found');
+    }
+});
+
+// Serve image files
+app.get('/assets/images/*', (req, res) => {
+    const imagePath = path.join(__dirname, '../assets/images', req.params[0]);
+    
+    if (fs.existsSync(imagePath)) {
+        res.sendFile(imagePath);
+    } else {
+        res.status(404).send('Image not found');
+    }
+});
+
+// Export for Vercel
 module.exports = app;
