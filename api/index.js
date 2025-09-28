@@ -403,4 +403,7 @@ app.post('/save-assessment', (req, res) => {
 });
 
 // Export the Express API for Vercel
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../index.html'));
+});
 module.exports = app;
