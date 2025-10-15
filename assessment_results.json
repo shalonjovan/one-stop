@@ -1710,5 +1710,430 @@
       "Information Security Research and Engineering",
       "Human-Computer Interaction (HCI) Research"
     ]
+  },
+  {
+    "username": "shalonjovan2410112@ssn.edu.in",
+    "userName": "SHALON JOVAN",
+    "age": "16",
+    "studentClass": "10",
+    "gender": "Male",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "When faced with a complex problem, what is your preferred approach?",
+        "options": [
+          "Derive a logical proof or develop a mathematical model to understand its core structure.",
+          "Write code to automate a solution or build a new software tool.",
+          "Design a physical system or prototype to test and implement a solution.",
+          "Analyze large datasets to find patterns, insights, and potential solutions."
+        ]
+      },
+      {
+        "question": "Which statement excites you more?",
+        "options": [
+          "Exploring the elegant structure of abstract mathematical concepts and proving theorems.",
+          "Building robust software applications that solve real-world user problems.",
+          "Understanding the fundamental laws governing the universe and how things work at a deep physical level.",
+          "Extracting meaningful stories and predictions from vast amounts of data."
+        ]
+      },
+      {
+        "question": "What aspect of computer science fascinates you most?",
+        "options": [
+          "Writing efficient algorithms and optimizing code for performance.",
+          "Designing intuitive user interfaces and experiences for software.",
+          "Ensuring computer systems and networks are secure from threats.",
+          "Understanding and building the underlying hardware components of computers."
+        ]
+      },
+      {
+        "question": "If given a large dataset, what would you most enjoy doing with it?",
+        "options": [
+          "Developing algorithms to process, clean, and transform the data efficiently.",
+          "Creating interactive visualizations and dashboards to explain the data's insights.",
+          "Building predictive models (e.g., machine learning) to forecast future outcomes.",
+          "Ensuring the data's privacy, integrity, and compliance with regulations."
+        ]
+      },
+      {
+        "question": "Which scenario sounds most engaging to you?",
+        "options": [
+          "Designing a new high-performance microchip or processor architecture.",
+          "Developing an autonomous robot that can navigate and perform tasks independently.",
+          "Optimizing logistical operations or supply chains for maximum efficiency.",
+          "Researching new materials or energy sources for sustainable technology."
+        ]
+      },
+      {
+        "question": "Where would you most like to apply advanced mathematical concepts?",
+        "options": [
+          "Proving new theorems in pure mathematics or abstract algebra.",
+          "Developing encryption methods and protocols for secure communication.",
+          "Simulating complex physical systems like weather patterns, fluid dynamics, or astronomical events.",
+          "Analyzing financial markets, developing trading strategies, or managing risk."
+        ]
+      },
+      {
+        "question": "What kind of impact would you most like your work to have?",
+        "options": [
+          "Advancing scientific knowledge and fundamental understanding through research.",
+          "Creating innovative software products that improve people's daily lives or businesses.",
+          "Designing practical engineering solutions for societal or environmental challenges.",
+          "Developing intelligent systems that can learn, adapt, and make decisions autonomously."
+        ]
+      },
+      {
+        "question": "Which type of challenge appeals most to you?",
+        "options": [
+          "Debugging complex code to find a subtle error and make it work perfectly.",
+          "Coming up with a novel, elegant way to solve a long-standing mathematical puzzle.",
+          "Designing a system that can handle massive amounts of data efficiently and reliably.",
+          "Building a robust and secure network infrastructure that protects sensitive information."
+        ]
+      },
+      {
+        "question": "What kind of interdisciplinary project would you find most stimulating?",
+        "options": [
+          "Developing software tools for medical diagnostics or drug discovery (Bioinformatics).",
+          "Creating computational models for climate change prediction or environmental monitoring.",
+          "Designing AI systems for smart cities, traffic management, or sustainable energy grids.",
+          "Building simulations and control systems for space exploration or satellite operations."
+        ]
+      },
+      {
+        "question": "What would you rather spend time on?",
+        "options": [
+          "Understanding how an entire computer network or distributed system operates.",
+          "Deep-diving into the architecture and functionality of a single processor or circuit board.",
+          "Optimizing a specific piece of software or an algorithm for maximum speed and efficiency.",
+          "Managing the security and reliability of digital information assets."
+        ]
+      },
+      {
+        "question": "Which skill do you enjoy exercising more?",
+        "options": [
+          "Devising elegant logical arguments, proofs, or abstract models.",
+          "Crafting intuitive, user-friendly, and visually appealing user experiences.",
+          "Inventing novel algorithms or machine learning models to solve complex problems.",
+          "Solving intricate puzzles or challenges through systematic deduction and problem decomposition."
+        ]
+      },
+      {
+        "question": "What kind of knowledge acquisition do you prefer?",
+        "options": [
+          "Understanding the 'why' behind fundamental theories and principles, even if they seem abstract.",
+          "Learning 'how' to build and implement practical solutions using existing tools and technologies.",
+          "Exploring the cutting-edge of research and contributing to new knowledge in a specific field.",
+          "Mastering existing tools and technologies to efficiently solve practical problems."
+        ]
+      },
+      {
+        "question": "What aspect of Artificial Intelligence and Machine Learning interests you most?",
+        "options": [
+          "Understanding the mathematical foundations and algorithms behind AI models.",
+          "Developing new AI models, training them, and improving their performance.",
+          "Applying existing AI tools and services to solve specific real-world problems.",
+          "Debating the ethical, societal, and philosophical implications of AI."
+        ]
+      },
+      {
+        "question": "Where would you be most inclined to use advanced statistical or quantitative methods?",
+        "options": [
+          "Forecasting economic trends, stock prices, or market behavior.",
+          "Analyzing experimental data in scientific research (e.g., physics, biology).",
+          "Optimizing operational efficiency, logistics, or resource allocation in a business.",
+          "Modeling complex systems like climate change, disease spread, or population growth."
+        ]
+      },
+      {
+        "question": "What kind of final outcome of a project brings you the most satisfaction?",
+        "options": [
+          "A groundbreaking new theory, discovery, or proof that advances human understanding.",
+          "A functional, elegant, and widely used software application or digital product.",
+          "A perfectly optimized, efficient, and robust physical system or engineering solution.",
+          "A clear, compelling insight or prediction derived from data that leads to better decisions."
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "When faced with a complex problem, what is your preferred approach?",
+        "answer": "Design a physical system or prototype to test and implement a solution."
+      },
+      {
+        "question": "Which statement excites you more?",
+        "answer": "Exploring the elegant structure of abstract mathematical concepts and proving theorems."
+      },
+      {
+        "question": "What aspect of computer science fascinates you most?",
+        "answer": "Ensuring computer systems and networks are secure from threats."
+      },
+      {
+        "question": "If given a large dataset, what would you most enjoy doing with it?",
+        "answer": "Creating interactive visualizations and dashboards to explain the data's insights."
+      },
+      {
+        "question": "Which scenario sounds most engaging to you?",
+        "answer": "Designing a new high-performance microchip or processor architecture."
+      },
+      {
+        "question": "Where would you most like to apply advanced mathematical concepts?",
+        "answer": "Developing encryption methods and protocols for secure communication."
+      },
+      {
+        "question": "What kind of impact would you most like your work to have?",
+        "answer": "Advancing scientific knowledge and fundamental understanding through research."
+      },
+      {
+        "question": "Which type of challenge appeals most to you?",
+        "answer": "Debugging complex code to find a subtle error and make it work perfectly."
+      },
+      {
+        "question": "What kind of interdisciplinary project would you find most stimulating?",
+        "answer": "Designing AI systems for smart cities, traffic management, or sustainable energy grids."
+      },
+      {
+        "question": "What would you rather spend time on?",
+        "answer": "Deep-diving into the architecture and functionality of a single processor or circuit board."
+      },
+      {
+        "question": "Which skill do you enjoy exercising more?",
+        "answer": "Inventing novel algorithms or machine learning models to solve complex problems."
+      },
+      {
+        "question": "What kind of knowledge acquisition do you prefer?",
+        "answer": "Mastering existing tools and technologies to efficiently solve practical problems."
+      },
+      {
+        "question": "What aspect of Artificial Intelligence and Machine Learning interests you most?",
+        "answer": "Applying existing AI tools and services to solve specific real-world problems."
+      },
+      {
+        "question": "Where would you be most inclined to use advanced statistical or quantitative methods?",
+        "answer": "Optimizing operational efficiency, logistics, or resource allocation in a business."
+      },
+      {
+        "question": "What kind of final outcome of a project brings you the most satisfaction?",
+        "answer": "A groundbreaking new theory, discovery, or proof that advances human understanding."
+      }
+    ],
+    "specializedFields": [
+      "Cybersecurity Engineering",
+      "Operations Research & Optimization",
+      "Embedded Systems Engineering",
+      "Data Scientist (with focus on visualization & optimization)"
+    ]
+  },
+  {
+    "username": "cac.cat.jovan@gmail.com",
+    "userName": "Cac Cat",
+    "age": "18",
+    "studentClass": "12",
+    "gender": "Male",
+    "stream": "Science (Maths/CS)",
+    "geminiQuestions": [
+      {
+        "question": "What aspect of computer science captivates you the most?",
+        "options": [
+          "Developing software applications and user interfaces.",
+          "Designing efficient algorithms and data structures.",
+          "Understanding computer hardware, networks, and operating systems.",
+          "Exploring artificial intelligence, machine learning, and data analysis."
+        ]
+      },
+      {
+        "question": "Which area of mathematics sparks your curiosity the most?",
+        "options": [
+          "Abstract logic, proofs, and number theory (pure mathematics).",
+          "Statistical analysis, probability, and data interpretation.",
+          "Mathematical modeling, calculus, and differential equations (applied mathematics).",
+          "Optimizing systems, algorithms, and computational methods."
+        ]
+      },
+      {
+        "question": "When faced with a complex problem, what is your preferred approach?",
+        "options": [
+          "Breaking it down into logical steps and deriving a precise solution.",
+          "Searching for patterns, analyzing data, and optimizing existing methods.",
+          "Brainstorming creative, unconventional solutions, and thinking outside the box.",
+          "Building a prototype or conducting an experiment to test different ideas."
+        ]
+      },
+      {
+        "question": "How do you feel about working with large amounts of data?",
+        "options": [
+          "Excited to extract insights, predict trends, and find hidden patterns.",
+          "Interested in designing efficient systems and databases to manage it.",
+          "More focused on the algorithms that process and transform it.",
+          "I prefer to work with smaller, more controlled datasets for focused analysis."
+        ]
+      },
+      {
+        "question": "Which statement resonates more with you?",
+        "options": [
+          "I love building entirely new things from scratch, innovating constantly.",
+          "I enjoy optimizing and improving existing systems to make them more efficient.",
+          "I'm passionate about understanding how things work fundamentally, from first principles.",
+          "I prefer finding creative applications for existing technologies to solve new problems."
+        ]
+      },
+      {
+        "question": "Do you prefer projects with a visible, physical output, or abstract concepts and theories?",
+        "options": [
+          "Physical products or functional machines (e.g., robotics, embedded systems).",
+          "Software applications or digital platforms with tangible user interaction.",
+          "Purely theoretical models, mathematical proofs, and abstract problem-solving.",
+          "Data visualizations, statistical reports, and insights that inform decisions."
+        ]
+      },
+      {
+        "question": "Which industry or societal challenge are you most eager to contribute to using your skills?",
+        "options": [
+          "Healthcare and medical advancements (e.g., diagnostics, drug discovery).",
+          "Environmental sustainability and climate change solutions.",
+          "Space exploration, fundamental physics research, or astronomy.",
+          "Finance, economics, business optimization, or logistics."
+        ]
+      },
+      {
+        "question": "In a team project, which role would you most naturally gravitate towards?",
+        "options": [
+          "The architect/designer who plans the overall structure and requirements.",
+          "The developer/engineer who implements the solution by writing code or building components.",
+          "The analyst/tester who ensures correctness, efficiency, and finds improvements.",
+          "The researcher who explores new ideas, conducts experiments, and pushes boundaries."
+        ]
+      },
+      {
+        "question": "When learning a new scientific or computational concept, what helps you understand it best?",
+        "options": [
+          "Reading theoretical explanations, academic papers, and proofs.",
+          "Writing code, solving equations, or engaging in practical problem-solving.",
+          "Conducting experiments, building prototypes, or hands-on exploration.",
+          "Discussing and collaborating with others, explaining concepts, and getting feedback."
+        ]
+      },
+      {
+        "question": "Which of these intrigues you more?",
+        "options": [
+          "How processors are designed, and circuits function at a fundamental physical level.",
+          "How software interacts with hardware to execute commands and manage resources.",
+          "The principles behind creating efficient operating systems and network protocols.",
+          "Designing user interfaces and user experiences that are intuitive and powerful."
+        ]
+      },
+      {
+        "question": "Do you find more satisfaction in:",
+        "options": [
+          "Precisely analyzing data and logically deriving conclusions.",
+          "Generating novel and imaginative solutions to complex problems.",
+          "Rigorously proving mathematical theorems or verifying system correctness.",
+          "Building functional systems that solve practical issues and are immediately useful."
+        ]
+      },
+      {
+        "question": "Which of these emerging technologies sparks your greatest interest?",
+        "options": [
+          "Artificial Intelligence and Machine Learning (e.g., neural networks, deep learning).",
+          "Quantum Computing and its potential to solve currently intractable problems.",
+          "Robotics, Automation, and the Internet of Things (IoT).",
+          "Cybersecurity, Blockchain, and Data Privacy."
+        ]
+      },
+      {
+        "question": "Do you prefer to:",
+        "options": [
+          "Dive deep into the minute details of an algorithm, a circuit, or a specific problem.",
+          "Focus on integrating different systems and seeing the bigger picture of how components connect.",
+          "Understand the theoretical underpinnings of entire fields of science or mathematics.",
+          "Optimize the performance and efficiency of existing complex systems."
+        ]
+      },
+      {
+        "question": "How important is it for you to see your Maths/CS skills applied to other scientific fields (like Physics, Chemistry, Biology)?",
+        "options": [
+          "Very important – I thrive on interdisciplinary challenges and novel applications.",
+          "Somewhat important – it's interesting, but my primary focus is elsewhere.",
+          "Not very important – I prefer core Maths/CS applications and theoretical advancements.",
+          "I'm open to it, but also happy with purely theoretical or abstract research in Maths/CS."
+        ]
+      },
+      {
+        "question": "Which statement best describes your primary motivation?",
+        "options": [
+          "To understand the fundamental 'why' and underlying principles of the universe or systems.",
+          "To build practical solutions that solve real-world problems directly and create impact.",
+          "To innovate and create entirely new technologies or mathematical frameworks.",
+          "To analyze and interpret complex data to gain insights and make informed decisions."
+        ]
+      }
+    ],
+    "geminiAnswers": [
+      {
+        "question": "What aspect of computer science captivates you the most?",
+        "answer": "Designing efficient algorithms and data structures."
+      },
+      {
+        "question": "Which area of mathematics sparks your curiosity the most?",
+        "answer": "Abstract logic, proofs, and number theory (pure mathematics)."
+      },
+      {
+        "question": "When faced with a complex problem, what is your preferred approach?",
+        "answer": "Searching for patterns, analyzing data, and optimizing existing methods."
+      },
+      {
+        "question": "How do you feel about working with large amounts of data?",
+        "answer": "I prefer to work with smaller, more controlled datasets for focused analysis."
+      },
+      {
+        "question": "Which statement resonates more with you?",
+        "answer": "I'm passionate about understanding how things work fundamentally, from first principles."
+      },
+      {
+        "question": "Do you prefer projects with a visible, physical output, or abstract concepts and theories?",
+        "answer": "Software applications or digital platforms with tangible user interaction."
+      },
+      {
+        "question": "Which industry or societal challenge are you most eager to contribute to using your skills?",
+        "answer": "Healthcare and medical advancements (e.g., diagnostics, drug discovery)."
+      },
+      {
+        "question": "In a team project, which role would you most naturally gravitate towards?",
+        "answer": "The architect/designer who plans the overall structure and requirements."
+      },
+      {
+        "question": "When learning a new scientific or computational concept, what helps you understand it best?",
+        "answer": "Reading theoretical explanations, academic papers, and proofs."
+      },
+      {
+        "question": "Which of these intrigues you more?",
+        "answer": "Designing user interfaces and user experiences that are intuitive and powerful."
+      },
+      {
+        "question": "Do you find more satisfaction in:",
+        "answer": "Generating novel and imaginative solutions to complex problems."
+      },
+      {
+        "question": "Which of these emerging technologies sparks your greatest interest?",
+        "answer": "Artificial Intelligence and Machine Learning (e.g., neural networks, deep learning)."
+      },
+      {
+        "question": "Do you prefer to:",
+        "answer": "Understand the theoretical underpinnings of entire fields of science or mathematics."
+      },
+      {
+        "question": "How important is it for you to see your Maths/CS skills applied to other scientific fields (like Physics, Chemistry, Biology)?",
+        "answer": "Somewhat important – it's interesting, but my primary focus is elsewhere."
+      },
+      {
+        "question": "Which statement best describes your primary motivation?",
+        "answer": "To build practical solutions that solve real-world problems directly and create impact."
+      }
+    ],
+    "specializedFields": [
+      "Optimization Engineer",
+      "Natural Language Processing (NLP) Engineer (Healthcare Applications)",
+      "Technical Product Manager (AI/ML Solutions)"
+    ]
   }
 ]
